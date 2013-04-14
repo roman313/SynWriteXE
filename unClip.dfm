@@ -16,7 +16,7 @@ object fmClip: TfmClip
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object ListClip: TTntListBox
+  object ListClip: TSpTBXListBox
     Left = 0
     Top = 0
     Width = 149

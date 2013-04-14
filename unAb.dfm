@@ -16,7 +16,7 @@ object fmAb: TfmAb
   ShowHint = True
   PixelsPerInch = 96
   TextHeight = 13
-  object LabelW0: TTntLabel
+  object LabelW0: TSpTBXLabel
     Left = 96
     Top = 4
     Width = 96
@@ -36,42 +36,42 @@ object fmAb: TfmAb
     Height = 13
     Caption = 'ver'
   end
-  object GroupBox4: TTntGroupBox
+  object GroupBox4: TSpTBXGroupBox
     Left = 8
     Top = 44
     Width = 313
     Height = 89
     Caption = 'About'
     TabOrder = 0
-    object Label12: TTntLabel
+    object Label12: TSpTBXLabel
       Left = 8
       Top = 32
       Width = 27
       Height = 13
       Caption = 'Sites:'
     end
-    object Label11: TTntLabel
+    object Label11: TSpTBXLabel
       Left = 8
       Top = 48
       Width = 39
       Height = 13
       Caption = 'Forums:'
     end
-    object Label9: TTntLabel
+    object Label9: TSpTBXLabel
       Left = 8
       Top = 16
       Width = 37
       Height = 13
       Caption = 'Author:'
     end
-    object LabelWn: TTntLabel
+    object LabelWn: TSpTBXLabel
       Left = 88
       Top = 16
       Width = 46
       Height = 13
       Caption = 'Alexey T.'
     end
-    object Labelw2: TTntLabel
+    object Labelw2: TSpTBXLabel
       Left = 160
       Top = 32
       Width = 61
@@ -87,14 +87,14 @@ object fmAb: TfmAb
       ParentFont = False
       OnClick = Labelw2Click
     end
-    object Label4: TTntLabel
+    object Label4: TSpTBXLabel
       Left = 8
       Top = 64
       Width = 28
       Height = 13
       Caption = 'Email:'
     end
-    object LabelWEm: TTntLabel
+    object LabelWEm: TSpTBXLabel
       Left = 88
       Top = 64
       Width = 123
@@ -110,7 +110,7 @@ object fmAb: TfmAb
       ParentFont = False
       OnClick = LabelWEmClick
     end
-    object Labelw3: TTntLabel
+    object Labelw3: TSpTBXLabel
       Left = 88
       Top = 32
       Width = 55
@@ -126,7 +126,7 @@ object fmAb: TfmAb
       ParentFont = False
       OnClick = Labelw3Click
     end
-    object LabelForum: TTntLabel
+    object LabelForum: TSpTBXLabel
       Left = 88
       Top = 48
       Width = 62
@@ -143,14 +143,14 @@ object fmAb: TfmAb
       OnClick = LabelForumClick
     end
   end
-  object GroupBox5: TTntGroupBox
+  object GroupBox5: TSpTBXGroupBox
     Left = 8
     Top = 136
     Width = 313
     Height = 69
     Caption = 'Components'
     TabOrder = 1
-    object LabelW1: TTntLabel
+    object LabelW1: TSpTBXLabel
       Left = 88
       Top = 16
       Width = 109
@@ -166,7 +166,7 @@ object fmAb: TfmAb
       ParentFont = False
       OnClick = LabelW1Click
     end
-    object LabelWA: TTntLabel
+    object LabelWA: TSpTBXLabel
       Left = 88
       Top = 32
       Width = 217
@@ -185,7 +185,7 @@ object fmAb: TfmAb
       OnClick = LabelWAClick
     end
   end
-  object Button1: TTntButton
+  object Button1: TSpTBXButton
     Left = 120
     Top = 212
     Width = 90

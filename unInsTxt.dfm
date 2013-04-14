@@ -18,14 +18,14 @@ object fmInsTxt: TfmInsTxt
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object TntGroupBox1: TTntGroupBox
+  object TntGroupBox1: TSpTBXGroupBox
     Left = 8
     Top = 4
     Width = 401
     Height = 185
     Caption = 'What to insert'
     TabOrder = 0
-    object TntLabel1: TTntLabel
+    object TntLabel1: TSpTBXLabel
       Left = 97
       Top = 36
       Width = 62
@@ -33,7 +33,7 @@ object fmInsTxt: TfmInsTxt
       Alignment = taRightJustify
       Caption = 'at line begin:'
     end
-    object TntLabel2: TTntLabel
+    object TntLabel2: TSpTBXLabel
       Left = 105
       Top = 60
       Width = 54
@@ -41,49 +41,49 @@ object fmInsTxt: TfmInsTxt
       Alignment = taRightJustify
       Caption = 'at line end:'
     end
-    object TntLabel3: TTntLabel
+    object TntLabel3: TSpTBXLabel
       Left = 168
       Top = 96
       Width = 51
       Height = 13
       Caption = 'Start num:'
     end
-    object TntLabel4: TTntLabel
+    object TntLabel4: TSpTBXLabel
       Left = 240
       Top = 96
       Width = 30
       Height = 13
       Caption = 'Digits:'
     end
-    object lab1: TTntLabel
+    object lab1: TSpTBXLabel
       Left = 168
       Top = 136
       Width = 10
       Height = 13
       Caption = '1.'
     end
-    object lab2: TTntLabel
+    object lab2: TSpTBXLabel
       Left = 168
       Top = 148
       Width = 10
       Height = 13
       Caption = '2.'
     end
-    object TntLabel5: TTntLabel
+    object TntLabel5: TSpTBXLabel
       Left = 312
       Top = 96
       Width = 32
       Height = 13
       Caption = 'Suffix:'
     end
-    object TntLabel6: TTntLabel
+    object TntLabel6: TSpTBXLabel
       Left = 88
       Top = 96
       Width = 32
       Height = 13
       Caption = 'Prefix:'
     end
-    object bText: TTntRadioButton
+    object bText: TSpTBXRadioButton
       Left = 8
       Top = 16
       Width = 161
@@ -94,7 +94,7 @@ object fmInsTxt: TfmInsTxt
       TabStop = True
       OnClick = bTextClick
     end
-    object bNumber: TTntRadioButton
+    object bNumber: TSpTBXRadioButton
       Left = 8
       Top = 80
       Width = 161
@@ -103,7 +103,7 @@ object fmInsTxt: TfmInsTxt
       TabOrder = 1
       OnClick = bTextClick
     end
-    object bBullets: TTntRadioButton
+    object bBullets: TSpTBXRadioButton
       Left = 8
       Top = 160
       Width = 161
@@ -112,7 +112,7 @@ object fmInsTxt: TfmInsTxt
       TabOrder = 2
       OnClick = bTextClick
     end
-    object ed1: TTntComboBox
+    object ed1: TSpTBXComboBox
       Left = 168
       Top = 32
       Width = 161
@@ -120,7 +120,7 @@ object fmInsTxt: TfmInsTxt
       ItemHeight = 13
       TabOrder = 3
     end
-    object ed2: TTntComboBox
+    object ed2: TSpTBXComboBox
       Left = 168
       Top = 56
       Width = 161
@@ -152,7 +152,7 @@ object fmInsTxt: TfmInsTxt
       OnChange = edStartChange
       OnKeyDown = edCounterKeyDown
     end
-    object edTail: TTntComboBox
+    object edTail: TSpTBXComboBox
       Left = 312
       Top = 112
       Width = 73
@@ -161,7 +161,7 @@ object fmInsTxt: TfmInsTxt
       TabOrder = 8
       OnChange = edStartChange
     end
-    object edBegin: TTntComboBox
+    object edBegin: TSpTBXComboBox
       Left = 88
       Top = 112
       Width = 73
@@ -171,21 +171,21 @@ object fmInsTxt: TfmInsTxt
       OnChange = edStartChange
     end
   end
-  object TntGroupBox2: TTntGroupBox
+  object TntGroupBox2: TSpTBXGroupBox
     Left = 8
     Top = 192
     Width = 401
     Height = 125
     Caption = 'Options'
     TabOrder = 1
-    object TntLabel8: TTntLabel
+    object TntLabel8: TSpTBXLabel
       Left = 8
       Top = 16
       Width = 82
       Height = 13
       Caption = 'Insert beginning:'
     end
-    object bAtCol: TTntRadioButton
+    object bAtCol: TSpTBXRadioButton
       Left = 8
       Top = 32
       Width = 169
@@ -195,7 +195,7 @@ object fmInsTxt: TfmInsTxt
       TabOrder = 0
       TabStop = True
     end
-    object bAfterSp: TTntRadioButton
+    object bAfterSp: TSpTBXRadioButton
       Left = 8
       Top = 52
       Width = 169
@@ -203,7 +203,7 @@ object fmInsTxt: TfmInsTxt
       Caption = 'after leading spaces'
       TabOrder = 1
     end
-    object cbSkip: TTntCheckBox
+    object cbSkip: TSpTBXCheckBox
       Left = 8
       Top = 100
       Width = 305
@@ -222,7 +222,7 @@ object fmInsTxt: TfmInsTxt
       Value = 1
       OnKeyDown = edCounterKeyDown
     end
-    object bAfterStr: TTntRadioButton
+    object bAfterStr: TSpTBXRadioButton
       Left = 8
       Top = 72
       Width = 169
@@ -230,7 +230,7 @@ object fmInsTxt: TfmInsTxt
       Caption = 'after string:'
       TabOrder = 2
     end
-    object edStrAfter: TTntComboBox
+    object edStrAfter: TSpTBXComboBox
       Left = 176
       Top = 72
       Width = 161
@@ -239,7 +239,7 @@ object fmInsTxt: TfmInsTxt
       TabOrder = 4
     end
   end
-  object bOk: TTntButton
+  object bOk: TSpTBXButton
     Left = 224
     Top = 388
     Width = 90
@@ -249,7 +249,7 @@ object fmInsTxt: TfmInsTxt
     ModalResult = 1
     TabOrder = 3
   end
-  object bCan: TTntButton
+  object bCan: TSpTBXButton
     Left = 320
     Top = 388
     Width = 90

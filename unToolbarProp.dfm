@@ -18,7 +18,7 @@ object fmToolbarProp: TfmToolbarProp
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object bOk: TTntButton
+  object bOk: TSpTBXButton
     Left = 208
     Top = 351
     Width = 90
@@ -28,7 +28,7 @@ object fmToolbarProp: TfmToolbarProp
     ModalResult = 1
     TabOrder = 1
   end
-  object bCan: TTntButton
+  object bCan: TSpTBXButton
     Left = 304
     Top = 351
     Width = 90
@@ -38,35 +38,35 @@ object fmToolbarProp: TfmToolbarProp
     ModalResult = 2
     TabOrder = 2
   end
-  object GroupBoxCmd: TTntGroupBox
+  object GroupBoxCmd: TSpTBXGroupBox
     Left = 8
     Top = 96
     Width = 385
     Height = 249
     Caption = 'Buttons'
     TabOrder = 0
-    object Label2: TTntLabel
+    object Label2: TSpTBXLabel
       Left = 8
       Top = 16
       Width = 52
       Height = 13
       Caption = 'Button list:'
     end
-    object LabelHint: TTntLabel
+    object LabelHint: TSpTBXLabel
       Left = 8
       Top = 124
       Width = 23
       Height = 13
       Caption = 'Hint:'
     end
-    object LabelCmd: TTntLabel
+    object LabelCmd: TSpTBXLabel
       Left = 8
       Top = 164
       Width = 51
       Height = 13
       Caption = 'Command:'
     end
-    object LabelIcon: TTntLabel
+    object LabelIcon: TSpTBXLabel
       Left = 8
       Top = 204
       Width = 25
@@ -89,7 +89,7 @@ object fmToolbarProp: TfmToolbarProp
       OnDragOver = ListBox1DragOver
       OnDrawItem = ListBox1DrawItem
     end
-    object edHint: TTntEdit
+    object edHint: TSpTBXEdit
       Left = 8
       Top = 140
       Width = 265
@@ -97,7 +97,7 @@ object fmToolbarProp: TfmToolbarProp
       TabOrder = 3
       OnChange = edHintChange
     end
-    object edCmd: TTntEdit
+    object edCmd: TSpTBXEdit
       Left = 8
       Top = 180
       Width = 265
@@ -105,7 +105,7 @@ object fmToolbarProp: TfmToolbarProp
       TabOrder = 4
       OnChange = edCmdChange
     end
-    object btnBrowseIcon: TTntButton
+    object btnBrowseIcon: TSpTBXButton
       Left = 8
       Top = 220
       Width = 97
@@ -114,7 +114,7 @@ object fmToolbarProp: TfmToolbarProp
       TabOrder = 6
       OnClick = btnBrowseIconClick
     end
-    object btnBrowseCmd: TTntButton
+    object btnBrowseCmd: TSpTBXButton
       Left = 280
       Top = 180
       Width = 97
@@ -122,7 +122,7 @@ object fmToolbarProp: TfmToolbarProp
       Caption = 'Browse...'
       TabOrder = 5
     end
-    object btnAdd: TTntButton
+    object btnAdd: TSpTBXButton
       Left = 8
       Top = 96
       Width = 97
@@ -131,7 +131,7 @@ object fmToolbarProp: TfmToolbarProp
       TabOrder = 1
       OnClick = btnAddClick
     end
-    object btnDel: TTntButton
+    object btnDel: TSpTBXButton
       Left = 216
       Top = 96
       Width = 97
@@ -140,7 +140,7 @@ object fmToolbarProp: TfmToolbarProp
       TabOrder = 2
       OnClick = btnDelClick
     end
-    object btnSep: TTntButton
+    object btnSep: TSpTBXButton
       Left = 112
       Top = 96
       Width = 97
@@ -150,42 +150,42 @@ object fmToolbarProp: TfmToolbarProp
       OnClick = btnSepClick
     end
   end
-  object GroupBoxProp: TTntGroupBox
+  object GroupBoxProp: TSpTBXGroupBox
     Left = 8
     Top = 4
     Width = 385
     Height = 89
     Caption = 'Properties'
     TabOrder = 3
-    object Label6: TTntLabel
+    object Label6: TSpTBXLabel
       Left = 8
       Top = 16
       Width = 78
       Height = 13
       Caption = 'Toolbar caption:'
     end
-    object Label1: TTntLabel
+    object Label1: TSpTBXLabel
       Left = 8
       Top = 64
       Width = 51
       Height = 13
       Caption = 'Icons size:'
     end
-    object LabelSize: TTntLabel
+    object LabelSize: TSpTBXLabel
       Left = 120
       Top = 64
       Width = 30
       Height = 13
       Caption = '10x10'
     end
-    object edCaption: TTntEdit
+    object edCaption: TSpTBXEdit
       Left = 8
       Top = 32
       Width = 265
       Height = 21
       TabOrder = 0
     end
-    object btnIconSize: TTntButton
+    object btnIconSize: TSpTBXButton
       Left = 176
       Top = 58
       Width = 97

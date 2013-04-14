@@ -18,7 +18,7 @@ object fmGoto: TfmGoto
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object Label1: TTntLabel
+  object Label1: TSpTBXLabel
     Left = 24
     Top = 28
     Width = 62
@@ -26,7 +26,7 @@ object fmGoto: TfmGoto
     Caption = '&Line number:'
     FocusControl = edLine
   end
-  object Label2: TTntLabel
+  object Label2: TSpTBXLabel
     Left = 24
     Top = 52
     Width = 78
@@ -48,7 +48,7 @@ object fmGoto: TfmGoto
     Height = 9
     Shape = bsTopLine
   end
-  object TntLabel1: TTntLabel
+  object TntLabel1: TSpTBXLabel
     Left = 24
     Top = 72
     Width = 249
@@ -67,7 +67,7 @@ object fmGoto: TfmGoto
     ItemHeight = 13
     TabOrder = 1
   end
-  object ButtonOk: TTntButton
+  object ButtonOk: TSpTBXButton
     Left = 57
     Top = 212
     Width = 80
@@ -78,7 +78,7 @@ object fmGoto: TfmGoto
     TabOrder = 8
     OnClick = ButtonOkClick
   end
-  object ButtonCan: TTntButton
+  object ButtonCan: TSpTBXButton
     Left = 145
     Top = 212
     Width = 80
@@ -96,7 +96,7 @@ object fmGoto: TfmGoto
     ItemHeight = 13
     TabOrder = 2
   end
-  object cbExtSel: TTntCheckBox
+  object cbExtSel: TSpTBXCheckBox
     Left = 8
     Top = 188
     Width = 265
@@ -104,7 +104,7 @@ object fmGoto: TfmGoto
     Caption = 'E&xtend selection'
     TabOrder = 7
   end
-  object cbPos: TTntRadioButton
+  object cbPos: TSpTBXRadioButton
     Left = 8
     Top = 6
     Width = 265
@@ -115,7 +115,7 @@ object fmGoto: TfmGoto
     TabStop = True
     OnClick = cbPosClick
   end
-  object cbPrev: TTntRadioButton
+  object cbPrev: TSpTBXRadioButton
     Left = 8
     Top = 108
     Width = 265
@@ -124,7 +124,7 @@ object fmGoto: TfmGoto
     TabOrder = 3
     OnClick = cbPosClick
   end
-  object cbNext: TTntRadioButton
+  object cbNext: TSpTBXRadioButton
     Left = 8
     Top = 124
     Width = 265
@@ -133,7 +133,7 @@ object fmGoto: TfmGoto
     TabOrder = 4
     OnClick = cbPosClick
   end
-  object cbNum: TTntRadioButton
+  object cbNum: TSpTBXRadioButton
     Left = 8
     Top = 140
     Width = 265
@@ -142,7 +142,7 @@ object fmGoto: TfmGoto
     TabOrder = 5
     OnClick = cbPosClick
   end
-  object edNum: TTntComboBox
+  object edNum: TSpTBXComboBox
     Left = 24
     Top = 158
     Width = 233

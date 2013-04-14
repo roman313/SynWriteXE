@@ -17,7 +17,7 @@ object fmProj: TfmProj
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object TreeProj: TTntTreeView
+  object TreeProj: TTreeView
     Left = 0
     Top = 22
     Width = 346
@@ -41,7 +41,7 @@ object fmProj: TfmProj
     OnKeyDown = TreeProjKeyDown
     OnMouseMove = TreeProjMouseMove
   end
-  object tbProject: TTBXToolbar
+  object tbProject: TSpTBXToolbar
     Left = 0
     Top = 0
     Width = 346
@@ -52,71 +52,71 @@ object fmProj: TfmProj
     HideWhenInactive = False
     Images = ImageListTool
     TabOrder = 1
-    object TBXItemProjOpen: TTBXSubmenuItem
+    object TBXItemProjOpen: TSpTBXSubmenuItem
       DropdownCombo = True
       ImageIndex = 0
       OnClick = TBXItemProjOpenClick
       OnPopup = TBXItemProjOpenPopup
       Caption = ''
       Hint = 'Open a project'
-      object TBXItemProjMRU: TTBXMRUListItem
+      object TBXItemProjMRU: TSpTBXMRUListItem
         MRUList = ProjMRUList
         Caption = '(TBX MRU List)'
         Hint = ''
       end
-      object TBXSeparatorItem5: TTBXSeparatorItem
+      object TBXSeparatorItem5: TSpTBXSeparatorItem
         Caption = ''
         Hint = ''
       end
-      object TBXItemProjClearRecent: TTBXItem
+      object TBXItemProjClearRecent: TSpTBXItem
         OnClick = TBXItemProjClearRecentClick
         Caption = 'Clear list'
         Hint = ''
       end
     end
-    object TBXItemProjSave: TTBXItem
+    object TBXItemProjSave: TSpTBXItem
       ImageIndex = 1
       OnClick = TBXItemProjSaveClick
       Caption = ''
       Hint = 'Save current project'
     end
-    object TBXItemProjAddVirtDir: TTBXItem
+    object TBXItemProjAddVirtDir: TSpTBXItem
       ImageIndex = 2
       OnClick = TBXItemProjAddVirtDirClick
       Caption = ''
       Hint = 'Add virtual folder to project'
     end
-    object TBXItemProjAddFilesDir: TTBXItem
+    object TBXItemProjAddFilesDir: TSpTBXItem
       ImageIndex = 8
       OnClick = TBXItemProjAddFilesDirClick
       Caption = ''
       Hint = 'Add disk folder'#39's contents to project'
     end
-    object TBXItemProjAddFiles: TTBXItem
+    object TBXItemProjAddFiles: TSpTBXItem
       ImageIndex = 3
       OnClick = TBXItemProjAddFilesClick
       Caption = ''
       Hint = 'Add file(s) to project'
     end
-    object TBXItemProjRename: TTBXItem
+    object TBXItemProjRename: TSpTBXItem
       ImageIndex = 4
       OnClick = TBXItemProjRenameClick
       Caption = ''
       Hint = 'Rename current project folder'
     end
-    object TBXItemProjDelFiles: TTBXItem
+    object TBXItemProjDelFiles: TSpTBXItem
       ImageIndex = 5
       OnClick = TBXItemProjDelFilesClick
       Caption = ''
       Hint = 'Remove selected item(s) from project'
     end
-    object TBXItemProjOpenFiles: TTBXItem
+    object TBXItemProjOpenFiles: TSpTBXItem
       ImageIndex = 6
       OnClick = TBXItemProjOpenFilesClick
       Caption = ''
       Hint = 'Open selected files(s) or folder(s) in editor'
     end
-    object TBXItemProjProp: TTBXItem
+    object TBXItemProjProp: TSpTBXItem
       ImageIndex = 7
       OnClick = TBXItemProjPropClick
       Caption = ''
@@ -531,7 +531,7 @@ object fmProj: TfmProj
       0000FFFFC01FC01F8001FFFFFFFFFFFF00000000000000000000000000000000
       000000000000}
   end
-  object ODFile: TTntOpenDialog
+  object ODFile: TOpenDialog
     Options = [ofHideReadOnly, ofAllowMultiSelect, ofPathMustExist, ofFileMustExist, ofEnableSizing]
     Left = 168
     Top = 48
@@ -950,144 +950,144 @@ object fmProj: TfmProj
       FFE78001FFFFC007FFFFFFFFFFFFC00F00000000000000000000000000000000
       000000000000}
   end
-  object PopupProj: TTBXPopupMenu
+  object PopupProj: TSpTBXPopupMenu
     OnPopup = PopupProjPopup
     Left = 112
     Top = 76
-    object TBXItemMnuExpand: TTBXItem
+    object TBXItemMnuExpand: TSpTBXItem
       OnClick = TBXItemMnuExpandClick
       Caption = 'Expand'
       Hint = ''
     end
-    object TBXItemMnuCollapse: TTBXItem
+    object TBXItemMnuCollapse: TSpTBXItem
       OnClick = TBXItemMnuCollapseClick
       Caption = 'Collapse'
       Hint = ''
     end
-    object TBXSeparatorItem4: TTBXSeparatorItem
+    object TBXSeparatorItem4: TSpTBXSeparatorItem
       Caption = ''
       Hint = ''
     end
-    object TBXItemMnuProjOpen: TTBXItem
+    object TBXItemMnuProjOpen: TSpTBXItem
       OnClick = TBXItemMnuProjOpenClick
       Caption = 'Open project...'
       Hint = ''
     end
-    object TBXItemMnuProjSave: TTBXItem
+    object TBXItemMnuProjSave: TSpTBXItem
       OnClick = TBXItemMnuProjSaveClick
       Caption = 'Save project'
       Hint = ''
     end
-    object TBXItemMnuProjSaveAs: TTBXItem
+    object TBXItemMnuProjSaveAs: TSpTBXItem
       OnClick = TBXItemMnuProjSaveAsClick
       Caption = 'Save project as...'
       Hint = ''
     end
-    object TBXItemMnuProjClose: TTBXItem
+    object TBXItemMnuProjClose: TSpTBXItem
       OnClick = TBXItemMnuProjCloseClick
       Caption = 'Close project'
       Hint = ''
     end
-    object TBXItemMnuProjProp: TTBXItem
+    object TBXItemMnuProjProp: TSpTBXItem
       OnClick = TBXItemMnuProjPropClick
       Caption = 'Show project properties...'
       Hint = ''
     end
-    object TBXSeparatorItem1: TTBXSeparatorItem
+    object TBXSeparatorItem1: TSpTBXSeparatorItem
       Caption = ''
       Hint = ''
     end
-    object TbxItemMnuAdd: TTBXSubmenuItem
+    object TbxItemMnuAdd: TSpTBXSubmenuItem
       Caption = 'Add'
       Hint = ''
-      object TbxItemMnuAddFiles: TTBXItem
+      object TbxItemMnuAddFiles: TSpTBXItem
         OnClick = TbxItemMnuAddFilesClick
         Caption = 'Files...'
         Hint = ''
       end
-      object TbxItemMnuAddDir: TTBXItem
+      object TbxItemMnuAddDir: TSpTBXItem
         OnClick = TbxItemMnuAddDirClick
         Caption = 'Folder...'
         Hint = ''
       end
-      object TbxItemMnuAddVDir: TTBXItem
+      object TbxItemMnuAddVDir: TSpTBXItem
         OnClick = TbxItemMnuAddVDirClick
         Caption = 'Virtual folder...'
         Hint = ''
       end
-      object TBXSeparatorItem3: TTBXSeparatorItem
+      object TBXSeparatorItem3: TSpTBXSeparatorItem
         Caption = ''
         Hint = ''
       end
-      object TBXItemMnuAddCurrFile: TTBXItem
+      object TBXItemMnuAddCurrFile: TSpTBXItem
         OnClick = TBXItemMnuAddCurrFileClick
         Caption = 'Current file'
         Hint = ''
       end
-      object TBXItemMnuAddOpenedFiles: TTBXItem
+      object TBXItemMnuAddOpenedFiles: TSpTBXItem
         OnClick = TBXItemMnuAddOpenedFilesClick
         Caption = 'All opened files'
         Hint = ''
       end
     end
-    object TbxItemMnuRename: TTBXItem
+    object TbxItemMnuRename: TSpTBXItem
       OnClick = TbxItemMnuRenameClick
       Caption = 'Rename'
       Hint = ''
     end
-    object TbxItemMnuRemove: TTBXItem
+    object TbxItemMnuRemove: TSpTBXItem
       OnClick = TbxItemMnuRemoveClick
       Caption = 'Remove'
       Hint = ''
     end
-    object TBXSeparatorItem2: TTBXSeparatorItem
+    object TBXSeparatorItem2: TSpTBXSeparatorItem
       Caption = ''
       Hint = ''
     end
-    object TBXItemMnuOpenFiles: TTBXItem
+    object TBXItemMnuOpenFiles: TSpTBXItem
       OnClick = TBXItemMnuOpenFilesClick
       Caption = 'Open selected item(s)'
       Hint = ''
     end
-    object TBXItemMnuSetMain: TTBXItem
+    object TBXItemMnuSetMain: TSpTBXItem
       OnClick = TBXItemMnuSetMainClick
       Caption = 'Set as main file'
       Hint = ''
     end
-    object TBXItemMnuProps: TTBXItem
+    object TBXItemMnuProps: TSpTBXItem
       OnClick = TBXItemMnuPropsClick
       Caption = 'Show file properties...'
       Hint = ''
     end
-    object TBXSubmenuItemSort: TTBXSubmenuItem
+    object TBXSubmenuItemSort: TSpTBXSubmenuItem
       Caption = 'Sort'
       Hint = ''
-      object TBXItemMnuSortByName: TTBXItem
+      object TBXItemMnuSortByName: TSpTBXItem
         OnClick = TBXItemMnuSortByNameClick
         Caption = 'By name'
         Hint = ''
       end
-      object TBXItemMnuSortByExt: TTBXItem
+      object TBXItemMnuSortByExt: TSpTBXItem
         OnClick = TBXItemMnuSortByExtClick
         Caption = 'By extension'
         Hint = ''
       end
-      object TBXItemMnuSortByDate: TTBXItem
+      object TBXItemMnuSortByDate: TSpTBXItem
         OnClick = TBXItemMnuSortByDateClick
         Caption = 'By date'
         Hint = ''
       end
-      object TBXItemMnuSortBySize: TTBXItem
+      object TBXItemMnuSortBySize: TSpTBXItem
         OnClick = TBXItemMnuSortBySizeClick
         Caption = 'By size'
         Hint = ''
       end
-      object TBXItemMnuSortByDateDesc: TTBXItem
+      object TBXItemMnuSortByDateDesc: TSpTBXItem
         OnClick = TBXItemMnuSortByDateDescClick
         Caption = 'By date, descending'
         Hint = ''
       end
-      object TBXItemMnuSortBySizeDesc: TTBXItem
+      object TBXItemMnuSortBySizeDesc: TSpTBXItem
         OnClick = TBXItemMnuSortBySizeDescClick
         Caption = 'By size, descending'
         Hint = ''
@@ -1171,7 +1171,7 @@ object fmProj: TfmProj
       6A4D525500000B0050726F6A4D52554C69737401010000002800000006005072
       6566697800}
   end
-  object ProjMRUList: TTBXMRUList
+  object ProjMRUList: TSpTBXMRUList
     MaxItems = 9
     Prefix = 'MRU'
     Left = 144

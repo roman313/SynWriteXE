@@ -20,14 +20,14 @@ object fmGotoBkmk: TfmGotoBkmk
     305)
   PixelsPerInch = 96
   TextHeight = 13
-  object TntLabel1: TTntLabel
+  object TntLabel1: TSpTBXLabel
     Left = 8
     Top = 8
     Width = 71
     Height = 13
     Caption = 'Bookmarks list:'
   end
-  object List: TTntListBox
+  object List: TSpTBXListBox
     Left = 8
     Top = 24
     Width = 465
@@ -37,7 +37,7 @@ object fmGotoBkmk: TfmGotoBkmk
     TabOrder = 0
     OnDblClick = ListDblClick
   end
-  object bOk: TTntButton
+  object bOk: TSpTBXButton
     Left = 288
     Top = 275
     Width = 90
@@ -48,7 +48,7 @@ object fmGotoBkmk: TfmGotoBkmk
     ModalResult = 1
     TabOrder = 1
   end
-  object bCan: TTntButton
+  object bCan: TSpTBXButton
     Left = 384
     Top = 275
     Width = 90

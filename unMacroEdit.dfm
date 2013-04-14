@@ -17,14 +17,14 @@ object fmMacroEdit: TfmMacroEdit
   OnDestroy = TntFormDestroy
   PixelsPerInch = 96
   TextHeight = 13
-  object boxList: TTntGroupBox
+  object boxList: TSpTBXGroupBox
     Left = 8
     Top = 4
     Width = 457
     Height = 189
     Caption = 'Macros'
     TabOrder = 0
-    object ButtonMRen: TTntButton
+    object ButtonMRen: TSpTBXButton
       Left = 360
       Top = 20
       Width = 87
@@ -32,7 +32,7 @@ object fmMacroEdit: TfmMacroEdit
       Action = MacrosRename
       TabOrder = 1
     end
-    object ButtonMDel: TTntButton
+    object ButtonMDel: TSpTBXButton
       Left = 360
       Top = 76
       Width = 87
@@ -40,7 +40,7 @@ object fmMacroEdit: TfmMacroEdit
       Action = MacrosDelete
       TabOrder = 3
     end
-    object ButtonMAdd: TTntButton
+    object ButtonMAdd: TSpTBXButton
       Left = 360
       Top = 48
       Width = 87
@@ -48,7 +48,7 @@ object fmMacroEdit: TfmMacroEdit
       Action = MacrosAdd
       TabOrder = 2
     end
-    object MacrosList: TTntListBox
+    object MacrosList: TSpTBXListBox
       Left = 8
       Top = 20
       Width = 345
@@ -62,14 +62,14 @@ object fmMacroEdit: TfmMacroEdit
       OnDragOver = MacrosListDragOver
     end
   end
-  object boxCmd: TTntGroupBox
+  object boxCmd: TSpTBXGroupBox
     Left = 8
     Top = 328
     Width = 457
     Height = 173
     Caption = 'Commands'
     TabOrder = 3
-    object ButtonCCh: TTntButton
+    object ButtonCCh: TSpTBXButton
       Left = 360
       Top = 20
       Width = 87
@@ -77,7 +77,7 @@ object fmMacroEdit: TfmMacroEdit
       Action = CommandChange
       TabOrder = 1
     end
-    object ButtonCDel: TTntButton
+    object ButtonCDel: TSpTBXButton
       Left = 360
       Top = 108
       Width = 87
@@ -85,7 +85,7 @@ object fmMacroEdit: TfmMacroEdit
       Action = CommandDelete
       TabOrder = 3
     end
-    object ButtonCAdd: TTntButton
+    object ButtonCAdd: TSpTBXButton
       Left = 360
       Top = 48
       Width = 87
@@ -93,7 +93,7 @@ object fmMacroEdit: TfmMacroEdit
       Action = CommandInsert
       TabOrder = 2
     end
-    object ButtonCClr: TTntButton
+    object ButtonCClr: TSpTBXButton
       Left = 360
       Top = 136
       Width = 87
@@ -101,7 +101,7 @@ object fmMacroEdit: TfmMacroEdit
       Action = CommandClear
       TabOrder = 4
     end
-    object CmdList: TTntListView
+    object CmdList: TListView
       Left = 8
       Top = 20
       Width = 345
@@ -130,7 +130,7 @@ object fmMacroEdit: TfmMacroEdit
       OnDragOver = CmdListDragOver
     end
   end
-  object ButtonOk: TTntButton
+  object ButtonOk: TSpTBXButton
     Left = 288
     Top = 508
     Width = 87
@@ -140,7 +140,7 @@ object fmMacroEdit: TfmMacroEdit
     ModalResult = 1
     TabOrder = 4
   end
-  object ButtonCan: TTntButton
+  object ButtonCan: TSpTBXButton
     Left = 380
     Top = 508
     Width = 87
@@ -150,7 +150,7 @@ object fmMacroEdit: TfmMacroEdit
     ModalResult = 2
     TabOrder = 5
   end
-  object boxKey: TTntGroupBox
+  object boxKey: TSpTBXGroupBox
     Left = 8
     Top = 196
     Width = 457
@@ -166,7 +166,7 @@ object fmMacroEdit: TfmMacroEdit
       HotKey = 0
       TabOrder = 0
     end
-    object ButtonShClr: TTntButton
+    object ButtonShClr: TSpTBXButton
       Left = 360
       Top = 40
       Width = 87
@@ -175,7 +175,7 @@ object fmMacroEdit: TfmMacroEdit
       TabOrder = 2
       OnClick = ButtonShClrClick
     end
-    object ButtonShSet: TTntButton
+    object ButtonShSet: TSpTBXButton
       Left = 360
       Top = 12
       Width = 87
@@ -185,14 +185,14 @@ object fmMacroEdit: TfmMacroEdit
       OnClick = ButtonShSetClick
     end
   end
-  object boxPlay: TTntGroupBox
+  object boxPlay: TSpTBXGroupBox
     Left = 8
     Top = 268
     Width = 457
     Height = 57
     Caption = 'Play selected macro'
     TabOrder = 2
-    object ButtonMPlay: TTntButton
+    object ButtonMPlay: TSpTBXButton
       Left = 360
       Top = 12
       Width = 87
@@ -213,7 +213,7 @@ object fmMacroEdit: TfmMacroEdit
       Value = 1
       OnKeyDown = edTimesKeyDown
     end
-    object bPlayTimes: TTntRadioButton
+    object bPlayTimes: TSpTBXRadioButton
       Left = 8
       Top = 16
       Width = 217
@@ -223,7 +223,7 @@ object fmMacroEdit: TfmMacroEdit
       TabOrder = 0
       TabStop = True
     end
-    object bPlayEof: TTntRadioButton
+    object bPlayEof: TSpTBXRadioButton
       Left = 8
       Top = 32
       Width = 217

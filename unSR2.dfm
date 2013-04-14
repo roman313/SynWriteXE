@@ -20,7 +20,7 @@ object fmSRFiles: TfmSRFiles
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object Label2: TTntLabel
+  object Label2: TSpTBXLabel
     Left = 8
     Top = 4
     Width = 54
@@ -28,7 +28,7 @@ object fmSRFiles: TfmSRFiles
     Caption = '&Search for:'
     FocusControl = ed1
   end
-  object Label4: TTntLabel
+  object Label4: TSpTBXLabel
     Left = 8
     Top = 44
     Width = 65
@@ -36,7 +36,7 @@ object fmSRFiles: TfmSRFiles
     Caption = '&Replace with:'
     FocusControl = ed2
   end
-  object TntLabel1: TTntLabel
+  object TntLabel1: TSpTBXLabel
     Left = 8
     Top = 152
     Width = 79
@@ -44,7 +44,7 @@ object fmSRFiles: TfmSRFiles
     Caption = 'Search in f&older:'
     FocusControl = edDir
   end
-  object TntLabel2: TTntLabel
+  object TntLabel2: TSpTBXLabel
     Left = 8
     Top = 84
     Width = 147
@@ -52,7 +52,7 @@ object fmSRFiles: TfmSRFiles
     Caption = 'File mas&k(s), space separated:'
     FocusControl = edFile
   end
-  object LabelErr: TTntLabel
+  object LabelErr: TSpTBXLabel
     Left = 292
     Top = 4
     Width = 10
@@ -68,7 +68,7 @@ object fmSRFiles: TfmSRFiles
     ParentFont = False
     Visible = False
   end
-  object labFind: TTntLabel
+  object labFind: TSpTBXLabel
     Left = 336
     Top = 140
     Width = 26
@@ -83,7 +83,7 @@ object fmSRFiles: TfmSRFiles
     ParentFont = False
     OnClick = labFindClick
   end
-  object labFindRep: TTntLabel
+  object labFindRep: TSpTBXLabel
     Left = 336
     Top = 156
     Width = 26
@@ -98,7 +98,7 @@ object fmSRFiles: TfmSRFiles
     ParentFont = False
     OnClick = labFindRepClick
   end
-  object ed1: TTntComboBox
+  object ed1: TSpTBXComboBox
     Left = 8
     Top = 20
     Width = 321
@@ -110,7 +110,7 @@ object fmSRFiles: TfmSRFiles
     OnChange = ed1Change
     OnKeyDown = ed1KeyDown
   end
-  object ed2: TTntComboBox
+  object ed2: TSpTBXComboBox
     Left = 8
     Top = 60
     Width = 321
@@ -121,7 +121,7 @@ object fmSRFiles: TfmSRFiles
     TabOrder = 1
     OnKeyDown = ed2KeyDown
   end
-  object bHelp: TTntButton
+  object bHelp: TSpTBXButton
     Left = 392
     Top = 200
     Width = 114
@@ -131,7 +131,7 @@ object fmSRFiles: TfmSRFiles
     Visible = False
     OnClick = bHelpClick
   end
-  object bCan: TTntButton
+  object bCan: TSpTBXButton
     Left = 336
     Top = 74
     Width = 114
@@ -141,7 +141,7 @@ object fmSRFiles: TfmSRFiles
     ModalResult = 2
     TabOrder = 15
   end
-  object gOp: TTntGroupBox
+  object gOp: TSpTBXGroupBox
     Left = 8
     Top = 240
     Width = 185
@@ -155,7 +155,7 @@ object fmSRFiles: TfmSRFiles
       Height = 5
       Shape = bsTopLine
     end
-    object cbRE: TTntCheckBox
+    object cbRE: TSpTBXCheckBox
       Left = 8
       Top = 48
       Width = 174
@@ -164,7 +164,7 @@ object fmSRFiles: TfmSRFiles
       TabOrder = 2
       OnClick = cbREClick
     end
-    object cbCase: TTntCheckBox
+    object cbCase: TSpTBXCheckBox
       Left = 8
       Top = 16
       Width = 174
@@ -172,7 +172,7 @@ object fmSRFiles: TfmSRFiles
       Caption = '&Case sensitive'
       TabOrder = 0
     end
-    object cbWords: TTntCheckBox
+    object cbWords: TSpTBXCheckBox
       Left = 8
       Top = 32
       Width = 174
@@ -180,7 +180,7 @@ object fmSRFiles: TfmSRFiles
       Caption = '&Whole words'
       TabOrder = 1
     end
-    object cbSpec: TTntCheckBox
+    object cbSpec: TSpTBXCheckBox
       Left = 8
       Top = 64
       Width = 174
@@ -189,7 +189,7 @@ object fmSRFiles: TfmSRFiles
       TabOrder = 3
       OnClick = cbSpecClick
     end
-    object cbInOEM: TTntCheckBox
+    object cbInOEM: TSpTBXCheckBox
       Left = 8
       Top = 88
       Width = 174
@@ -197,7 +197,7 @@ object fmSRFiles: TfmSRFiles
       Caption = 'Search also in OE&M'
       TabOrder = 4
     end
-    object cbInUTF8: TTntCheckBox
+    object cbInUTF8: TSpTBXCheckBox
       Left = 8
       Top = 104
       Width = 174
@@ -205,7 +205,7 @@ object fmSRFiles: TfmSRFiles
       Caption = 'Search also in UTF-&8'
       TabOrder = 5
     end
-    object cbInUTF16: TTntCheckBox
+    object cbInUTF16: TSpTBXCheckBox
       Left = 8
       Top = 120
       Width = 174
@@ -214,7 +214,7 @@ object fmSRFiles: TfmSRFiles
       TabOrder = 6
     end
   end
-  object edDir: TTntComboBox
+  object edDir: TSpTBXComboBox
     Left = 8
     Top = 168
     Width = 321
@@ -226,7 +226,7 @@ object fmSRFiles: TfmSRFiles
     OnChange = edDirChange
     OnKeyDown = edDirKeyDown
   end
-  object bRAll: TTntButton
+  object bRAll: TSpTBXButton
     Left = 336
     Top = 38
     Width = 114
@@ -234,7 +234,7 @@ object fmSRFiles: TfmSRFiles
     Caption = 'Replace all'
     TabOrder = 13
   end
-  object cbSubDir: TTntCheckBox
+  object cbSubDir: TSpTBXCheckBox
     Left = 8
     Top = 192
     Width = 305
@@ -242,7 +242,7 @@ object fmSRFiles: TfmSRFiles
     Caption = 'With all s&ubfolders'
     TabOrder = 6
   end
-  object bBrowseDir: TTntButton
+  object bBrowseDir: TSpTBXButton
     Left = 8
     Top = 212
     Width = 113
@@ -251,7 +251,7 @@ object fmSRFiles: TfmSRFiles
     TabOrder = 7
     OnClick = bBrowseDirClick
   end
-  object edFile: TTntComboBox
+  object edFile: TSpTBXComboBox
     Left = 8
     Top = 100
     Width = 321
@@ -263,7 +263,7 @@ object fmSRFiles: TfmSRFiles
     OnChange = edFileChange
     OnKeyDown = edFileKeyDown
   end
-  object bFAll: TTntButton
+  object bFAll: TSpTBXButton
     Left = 336
     Top = 8
     Width = 114
@@ -273,7 +273,7 @@ object fmSRFiles: TfmSRFiles
     Enabled = False
     TabOrder = 12
   end
-  object bCurrDir: TTntButton
+  object bCurrDir: TSpTBXButton
     Left = 128
     Top = 212
     Width = 113
@@ -282,14 +282,14 @@ object fmSRFiles: TfmSRFiles
     TabOrder = 8
     OnClick = bCurrDirClick
   end
-  object gFile: TTntGroupBox
+  object gFile: TSpTBXGroupBox
     Left = 200
     Top = 240
     Width = 249
     Height = 109
     Caption = 'Options for files search'
     TabOrder = 10
-    object TntLabel3: TTntLabel
+    object TntLabel3: TSpTBXLabel
       Left = 8
       Top = 84
       Width = 46
@@ -297,7 +297,7 @@ object fmSRFiles: TfmSRFiles
       Caption = 'Sort files:'
       FocusControl = edSort
     end
-    object cbNoBin: TTntCheckBox
+    object cbNoBin: TSpTBXCheckBox
       Left = 8
       Top = 16
       Width = 238
@@ -305,7 +305,7 @@ object fmSRFiles: TfmSRFiles
       Caption = 'Skip b&inary files'
       TabOrder = 0
     end
-    object cbNoRO: TTntCheckBox
+    object cbNoRO: TSpTBXCheckBox
       Left = 8
       Top = 32
       Width = 238
@@ -313,7 +313,7 @@ object fmSRFiles: TfmSRFiles
       Caption = 'Skip r&ead-only files'
       TabOrder = 1
     end
-    object cbNoHid: TTntCheckBox
+    object cbNoHid: TSpTBXCheckBox
       Left = 8
       Top = 48
       Width = 238
@@ -321,7 +321,7 @@ object fmSRFiles: TfmSRFiles
       Caption = 'Skip &hidden files'
       TabOrder = 2
     end
-    object cbNoHid2: TTntCheckBox
+    object cbNoHid2: TSpTBXCheckBox
       Left = 8
       Top = 64
       Width = 238
@@ -329,7 +329,7 @@ object fmSRFiles: TfmSRFiles
       Caption = 'Skip hi&dden folders'
       TabOrder = 3
     end
-    object edSort: TTntComboBox
+    object edSort: TSpTBXComboBox
       Left = 112
       Top = 80
       Width = 129
@@ -341,14 +341,14 @@ object fmSRFiles: TfmSRFiles
       OnChange = edDirChange
     end
   end
-  object gRes: TTntGroupBox
+  object gRes: TSpTBXGroupBox
     Left = 200
     Top = 352
     Width = 249
     Height = 69
     Caption = 'Result list'
     TabOrder = 11
-    object cbFnOnly: TTntCheckBox
+    object cbFnOnly: TSpTBXCheckBox
       Left = 8
       Top = 32
       Width = 238
@@ -356,7 +356,7 @@ object fmSRFiles: TfmSRFiles
       Caption = 'Show filenames onl&y'
       TabOrder = 1
     end
-    object cbOutTab: TTntCheckBox
+    object cbOutTab: TSpTBXCheckBox
       Left = 8
       Top = 16
       Width = 238
@@ -365,7 +365,7 @@ object fmSRFiles: TfmSRFiles
       TabOrder = 0
       OnClick = cbOutTabClick
     end
-    object cbOutAppend: TTntCheckBox
+    object cbOutAppend: TSpTBXCheckBox
       Left = 8
       Top = 48
       Width = 238
@@ -374,7 +374,7 @@ object fmSRFiles: TfmSRFiles
       TabOrder = 2
     end
   end
-  object bCurFile: TTntButton
+  object bCurFile: TSpTBXButton
     Left = 128
     Top = 126
     Width = 113
@@ -383,7 +383,7 @@ object fmSRFiles: TfmSRFiles
     TabOrder = 4
     OnClick = bCurFileClick
   end
-  object bBrowseFile: TTntButton
+  object bBrowseFile: TSpTBXButton
     Left = 8
     Top = 126
     Width = 113
@@ -438,7 +438,7 @@ object fmSRFiles: TfmSRFiles
     Left = 408
     Top = 168
   end
-  object TntOpenDialog1: TTntOpenDialog
+  object TntOpenDialog1: TOpenDialog
     Filter = '*.*|*.*'
     Left = 376
     Top = 140

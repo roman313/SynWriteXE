@@ -19,14 +19,14 @@ object fmTools: TfmTools
   OnShow = TntFormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object TntGroupBox1: TTntGroupBox
+  object TntGroupBox1: TSpTBXGroupBox
     Left = 272
     Top = 4
     Width = 423
     Height = 301
     Caption = 'Tool properties'
     TabOrder = 1
-    object TntLabel1: TTntLabel
+    object TntLabel1: TSpTBXLabel
       Left = 8
       Top = 44
       Width = 49
@@ -34,7 +34,7 @@ object fmTools: TfmTools
       Caption = '&File name:'
       FocusControl = edFN
     end
-    object TntLabel2: TTntLabel
+    object TntLabel2: TSpTBXLabel
       Left = 8
       Top = 68
       Width = 59
@@ -42,7 +42,7 @@ object fmTools: TfmTools
       Caption = '&Parameters:'
       FocusControl = edPar
     end
-    object TntLabel3: TTntLabel
+    object TntLabel3: TSpTBXLabel
       Left = 8
       Top = 92
       Width = 61
@@ -50,7 +50,7 @@ object fmTools: TfmTools
       Caption = '&Initial folder:'
       FocusControl = edDir
     end
-    object TntLabel4: TTntLabel
+    object TntLabel4: TSpTBXLabel
       Left = 8
       Top = 20
       Width = 31
@@ -58,7 +58,7 @@ object fmTools: TfmTools
       Caption = '&Name:'
       FocusControl = edCap
     end
-    object TntLabel5: TTntLabel
+    object TntLabel5: TSpTBXLabel
       Left = 8
       Top = 164
       Width = 38
@@ -66,7 +66,7 @@ object fmTools: TfmTools
       Caption = '&Hotkey:'
       FocusControl = edKey
     end
-    object TntLabel6: TTntLabel
+    object TntLabel6: TSpTBXLabel
       Left = 8
       Top = 116
       Width = 31
@@ -74,7 +74,7 @@ object fmTools: TfmTools
       Caption = '&Lexer:'
       FocusControl = edLexer
     end
-    object TntLabel7: TTntLabel
+    object TntLabel7: TSpTBXLabel
       Left = 8
       Top = 140
       Width = 63
@@ -82,7 +82,7 @@ object fmTools: TfmTools
       Caption = 'Save &before:'
       FocusControl = edLexer
     end
-    object TntLabel8: TTntLabel
+    object TntLabel8: TSpTBXLabel
       Left = 8
       Top = 228
       Width = 63
@@ -90,7 +90,7 @@ object fmTools: TfmTools
       Caption = 'Output type:'
       FocusControl = edOutType
     end
-    object TntLabel9: TTntLabel
+    object TntLabel9: TSpTBXLabel
       Left = 8
       Top = 252
       Width = 47
@@ -98,7 +98,7 @@ object fmTools: TfmTools
       Caption = 'Encoding:'
       FocusControl = edOutType
     end
-    object edFN: TTntEdit
+    object edFN: TSpTBXEdit
       Left = 96
       Top = 40
       Width = 240
@@ -106,7 +106,7 @@ object fmTools: TfmTools
       TabOrder = 1
       OnChange = edFNChange
     end
-    object bBr: TTntButton
+    object bBr: TSpTBXButton
       Left = 342
       Top = 40
       Width = 75
@@ -115,7 +115,7 @@ object fmTools: TfmTools
       TabOrder = 2
       OnClick = bBrClick
     end
-    object edDir: TTntEdit
+    object edDir: TSpTBXEdit
       Left = 96
       Top = 88
       Width = 240
@@ -123,7 +123,7 @@ object fmTools: TfmTools
       TabOrder = 5
       OnChange = edDirChange
     end
-    object edPar: TTntEdit
+    object edPar: TSpTBXEdit
       Left = 96
       Top = 64
       Width = 240
@@ -131,7 +131,7 @@ object fmTools: TfmTools
       TabOrder = 3
       OnChange = edParChange
     end
-    object bBr2: TTntButton
+    object bBr2: TSpTBXButton
       Left = 342
       Top = 88
       Width = 75
@@ -140,7 +140,7 @@ object fmTools: TfmTools
       TabOrder = 6
       OnClick = bBr2Click
     end
-    object bPar: TTntButton
+    object bPar: TSpTBXButton
       Left = 342
       Top = 64
       Width = 75
@@ -149,7 +149,7 @@ object fmTools: TfmTools
       TabOrder = 4
       OnClick = bParClick
     end
-    object cbOut: TTntCheckBox
+    object cbOut: TSpTBXCheckBox
       Left = 8
       Top = 206
       Width = 281
@@ -158,7 +158,7 @@ object fmTools: TfmTools
       TabOrder = 13
       OnClick = cbOutClick
     end
-    object bOut: TTntButton
+    object bOut: TSpTBXButton
       Left = 96
       Top = 272
       Width = 137
@@ -167,7 +167,7 @@ object fmTools: TfmTools
       TabOrder = 16
       OnClick = bOutClick
     end
-    object edCap: TTntEdit
+    object edCap: TSpTBXEdit
       Left = 96
       Top = 16
       Width = 240
@@ -185,7 +185,7 @@ object fmTools: TfmTools
       TabOrder = 10
       OnChange = edKeyChange
     end
-    object edLexer: TTntComboBox
+    object edLexer: TSpTBXComboBox
       Left = 96
       Top = 112
       Width = 240
@@ -195,7 +195,7 @@ object fmTools: TfmTools
       TabOrder = 7
       OnChange = edLexerChange
     end
-    object bLex: TTntButton
+    object bLex: TSpTBXButton
       Left = 342
       Top = 112
       Width = 75
@@ -204,7 +204,7 @@ object fmTools: TfmTools
       TabOrder = 8
       OnClick = bLexClick
     end
-    object bKey: TTntButton
+    object bKey: TSpTBXButton
       Left = 342
       Top = 160
       Width = 75
@@ -213,7 +213,7 @@ object fmTools: TfmTools
       TabOrder = 11
       OnClick = bKeyClick
     end
-    object edSave: TTntComboBox
+    object edSave: TSpTBXComboBox
       Left = 96
       Top = 136
       Width = 240
@@ -227,7 +227,7 @@ object fmTools: TfmTools
         'Current document'
         'All documents')
     end
-    object cbCtx: TTntCheckBox
+    object cbCtx: TSpTBXCheckBox
       Left = 8
       Top = 186
       Width = 281
@@ -236,7 +236,7 @@ object fmTools: TfmTools
       TabOrder = 12
       OnClick = cbCtxClick
     end
-    object edOutType: TTntComboBox
+    object edOutType: TSpTBXComboBox
       Left = 96
       Top = 224
       Width = 240
@@ -246,7 +246,7 @@ object fmTools: TfmTools
       TabOrder = 14
       OnChange = edOutTypeChange
     end
-    object edOutEnc: TTntComboBox
+    object edOutEnc: TSpTBXComboBox
       Left = 96
       Top = 248
       Width = 240
@@ -261,7 +261,7 @@ object fmTools: TfmTools
         'UTF-8')
     end
   end
-  object bOk: TTntButton
+  object bOk: TSpTBXButton
     Left = 408
     Top = 312
     Width = 90
@@ -271,7 +271,7 @@ object fmTools: TfmTools
     ModalResult = 1
     TabOrder = 2
   end
-  object bCancel: TTntButton
+  object bCancel: TSpTBXButton
     Left = 600
     Top = 312
     Width = 90
@@ -281,14 +281,14 @@ object fmTools: TfmTools
     ModalResult = 2
     TabOrder = 4
   end
-  object TntGroupBox2: TTntGroupBox
+  object TntGroupBox2: TSpTBXGroupBox
     Left = 8
     Top = 4
     Width = 257
     Height = 301
     Caption = 'Tools'
     TabOrder = 0
-    object List: TTntListView
+    object List: TListView
       Left = 8
       Top = 16
       Width = 155
@@ -335,7 +335,7 @@ object fmTools: TfmTools
       OnChange = ListChange
       OnClick = ListClick
     end
-    object bUp: TTntButton
+    object bUp: TSpTBXButton
       Left = 170
       Top = 16
       Width = 75
@@ -344,7 +344,7 @@ object fmTools: TfmTools
       TabOrder = 1
       OnClick = bUpClick
     end
-    object bDn: TTntButton
+    object bDn: TSpTBXButton
       Left = 170
       Top = 40
       Width = 75
@@ -353,7 +353,7 @@ object fmTools: TfmTools
       TabOrder = 2
       OnClick = bDnClick
     end
-    object bClr: TTntButton
+    object bClr: TSpTBXButton
       Left = 170
       Top = 64
       Width = 75
@@ -363,7 +363,7 @@ object fmTools: TfmTools
       OnClick = bClrClick
     end
   end
-  object bHelp: TTntButton
+  object bHelp: TSpTBXButton
     Left = 504
     Top = 312
     Width = 90
@@ -372,7 +372,7 @@ object fmTools: TfmTools
     TabOrder = 3
     OnClick = bHelpClick
   end
-  object TntOpenDialog1: TTntOpenDialog
+  object TntOpenDialog1: TOpenDialog
     Options = [ofHideReadOnly, ofPathMustExist, ofFileMustExist, ofEnableSizing]
     Left = 200
     Top = 116

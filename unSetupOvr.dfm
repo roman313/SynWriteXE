@@ -18,42 +18,42 @@ object fmSetupOvr: TfmSetupOvr
   OnShow = TntFormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object Label1: TTntLabel
+  object Label1: TSpTBXLabel
     Left = 8
     Top = 4
     Width = 36
     Height = 13
     Caption = 'Lexers:'
   end
-  object LabelTabStop: TTntLabel
+  object LabelTabStop: TSpTBXLabel
     Left = 184
     Top = 40
     Width = 51
     Height = 13
     Caption = 'Tab stops:'
   end
-  object LabelTabMode: TTntLabel
+  object LabelTabMode: TSpTBXLabel
     Left = 184
     Top = 64
     Width = 51
     Height = 13
     Caption = 'Tab mode:'
   end
-  object LabelWrap: TTntLabel
+  object LabelWrap: TSpTBXLabel
     Left = 184
     Top = 88
     Width = 59
     Height = 13
     Caption = 'Wrap mode:'
   end
-  object LabelMargin: TTntLabel
+  object LabelMargin: TSpTBXLabel
     Left = 184
     Top = 112
     Width = 64
     Height = 13
     Caption = 'Right margin:'
   end
-  object LabelSp: TTntLabel
+  object LabelSp: TSpTBXLabel
     Left = 184
     Top = 136
     Width = 62
@@ -70,7 +70,7 @@ object fmSetupOvr: TfmSetupOvr
     TabOrder = 0
     OnClick = ListLexClick
   end
-  object edTab: TTntEdit
+  object edTab: TSpTBXEdit
     Left = 336
     Top = 36
     Width = 153
@@ -78,7 +78,7 @@ object fmSetupOvr: TfmSetupOvr
     TabOrder = 2
     OnChange = edTabChange
   end
-  object edTabMode: TTntComboBox
+  object edTabMode: TSpTBXComboBox
     Left = 336
     Top = 60
     Width = 153
@@ -102,7 +102,7 @@ object fmSetupOvr: TfmSetupOvr
     ReadOnly = True
     TabOrder = 7
   end
-  object cbOvr: TTntCheckBox
+  object cbOvr: TSpTBXCheckBox
     Left = 184
     Top = 8
     Width = 329
@@ -112,7 +112,7 @@ object fmSetupOvr: TfmSetupOvr
     WordWrap = True
     OnClick = cbOvrClick
   end
-  object edWrap: TTntComboBox
+  object edWrap: TSpTBXComboBox
     Left = 336
     Top = 84
     Width = 153

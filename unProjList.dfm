@@ -20,7 +20,7 @@ object fmProjList: TfmProjList
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 16
-  object List: TTntListBox
+  object List: TSpTBXListBox
     Left = 0
     Top = 24
     Width = 502
@@ -32,7 +32,7 @@ object fmProjList: TfmProjList
     OnDblClick = ListDblClick
     OnDrawItem = ListDrawItem
   end
-  object Edit: TTntEdit
+  object Edit: TSpTBXEdit
     Left = 0
     Top = 0
     Width = 502
@@ -72,7 +72,7 @@ object fmProjList: TfmProjList
       ParentFont = False
       OnClick = labHelpClick
     end
-    object cbFuzzy: TTntCheckBox
+    object cbFuzzy: TSpTBXCheckBox
       Left = 0
       Top = 0
       Width = 217

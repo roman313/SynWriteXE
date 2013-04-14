@@ -500,55 +500,55 @@ object EditorFrame: TEditorFrame
     Left = 276
     Top = 156
   end
-  object PopupSplitter: TTBXPopupMenu
+  object PopupSplitter: TSpTBXPopupMenu
     OnPopup = PopupSplitterPopup
     Left = 208
     Top = 188
-    object TBXItemSplitCaption: TTBXItem
+    object TBXItemSplitCaption: TSpTBXItem
       Enabled = False
       Caption = '--- Editor splitter ---'
       Hint = ''
     end
-    object TBXItemSplit20_80: TTBXItem
+    object TBXItemSplit20_80: TSpTBXItem
       OnClick = TBXItemSplit20_80Click
       Caption = '20/80'
       Hint = ''
     end
-    object TBXItemSplit30_70: TTBXItem
+    object TBXItemSplit30_70: TSpTBXItem
       OnClick = TBXItemSplit30_70Click
       Caption = '30/70'
       Hint = ''
     end
-    object TBXItemSplit40_60: TTBXItem
+    object TBXItemSplit40_60: TSpTBXItem
       OnClick = TBXItemSplit40_60Click
       Caption = '40/60'
       Hint = ''
     end
-    object TBXItemSplit50_50: TTBXItem
+    object TBXItemSplit50_50: TSpTBXItem
       OnClick = TBXItemSplit50_50Click
       Caption = '50/50'
       Hint = ''
     end
-    object TBXItemSplit60_40: TTBXItem
+    object TBXItemSplit60_40: TSpTBXItem
       OnClick = TBXItemSplit60_40Click
       Caption = '60/40'
       Hint = ''
     end
-    object TBXItemSplit70_30: TTBXItem
+    object TBXItemSplit70_30: TSpTBXItem
       OnClick = TBXItemSplit70_30Click
       Caption = '70/30'
       Hint = ''
     end
-    object TBXItemSplit80_20: TTBXItem
+    object TBXItemSplit80_20: TSpTBXItem
       OnClick = TBXItemSplit80_20Click
       Caption = '80/20'
       Hint = ''
     end
-    object TBXSeparatorItem1: TTBXSeparatorItem
+    object TBXSeparatorItem1: TSpTBXSeparatorItem
       Caption = ''
       Hint = ''
     end
-    object TBXItemSplitHorz: TTBXItem
+    object TBXItemSplitHorz: TSpTBXItem
       OnClick = TBXItemSplitHorzClick
       Caption = 'Split horozintally'
       Hint = ''

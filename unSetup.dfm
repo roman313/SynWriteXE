@@ -25,7 +25,7 @@ object fmSetup: TfmSetup
     429)
   PixelsPerInch = 96
   TextHeight = 13
-  object Tabs: TTntPageControl
+  object Tabs: TSpTBXPageControl
     Left = 152
     Top = 0
     Width = 545
@@ -33,40 +33,40 @@ object fmSetup: TfmSetup
     ActivePage = tabEd
     Style = tsButtons
     TabOrder = 0
-    object tabIntf: TTntTabSheet
+    object tabIntf: TSpTBXTabSheet
       Caption = 'Interface'
       ImageIndex = 4
       TabVisible = False
       OnShow = tabIntfShow
-      object Label11: TTntLabel
+      object Label11: TSpTBXLabel
         Left = 8
         Top = 364
         Width = 169
         Height = 13
         Caption = '* - saved separately for plugin/app'
       end
-      object boxIntf: TTntGroupBox
+      object boxIntf: TSpTBXGroupBox
         Left = 8
         Top = 0
         Width = 529
         Height = 205
         Caption = 'View'
         TabOrder = 0
-        object Label18: TTntLabel
+        object Label18: TSpTBXLabel
           Left = 8
           Top = 16
           Width = 51
           Height = 13
           Caption = 'Language:'
         end
-        object TntLabel21: TTntLabel
+        object TntLabel21: TSpTBXLabel
           Left = 8
           Top = 56
           Width = 49
           Height = 13
           Caption = 'Esc key: *'
         end
-        object cbChar: TTntCheckBox
+        object cbChar: TSpTBXCheckBox
           Left = 8
           Top = 132
           Width = 360
@@ -74,7 +74,7 @@ object fmSetup: TfmSetup
           Caption = 'Show "char at cursor" status info'
           TabOrder = 4
         end
-        object cbStat: TTntCheckBox
+        object cbStat: TSpTBXCheckBox
           Left = 8
           Top = 116
           Width = 360
@@ -82,7 +82,7 @@ object fmSetup: TfmSetup
           Caption = 'Show status line'
           TabOrder = 3
         end
-        object cbMenu: TTntCheckBox
+        object cbMenu: TSpTBXCheckBox
           Left = 8
           Top = 100
           Width = 360
@@ -90,7 +90,7 @@ object fmSetup: TfmSetup
           Caption = 'Show upper menu *'
           TabOrder = 2
         end
-        object cbLang: TTntComboBox
+        object cbLang: TSpTBXComboBox
           Left = 8
           Top = 32
           Width = 240
@@ -101,7 +101,7 @@ object fmSetup: TfmSetup
           TabOrder = 0
           OnChange = cbLangChange
         end
-        object cbInst: TTntCheckBox
+        object cbInst: TSpTBXCheckBox
           Left = 8
           Top = 164
           Width = 360
@@ -109,7 +109,7 @@ object fmSetup: TfmSetup
           Caption = 'Allow to run single instance only'
           TabOrder = 6
         end
-        object cbEsc: TTntComboBox
+        object cbEsc: TSpTBXComboBox
           Left = 8
           Top = 72
           Width = 240
@@ -124,7 +124,7 @@ object fmSetup: TfmSetup
             'Close tab or editor'
             'Minimize editor')
         end
-        object cbRoStart: TTntCheckBox
+        object cbRoStart: TSpTBXCheckBox
           Left = 8
           Top = 180
           Width = 360
@@ -132,7 +132,7 @@ object fmSetup: TfmSetup
           Caption = 'Set read-only mode at startup *'
           TabOrder = 7
         end
-        object cbMicroMap: TTntCheckBox
+        object cbMicroMap: TSpTBXCheckBox
           Left = 8
           Top = 148
           Width = 256
@@ -141,35 +141,35 @@ object fmSetup: TfmSetup
           TabOrder = 5
         end
       end
-      object boxNew: TTntGroupBox
+      object boxNew: TSpTBXGroupBox
         Left = 8
         Top = 208
         Width = 529
         Height = 61
         Caption = 'New document'
         TabOrder = 1
-        object TntLabel4: TTntLabel
+        object TntLabel4: TSpTBXLabel
           Left = 8
           Top = 16
           Width = 47
           Height = 13
           Caption = 'Encoding:'
         end
-        object TntLabel5: TTntLabel
+        object TntLabel5: TSpTBXLabel
           Left = 168
           Top = 16
           Width = 63
           Height = 13
           Caption = 'Line endings:'
         end
-        object TntLabel6: TTntLabel
+        object TntLabel6: TSpTBXLabel
           Left = 320
           Top = 16
           Width = 31
           Height = 13
           Caption = 'Lexer:'
         end
-        object edEnc: TTntComboBox
+        object edEnc: TSpTBXComboBox
           Left = 8
           Top = 32
           Width = 153
@@ -185,7 +185,7 @@ object fmSetup: TfmSetup
             'UTF-16'
             'UTF-16 BE')
         end
-        object edLE: TTntComboBox
+        object edLE: TSpTBXComboBox
           Left = 168
           Top = 32
           Width = 145
@@ -198,7 +198,7 @@ object fmSetup: TfmSetup
             'Unix'
             'Mac')
         end
-        object edLex: TTntComboBox
+        object edLex: TSpTBXComboBox
           Left = 320
           Top = 32
           Width = 193
@@ -211,33 +211,33 @@ object fmSetup: TfmSetup
         end
       end
     end
-    object tabColors: TTntTabSheet
+    object tabColors: TSpTBXTabSheet
       Caption = 'Colors'
       ImageIndex = 1
       TabVisible = False
       OnShow = tabColorsShow
-      object boxToolbar: TTntGroupBox
+      object boxToolbar: TSpTBXGroupBox
         Left = 8
         Top = 1
         Width = 529
         Height = 100
         Caption = 'Toolbar'
         TabOrder = 0
-        object Label2: TTntLabel
+        object Label2: TSpTBXLabel
           Left = 8
           Top = 16
           Width = 73
           Height = 13
           Caption = 'Toolbar theme:'
         end
-        object Label12: TTntLabel
+        object Label12: TSpTBXLabel
           Left = 8
           Top = 56
           Width = 67
           Height = 13
           Caption = 'Toolbar icons:'
         end
-        object cbTheme: TTntComboBox
+        object cbTheme: TSpTBXComboBox
           Left = 8
           Top = 32
           Width = 240
@@ -246,7 +246,7 @@ object fmSetup: TfmSetup
           ItemHeight = 13
           TabOrder = 0
         end
-        object cbIcons: TTntComboBox
+        object cbIcons: TSpTBXComboBox
           Left = 8
           Top = 72
           Width = 240
@@ -263,28 +263,28 @@ object fmSetup: TfmSetup
             'Gnome 24x24')
         end
       end
-      object gColors: TTntGroupBox
+      object gColors: TSpTBXGroupBox
         Left = 8
         Top = 104
         Width = 529
         Height = 249
         Caption = 'Colors'
         TabOrder = 1
-        object Label4: TTntLabel
+        object Label4: TSpTBXLabel
           Left = 8
           Top = 16
           Width = 47
           Height = 13
           Caption = 'Elements:'
         end
-        object Label5: TTntLabel
+        object Label5: TSpTBXLabel
           Left = 286
           Top = 16
           Width = 29
           Height = 13
           Caption = 'Color:'
         end
-        object ListColors: TTntListBox
+        object ListColors: TSpTBXListBox
           Left = 8
           Top = 32
           Width = 273
@@ -297,7 +297,7 @@ object fmSetup: TfmSetup
           OnClick = ListColorsClick
           OnDrawItem = ListColorsDrawItem
         end
-        object StaticText1: TTntStaticText
+        object StaticText1: TStaticText
           Left = 288
           Top = 56
           Width = 233
@@ -318,7 +318,7 @@ object fmSetup: TfmSetup
           TabOrder = 1
           OnSelect = ColorBox1Select
         end
-        object bColorLoad: TTntButton
+        object bColorLoad: TSpTBXButton
           Left = 8
           Top = 196
           Width = 242
@@ -327,7 +327,7 @@ object fmSetup: TfmSetup
           TabOrder = 3
           OnClick = bColorLoadClick
         end
-        object bColorSave: TTntButton
+        object bColorSave: TSpTBXButton
           Left = 8
           Top = 220
           Width = 242
@@ -338,18 +338,18 @@ object fmSetup: TfmSetup
         end
       end
     end
-    object tabFonts: TTntTabSheet
+    object tabFonts: TSpTBXTabSheet
       Caption = 'Fonts'
       TabVisible = False
       OnShow = tabFontsShow
-      object gFont: TTntGroupBox
+      object gFont: TSpTBXGroupBox
         Left = 8
         Top = -3
         Width = 529
         Height = 172
         Caption = 'Fonts'
         TabOrder = 0
-        object b1: TTntButton
+        object b1: TSpTBXButton
           Left = 10
           Top = 16
           Width = 242
@@ -358,7 +358,7 @@ object fmSetup: TfmSetup
           TabOrder = 0
           OnClick = b1Click
         end
-        object b2: TTntButton
+        object b2: TSpTBXButton
           Left = 10
           Top = 40
           Width = 242
@@ -367,7 +367,7 @@ object fmSetup: TfmSetup
           TabOrder = 1
           OnClick = b2Click
         end
-        object b4: TTntButton
+        object b4: TSpTBXButton
           Left = 10
           Top = 64
           Width = 242
@@ -376,7 +376,7 @@ object fmSetup: TfmSetup
           TabOrder = 2
           OnClick = b4Click
         end
-        object b3: TTntButton
+        object b3: TSpTBXButton
           Left = 10
           Top = 88
           Width = 242
@@ -385,7 +385,7 @@ object fmSetup: TfmSetup
           TabOrder = 3
           OnClick = b3Click
         end
-        object b5: TTntButton
+        object b5: TSpTBXButton
           Left = 10
           Top = 112
           Width = 242
@@ -394,7 +394,7 @@ object fmSetup: TfmSetup
           TabOrder = 4
           OnClick = b5Click
         end
-        object b6: TTntButton
+        object b6: TSpTBXButton
           Left = 10
           Top = 136
           Width = 242
@@ -405,25 +405,25 @@ object fmSetup: TfmSetup
         end
       end
     end
-    object tabTabs: TTntTabSheet
+    object tabTabs: TSpTBXTabSheet
       Caption = 'Tabs'
       TabVisible = False
       OnShow = tabTabsShow
-      object boxTabs: TTntGroupBox
+      object boxTabs: TSpTBXGroupBox
         Left = 8
         Top = 0
         Width = 529
         Height = 217
         Caption = 'Tabs'
         TabOrder = 0
-        object TntLabel3: TTntLabel
+        object TntLabel3: TSpTBXLabel
           Left = 56
           Top = 144
           Width = 109
           Height = 13
           Caption = 'Maximal caption length'
         end
-        object TntLabel13: TTntLabel
+        object TntLabel13: TSpTBXLabel
           Left = 445
           Top = 12
           Width = 58
@@ -431,7 +431,7 @@ object fmSetup: TfmSetup
           Alignment = taRightJustify
           Caption = 'Tabs colors:'
         end
-        object cbTabBtn: TTntCheckBox
+        object cbTabBtn: TSpTBXCheckBox
           Left = 8
           Top = 72
           Width = 380
@@ -439,7 +439,7 @@ object fmSetup: TfmSetup
           Caption = 'Show close buttons on tabs'
           TabOrder = 3
         end
-        object cbTabMul: TTntCheckBox
+        object cbTabMul: TSpTBXCheckBox
           Left = 8
           Top = 88
           Width = 380
@@ -447,7 +447,7 @@ object fmSetup: TfmSetup
           Caption = 'Show multiple tab lines'
           TabOrder = 4
         end
-        object cbTabDown: TTntCheckBox
+        object cbTabDown: TSpTBXCheckBox
           Left = 8
           Top = 40
           Width = 380
@@ -455,7 +455,7 @@ object fmSetup: TfmSetup
           Caption = 'Show tabs at bottom'
           TabOrder = 1
         end
-        object cbTabNums: TTntCheckBox
+        object cbTabNums: TSpTBXCheckBox
           Left = 8
           Top = 56
           Width = 380
@@ -463,7 +463,7 @@ object fmSetup: TfmSetup
           Caption = 'Show tabs numbers'
           TabOrder = 2
         end
-        object cbTabSw: TTntCheckBox
+        object cbTabSw: TSpTBXCheckBox
           Left = 8
           Top = 172
           Width = 433
@@ -471,7 +471,7 @@ object fmSetup: TfmSetup
           Caption = 'Use modern tab switcher (Ctrl+Tab)'
           TabOrder = 8
         end
-        object cbTabDnD: TTntCheckBox
+        object cbTabDnD: TSpTBXCheckBox
           Left = 8
           Top = 120
           Width = 380
@@ -490,7 +490,7 @@ object fmSetup: TfmSetup
           Value = 0
           OnKeyDown = edIndKeyDown
         end
-        object cbTabDbl: TTntCheckBox
+        object cbTabDbl: TSpTBXCheckBox
           Left = 8
           Top = 104
           Width = 380
@@ -498,7 +498,7 @@ object fmSetup: TfmSetup
           Caption = 'Allow closing by double-click'
           TabOrder = 5
         end
-        object ListTabColors: TTntListBox
+        object ListTabColors: TSpTBXListBox
           Left = 448
           Top = 28
           Width = 57
@@ -510,7 +510,7 @@ object fmSetup: TfmSetup
           OnDrawItem = ListTabColorsDrawItem
           OnKeyDown = ListTabColorsKeyDown
         end
-        object cbTabVis: TTntComboBox
+        object cbTabVis: TSpTBXComboBox
           Left = 8
           Top = 16
           Width = 321
@@ -525,11 +525,11 @@ object fmSetup: TfmSetup
         end
       end
     end
-    object tabEd: TTntTabSheet
+    object tabEd: TSpTBXTabSheet
       Caption = 'Editor'
       TabVisible = False
       OnShow = tabEdShow
-      object gEdit: TTntGroupBox
+      object gEdit: TSpTBXGroupBox
         Left = 8
         Top = 4
         Width = 529
@@ -547,14 +547,14 @@ object fmSetup: TfmSetup
           Width = 513
           Height = 3
         end
-        object TntLabel35: TTntLabel
+        object TntLabel35: TSpTBXLabel
           Left = 112
           Top = 268
           Width = 100
           Height = 13
           Caption = 'Initial selection mode'
         end
-        object cbBOver: TTntCheckBox
+        object cbBOver: TSpTBXCheckBox
           Left = 8
           Top = 12
           Width = 258
@@ -563,7 +563,7 @@ object fmSetup: TfmSetup
           Caption = 'Overwrite blocks'
           TabOrder = 0
         end
-        object cbBPers: TTntCheckBox
+        object cbBPers: TSpTBXCheckBox
           Left = 8
           Top = 28
           Width = 258
@@ -574,7 +574,7 @@ object fmSetup: TfmSetup
           Caption = 'Persistent blocks'
           TabOrder = 1
         end
-        object cbDClick: TTntCheckBox
+        object cbDClick: TSpTBXCheckBox
           Left = 8
           Top = 44
           Width = 258
@@ -585,7 +585,7 @@ object fmSetup: TfmSetup
           Caption = 'Double-click selects line'
           TabOrder = 2
         end
-        object cbGrSel: TTntCheckBox
+        object cbGrSel: TSpTBXCheckBox
           Left = 8
           Top = 60
           Width = 258
@@ -596,7 +596,7 @@ object fmSetup: TfmSetup
           Caption = 'Greedy selection'
           TabOrder = 3
         end
-        object cbWrap: TTntCheckBox
+        object cbWrap: TSpTBXCheckBox
           Left = 270
           Top = 12
           Width = 256
@@ -605,7 +605,7 @@ object fmSetup: TfmSetup
           Caption = 'Word wrap'
           TabOrder = 4
         end
-        object cbFold: TTntCheckBox
+        object cbFold: TSpTBXCheckBox
           Left = 270
           Top = 28
           Width = 256
@@ -614,7 +614,7 @@ object fmSetup: TfmSetup
           Caption = 'Code folding'
           TabOrder = 5
         end
-        object cbDrag: TTntCheckBox
+        object cbDrag: TSpTBXCheckBox
           Left = 270
           Top = 44
           Width = 256
@@ -623,7 +623,7 @@ object fmSetup: TfmSetup
           Caption = 'Text dragging'
           TabOrder = 6
         end
-        object cbCollap: TTntCheckBox
+        object cbCollap: TSpTBXCheckBox
           Left = 270
           Top = 60
           Width = 256
@@ -634,7 +634,7 @@ object fmSetup: TfmSetup
           Caption = 'Collapse empty lines'
           TabOrder = 7
         end
-        object cbFLine: TTntCheckBox
+        object cbFLine: TSpTBXCheckBox
           Left = 270
           Top = 76
           Width = 256
@@ -645,7 +645,7 @@ object fmSetup: TfmSetup
           Caption = 'Fixed line height'
           TabOrder = 8
         end
-        object cbAutoInd: TTntCheckBox
+        object cbAutoInd: TSpTBXCheckBox
           Left = 8
           Top = 104
           Width = 258
@@ -656,7 +656,7 @@ object fmSetup: TfmSetup
           Caption = 'Auto indent mode'
           TabOrder = 9
         end
-        object cbBackInd: TTntCheckBox
+        object cbBackInd: TSpTBXCheckBox
           Left = 8
           Top = 120
           Width = 258
@@ -667,7 +667,7 @@ object fmSetup: TfmSetup
           Caption = 'Backspace unindents'
           TabOrder = 10
         end
-        object cbGrRedo: TTntCheckBox
+        object cbGrRedo: TSpTBXCheckBox
           Left = 8
           Top = 136
           Width = 258
@@ -676,7 +676,7 @@ object fmSetup: TfmSetup
           Caption = 'Group redo'
           TabOrder = 11
         end
-        object cbGrUndo: TTntCheckBox
+        object cbGrUndo: TSpTBXCheckBox
           Left = 8
           Top = 152
           Width = 258
@@ -687,7 +687,7 @@ object fmSetup: TfmSetup
           Caption = 'Group undo'
           TabOrder = 12
         end
-        object cbUndoSav: TTntCheckBox
+        object cbUndoSav: TSpTBXCheckBox
           Left = 8
           Top = 168
           Width = 258
@@ -696,7 +696,7 @@ object fmSetup: TfmSetup
           Caption = 'Undo after save'
           TabOrder = 13
         end
-        object cbCopyRtf: TTntCheckBox
+        object cbCopyRtf: TSpTBXCheckBox
           Left = 8
           Top = 184
           Width = 258
@@ -705,7 +705,7 @@ object fmSetup: TfmSetup
           Caption = 'Copy to clipboard as RTF'
           TabOrder = 14
         end
-        object cbSmCaret: TTntCheckBox
+        object cbSmCaret: TSpTBXCheckBox
           Left = 8
           Top = 200
           Width = 258
@@ -714,7 +714,7 @@ object fmSetup: TfmSetup
           Caption = 'Smart caret behaviour'
           TabOrder = 15
         end
-        object cbKeepCaret: TTntCheckBox
+        object cbKeepCaret: TSpTBXCheckBox
           Left = 8
           Top = 216
           Width = 258
@@ -723,7 +723,7 @@ object fmSetup: TfmSetup
           Caption = 'Keep caret in text'
           TabOrder = 16
         end
-        object cbOptFill: TTntCheckBox
+        object cbOptFill: TSpTBXCheckBox
           Left = 8
           Top = 232
           Width = 258
@@ -734,7 +734,7 @@ object fmSetup: TfmSetup
           Caption = 'Optimal fill'
           TabOrder = 17
         end
-        object cbColSel: TTntCheckBox
+        object cbColSel: TSpTBXCheckBox
           Left = 430
           Top = 300
           Width = 256
@@ -745,7 +745,7 @@ object fmSetup: TfmSetup
           TabOrder = 18
           Visible = False
         end
-        object cbFloatM: TTntCheckBox
+        object cbFloatM: TSpTBXCheckBox
           Left = 270
           Top = 104
           Width = 256
@@ -757,7 +757,7 @@ object fmSetup: TfmSetup
           Caption = 'Floating markers'
           TabOrder = 19
         end
-        object cbScrollLast: TTntCheckBox
+        object cbScrollLast: TSpTBXCheckBox
           Left = 270
           Top = 120
           Width = 256
@@ -768,7 +768,7 @@ object fmSetup: TfmSetup
           Caption = 'Scroll to last line'
           TabOrder = 20
         end
-        object cbWrapMar: TTntCheckBox
+        object cbWrapMar: TSpTBXCheckBox
           Left = 270
           Top = 136
           Width = 256
@@ -777,7 +777,7 @@ object fmSetup: TfmSetup
           Caption = 'Word wrap on right margin'
           TabOrder = 21
         end
-        object cbFixMove: TTntCheckBox
+        object cbFixMove: TSpTBXCheckBox
           Left = 270
           Top = 152
           Width = 256
@@ -788,7 +788,7 @@ object fmSetup: TfmSetup
           Caption = 'Fixed column move'
           TabOrder = 22
         end
-        object cbVarHorz: TTntCheckBox
+        object cbVarHorz: TSpTBXCheckBox
           Left = 270
           Top = 168
           Width = 256
@@ -799,7 +799,7 @@ object fmSetup: TfmSetup
           Caption = 'Variable horizontal scrollbar'
           TabOrder = 23
         end
-        object cbUnindKeep: TTntCheckBox
+        object cbUnindKeep: TSpTBXCheckBox
           Left = 270
           Top = 184
           Width = 256
@@ -808,7 +808,7 @@ object fmSetup: TfmSetup
           Caption = 'Unindent keeps align'
           TabOrder = 24
         end
-        object cbKeepBlank: TTntCheckBox
+        object cbKeepBlank: TSpTBXCheckBox
           Left = 270
           Top = 200
           Width = 256
@@ -817,7 +817,7 @@ object fmSetup: TfmSetup
           Caption = 'Keep trailing blanks'
           TabOrder = 25
         end
-        object cbSelMode: TTntComboBox
+        object cbSelMode: TSpTBXComboBox
           Left = 8
           Top = 264
           Width = 97
@@ -830,7 +830,7 @@ object fmSetup: TfmSetup
             'Columns'
             'Lines')
         end
-        object cbKeepPaste: TTntCheckBox
+        object cbKeepPaste: TSpTBXCheckBox
           Left = 270
           Top = 216
           Width = 256
@@ -839,7 +839,7 @@ object fmSetup: TfmSetup
           Caption = 'Keep caret on paste'
           TabOrder = 26
         end
-        object cbUrlClick: TTntCheckBox
+        object cbUrlClick: TSpTBXCheckBox
           Left = 270
           Top = 232
           Width = 258
@@ -852,46 +852,46 @@ object fmSetup: TfmSetup
         end
       end
     end
-    object tabEd2: TTntTabSheet
+    object tabEd2: TSpTBXTabSheet
       Caption = 'Editor 2'
       ImageIndex = 6
       TabVisible = False
       OnShow = tabEd2Show
-      object gEditor: TTntGroupBox
+      object gEditor: TSpTBXGroupBox
         Left = 8
         Top = 88
         Width = 529
         Height = 257
         TabOrder = 1
-        object Label15: TTntLabel
+        object Label15: TSpTBXLabel
           Left = 56
           Top = 108
           Width = 58
           Height = 13
           Caption = 'Line spacing'
         end
-        object Label3: TTntLabel
+        object Label3: TSpTBXLabel
           Left = 56
           Top = 84
           Width = 60
           Height = 13
           Caption = 'Right margin'
         end
-        object Label14: TTntLabel
+        object Label14: TSpTBXLabel
           Left = 136
           Top = 132
           Width = 63
           Height = 13
           Caption = 'Line numbers'
         end
-        object TntLabel28: TTntLabel
+        object TntLabel28: TSpTBXLabel
           Left = 136
           Top = 156
           Width = 61
           Height = 13
           Caption = 'Block staples'
         end
-        object cbDSep: TTntCheckBox
+        object cbDSep: TSpTBXCheckBox
           Left = 270
           Top = 92
           Width = 256
@@ -900,7 +900,7 @@ object fmSetup: TfmSetup
           Caption = 'Draw gutter separator'
           TabOrder = 17
         end
-        object cbDGrad: TTntCheckBox
+        object cbDGrad: TSpTBXCheckBox
           Left = 270
           Top = 108
           Width = 256
@@ -909,7 +909,7 @@ object fmSetup: TfmSetup
           Caption = 'Draw gutter gradient'
           TabOrder = 18
         end
-        object cbLink: TTntCheckBox
+        object cbLink: TSpTBXCheckBox
           Left = 8
           Top = 12
           Width = 256
@@ -918,7 +918,7 @@ object fmSetup: TfmSetup
           Caption = 'Highlight links'
           TabOrder = 0
         end
-        object cbDLBack: TTntCheckBox
+        object cbDLBack: TSpTBXCheckBox
           Left = 270
           Top = 76
           Width = 256
@@ -927,7 +927,7 @@ object fmSetup: TfmSetup
           Caption = 'Draw current line backgnd'
           TabOrder = 16
         end
-        object cbCaret: TTntCheckBox
+        object cbCaret: TSpTBXCheckBox
           Left = 8
           Top = 28
           Width = 256
@@ -936,7 +936,7 @@ object fmSetup: TfmSetup
           Caption = 'Show caret in read-only'
           TabOrder = 1
         end
-        object cbHideCur: TTntCheckBox
+        object cbHideCur: TSpTBXCheckBox
           Left = 270
           Top = 44
           Width = 256
@@ -947,7 +947,7 @@ object fmSetup: TfmSetup
           Caption = 'Hide cursor on typing'
           TabOrder = 14
         end
-        object cbHideD: TTntCheckBox
+        object cbHideD: TSpTBXCheckBox
           Left = 270
           Top = 28
           Width = 256
@@ -956,7 +956,7 @@ object fmSetup: TfmSetup
           Caption = 'Hide dynamic highlightings'
           TabOrder = 13
         end
-        object cbHideSel: TTntCheckBox
+        object cbHideSel: TSpTBXCheckBox
           Left = 270
           Top = 12
           Width = 256
@@ -989,7 +989,7 @@ object fmSetup: TfmSetup
           Value = 1
           OnKeyDown = edIndKeyDown
         end
-        object cbMar: TTntCheckBox
+        object cbMar: TSpTBXCheckBox
           Left = 8
           Top = 60
           Width = 256
@@ -998,7 +998,7 @@ object fmSetup: TfmSetup
           Caption = 'Show right margin'
           TabOrder = 3
         end
-        object edNums: TTntComboBox
+        object edNums: TSpTBXComboBox
           Left = 8
           Top = 128
           Width = 121
@@ -1013,7 +1013,7 @@ object fmSetup: TfmSetup
             'Each 5'
             'Only current')
         end
-        object cbDFocus: TTntCheckBox
+        object cbDFocus: TSpTBXCheckBox
           Left = 270
           Top = 60
           Width = 256
@@ -1022,7 +1022,7 @@ object fmSetup: TfmSetup
           Caption = 'Draw current line focus'
           TabOrder = 15
         end
-        object cbRuler: TTntCheckBox
+        object cbRuler: TSpTBXCheckBox
           Left = 8
           Top = 44
           Width = 256
@@ -1031,7 +1031,7 @@ object fmSetup: TfmSetup
           Caption = 'Show horizontal ruler'
           TabOrder = 2
         end
-        object cbKeepScr: TTntCheckBox
+        object cbKeepScr: TSpTBXCheckBox
           Left = 422
           Top = 236
           Width = 256
@@ -1041,7 +1041,7 @@ object fmSetup: TfmSetup
           TabOrder = 20
           Visible = False
         end
-        object cbSmHi: TTntCheckBox
+        object cbSmHi: TSpTBXCheckBox
           Left = 8
           Top = 176
           Width = 256
@@ -1050,7 +1050,7 @@ object fmSetup: TfmSetup
           Caption = 'Smart highlighting'
           TabOrder = 9
         end
-        object cbBrHi: TTntCheckBox
+        object cbBrHi: TSpTBXCheckBox
           Left = 8
           Top = 208
           Width = 256
@@ -1061,7 +1061,7 @@ object fmSetup: TfmSetup
           Caption = 'Highlight pair brackets'
           TabOrder = 11
         end
-        object cbSmHiCase: TTntCheckBox
+        object cbSmHiCase: TSpTBXCheckBox
           Left = 22
           Top = 192
           Width = 243
@@ -1070,7 +1070,7 @@ object fmSetup: TfmSetup
           Caption = 'Case sensitive'
           TabOrder = 10
         end
-        object cbFixBlocks: TTntCheckBox
+        object cbFixBlocks: TSpTBXCheckBox
           Left = 430
           Top = 220
           Width = 256
@@ -1082,7 +1082,7 @@ object fmSetup: TfmSetup
           TabOrder = 21
           Visible = False
         end
-        object cbShowEOL: TTntCheckBox
+        object cbShowEOL: TSpTBXCheckBox
           Left = 270
           Top = 156
           Width = 256
@@ -1093,7 +1093,7 @@ object fmSetup: TfmSetup
           Caption = 'Show EOL characters'
           TabOrder = 23
         end
-        object cbBkUndo: TTntCheckBox
+        object cbBkUndo: TSpTBXCheckBox
           Left = 270
           Top = 188
           Width = 256
@@ -1128,7 +1128,7 @@ object fmSetup: TfmSetup
           Value = 0
           OnKeyDown = edIndKeyDown
         end
-        object cbDWrapMark: TTntCheckBox
+        object cbDWrapMark: TSpTBXCheckBox
           Left = 270
           Top = 124
           Width = 256
@@ -1137,7 +1137,7 @@ object fmSetup: TfmSetup
           Caption = 'Draw gutter "line wrapped" mark'
           TabOrder = 19
         end
-        object cbColorOnEmpty: TTntCheckBox
+        object cbColorOnEmpty: TSpTBXCheckBox
           Left = 270
           Top = 172
           Width = 256
@@ -1148,7 +1148,7 @@ object fmSetup: TfmSetup
           Caption = 'Colorize selection BG including white space'
           TabOrder = 24
         end
-        object cbCopyLineNSel: TTntCheckBox
+        object cbCopyLineNSel: TSpTBXCheckBox
           Left = 270
           Top = 140
           Width = 256
@@ -1160,34 +1160,34 @@ object fmSetup: TfmSetup
           TabOrder = 22
         end
       end
-      object GroupBox2: TTntGroupBox
+      object GroupBox2: TSpTBXGroupBox
         Left = 8
         Top = 4
         Width = 529
         Height = 81
         TabOrder = 0
-        object Label1: TTntLabel
+        object Label1: TSpTBXLabel
           Left = 74
           Top = 16
           Width = 57
           Height = 13
           Caption = 'Block indent'
         end
-        object Label13: TTntLabel
+        object Label13: TSpTBXLabel
           Left = 74
           Top = 40
           Width = 46
           Height = 13
           Caption = 'Undo limit'
         end
-        object Label6: TTntLabel
+        object Label6: TSpTBXLabel
           Left = 376
           Top = 40
           Width = 47
           Height = 13
           Caption = 'Tab mode'
         end
-        object Label16: TTntLabel
+        object Label16: TSpTBXLabel
           Left = 376
           Top = 16
           Width = 47
@@ -1219,7 +1219,7 @@ object fmSetup: TfmSetup
           Value = 10
           OnKeyDown = edIndKeyDown
         end
-        object edTabMode: TTntComboBox
+        object edTabMode: TSpTBXComboBox
           Left = 270
           Top = 36
           Width = 97
@@ -1237,7 +1237,7 @@ object fmSetup: TfmSetup
             'Tab character'
             'SmartTab')
         end
-        object edTab_: TTntEdit
+        object edTab_: TSpTBXEdit
           Left = 270
           Top = 12
           Width = 97
@@ -1247,7 +1247,7 @@ object fmSetup: TfmSetup
             'space).'
           TabOrder = 2
         end
-        object cbTabSp: TTntCheckBox
+        object cbTabSp: TSpTBXCheckBox
           Left = 270
           Top = 60
           Width = 256
@@ -1258,17 +1258,17 @@ object fmSetup: TfmSetup
         end
       end
     end
-    object tabOvr: TTntTabSheet
+    object tabOvr: TSpTBXTabSheet
       Caption = 'Editor overrides'
       TabVisible = False
       OnShow = tabOvrShow
     end
-    object tabKey: TTntTabSheet
+    object tabKey: TSpTBXTabSheet
       Caption = 'Keys'
       ImageIndex = 2
       TabVisible = False
       OnShow = tabKeyShow
-      object TntLabel19: TTntLabel
+      object TntLabel19: TSpTBXLabel
         Left = 8
         Top = 8
         Width = 88
@@ -1276,7 +1276,7 @@ object fmSetup: TfmSetup
         Caption = 'Jump to category:'
         FocusControl = cbKeyCat
       end
-      object TntLabel25: TTntLabel
+      object TntLabel25: TSpTBXLabel
         Left = 8
         Top = 32
         Width = 44
@@ -1284,7 +1284,7 @@ object fmSetup: TfmSetup
         Caption = 'Filter list:'
         FocusControl = edFilter
       end
-      object KeyList: TTntStringGrid
+      object KeyList: TStringGrid
         Left = 8
         Top = 56
         Width = 521
@@ -1318,7 +1318,7 @@ object fmSetup: TfmSetup
         TabOrder = 4
         OnChange = ecHotKeyChange
       end
-      object bKeySet: TTntButton
+      object bKeySet: TSpTBXButton
         Left = 200
         Top = 346
         Width = 105
@@ -1327,7 +1327,7 @@ object fmSetup: TfmSetup
         TabOrder = 5
         OnClick = bKeySetClick
       end
-      object bKeyClr: TTntButton
+      object bKeyClr: TSpTBXButton
         Left = 312
         Top = 346
         Width = 105
@@ -1336,7 +1336,7 @@ object fmSetup: TfmSetup
         TabOrder = 6
         OnClick = bKeyClrClick
       end
-      object bKeyFn: TTntButton
+      object bKeyFn: TSpTBXButton
         Left = 424
         Top = 346
         Width = 105
@@ -1345,7 +1345,7 @@ object fmSetup: TfmSetup
         TabOrder = 7
         OnClick = bKeyFnClick
       end
-      object cbKeyCat: TTntComboBox
+      object cbKeyCat: TSpTBXComboBox
         Left = 152
         Top = 4
         Width = 265
@@ -1356,7 +1356,7 @@ object fmSetup: TfmSetup
         TabOrder = 0
         OnChange = cbKeyCatChange
       end
-      object edFilter: TTntEdit
+      object edFilter: TSpTBXEdit
         Left = 152
         Top = 28
         Width = 265
@@ -1364,7 +1364,7 @@ object fmSetup: TfmSetup
         TabOrder = 1
         OnChange = edFilterChange
       end
-      object bFiltClear: TTntButton
+      object bFiltClear: TSpTBXButton
         Left = 424
         Top = 28
         Width = 97
@@ -1374,47 +1374,47 @@ object fmSetup: TfmSetup
         OnClick = bFiltClearClick
       end
     end
-    object tabFiles: TTntTabSheet
+    object tabFiles: TSpTBXTabSheet
       Caption = 'Files'
       ImageIndex = 3
       TabVisible = False
       OnShow = tabFilesShow
-      object boxFGroup: TTntGroupBox
+      object boxFGroup: TSpTBXGroupBox
         Left = 8
         Top = 0
         Width = 529
         Height = 89
         Caption = 'File groups'
         TabOrder = 0
-        object TntLabel1: TTntLabel
+        object TntLabel1: TSpTBXLabel
           Left = 8
           Top = 16
           Width = 69
           Height = 13
           Caption = 'Non-text files:'
         end
-        object Label17: TTntLabel
+        object Label17: TSpTBXLabel
           Left = 8
           Top = 36
           Width = 184
           Height = 13
           Caption = 'Open in OEM encoding file extensions:'
         end
-        object TntLabel8: TTntLabel
+        object TntLabel8: TSpTBXLabel
           Left = 8
           Top = 56
           Width = 191
           Height = 13
           Caption = 'Open in UTF-8 encoding file extensions:'
         end
-        object TntLabel9: TTntLabel
+        object TntLabel9: TSpTBXLabel
           Left = 8
           Top = 68
           Width = 103
           Height = 13
           Caption = '(enter "*" for all files)'
         end
-        object cbText_: TTntComboBox
+        object cbText_: TSpTBXComboBox
           Left = 283
           Top = 12
           Width = 230
@@ -1427,14 +1427,14 @@ object fmSetup: TfmSetup
             'Open'
             'Prompt')
         end
-        object edOem: TTntEdit
+        object edOem: TSpTBXEdit
           Left = 283
           Top = 36
           Width = 230
           Height = 21
           TabOrder = 1
         end
-        object edUTF8: TTntEdit
+        object edUTF8: TSpTBXEdit
           Left = 283
           Top = 60
           Width = 230
@@ -1442,28 +1442,28 @@ object fmSetup: TfmSetup
           TabOrder = 2
         end
       end
-      object boxReload: TTntGroupBox
+      object boxReload: TSpTBXGroupBox
         Left = 8
         Top = 92
         Width = 529
         Height = 125
         Caption = 'Misc'
         TabOrder = 1
-        object Label9: TTntLabel
+        object Label9: TSpTBXLabel
           Left = 8
           Top = 16
           Width = 112
           Height = 13
           Caption = 'Watch for file changes:'
         end
-        object TntLabel23: TTntLabel
+        object TntLabel23: TSpTBXLabel
           Left = 64
           Top = 100
           Width = 208
           Height = 13
           Caption = 'Disable lexer if file size is bigger than ... Mb'
         end
-        object TntLabel36: TTntLabel
+        object TntLabel36: TSpTBXLabel
           Left = 8
           Top = 32
           Width = 261
@@ -1471,7 +1471,7 @@ object fmSetup: TfmSetup
           Caption = 'Suggest to save Unicode content in Unicode encoding:'
           WordWrap = True
         end
-        object cbTail: TTntCheckBox
+        object cbTail: TSpTBXCheckBox
           Left = 8
           Top = 60
           Width = 481
@@ -1479,7 +1479,7 @@ object fmSetup: TfmSetup
           Caption = 'Follow tail on reload'
           TabOrder = 2
         end
-        object cbOverRO: TTntCheckBox
+        object cbOverRO: TSpTBXCheckBox
           Left = 8
           Top = 76
           Width = 489
@@ -1498,7 +1498,7 @@ object fmSetup: TfmSetup
           Value = 1
           OnKeyDown = edIndKeyDown
         end
-        object cbNotif: TTntComboBox
+        object cbNotif: TSpTBXComboBox
           Left = 283
           Top = 12
           Width = 230
@@ -1511,7 +1511,7 @@ object fmSetup: TfmSetup
             'Watch, reload w/o question'
             'Watch, ask to reload')
         end
-        object cbUniNeed: TTntComboBox
+        object cbUniNeed: TSpTBXComboBox
           Left = 283
           Top = 36
           Width = 230
@@ -1533,25 +1533,25 @@ object fmSetup: TfmSetup
         end
       end
     end
-    object tabSearch: TTntTabSheet
+    object tabSearch: TSpTBXTabSheet
       Caption = 'Search'
       TabVisible = False
       OnShow = tabSearchShow
-      object TntLabel22: TTntLabel
+      object TntLabel22: TSpTBXLabel
         Left = 8
         Top = 364
         Width = 169
         Height = 13
         Caption = '* - saved separately for plugin/app'
       end
-      object gSR: TTntGroupBox
+      object gSR: TSpTBXGroupBox
         Left = 8
         Top = 4
         Width = 529
         Height = 137
         Caption = 'Search'
         TabOrder = 0
-        object TntLabel32: TTntLabel
+        object TntLabel32: TSpTBXLabel
           Left = 64
           Top = 104
           Width = 201
@@ -1560,7 +1560,7 @@ object fmSetup: TfmSetup
           Caption = 'Offset of search result from horizontal edge'
           WordWrap = True
         end
-        object cbSrDlg: TTntCheckBox
+        object cbSrDlg: TSpTBXCheckBox
           Left = 8
           Top = 16
           Width = 260
@@ -1568,7 +1568,7 @@ object fmSetup: TfmSetup
           Caption = 'Allow Lister to call custom search dialog'
           TabOrder = 0
         end
-        object cbSrWord: TTntCheckBox
+        object cbSrWord: TSpTBXCheckBox
           Left = 270
           Top = 32
           Width = 256
@@ -1576,7 +1576,7 @@ object fmSetup: TfmSetup
           Caption = 'Suggest current word as search text'
           TabOrder = 7
         end
-        object cbSrHistTC: TTntCheckBox
+        object cbSrHistTC: TSpTBXCheckBox
           Left = 8
           Top = 32
           Width = 260
@@ -1584,7 +1584,7 @@ object fmSetup: TfmSetup
           Caption = 'Use TotalCmd'#39's history section'
           TabOrder = 1
         end
-        object cbSrOnTop: TTntCheckBox
+        object cbSrOnTop: TSpTBXCheckBox
           Left = 270
           Top = 52
           Width = 256
@@ -1592,7 +1592,7 @@ object fmSetup: TfmSetup
           Caption = 'Show search dialog on top *'
           TabOrder = 8
         end
-        object cbSrErr: TTntCheckBox
+        object cbSrErr: TSpTBXCheckBox
           Left = 8
           Top = 52
           Width = 260
@@ -1600,7 +1600,7 @@ object fmSetup: TfmSetup
           Caption = 'Show messagebox when no results found'
           TabOrder = 2
         end
-        object cbSrErr2: TTntCheckBox
+        object cbSrErr2: TSpTBXCheckBox
           Left = 8
           Top = 68
           Width = 260
@@ -1608,7 +1608,7 @@ object fmSetup: TfmSetup
           Caption = 'Same, for "Find/Replace in files"'
           TabOrder = 3
         end
-        object cbSrSel: TTntCheckBox
+        object cbSrSel: TSpTBXCheckBox
           Left = 270
           Top = 16
           Width = 256
@@ -1616,7 +1616,7 @@ object fmSetup: TfmSetup
           Caption = 'Suggest selection as search text'
           TabOrder = 6
         end
-        object cbSrExpand: TTntCheckBox
+        object cbSrExpand: TSpTBXCheckBox
           Left = 8
           Top = 88
           Width = 260
@@ -1636,21 +1636,21 @@ object fmSetup: TfmSetup
           OnKeyDown = edIndKeyDown
         end
       end
-      object gQSr: TTntGroupBox
+      object gQSr: TSpTBXGroupBox
         Left = 8
         Top = 144
         Width = 529
         Height = 81
         Caption = 'Quick Search'
         TabOrder = 1
-        object TntLabel2: TTntLabel
+        object TntLabel2: TSpTBXLabel
           Left = 8
           Top = 36
           Width = 160
           Height = 13
           Caption = 'Behaviour of Esc in Quick Search:'
         end
-        object cbQsEsc: TTntComboBox
+        object cbQsEsc: TSpTBXComboBox
           Left = 8
           Top = 52
           Width = 243
@@ -1663,7 +1663,7 @@ object fmSetup: TfmSetup
             'Close editor'
             'Focus editor')
         end
-        object cbQsCap: TTntCheckBox
+        object cbQsCap: TSpTBXCheckBox
           Left = 8
           Top = 16
           Width = 260
@@ -1673,32 +1673,32 @@ object fmSetup: TfmSetup
         end
       end
     end
-    object tabTree: TTntTabSheet
+    object tabTree: TSpTBXTabSheet
       Caption = 'Tree/Map'
       TabVisible = False
       OnShow = tabTreeShow
-      object gTree: TTntGroupBox
+      object gTree: TSpTBXGroupBox
         Left = 8
         Top = 0
         Width = 529
         Height = 157
         Caption = 'Syntax tree'
         TabOrder = 0
-        object TntLabel17: TTntLabel
+        object TntLabel17: TSpTBXLabel
           Left = 8
           Top = 112
           Width = 92
           Height = 13
           Caption = 'Double-click action:'
         end
-        object TntLabel39: TTntLabel
+        object TntLabel39: TSpTBXLabel
           Left = 286
           Top = 112
           Width = 92
           Height = 13
           Caption = 'Update delay (ms):'
         end
-        object cbTreeSync: TTntCheckBox
+        object cbTreeSync: TSpTBXCheckBox
           Left = 8
           Top = 16
           Width = 260
@@ -1706,7 +1706,7 @@ object fmSetup: TfmSetup
           Caption = 'Auto synchronize'
           TabOrder = 0
         end
-        object cbTreeCollapse: TTntCheckBox
+        object cbTreeCollapse: TSpTBXCheckBox
           Left = 8
           Top = 32
           Width = 260
@@ -1714,7 +1714,7 @@ object fmSetup: TfmSetup
           Caption = 'Auto collapse'
           TabOrder = 1
         end
-        object cbTreeExpand: TTntCheckBox
+        object cbTreeExpand: TSpTBXCheckBox
           Left = 8
           Top = 48
           Width = 260
@@ -1722,7 +1722,7 @@ object fmSetup: TfmSetup
           Caption = 'Auto expand'
           TabOrder = 2
         end
-        object cbTreeSort: TTntCheckBox
+        object cbTreeSort: TSpTBXCheckBox
           Left = 8
           Top = 72
           Width = 256
@@ -1730,7 +1730,7 @@ object fmSetup: TfmSetup
           Caption = 'Sort items'
           TabOrder = 3
         end
-        object cbTreeTrack: TTntCheckBox
+        object cbTreeTrack: TSpTBXCheckBox
           Left = 8
           Top = 88
           Width = 256
@@ -1738,7 +1738,7 @@ object fmSetup: TfmSetup
           Caption = 'Hot track'
           TabOrder = 4
         end
-        object cbTreeAction: TTntComboBox
+        object cbTreeAction: TSpTBXComboBox
           Left = 8
           Top = 128
           Width = 243
@@ -1765,21 +1765,21 @@ object fmSetup: TfmSetup
           OnKeyDown = edIndKeyDown
         end
       end
-      object TntGroupBox1: TTntGroupBox
+      object TntGroupBox1: TSpTBXGroupBox
         Left = 8
         Top = 160
         Width = 529
         Height = 77
         Caption = 'Mini-map'
         TabOrder = 1
-        object TntLabel26: TTntLabel
+        object TntLabel26: TSpTBXLabel
           Left = 62
           Top = 52
           Width = 44
           Height = 13
           Caption = 'Zoom, %'
         end
-        object cbMapHScroll: TTntCheckBox
+        object cbMapHScroll: TSpTBXCheckBox
           Left = 8
           Top = 14
           Width = 280
@@ -1787,7 +1787,7 @@ object fmSetup: TfmSetup
           Caption = 'Horz. scrollbar'
           TabOrder = 0
         end
-        object cbMapVScroll: TTntCheckBox
+        object cbMapVScroll: TSpTBXCheckBox
           Left = 8
           Top = 30
           Width = 280
@@ -1809,39 +1809,39 @@ object fmSetup: TfmSetup
         end
       end
     end
-    object tabHist: TTntTabSheet
+    object tabHist: TSpTBXTabSheet
       Caption = 'History'
       TabVisible = False
       OnShow = tabHistShow
-      object boxHist: TTntGroupBox
+      object boxHist: TSpTBXGroupBox
         Left = 8
         Top = 0
         Width = 529
         Height = 273
         Caption = 'History'
         TabOrder = 0
-        object Label8: TTntLabel
+        object Label8: TSpTBXLabel
           Left = 56
           Top = 20
           Width = 201
           Height = 13
           Caption = 'Length of file state history (0: don'#39't save)'
         end
-        object Label7: TTntLabel
+        object Label7: TSpTBXLabel
           Left = 56
           Top = 112
           Width = 230
           Height = 13
           Caption = 'Length of search/replace history (0: don'#39't save)'
         end
-        object TntLabel11: TTntLabel
+        object TntLabel11: TSpTBXLabel
           Left = 8
           Top = 224
           Width = 140
           Height = 13
           Caption = 'Folder of Open/Save dialogs:'
         end
-        object TntLabel10: TTntLabel
+        object TntLabel10: TSpTBXLabel
           Left = 8
           Top = 198
           Width = 96
@@ -1870,7 +1870,7 @@ object fmSetup: TfmSetup
           Value = 0
           OnKeyDown = edIndKeyDown
         end
-        object cbHCaret: TTntCheckBox
+        object cbHCaret: TSpTBXCheckBox
           Left = 56
           Top = 36
           Width = 409
@@ -1880,7 +1880,7 @@ object fmSetup: TfmSetup
           State = cbChecked
           TabOrder = 1
         end
-        object cbHEnc: TTntCheckBox
+        object cbHEnc: TSpTBXCheckBox
           Left = 56
           Top = 52
           Width = 409
@@ -1890,7 +1890,7 @@ object fmSetup: TfmSetup
           State = cbChecked
           TabOrder = 2
         end
-        object bClrSR: TTntButton
+        object bClrSR: TSpTBXButton
           Left = 56
           Top = 132
           Width = 113
@@ -1899,7 +1899,7 @@ object fmSetup: TfmSetup
           TabOrder = 6
           OnClick = bClrSRClick
         end
-        object bClrFS: TTntButton
+        object bClrFS: TSpTBXButton
           Left = 56
           Top = 88
           Width = 113
@@ -1908,7 +1908,7 @@ object fmSetup: TfmSetup
           TabOrder = 4
           OnClick = bClrFSClick
         end
-        object cbMru: TTntCheckBox
+        object cbMru: TSpTBXCheckBox
           Left = 8
           Top = 160
           Width = 497
@@ -1916,7 +1916,7 @@ object fmSetup: TfmSetup
           Caption = 'Cleanup recent files list at startup'
           TabOrder = 7
         end
-        object cbDirLast: TTntComboBox
+        object cbDirLast: TSpTBXComboBox
           Left = 264
           Top = 220
           Width = 233
@@ -1930,14 +1930,14 @@ object fmSetup: TfmSetup
             'Remember last folder'
             'Custom folder')
         end
-        object edDirLast: TTntEdit
+        object edDirLast: TSpTBXEdit
           Left = 24
           Top = 244
           Width = 329
           Height = 21
           TabOrder = 11
         end
-        object bDirLast: TTntButton
+        object bDirLast: TSpTBXButton
           Left = 360
           Top = 244
           Width = 41
@@ -1946,7 +1946,7 @@ object fmSetup: TfmSetup
           TabOrder = 12
           OnClick = bDirLastClick
         end
-        object cbBak: TTntComboBox
+        object cbBak: TSpTBXComboBox
           Left = 264
           Top = 196
           Width = 233
@@ -1959,7 +1959,7 @@ object fmSetup: TfmSetup
             'In %AppData%\SynWrite'
             'In the same folder')
         end
-        object cbHTemp: TTntCheckBox
+        object cbHTemp: TSpTBXCheckBox
           Left = 56
           Top = 68
           Width = 449
@@ -1969,7 +1969,7 @@ object fmSetup: TfmSetup
           State = cbChecked
           TabOrder = 3
         end
-        object cbSavePos: TTntCheckBox
+        object cbSavePos: TSpTBXCheckBox
           Left = 8
           Top = 176
           Width = 497
@@ -1979,18 +1979,18 @@ object fmSetup: TfmSetup
         end
       end
     end
-    object tabSess: TTntTabSheet
+    object tabSess: TSpTBXTabSheet
       Caption = 'Sessions/Projects'
       TabVisible = False
       OnShow = tabSessShow
-      object boxSess: TTntGroupBox
+      object boxSess: TSpTBXGroupBox
         Left = 8
         Top = 0
         Width = 529
         Height = 73
         Caption = 'Sessions'
         TabOrder = 0
-        object cbSessDef: TTntCheckBox
+        object cbSessDef: TSpTBXCheckBox
           Left = 24
           Top = 32
           Width = 470
@@ -1998,7 +1998,7 @@ object fmSetup: TfmSetup
           Caption = 'Save "default" session on exit, not current one'
           TabOrder = 1
         end
-        object cbSessLoad: TTntCheckBox
+        object cbSessLoad: TSpTBXCheckBox
           Left = 8
           Top = 48
           Width = 470
@@ -2007,7 +2007,7 @@ object fmSetup: TfmSetup
           TabOrder = 2
           OnClick = cbSessSaveClick
         end
-        object cbSessSave: TTntCheckBox
+        object cbSessSave: TSpTBXCheckBox
           Left = 8
           Top = 16
           Width = 470
@@ -2017,14 +2017,14 @@ object fmSetup: TfmSetup
           OnClick = cbSessSaveClick
         end
       end
-      object boxProj: TTntGroupBox
+      object boxProj: TSpTBXGroupBox
         Left = 8
         Top = 76
         Width = 529
         Height = 57
         Caption = 'Projects'
         TabOrder = 1
-        object cbProjLoad: TTntCheckBox
+        object cbProjLoad: TSpTBXCheckBox
           Left = 8
           Top = 32
           Width = 470
@@ -2033,7 +2033,7 @@ object fmSetup: TfmSetup
           TabOrder = 1
           OnClick = cbSessSaveClick
         end
-        object cbProjSave: TTntCheckBox
+        object cbProjSave: TSpTBXCheckBox
           Left = 8
           Top = 16
           Width = 470
@@ -2043,7 +2043,7 @@ object fmSetup: TfmSetup
         end
       end
     end
-    object tabACP: TTntTabSheet
+    object tabACP: TSpTBXTabSheet
       Caption = 'Auto-complete'
       ImageIndex = -1
       TabVisible = False
@@ -2055,21 +2055,21 @@ object fmSetup: TfmSetup
         Height = 105
         Caption = 'Common auto-completion options'
         TabOrder = 1
-        object Label42: TTntLabel
+        object Label42: TSpTBXLabel
           Left = 304
           Top = 48
           Width = 53
           Height = 13
           Caption = 'Filter type:'
         end
-        object TntLabel7: TTntLabel
+        object TntLabel7: TSpTBXLabel
           Left = 64
           Top = 80
           Width = 90
           Height = 13
           Caption = 'Drop-down list size'
         end
-        object TntLabel12: TTntLabel
+        object TntLabel12: TSpTBXLabel
           Left = 64
           Top = 52
           Width = 233
@@ -2078,7 +2078,7 @@ object fmSetup: TfmSetup
           Caption = 'After typing ... letters, show list automatically (0 - disabled)'
           WordWrap = True
         end
-        object cbAcpFilter: TTntComboBox
+        object cbAcpFilter: TSpTBXComboBox
           Left = 304
           Top = 64
           Width = 201
@@ -2092,7 +2092,7 @@ object fmSetup: TfmSetup
             'Any part of string'
             'Characters are in the same order')
         end
-        object cbAcpNone: TTntCheckBox
+        object cbAcpNone: TSpTBXCheckBox
           Left = 8
           Top = 16
           Width = 289
@@ -2122,7 +2122,7 @@ object fmSetup: TfmSetup
           Value = 0
           OnKeyDown = edIndKeyDown
         end
-        object cbAcpUseSingle: TTntCheckBox
+        object cbAcpUseSingle: TSpTBXCheckBox
           Left = 8
           Top = 32
           Width = 289
@@ -2131,28 +2131,28 @@ object fmSetup: TfmSetup
           TabOrder = 1
         end
       end
-      object gAcp2: TTntGroupBox
+      object gAcp2: TSpTBXGroupBox
         Left = 8
         Top = 256
         Width = 529
         Height = 89
         Caption = 'Auto-completion from current file'
         TabOrder = 2
-        object LabelAcpFileChars: TTntLabel
+        object LabelAcpFileChars: TSpTBXLabel
           Left = 64
           Top = 40
           Width = 184
           Height = 13
           Caption = 'Show words not shorter than ... chars'
         end
-        object LabelAcpFileSize: TTntLabel
+        object LabelAcpFileSize: TSpTBXLabel
           Left = 64
           Top = 64
           Width = 200
           Height = 13
           Caption = 'Search for words only in first ... Mb of file'
         end
-        object cbAcpFile: TTntCheckBox
+        object cbAcpFile: TSpTBXCheckBox
           Left = 8
           Top = 16
           Width = 457
@@ -2184,14 +2184,14 @@ object fmSetup: TfmSetup
           OnKeyDown = edIndKeyDown
         end
       end
-      object gAcpSp: TTntGroupBox
+      object gAcpSp: TSpTBXGroupBox
         Left = 8
         Top = 4
         Width = 529
         Height = 141
         Caption = 'Special auto-completion features'
         TabOrder = 0
-        object labSmTabHelp: TTntLabel
+        object labSmTabHelp: TSpTBXLabel
           Left = 424
           Top = 48
           Width = 29
@@ -2206,7 +2206,7 @@ object fmSetup: TfmSetup
           ParentFont = False
           OnClick = labSmTabHelpClick
         end
-        object labTplHelp: TTntLabel
+        object labTplHelp: TSpTBXLabel
           Left = 424
           Top = 98
           Width = 29
@@ -2221,7 +2221,7 @@ object fmSetup: TfmSetup
           ParentFont = False
           OnClick = labTplHelpClick
         end
-        object labAutoCloseHelp: TTntLabel
+        object labAutoCloseHelp: TSpTBXLabel
           Left = 424
           Top = 62
           Width = 29
@@ -2236,7 +2236,7 @@ object fmSetup: TfmSetup
           ParentFont = False
           OnClick = labAutoCloseHelpClick
         end
-        object TntLabel34: TTntLabel
+        object TntLabel34: TSpTBXLabel
           Left = 47
           Top = 116
           Width = 156
@@ -2244,7 +2244,7 @@ object fmSetup: TfmSetup
           Alignment = taRightJustify
           Caption = 'Except for these file extensions:'
         end
-        object cbAcpHtm: TTntCheckBox
+        object cbAcpHtm: TSpTBXCheckBox
           Left = 8
           Top = 16
           Width = 450
@@ -2252,7 +2252,7 @@ object fmSetup: TfmSetup
           Caption = 'Use special HTML auto-completion'
           TabOrder = 0
         end
-        object cbAcpTabbing: TTntCheckBox
+        object cbAcpTabbing: TSpTBXCheckBox
           Left = 8
           Top = 48
           Width = 409
@@ -2260,7 +2260,7 @@ object fmSetup: TfmSetup
           Caption = 'Use special HTML feature - SmartTagTabbing'
           TabOrder = 2
         end
-        object cbAcpCss: TTntCheckBox
+        object cbAcpCss: TSpTBXCheckBox
           Left = 8
           Top = 32
           Width = 450
@@ -2268,7 +2268,7 @@ object fmSetup: TfmSetup
           Caption = 'Use special CSS auto-completion'
           TabOrder = 1
         end
-        object cbTplTabbing: TTntCheckBox
+        object cbTplTabbing: TSpTBXCheckBox
           Left = 8
           Top = 96
           Width = 409
@@ -2276,7 +2276,7 @@ object fmSetup: TfmSetup
           Caption = 'Use Tab key to expand code templates'
           TabOrder = 7
         end
-        object cbACloseTags: TTntCheckBox
+        object cbACloseTags: TSpTBXCheckBox
           Left = 8
           Top = 64
           Width = 409
@@ -2284,7 +2284,7 @@ object fmSetup: TfmSetup
           Caption = 'Auto-close HTML/XML tags'
           TabOrder = 3
         end
-        object cbACloseBr: TTntCheckBox
+        object cbACloseBr: TSpTBXCheckBox
           Left = 8
           Top = 80
           Width = 208
@@ -2293,7 +2293,7 @@ object fmSetup: TfmSetup
           TabOrder = 4
           OnClick = cbACloseBrClick
         end
-        object cbACloseBrEsc: TTntCheckBox
+        object cbACloseBrEsc: TSpTBXCheckBox
           Left = 336
           Top = 80
           Width = 185
@@ -2301,7 +2301,7 @@ object fmSetup: TfmSetup
           Caption = 'Skip escaped: \{'
           TabOrder = 6
         end
-        object cbACloseQ: TTntCheckBox
+        object cbACloseQ: TSpTBXCheckBox
           Left = 216
           Top = 80
           Width = 120
@@ -2319,25 +2319,25 @@ object fmSetup: TfmSetup
         end
       end
     end
-    object tabASave: TTntTabSheet
+    object tabASave: TSpTBXTabSheet
       Caption = 'Auto-save'
       TabVisible = False
       OnShow = tabASaveShow
-      object gASave: TTntGroupBox
+      object gASave: TSpTBXGroupBox
         Left = 8
         Top = 4
         Width = 529
         Height = 65
         Caption = 'Auto-save when'
         TabOrder = 0
-        object labASaveTime: TTntLabel
+        object labASaveTime: TSpTBXLabel
           Left = 192
           Top = 22
           Width = 37
           Height = 13
           Caption = 'minutes'
         end
-        object cbASaveTimer: TTntCheckBox
+        object cbASaveTimer: TSpTBXCheckBox
           Left = 8
           Top = 20
           Width = 129
@@ -2357,7 +2357,7 @@ object fmSetup: TfmSetup
           Value = 1
           OnKeyDown = edIndKeyDown
         end
-        object cbASaveFocus: TTntCheckBox
+        object cbASaveFocus: TSpTBXCheckBox
           Left = 8
           Top = 40
           Width = 393
@@ -2366,28 +2366,28 @@ object fmSetup: TfmSetup
           TabOrder = 2
         end
       end
-      object gASaveWhat: TTntGroupBox
+      object gASaveWhat: TSpTBXGroupBox
         Left = 8
         Top = 72
         Width = 529
         Height = 77
         Caption = 'Auto-save what'
         TabOrder = 1
-        object labASavIgnore: TTntLabel
+        object labASavIgnore: TSpTBXLabel
           Left = 8
           Top = 52
           Width = 110
           Height = 13
           Caption = 'Ignore files larger than'
         end
-        object labKByte: TTntLabel
+        object labKByte: TSpTBXLabel
           Left = 344
           Top = 52
           Width = 12
           Height = 13
           Caption = 'Kb'
         end
-        object cbASaveCurrFile: TTntRadioButton
+        object cbASaveCurrFile: TSpTBXRadioButton
           Left = 8
           Top = 16
           Width = 297
@@ -2395,7 +2395,7 @@ object fmSetup: TfmSetup
           Caption = 'Current file'
           TabOrder = 0
         end
-        object cbASaveAllFiles: TTntRadioButton
+        object cbASaveAllFiles: TSpTBXRadioButton
           Left = 8
           Top = 32
           Width = 305
@@ -2416,7 +2416,7 @@ object fmSetup: TfmSetup
           OnKeyDown = edIndKeyDown
         end
       end
-      object gUnnamed: TTntGroupBox
+      object gUnnamed: TSpTBXGroupBox
         Left = 8
         Top = 152
         Width = 529
@@ -2430,7 +2430,7 @@ object fmSetup: TfmSetup
           Height = 21
           TabOrder = 0
         end
-        object cbASaveUnIgnore: TTntRadioButton
+        object cbASaveUnIgnore: TSpTBXRadioButton
           Left = 8
           Top = 16
           Width = 420
@@ -2439,7 +2439,7 @@ object fmSetup: TfmSetup
           TabOrder = 1
           OnClick = cbASaveUnnamedClick
         end
-        object cbASaveUnShowSave: TTntRadioButton
+        object cbASaveUnShowSave: TSpTBXRadioButton
           Left = 8
           Top = 32
           Width = 420
@@ -2448,7 +2448,7 @@ object fmSetup: TfmSetup
           TabOrder = 2
           OnClick = cbASaveUnnamedClick
         end
-        object cbASaveUnSaveToDir: TTntRadioButton
+        object cbASaveUnSaveToDir: TSpTBXRadioButton
           Left = 8
           Top = 48
           Width = 420
@@ -2457,7 +2457,7 @@ object fmSetup: TfmSetup
           TabOrder = 3
           OnClick = cbASaveUnnamedClick
         end
-        object bUnnamedBrowse: TTntButton
+        object bUnnamedBrowse: TSpTBXButton
           Left = 344
           Top = 68
           Width = 41
@@ -2468,18 +2468,18 @@ object fmSetup: TfmSetup
         end
       end
     end
-    object tabSpell: TTntTabSheet
+    object tabSpell: TSpTBXTabSheet
       Caption = 'Spell checker'
       TabVisible = False
       OnShow = tabSpellShow
-      object boxSpellOpt: TTntGroupBox
+      object boxSpellOpt: TSpTBXGroupBox
         Left = 8
         Top = 0
         Width = 529
         Height = 125
         Caption = 'Spell checker options'
         TabOrder = 0
-        object TntLabel16: TTntLabel
+        object TntLabel16: TSpTBXLabel
           Left = 8
           Top = 36
           Width = 158
@@ -2487,21 +2487,21 @@ object fmSetup: TfmSetup
           Caption = 'Check &only these file extensions:'
           FocusControl = edSpellExt
         end
-        object TntLabel24: TTntLabel
+        object TntLabel24: TSpTBXLabel
           Left = 8
           Top = 76
           Width = 156
           Height = 13
           Caption = 'Customize spell checking engine:'
         end
-        object edSpellExt: TTntEdit
+        object edSpellExt: TSpTBXEdit
           Left = 8
           Top = 52
           Width = 329
           Height = 21
           TabOrder = 1
         end
-        object cbSpellEn: TTntCheckBox
+        object cbSpellEn: TSpTBXCheckBox
           Left = 8
           Top = 16
           Width = 313
@@ -2509,7 +2509,7 @@ object fmSetup: TfmSetup
           Caption = '&Enable live spell checking'
           TabOrder = 0
         end
-        object bSpellOpt: TTntButton
+        object bSpellOpt: TSpTBXButton
           Left = 8
           Top = 92
           Width = 121
@@ -2519,14 +2519,14 @@ object fmSetup: TfmSetup
           OnClick = bSpellOptClick
         end
       end
-      object boxSpellLnk: TTntGroupBox
+      object boxSpellLnk: TSpTBXGroupBox
         Left = 8
         Top = 128
         Width = 529
         Height = 89
         Caption = 'Additional dictionaries'
         TabOrder = 1
-        object TntLabel27: TTntLabel
+        object TntLabel27: TSpTBXLabel
           Left = 8
           Top = 16
           Width = 513
@@ -2538,7 +2538,7 @@ object fmSetup: TfmSetup
             'tallation folder. Download from:'
           WordWrap = True
         end
-        object labDictWww: TTntLabel
+        object labDictWww: TSpTBXLabel
           Left = 8
           Top = 48
           Width = 137
@@ -2553,7 +2553,7 @@ object fmSetup: TfmSetup
           ParentFont = False
           OnClick = labDictWwwClick
         end
-        object labDictDir: TTntLabel
+        object labDictDir: TSpTBXLabel
           Left = 8
           Top = 64
           Width = 123
@@ -2570,25 +2570,25 @@ object fmSetup: TfmSetup
         end
       end
     end
-    object tabFolders: TTntTabSheet
+    object tabFolders: TSpTBXTabSheet
       Caption = 'Search folders'
       TabVisible = False
       OnShow = tabFoldersShow
-      object boxFolders: TTntGroupBox
+      object boxFolders: TSpTBXGroupBox
         Left = 8
         Top = 0
         Width = 529
         Height = 237
         Caption = 'Search folders'
         TabOrder = 0
-        object TntLabel14: TTntLabel
+        object TntLabel14: TSpTBXLabel
           Left = 8
           Top = 216
           Width = 267
           Height = 13
           Caption = 'Hint: add * after folder name to search in it recursively.'
         end
-        object TntLabel15: TTntLabel
+        object TntLabel15: TSpTBXLabel
           Left = 8
           Top = 16
           Width = 345
@@ -2599,7 +2599,7 @@ object fmSetup: TfmSetup
             'r context menu:'
           WordWrap = True
         end
-        object edFolders: TTntMemo
+        object edFolders: TMemo
           Left = 8
           Top = 48
           Width = 345
@@ -2608,7 +2608,7 @@ object fmSetup: TfmSetup
           TabOrder = 0
           OnKeyDown = edFoldersKeyDown
         end
-        object bAddFolder: TTntButton
+        object bAddFolder: TSpTBXButton
           Left = 8
           Top = 188
           Width = 129
@@ -2619,18 +2619,18 @@ object fmSetup: TfmSetup
         end
       end
     end
-    object tabMisc: TTntTabSheet
+    object tabMisc: TSpTBXTabSheet
       Caption = 'Misc'
       TabVisible = False
       OnShow = tabMiscShow
-      object boxMisc: TTntGroupBox
+      object boxMisc: TSpTBXGroupBox
         Left = 8
         Top = 0
         Width = 529
         Height = 269
         Caption = 'Misc'
         TabOrder = 0
-        object labDate: TTntLabel
+        object labDate: TSpTBXLabel
           Left = 158
           Top = 44
           Width = 13
@@ -2645,14 +2645,14 @@ object fmSetup: TfmSetup
           ParentFont = False
           OnClick = labDateClick
         end
-        object TntLabel20: TTntLabel
+        object TntLabel20: TSpTBXLabel
           Left = 176
           Top = 44
           Width = 82
           Height = 13
           Caption = 'Date/time format'
         end
-        object TntLabel18: TTntLabel
+        object TntLabel18: TSpTBXLabel
           Left = 176
           Top = 20
           Width = 65
@@ -2660,14 +2660,14 @@ object fmSetup: TfmSetup
           Caption = 'Emmet profile'
           Layout = tlCenter
         end
-        object TntLabel33: TTntLabel
+        object TntLabel33: TSpTBXLabel
           Left = 160
           Top = 68
           Width = 152
           Height = 13
           Caption = 'Date/time format for plugins log'
         end
-        object TntLabel37: TTntLabel
+        object TntLabel37: TSpTBXLabel
           Left = 160
           Top = 92
           Width = 120
@@ -2675,7 +2675,7 @@ object fmSetup: TfmSetup
           Caption = 'Show recent colors menu'
           Layout = tlCenter
         end
-        object TntLabel38: TTntLabel
+        object TntLabel38: TSpTBXLabel
           Left = 160
           Top = 116
           Width = 82
@@ -2683,7 +2683,7 @@ object fmSetup: TfmSetup
           Caption = 'Default sort type'
           Layout = tlCenter
         end
-        object labEmmet: TTntLabel
+        object labEmmet: TSpTBXLabel
           Left = 158
           Top = 20
           Width = 13
@@ -2698,7 +2698,7 @@ object fmSetup: TfmSetup
           ParentFont = False
           OnClick = labEmmetClick
         end
-        object TntLabel29: TTntLabel
+        object TntLabel29: TSpTBXLabel
           Left = 160
           Top = 132
           Width = 313
@@ -2708,7 +2708,7 @@ object fmSetup: TfmSetup
           Layout = tlCenter
           WordWrap = True
         end
-        object cbFullTitle: TTntCheckBox
+        object cbFullTitle: TSpTBXCheckBox
           Left = 8
           Top = 180
           Width = 360
@@ -2716,7 +2716,7 @@ object fmSetup: TfmSetup
           Caption = 'Show full path in window caption'
           TabOrder = 8
         end
-        object cbGroupLexers: TTntCheckBox
+        object cbGroupLexers: TSpTBXCheckBox
           Left = 8
           Top = 164
           Width = 360
@@ -2724,7 +2724,7 @@ object fmSetup: TfmSetup
           Caption = 'Group lexers list'
           TabOrder = 7
         end
-        object cbMenuIcon: TTntCheckBox
+        object cbMenuIcon: TSpTBXCheckBox
           Left = 8
           Top = 196
           Width = 360
@@ -2732,14 +2732,14 @@ object fmSetup: TfmSetup
           Caption = 'Show icons in context menu'
           TabOrder = 9
         end
-        object edDateFmt: TTntEdit
+        object edDateFmt: TSpTBXEdit
           Left = 8
           Top = 40
           Width = 145
           Height = 21
           TabOrder = 1
         end
-        object cbBeep: TTntCheckBox
+        object cbBeep: TSpTBXCheckBox
           Left = 8
           Top = 244
           Width = 360
@@ -2747,7 +2747,7 @@ object fmSetup: TfmSetup
           Caption = 'Allow beep sounds'
           TabOrder = 12
         end
-        object cbTips: TTntCheckBox
+        object cbTips: TSpTBXCheckBox
           Left = 8
           Top = 212
           Width = 360
@@ -2777,7 +2777,7 @@ object fmSetup: TfmSetup
           Value = 1
           OnKeyDown = edIndKeyDown
         end
-        object cbZenProfile: TTntComboBox
+        object cbZenProfile: TSpTBXComboBox
           Left = 8
           Top = 16
           Width = 145
@@ -2786,7 +2786,7 @@ object fmSetup: TfmSetup
           ItemHeight = 13
           TabOrder = 0
         end
-        object cbStripBk: TTntCheckBox
+        object cbStripBk: TSpTBXCheckBox
           Left = 8
           Top = 228
           Width = 497
@@ -2794,14 +2794,14 @@ object fmSetup: TfmSetup
           Caption = 'Strip names in "Go to portable bookmark" dialog'
           TabOrder = 11
         end
-        object edDateFmtP: TTntEdit
+        object edDateFmtP: TSpTBXEdit
           Left = 8
           Top = 64
           Width = 145
           Height = 21
           TabOrder = 2
         end
-        object cbRecColors: TTntComboBox
+        object cbRecColors: TSpTBXComboBox
           Left = 8
           Top = 88
           Width = 145
@@ -2814,7 +2814,7 @@ object fmSetup: TfmSetup
             'Always show'
             'Always hide')
         end
-        object cbSortMode: TTntComboBox
+        object cbSortMode: TSpTBXComboBox
           Left = 8
           Top = 112
           Width = 145
@@ -2831,7 +2831,7 @@ object fmSetup: TfmSetup
       end
     end
   end
-  object bApply: TTntButton
+  object bApply: TSpTBXButton
     Left = 508
     Top = 399
     Width = 90
@@ -2841,7 +2841,7 @@ object fmSetup: TfmSetup
     TabOrder = 2
     OnClick = bApplyClick
   end
-  object bCan: TTntButton
+  object bCan: TSpTBXButton
     Left = 604
     Top = 399
     Width = 90
@@ -2852,7 +2852,7 @@ object fmSetup: TfmSetup
     TabOrder = 3
     OnClick = bCanClick
   end
-  object bOk: TTntButton
+  object bOk: TSpTBXButton
     Left = 412
     Top = 399
     Width = 90
@@ -2863,7 +2863,7 @@ object fmSetup: TfmSetup
     TabOrder = 1
     OnClick = bOkClick
   end
-  object ListCat: TTntListBox
+  object ListCat: TSpTBXListBox
     Left = 8
     Top = 8
     Width = 145

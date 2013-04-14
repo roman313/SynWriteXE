@@ -24,7 +24,7 @@ object fmFav: TfmFav
     346)
   PixelsPerInch = 96
   TextHeight = 13
-  object btnOk: TTntButton
+  object btnOk: TSpTBXButton
     Left = 456
     Top = 8
     Width = 97
@@ -36,7 +36,7 @@ object fmFav: TfmFav
     TabOrder = 2
     OnClick = btnOkClick
   end
-  object btnCan: TTntButton
+  object btnCan: TSpTBXButton
     Left = 456
     Top = 148
     Width = 97
@@ -47,7 +47,7 @@ object fmFav: TfmFav
     ModalResult = 2
     TabOrder = 6
   end
-  object cbPaths: TTntCheckBox
+  object cbPaths: TSpTBXCheckBox
     Left = 8
     Top = 324
     Width = 249
@@ -59,7 +59,7 @@ object fmFav: TfmFav
     TabOrder = 1
     OnClick = cbPathsClick
   end
-  object List: TTntListBox
+  object List: TSpTBXListBox
     Left = 8
     Top = 8
     Width = 441
@@ -70,7 +70,7 @@ object fmFav: TfmFav
     OnClick = ListClick
     OnDblClick = ListDblClick
   end
-  object btnUp: TTntButton
+  object btnUp: TSpTBXButton
     Left = 456
     Top = 80
     Width = 97
@@ -80,7 +80,7 @@ object fmFav: TfmFav
     TabOrder = 4
     OnClick = btnUpClick
   end
-  object btnDown: TTntButton
+  object btnDown: TSpTBXButton
     Left = 456
     Top = 108
     Width = 97
@@ -90,7 +90,7 @@ object fmFav: TfmFav
     TabOrder = 5
     OnClick = btnDownClick
   end
-  object btnDel: TTntButton
+  object btnDel: TSpTBXButton
     Left = 456
     Top = 36
     Width = 97

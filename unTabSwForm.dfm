@@ -38,7 +38,7 @@ object fmTabSw: TfmTabSw
     DesignSize = (
       520
       164)
-    object List: TTntListBox
+    object List: TSpTBXListBox
       Left = 136
       Top = 4
       Width = 249
@@ -57,14 +57,14 @@ object fmTabSw: TfmTabSw
       BevelInner = bvLowered
       BevelOuter = bvLowered
       TabOrder = 1
-      object Label1: TTntLabel
+      object Label1: TSpTBXLabel
         Left = 6
         Top = 4
         Width = 35
         Height = 14
         Caption = 'Label1'
       end
-      object Label2: TTntLabel
+      object Label2: TSpTBXLabel
         Left = 6
         Top = 20
         Width = 35

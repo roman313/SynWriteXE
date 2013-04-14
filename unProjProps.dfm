@@ -16,7 +16,7 @@ object fmProjProps: TfmProjProps
   OnShow = TntFormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object btnOk: TTntButton
+  object btnOk: TSpTBXButton
     Left = 296
     Top = 296
     Width = 91
@@ -26,7 +26,7 @@ object fmProjProps: TfmProjProps
     ModalResult = 1
     TabOrder = 1
   end
-  object btnCan: TTntButton
+  object btnCan: TSpTBXButton
     Left = 392
     Top = 296
     Width = 91
@@ -36,72 +36,72 @@ object fmProjProps: TfmProjProps
     ModalResult = 2
     TabOrder = 2
   end
-  object Pages: TTntPageControl
+  object Pages: TSpTBXTabControl
     Left = 8
     Top = 4
     Width = 473
     Height = 285
     ActivePage = TntTabSheet1
     TabOrder = 0
-    object TntTabSheet1: TTntTabSheet
+    object TntTabSheet1: TSpTBXTabSheet
       Caption = 'General'
-      object Label4: TTntLabel
+      object Label4: TSpTBXLabel
         Left = 8
         Top = 76
         Width = 74
         Height = 13
         Caption = 'Working folder:'
       end
-      object TntLabel1: TTntLabel
+      object TntLabel1: TSpTBXLabel
         Left = 8
         Top = 116
         Width = 43
         Height = 13
         Caption = 'Main file:'
       end
-      object TntLabel3: TTntLabel
+      object TntLabel3: TSpTBXLabel
         Left = 8
         Top = 4
         Width = 75
         Height = 13
         Caption = 'New document:'
       end
-      object Label1: TTntLabel
+      object Label1: TSpTBXLabel
         Left = 8
         Top = 20
         Width = 47
         Height = 13
         Caption = 'Encoding:'
       end
-      object Label2: TTntLabel
+      object Label2: TSpTBXLabel
         Left = 144
         Top = 20
         Width = 49
         Height = 13
         Caption = 'Line ends:'
       end
-      object Label3: TTntLabel
+      object Label3: TSpTBXLabel
         Left = 280
         Top = 20
         Width = 31
         Height = 13
         Caption = 'Lexer:'
       end
-      object TntLabel4: TTntLabel
+      object TntLabel4: TSpTBXLabel
         Left = 8
         Top = 156
         Width = 61
         Height = 13
         Caption = 'Files sorting:'
       end
-      object edWorkDir: TTntEdit
+      object edWorkDir: TSpTBXEdit
         Left = 8
         Top = 92
         Width = 321
         Height = 21
         TabOrder = 3
       end
-      object edMainFN: TTntEdit
+      object edMainFN: TSpTBXEdit
         Left = 8
         Top = 132
         Width = 321
@@ -110,7 +110,7 @@ object fmProjProps: TfmProjProps
         ReadOnly = True
         TabOrder = 5
       end
-      object btnWorkDir: TTntButton
+      object btnWorkDir: TSpTBXButton
         Left = 336
         Top = 92
         Width = 91
@@ -119,7 +119,7 @@ object fmProjProps: TfmProjProps
         TabOrder = 4
         OnClick = btnWorkDirClick
       end
-      object cbEnc: TTntComboBox
+      object cbEnc: TSpTBXComboBox
         Left = 8
         Top = 36
         Width = 129
@@ -135,7 +135,7 @@ object fmProjProps: TfmProjProps
           'UTF-16'
           'UTF-16 BE')
       end
-      object cbEnds: TTntComboBox
+      object cbEnds: TSpTBXComboBox
         Left = 144
         Top = 36
         Width = 129
@@ -148,7 +148,7 @@ object fmProjProps: TfmProjProps
           'Unix (LF)'
           'Mac (CR)')
       end
-      object cbLexer: TTntComboBox
+      object cbLexer: TSpTBXComboBox
         Left = 280
         Top = 36
         Width = 177
@@ -159,7 +159,7 @@ object fmProjProps: TfmProjProps
         Sorted = True
         TabOrder = 2
       end
-      object cbSort: TTntComboBox
+      object cbSort: TSpTBXComboBox
         Left = 8
         Top = 172
         Width = 169
@@ -177,9 +177,9 @@ object fmProjProps: TfmProjProps
           'By size, descending')
       end
     end
-    object TntTabSheet2: TTntTabSheet
+    object TntTabSheet2: TSpTBXTabSheet
       Caption = 'Search folders'
-      object TntLabel2: TTntLabel
+      object TntLabel2: TSpTBXLabel
         Left = 8
         Top = 168
         Width = 441
@@ -190,7 +190,7 @@ object fmProjProps: TfmProjProps
           'he main Options dialog.'
         WordWrap = True
       end
-      object edDirs: TTntMemo
+      object edDirs: TMemo
         Left = 8
         Top = 8
         Width = 409
@@ -199,7 +199,7 @@ object fmProjProps: TfmProjProps
         TabOrder = 0
         OnKeyDown = edDirsKeyDown
       end
-      object btnDirAdd: TTntButton
+      object btnDirAdd: TSpTBXButton
         Left = 8
         Top = 140
         Width = 137

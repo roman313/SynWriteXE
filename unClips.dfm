@@ -16,7 +16,7 @@ object fmClips: TfmClips
   OnDestroy = FormDestroy
   PixelsPerInch = 96
   TextHeight = 13
-  object Combo: TTntComboBox
+  object Combo: TSpTBXComboBox
     Left = 0
     Top = 0
     Width = 174
@@ -29,7 +29,7 @@ object fmClips: TfmClips
     TabOrder = 0
     OnChange = ComboChange
   end
-  object List: TTntListBox
+  object List: TSpTBXListBox
     Left = 0
     Top = 21
     Width = 174

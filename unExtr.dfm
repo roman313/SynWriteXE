@@ -22,7 +22,7 @@ object fmExtract: TfmExtract
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object b1: TTntGroupBox
+  object b1: TSpTBXGroupBox
     Left = 8
     Top = 4
     Width = 313
@@ -32,14 +32,14 @@ object fmExtract: TfmExtract
     DesignSize = (
       313
       113)
-    object TntLabel1: TTntLabel
+    object TntLabel1: TSpTBXLabel
       Left = 8
       Top = 16
       Width = 96
       Height = 13
       Caption = 'Regular expression:'
     end
-    object labNot: TTntLabel
+    object labNot: TSpTBXLabel
       Left = 240
       Top = 16
       Width = 63
@@ -54,7 +54,7 @@ object fmExtract: TfmExtract
       ParentFont = False
       Visible = False
     end
-    object ed: TTntComboBox
+    object ed: TSpTBXComboBox
       Left = 8
       Top = 32
       Width = 297
@@ -63,7 +63,7 @@ object fmExtract: TfmExtract
       TabOrder = 0
       OnKeyDown = edKeyDown
     end
-    object bCase: TTntCheckBox
+    object bCase: TSpTBXCheckBox
       Left = 8
       Top = 56
       Width = 300
@@ -72,7 +72,7 @@ object fmExtract: TfmExtract
       Caption = 'Case sensitive'
       TabOrder = 1
     end
-    object bSel: TTntCheckBox
+    object bSel: TSpTBXCheckBox
       Left = 8
       Top = 72
       Width = 300
@@ -81,7 +81,7 @@ object fmExtract: TfmExtract
       Caption = 'Search in selection only'
       TabOrder = 2
     end
-    object bCur: TTntCheckBox
+    object bCur: TSpTBXCheckBox
       Left = 8
       Top = 88
       Width = 300
@@ -91,7 +91,7 @@ object fmExtract: TfmExtract
       TabOrder = 3
     end
   end
-  object bFind: TTntButton
+  object bFind: TSpTBXButton
     Left = 328
     Top = 8
     Width = 105
@@ -101,7 +101,7 @@ object fmExtract: TfmExtract
     TabOrder = 2
     OnClick = bFindClick
   end
-  object bCopy: TTntButton
+  object bCopy: TSpTBXButton
     Left = 328
     Top = 36
     Width = 105
@@ -111,14 +111,14 @@ object fmExtract: TfmExtract
     TabOrder = 3
     OnClick = bCopyClick
   end
-  object b2: TTntGroupBox
+  object b2: TSpTBXGroupBox
     Left = 8
     Top = 120
     Width = 313
     Height = 147
     Caption = 'Preview of found strings'
     TabOrder = 1
-    object List: TTntListBox
+    object List: TSpTBXListBox
       Left = 2
       Top = 15
       Width = 309
@@ -130,7 +130,7 @@ object fmExtract: TfmExtract
       OnDrawItem = ListDrawItem
     end
   end
-  object bCan: TTntButton
+  object bCan: TSpTBXButton
     Left = 328
     Top = 128
     Width = 105
@@ -140,7 +140,7 @@ object fmExtract: TfmExtract
     ModalResult = 2
     TabOrder = 6
   end
-  object bHelp: TTntButton
+  object bHelp: TSpTBXButton
     Left = 328
     Top = 100
     Width = 105
@@ -149,7 +149,7 @@ object fmExtract: TfmExtract
     TabOrder = 5
     OnClick = bHelpClick
   end
-  object bTab: TTntButton
+  object bTab: TSpTBXButton
     Left = 328
     Top = 64
     Width = 105

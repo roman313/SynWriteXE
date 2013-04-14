@@ -21,14 +21,14 @@ object fmToolbarSize: TfmToolbarSize
     Width = 217
     Height = 97
     TabOrder = 0
-    object Label1: TTntLabel
+    object Label1: TSpTBXLabel
       Left = 102
       Top = 72
       Width = 6
       Height = 13
       Caption = 'x'
     end
-    object btn16: TTntRadioButton
+    object btn16: TSpTBXRadioButton
       Left = 8
       Top = 16
       Width = 73
@@ -36,7 +36,7 @@ object fmToolbarSize: TfmToolbarSize
       Caption = '16x16'
       TabOrder = 0
     end
-    object btn32: TTntRadioButton
+    object btn32: TSpTBXRadioButton
       Left = 8
       Top = 32
       Width = 73
@@ -44,7 +44,7 @@ object fmToolbarSize: TfmToolbarSize
       Caption = '32x32'
       TabOrder = 1
     end
-    object btnSize: TTntRadioButton
+    object btnSize: TSpTBXRadioButton
       Left = 8
       Top = 48
       Width = 113
@@ -73,7 +73,7 @@ object fmToolbarSize: TfmToolbarSize
       Value = 22
     end
   end
-  object bOk: TTntButton
+  object bOk: TSpTBXButton
     Left = 24
     Top = 107
     Width = 90
@@ -83,7 +83,7 @@ object fmToolbarSize: TfmToolbarSize
     ModalResult = 1
     TabOrder = 1
   end
-  object bCan: TTntButton
+  object bCan: TSpTBXButton
     Left = 120
     Top = 107
     Width = 90

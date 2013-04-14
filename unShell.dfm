@@ -19,20 +19,20 @@ object fmShell: TfmShell
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object GroupBoxEx: TTntGroupBox
+  object GroupBoxEx: TSpTBXGroupBox
     Left = 9
     Top = 5
     Width = 360
     Height = 276
     TabOrder = 0
-    object TntLabel1: TTntLabel
+    object TntLabel1: TSpTBXLabel
       Left = 8
       Top = 96
       Width = 241
       Height = 13
       Caption = 'Associate SynWrite with additional file extensions:'
     end
-    object cbShell: TTntCheckBox
+    object cbShell: TSpTBXCheckBox
       Left = 8
       Top = 14
       Width = 345
@@ -42,7 +42,7 @@ object fmShell: TfmShell
       WordWrap = True
       OnClick = cbShellClick
     end
-    object cbTxt: TTntCheckBox
+    object cbTxt: TSpTBXCheckBox
       Left = 8
       Top = 40
       Width = 345
@@ -51,7 +51,7 @@ object fmShell: TfmShell
       TabOrder = 1
       OnClick = cbTxtClick
     end
-    object cbIni: TTntCheckBox
+    object cbIni: TSpTBXCheckBox
       Left = 8
       Top = 56
       Width = 345
@@ -60,7 +60,7 @@ object fmShell: TfmShell
       TabOrder = 2
       OnClick = cbIniClick
     end
-    object ed: TTntComboBox
+    object ed: TSpTBXComboBox
       Left = 64
       Top = 116
       Width = 225
@@ -80,7 +80,7 @@ object fmShell: TfmShell
       ItemHeight = 13
       TabOrder = 5
     end
-    object bUn: TTntButton
+    object bUn: TSpTBXButton
       Left = 64
       Top = 245
       Width = 225
@@ -89,7 +89,7 @@ object fmShell: TfmShell
       TabOrder = 6
       OnClick = bUnClick
     end
-    object cbProj: TTntCheckBox
+    object cbProj: TSpTBXCheckBox
       Left = 8
       Top = 72
       Width = 345
@@ -99,7 +99,7 @@ object fmShell: TfmShell
       OnClick = cbProjClick
     end
   end
-  object bOk: TTntButton
+  object bOk: TSpTBXButton
     Left = 144
     Top = 287
     Width = 90

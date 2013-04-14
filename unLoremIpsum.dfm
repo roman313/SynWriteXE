@@ -17,7 +17,7 @@ object fmLoremIpsum: TfmLoremIpsum
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object Label2: TTntLabel
+  object Label2: TSpTBXLabel
     Left = 280
     Top = 100
     Width = 11
@@ -32,7 +32,7 @@ object fmLoremIpsum: TfmLoremIpsum
     ParentFont = False
     OnClick = Label2Click
   end
-  object bOk: TTntButton
+  object bOk: TSpTBXButton
     Left = 240
     Top = 8
     Width = 97
@@ -42,7 +42,7 @@ object fmLoremIpsum: TfmLoremIpsum
     ModalResult = 1
     TabOrder = 0
   end
-  object bCopy: TTntButton
+  object bCopy: TSpTBXButton
     Left = 240
     Top = 36
     Width = 97
@@ -51,7 +51,7 @@ object fmLoremIpsum: TfmLoremIpsum
     ModalResult = 6
     TabOrder = 1
   end
-  object bCan: TTntButton
+  object bCan: TSpTBXButton
     Left = 240
     Top = 64
     Width = 97
@@ -61,20 +61,20 @@ object fmLoremIpsum: TfmLoremIpsum
     ModalResult = 2
     TabOrder = 2
   end
-  object GroupBox1: TTntGroupBox
+  object GroupBox1: TSpTBXGroupBox
     Left = 8
     Top = 4
     Width = 225
     Height = 121
     TabOrder = 3
-    object Label1: TTntLabel
+    object Label1: TSpTBXLabel
       Left = 72
       Top = 64
       Width = 29
       Height = 13
       Caption = 'Count'
     end
-    object cbSent: TTntRadioButton
+    object cbSent: TSpTBXRadioButton
       Left = 8
       Top = 16
       Width = 210
@@ -85,7 +85,7 @@ object fmLoremIpsum: TfmLoremIpsum
       TabStop = True
       OnClick = cbWordsClick
     end
-    object cbPara: TTntRadioButton
+    object cbPara: TSpTBXRadioButton
       Left = 8
       Top = 32
       Width = 210
@@ -105,7 +105,7 @@ object fmLoremIpsum: TfmLoremIpsum
       Value = 5
       OnKeyDown = edCountKeyDown
     end
-    object cbTags: TTntCheckBox
+    object cbTags: TSpTBXCheckBox
       Left = 8
       Top = 96
       Width = 209

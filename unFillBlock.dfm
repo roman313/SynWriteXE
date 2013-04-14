@@ -17,20 +17,20 @@ object fmFillBlock: TfmFillBlock
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object TntGroupBox1: TTntGroupBox
+  object TntGroupBox1: TSpTBXGroupBox
     Left = 8
     Top = 4
     Width = 417
     Height = 93
     TabOrder = 0
-    object TntLabel1: TTntLabel
+    object TntLabel1: TSpTBXLabel
       Left = 8
       Top = 12
       Width = 55
       Height = 13
       Caption = 'New string:'
     end
-    object edLine: TTntEdit
+    object edLine: TSpTBXEdit
       Left = 8
       Top = 28
       Width = 401
@@ -38,7 +38,7 @@ object fmFillBlock: TfmFillBlock
       TabOrder = 0
       OnChange = edLineChange
     end
-    object cbKeepWidth: TTntCheckBox
+    object cbKeepWidth: TSpTBXCheckBox
       Left = 8
       Top = 52
       Width = 401
@@ -48,7 +48,7 @@ object fmFillBlock: TfmFillBlock
       WordWrap = True
     end
   end
-  object bOk: TTntButton
+  object bOk: TSpTBXButton
     Left = 224
     Top = 104
     Width = 97
@@ -58,7 +58,7 @@ object fmFillBlock: TfmFillBlock
     ModalResult = 1
     TabOrder = 1
   end
-  object bCan: TTntButton
+  object bCan: TSpTBXButton
     Left = 328
     Top = 104
     Width = 97
