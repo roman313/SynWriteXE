@@ -4,8 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls,
-  TntStdCtrls, TntClasses;
+  Dialogs, StdCtrls;
 
 type
   TClipsEvent = procedure(Sender: TObject; const S: Widestring) of object;
@@ -23,7 +22,7 @@ type
   private
     { Private declarations }
     FClipsDir: string;
-    FClips: TTntStringList;
+    FClips: TStringList;
     FOnClick: TClipsEvent;
     FOnInsPress: TNotifyEvent;
     procedure LoadClips;
@@ -143,7 +142,7 @@ end;
 
 procedure TfmClips.FormCreate(Sender: TObject);
 begin
-  FClips:= TTntStringList.Create;
+  FClips:= TStringList.Create;
 end;
 
 procedure TfmClips.FormDestroy(Sender: TObject);
@@ -229,13 +228,13 @@ end;
 
 procedure TfmClips.DoDeleteClip;
 var
-  L: TTntStringList;
+  L: TStringList;
   Idx: integer;
 begin
   Idx:= List.ItemIndex;
   if Idx<0 then Exit;
 
-  L:= TTntStringList.Create;
+  L:= TStringList.Create;
   try
     L.LoadFromFile(GetCurrentFN);
     L.Delete(Idx);

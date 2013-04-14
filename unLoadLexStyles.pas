@@ -4,13 +4,10 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls,
-  TntStdCtrls, TntForms,
-  CheckLst, TntCheckLst,
-  DKLang;
+  Dialogs, StdCtrls, CheckLst, DKLang;
 
 type
-  TfmLoadLex = class(TTntForm)
+  TfmLoadLex = class(TForm)
     Label1: TSpTBXLabel;
     TntGroupBox1: TSpTBXGroupBox;
     List: TCheckListBox;

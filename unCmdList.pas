@@ -4,12 +4,10 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls,
-  TntStdCtrls, TntForms,
-  ecKeyMap, ExtCtrls;
+  Dialogs, StdCtrls, ecKeyMap, ExtCtrls;
 
 type
-  TfmCmdList = class(TTntForm)
+  TfmCmdList = class(TForm)
     List: TSpTBXListBox;
     Keys: TSyntKeyMapping;
     Edit: TSpTBXEdit;
@@ -44,11 +42,7 @@ type
 implementation
 
 uses
-  TntClasses, TntWideStrings,
-  Math,
-  ecStrUtils,
-  unProc,
-  ATxSProc;
+  Math, ecStrUtils, unProc, ATxSProc;
 
 {$R *.dfm}
 
@@ -102,10 +96,10 @@ procedure TfmCmdList.DoFilter;
   end;      
 var
   i, j: Integer;
-  ListCat: TTntStringList;
+  ListCat: TStringList;
   S, SKey: Widestring;
 begin
-  ListCat:= TTntStringList.Create;
+  ListCat:= TStringList.Create;
   for i:= 0 to Keys.Items.Count-1 do
     if ListCat.IndexOf(Keys.Items[i].Category)<0 then
       ListCat.Add(Keys.Items[i].Category);

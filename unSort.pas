@@ -4,10 +4,10 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, TntStdCtrls, TntForms, Spin, DKLang;
+  Dialogs, StdCtrls, Spin, DKLang;
 
 type
-  TfmSort = class(TTntForm)
+  TfmSort = class(TForm)
     bOk: TSpTBXButton;
     bCan: TSpTBXButton;
     boxGeneral: TSpTBXGroupBox;

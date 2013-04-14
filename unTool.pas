@@ -4,11 +4,10 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, TntDialogs, StdCtrls, TntStdCtrls, TntForms, DKLang, ComCtrls,
-  TntComCtrls, Menus, ecHotKeyEdit;
+  Dialogs, TntDialogs, StdCtrls, DKLang, ComCtrls, Menus, ecHotKeyEdit;
 
 type
-  TfmTools = class(TTntForm)
+  TfmTools = class(TForm)
     TntOpenDialog1: TOpenDialog;
     TntGroupBox1: TSpTBXGroupBox;
     TntLabel1: TSpTBXLabel;

@@ -3,18 +3,9 @@ unit unProc;
 interface
 
 uses
-  ExtCtrls, Types, Forms, SysUtils,
-  Classes,
-  Graphics,
-  Controls,
-  Messages,
-  TntComCtrls, TntStdCtrls, TntClasses,
-  ecSyntMemo,
-  ecKeyMap,
-  ecStrUtils,
-  ecMemoStrings,
-  ecSyntDlg,
-  ecSyntTree;
+  ExtCtrls, Types, Forms, SysUtils, Classes, Graphics, Controls,
+  Messages, ecSyntMemo, ecKeyMap, ecStrUtils, ecMemoStrings,
+  ecSyntDlg, ecSyntTree;
 
 function DoInputFilename(const dkmsg: string; var S: Widestring): boolean;
 function DoInputString(const dkmsg: string; var S: Widestring): boolean;
@@ -89,8 +80,8 @@ procedure FixTcIni(var fnTC: string; const section: string);
 function SFindRegex(const S, Regex: ecString): ecString;
 function IsStringRegex(const S, Regex: ecString): boolean;
 
-function CompareListDate(List: TTntStringList; Index1, Index2: Integer): Integer;
-function CompareListDateDesc(List: TTntStringList; Index1, Index2: Integer): Integer;
+function CompareListDate(List: TStringList; Index1, Index2: Integer): Integer;
+function CompareListDateDesc(List: TStringList; Index1, Index2: Integer): Integer;
 
 function Color2str(C: TColor): string;
 function Hex2color(const s: string): TColor;
@@ -967,7 +958,7 @@ begin
 end;
 
 
-function CompareListDate(List: TTntStringList; Index1, Index2: Integer): Integer;
+function CompareListDate(List: TStringList; Index1, Index2: Integer): Integer;
 var d1, d2: integer;
 begin
   d1:= WideFileAge(List[Index1]);
@@ -975,7 +966,7 @@ begin
   Result:= Trunc(FileDateToDateTime(d1) - FileDateToDateTime(d2));
 end;
 
-function CompareListDateDesc(List: TTntStringList; Index1, Index2: Integer): Integer;
+function CompareListDateDesc(List: TStringList; Index1, Index2: Integer): Integer;
 begin
   Result:= -CompareListDate(List, Index1, Index2);
 end;

@@ -4,10 +4,10 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  StdCtrls, TntStdCtrls, TntForms;
+  StdCtrls;
 
 type
-  TfmRename = class(TTntForm)
+  TfmRename = class(TForm)
     btnOK: TSpTBXButton;
     btnCancel: TSpTBXButton;
     edName: TSpTBXEdit;

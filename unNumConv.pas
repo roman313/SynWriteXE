@@ -4,15 +4,14 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls,
-  TntForms, TntStdCtrls, DKLang;
+  Dialogs, StdCtrls, DKLang;
 
 type
   TNumType = (numChar, numDec, numHex, numBin, numOct);
   TNumConvEvent = procedure(Sender: TObject; const S: string) of object;
 
 type
-  TfmNumConv = class(TTntForm)
+  TfmNumConv = class(TForm)
     GroupBox1: TSpTBXGroupBox;
     Label1: TSpTBXLabel;
     Label2: TSpTBXLabel;

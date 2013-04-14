@@ -4,11 +4,10 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls,
-  TntForms, TntStdCtrls, TntClasses, DKLang;
+  Dialogs, StdCtrls, DKLang;
 
 type
-  TfmFav = class(TTntForm)
+  TfmFav = class(TForm)
     btnOk: TSpTBXButton;
     btnCan: TSpTBXButton;
     cbPaths: TSpTBXCheckBox;
@@ -31,7 +30,7 @@ type
       Shift: TShiftState);
   private
     { Private declarations }
-    FFileNames: TTntStringList;
+    FFileNames: TStringList;
     procedure DoList;
     procedure DoLoad;
     procedure DoSave;
@@ -117,7 +116,7 @@ end;
 
 procedure TfmFav.TntFormCreate(Sender: TObject);
 begin
-  FFileNames:= TTntStringList.Create;
+  FFileNames:= TStringList.Create;
 end;
 
 procedure TfmFav.TntFormDestroy(Sender: TObject);

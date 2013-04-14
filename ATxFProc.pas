@@ -3,7 +3,7 @@ unit ATxFProc;
 interface
 
 uses
-  Windows, Classes, TntClasses;
+  Windows, Classes;
 
 type
   TExecCode = (exOk, exCannotRun, exExcept);
@@ -25,7 +25,7 @@ function FFindInSubdirs(const sname, sdir: Widestring; var fn: Widestring): bool
 function FAppDataPath: string;
 function FExecProcess(const CmdLine, CurrentDir: Widestring; ShowCmd: integer; DoWait: boolean): TExecCode;
 procedure FReadSection(const fn, sec: string; L: TStringList);
-procedure FFindToList(List: TTntStringList;
+procedure FFindToList(List: TStringList;
   const SDir, SMask: Widestring; ASubDir: boolean;
   ANoRO: boolean;
   ANoHidFiles: boolean;
@@ -778,7 +778,7 @@ end;
   end;
 
 //SMask: space separated masks
-procedure FFindToList(List: TTntStringList;
+procedure FFindToList(List: TStringList;
   const SDir, SMask: Widestring; ASubDir: boolean;
   ANoRO: boolean;
   ANoHidFiles: boolean;

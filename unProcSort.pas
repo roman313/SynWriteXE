@@ -3,13 +3,13 @@ unit unProcSort;
 interface
 
 uses
-  Classes, TntClasses;
+  Classes;
 
 type
   TSynSortMode = (sortUnicodeRaw, sortUnicode, sortAscii, sortNumeric);
 
 function DoSortStringList(
-  List: TTntStringList;
+  List: TStringList;
   AMode: TSynSortMode;
   AAscend: boolean;
   AShowDlg: boolean;
@@ -80,7 +80,7 @@ begin
 end;
 
 
-function _ListCompare(List: TTntStringList; Index1, Index2: Integer): Integer;
+function _ListCompare(List: TStringList; Index1, Index2: Integer): Integer;
 var
   S1, S2,
   S1_org, S2_org: Widestring;
@@ -129,7 +129,7 @@ begin
     Result:= -Result;
 end;
 
-procedure DoRemoveListDups(List: TTntStringList);
+procedure DoRemoveListDups(List: TStringList);
 var
   i: Integer;
   same: boolean;
@@ -145,7 +145,7 @@ begin
   end;
 end;
 
-procedure DoRemoveListBlanks(List: TTntStringList);
+procedure DoRemoveListBlanks(List: TStringList);
 var
   i: Integer;
 begin
@@ -155,7 +155,7 @@ begin
 end;
 
 function DoSortStringList(
-  List: TTntStringList;
+  List: TStringList;
   AMode: TSynSortMode;
   AAscend: boolean;
   AShowDlg: boolean;

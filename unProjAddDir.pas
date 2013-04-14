@@ -4,11 +4,10 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls,
-  TntForms, TntStdCtrls, DKLang;
+  Dialogs, StdCtrls, DKLang;
 
 type
-  TfmProjAddDir = class(TTntForm)
+  TfmProjAddDir = class(TForm)
     btnOk: TSpTBXButton;
     btnCan: TSpTBXButton;
     GroupBox1: TSpTBXGroupBox;

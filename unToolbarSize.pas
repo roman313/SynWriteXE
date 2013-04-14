@@ -4,11 +4,10 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls,
-  TntForms, TntStdCtrls, Spin;
+  Dialogs, StdCtrls, Spin;
 
 type
-  TfmToolbarSize = class(TTntForm)
+  TfmToolbarSize = class(TForm)
     GroupBoxIco: TSpTBXGroupBox;
     Label1: TSpTBXLabel;
     btn16: TSpTBXRadioButton;

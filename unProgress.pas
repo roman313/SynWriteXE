@@ -4,9 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls,
-  TntStdCtrls, TntForms,
-  DKLang, Gauges, ExtCtrls;
+  Dialogs, StdCtrls, DKLang, Gauges, ExtCtrls;
 
 type
   TProgressType = (
@@ -19,7 +17,7 @@ type
     );
 
 type
-  TfmProgress = class(TTntForm)
+  TfmProgress = class(TForm)
     laFile: TSpTBXLabel;
     DKLanguageController1: TDKLanguageController;
     bCan: TSpTBXButton;

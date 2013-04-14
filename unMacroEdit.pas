@@ -7,12 +7,10 @@ interface
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ActnList, ecSyntMemo, ecMacroRec, ComCtrls, DKLang,
-  ecHotKeyEdit,
-  TntStdCtrls, TntComCtrls, TntForms,
-  Spin;
+  ecHotKeyEdit, Spin;
 
 type
-  TfmMacroEdit = class(TTntForm)
+  TfmMacroEdit = class(TForm)
     boxList: TSpTBXGroupBox;
     MacrosList: TSpTBXListBox;
     boxCmd: TSpTBXGroupBox;

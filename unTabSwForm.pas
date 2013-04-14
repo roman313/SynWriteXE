@@ -4,8 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ExtCtrls, TntStdCtrls,
-  TntClasses;
+  Dialogs, StdCtrls, ExtCtrls;
 
 type
   TfmTabSw = class(TForm)
@@ -29,7 +28,7 @@ type
   public
     { Public declarations }
     FListFN,
-    FListLex: TTntStringList;
+    FListLex: TStringList;
   end;
 
 var
@@ -91,8 +90,8 @@ end;
 procedure TfmTabSw.FormCreate(Sender: TObject);
 begin
   FY:= ClientHeight-List.Height + 8;
-  FListFN:= TTntStringList.Create;
-  FListLex:= TTntStringList.Create;
+  FListFN:= TStringList.Create;
+  FListLex:= TStringList.Create;
 end;
 
 procedure TfmTabSw.FormDestroy(Sender: TObject);

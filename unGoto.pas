@@ -4,11 +4,10 @@ interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, DKLang,
-  TntForms, TntStdCtrls, ExtCtrls;
+  Dialogs, StdCtrls, DKLang, ExtCtrls;
 
 type
-  TfmGoto = class(TTntForm)
+  TfmGoto = class(TForm)
     Label1: TSpTBXLabel;
     edLine: TComboBox;
     ButtonOk: TSpTBXButton;

@@ -4,13 +4,10 @@ interface
 
 uses
   Windows, Messages, SysUtils, Classes, Controls, Forms,
-  TntForms, TntClasses,
-  IniFiles,
-  unMain, ATSynPlugins,
-  XPMan, AppEvnts;
+  IniFiles, unMain, ATSynPlugins, XPMan, AppEvnts;
 
 type
-  TfmSynEx = class(TTntForm)
+  TfmSynEx = class(TForm)
     XPManifest1: TXPManifest;
     ApplicationEvents1: TApplicationEvents;
     procedure FormCreate(Sender: TObject);

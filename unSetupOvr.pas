@@ -4,11 +4,10 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  TntForms,
-  Dialogs, StdCtrls, TntStdCtrls, DKLang, Spin;
+  Dialogs, StdCtrls, DKLang, Spin;
 
 type
-  TfmSetupOvr = class(TTntForm)
+  TfmSetupOvr = class(TForm)
     ListLex: TSpTBXListBox;
     Label1: TSpTBXLabel;
     edTab: TSpTBXEdit;

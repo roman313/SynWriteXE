@@ -12,14 +12,13 @@ uses
   Dialogs, ComCtrls, StdCtrls, ExtCtrls, unMain, Grids, Spin,
 
   ecSyntMemo, ecKeyMap, ecHotKeyEdit, ecPopupCtrl, DKLang,
-  TntStdCtrls, TntComCtrls, TntForms, TntGrids,
   unSetupOvr;
 
 const
   cColorsNum = 54;
 
 type
-  TfmSetup = class(TTntForm)
+  TfmSetup = class(TForm)
     Tabs: TTntPageControl;
     bApply: TSpTBXButton;
     bCan: TSpTBXButton;
@@ -573,10 +572,7 @@ uses
   unHints,
   unProc,
   unProj,
-  unProcSort,
-
-  TntClasses,
-  TntFileCtrl;
+  unProcSort;
 
 {$R *.dfm}
 

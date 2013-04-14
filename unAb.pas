@@ -4,10 +4,10 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, TntForms, TntStdCtrls, DKLang;
+  Dialogs, StdCtrls, DKLang;
 
 type
-  TfmAb = class(TTntForm)
+  TfmAb = class(TForm)
     GroupBox4: TSpTBXGroupBox;
     Label12: TSpTBXLabel;
     Label11: TSpTBXLabel;

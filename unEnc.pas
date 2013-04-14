@@ -4,10 +4,10 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, TntForms, TntStdCtrls, DKLang;
+  Dialogs, StdCtrls, DKLang;
 
 type
-  TfmEnc = class(TTntForm)
+  TfmEnc = class(TForm)
     Button1: TSpTBXButton;
     Button2: TSpTBXButton;
     StaticText1: TTntStaticText;

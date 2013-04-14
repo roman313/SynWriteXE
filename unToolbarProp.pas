@@ -4,9 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, TntStdCtrls, Spin, ExtCtrls,
-  TntForms,
-  PngImage, ImgList;
+  Dialogs, StdCtrls, Spin, ExtCtrls, PngImage, ImgList;
 
 type
   TToolbarProp = record
@@ -20,7 +18,7 @@ const
   cToolbarSep = '-';
 
 type
-  TfmToolbarProp = class(TTntForm)
+  TfmToolbarProp = class(TForm)
     bOk: TSpTBXButton;
     bCan: TSpTBXButton;
     GroupBoxCmd: TSpTBXGroupBox;

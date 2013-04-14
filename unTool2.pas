@@ -4,11 +4,10 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, TntStdCtrls, Tntforms, DKLang, ExtCtrls, Menus,
-  TntMenus, tntClasses;
+  Dialogs, StdCtrls, DKLang, ExtCtrls, Menus;
 
 type
-  TfmToolOutput = class(TTntForm)
+  TfmToolOutput = class(TForm)
     bOk: TSpTBXButton;
     bCancel: TSpTBXButton;
     TntGroupBox1: TSpTBXGroupBox;
@@ -39,7 +38,7 @@ type
     procedure TntFormShow(Sender: TObject);
   private
     { Private declarations }
-    FList: TTntStringList;
+    FList: TStringList;
     procedure MnuClick(Sender: TObject);
   public
     { Public declarations }
@@ -62,7 +61,7 @@ begin
   with edLn.Items do begin Add('--'); for i:= 1 to 8 do Add(Inttostr(i)); end;
   with edCol.Items do begin Add('--'); for i:= 1 to 8 do Add(Inttostr(i)); end;
 
-  FList:= TTntStringlist.Create;
+  FList:= TStringList.Create;
   sd:= ExtractFileDir(GetModuleName(HInstance))+'\Template\tools';
   FFindToList(FList, sd, '*.tool', false, false, false, false);
   FList.Sort;

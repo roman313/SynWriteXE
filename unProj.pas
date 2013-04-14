@@ -8,7 +8,6 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ComCtrls, ImgList,
   TB2Item, TBX, TB2Dock, TB2Toolbar,
-  TntForms, TntClasses, TntComCtrls, TntDialogs,
   ExtCtrls, Menus, DKLang, unProgress, TBXExtItems, TB2MRU;
 
 var
@@ -149,7 +148,7 @@ type
     FProjectFN: Widestring;
     FModified: boolean;
     FIcoList: TStringList;
-    FPathList: TTntStringList;
+    FPathList: TStringList;
     FOldItemsCount: integer;
     FOnFileOpen: TListProc;
     FOnUpdateMRU: TListProc;
@@ -190,7 +189,7 @@ type
     function DirForNode(Node: TTntTreeNode): TTntTreeNode;
     function DoAddDirWithSubdirs(Node: TTntTreeNode; const SDir: Widestring;
       SubDirs, NoBinary: boolean; const ExtInc, ExtExc: string): TTntTreeNode;
-    procedure AddFilesToList(L: TTntStringList; Node: TTntTreeNode);
+    procedure AddFilesToList(L: TStringList; Node: TTntTreeNode);
     function IsRoot(Node: TTntTreeNode): boolean;
     function IsFilenameListed(Node: TTntTreeNode; const fn: Widestring): boolean;
     procedure DoRefresh;
@@ -561,7 +560,7 @@ begin
 
   FShellIcons:= true; //todo
   FIcoList:= TStringList.Create;
-  FPathList:= TTntStringList.Create;
+  FPathList:= TStringList.Create;
   fmProgress:= nil;
 
   ProjMRUList.OnClick:= ProjMRUListClick;
@@ -711,14 +710,14 @@ end;
 
 procedure TfmProj.DoOpenFiles;
 var
-  L: TTntStringList;
+  L: TStringList;
   i: Integer;
 begin
   if Assigned(FOnFileOpen) then
     with TreeProj do
       if (SelectionCount>0) then
       begin
-        L:= TTntStringList.Create;
+        L:= TStringList.Create;
         try
           for i:= 0 to SelectionCount-1 do
           begin
@@ -751,7 +750,7 @@ begin
   DoOpenFiles;
 end;
 
-procedure TfmProj.AddFilesToList(L: TTntStringList; Node: TTntTreeNode);
+procedure TfmProj.AddFilesToList(L: TStringList; Node: TTntTreeNode);
 var
   N: TTntTreeNode;
 begin
@@ -1263,7 +1262,7 @@ end;
 
 procedure TfmProj.DoConfigProject;
 var
-  L: TTntStringList;
+  L: TStringList;
 begin
   with TfmProjProps.Create(nil) do
   try
@@ -1272,7 +1271,7 @@ begin
     cbEnds.Items.Insert(0, SMsgProjDefault);
     cbLexer.Items.Insert(0, '  '+SMsgProjDefault);
 
-    L:= TTntStringList.Create;
+    L:= TStringList.Create;
     try
       if Assigned(FOnGetLexers) then
         FOnGetLexers(Self, L);
@@ -1377,10 +1376,10 @@ end;
 
 procedure TfmProj.DoAddEditorFiles(All: boolean);
 var
-  L: TTntStringList;
+  L: TStringList;
   i: integer;
 begin
-  L:= TTntStringList.Create;
+  L:= TStringList.Create;
   try
     if not All then
     begin
@@ -1630,13 +1629,13 @@ end;
 
 function TfmProj.GetWorkDir: Widestring;
 var
-  L: TTntStringList;
+  L: TStringList;
 begin
   Result:= FOpts.WorkDir;
   if Result='' then
     if Assigned(FOnGetWorkDir) then
     begin
-      L:= TTntStringList.Create;
+      L:= TStringList.Create;
       try
         FOnGetWorkDir(Self, L);
         if L.Count>0 then
@@ -1649,12 +1648,12 @@ end;
 
 function TfmProj.GetProjDir: Widestring;
 var
-  L: TTntStringList;
+  L: TStringList;
 begin
   Result:= '';
   if Assigned(FOnGetProjDir) then
   begin
-    L:= TTntStringList.Create;
+    L:= TStringList.Create;
     try
       FOnGetProjDir(Self, L);
       if L.Count>0 then
@@ -1667,11 +1666,11 @@ end;
 
 procedure TfmProj.SetProjDir(const Dir: string);
 var
-  L: TTntStringList;
+  L: TStringList;
 begin
   if Assigned(FOnSetProjDir) then
   begin
-    L:= TTntStringList.Create;
+    L:= TStringList.Create;
     try
       L.Add(Dir);
       FOnSetProjDir(Self, L);

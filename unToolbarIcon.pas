@@ -4,15 +4,13 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, TntStdCtrls, ImgList, ExtDlgs, ExtCtrls,
-  TntForms,
-  PngImage;
+  Dialogs, StdCtrls, ImgList, ExtDlgs, ExtCtrls, PngImage;
 
 const
   MsgIcoCannotSave = 'Can''t save icon as png';
 
 type
-  TfmToolbarIcon = class(TTntForm)
+  TfmToolbarIcon = class(TForm)
     GroupBox1: TSpTBXGroupBox;
     btnDLL: TSpTBXRadioButton;
     btnPNG: TSpTBXRadioButton;

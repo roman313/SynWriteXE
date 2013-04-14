@@ -4,11 +4,10 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls,
-  TntForms, TntStdCtrls, ComCtrls, TntComCtrls, DKLang;
+  Dialogs, StdCtrls, ComCtrls, DKLang;
 
 type
-  TfmProjProps = class(TTntForm)
+  TfmProjProps = class(TForm)
     btnOk: TSpTBXButton;
     btnCan: TSpTBXButton;
     Pages: TTntPageControl;

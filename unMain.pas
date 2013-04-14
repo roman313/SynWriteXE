@@ -13,9 +13,7 @@ interface
 
 uses
   Windows, SysUtils, Messages, Controls, StdCtrls, ComCtrls, Classes, Menus, Forms,
-  ActnList, Dialogs, ImgList, ExtCtrls, Graphics,
-  TntForms, TntClasses,
-  Gauges,
+  ActnList, Dialogs, ImgList, ExtCtrls, Graphics, Gauges,
 
   {$ifdef SPELL}
   ad3LiveBase,
@@ -134,7 +132,7 @@ type
   end;
 
 type
-  TfmMain = class(TTntForm)
+  TfmMain = class(TForm)
     ActionList: TActionList;
     TBXDockTop: TSpTBXDock;
     tbFile: TSpTBXToolbar;
@@ -1688,8 +1686,8 @@ type
     FSplitHorz: boolean; //views splitter is horizontal
     FSplitter: Double; //views splitter position (%)
     FPageControl: TTntPageControl; //current TPageControl: PageControl1 or PageControl2
-    FListNewDocs: TTntStringList; //filenames list of templates (template\newdoc)
-    FListFiles: TTntStringList; //filenames list of mass search/replace operation
+    FListNewDocs: TStringList; //filenames list of templates (template\newdoc)
+    FListFiles: TStringList; //filenames list of mass search/replace operation
     FListValFN: Widestring; //filename for which HTML Tidy is called
     FSelBlank: boolean; //selection is blank (for Smart Hilite)
     FFullScr: boolean; //full-screen
@@ -6434,8 +6432,8 @@ begin
   FSyncBusy:= false;
   FPageControl:= PageControl1;
   FSplitter:= 50.0;
-  FListNewDocs:= TTntStringList.Create;
-  FListFiles:= TTntStringList.Create;
+  FListNewDocs:= TStringList.Create;
+  FListFiles:= TStringList.Create;
 
   FTabOut:= tbOut;
   FTabRight:= tbClip;
@@ -12949,8 +12947,8 @@ begin
   end;
 
   //Read CP.cfg
-  SS:= TStringList.create;
-  SK:= TStringlist.create;
+  SS:= TStringList.Create;
+  SK:= TStringList.Create;
   Ini:= TMemIniFile.Create(SynDir + 'CP.cfg');
   try
     Ini.ReadSections(SS);
@@ -14357,7 +14355,7 @@ procedure TfmMain.TBXItemCtxOpenSelClick(Sender: TObject);
 var
   sel, fn, s, dir, ext: Widestring;
   n, LnNum: integer;
-  Dirs, Dirs2: TTntStringList;
+  Dirs, Dirs2: TStringList;
 begin
   LnNum:= 0;
   sel:= CurrentEditor.SelText;
@@ -14403,8 +14401,8 @@ begin
   //find filename in Project paths
   if not IsFileExist(fn) then
   try
-    Dirs:= TTntStringList.Create;
-    Dirs2:= TTntStringList.Create;
+    Dirs:= TStringList.Create;
+    Dirs2:= TStringList.Create;
     
     SStringToList(opProjPaths, Dirs);
     if Assigned(fmProj) and (fmProj.FOpts.SearchDirs<>'') then
@@ -14563,7 +14561,7 @@ end;
 procedure TfmMain.DoAcpFromFile(List, Display: TWideStrings);
 var
   S, SWord: Widestring;
-  LL: TTntStringList;
+  LL: TStringList;
   i, NCaret: Integer;
   IsWord, AtCaret: boolean;
 begin
@@ -14575,7 +14573,7 @@ begin
   if Length(S) > i then
     SetLength(S, i);
 
-  LL:= TTntStringList.Create;
+  LL:= TStringList.Create;
   LL.Sorted:= true;
   LL.Duplicates:= dupIgnore;
   SWord:= '';
@@ -20054,14 +20052,14 @@ var
 var
   i, nPos: Integer;
   L: TList;
-  L_Str: TTntStringList;
+  L_Str: TStringList;
   ed: TSyntaxMemo;
   MLine: boolean;
   SLastLexer, SLexer: string;
 begin
   ed:= CurrentEditor;
   L:= TList.Create;
-  L_Str:= TTntStringList.Create;
+  L_Str:= TStringList.Create;
 
   CmtBegin:= '';
   CmtEnd:= '';
@@ -20233,13 +20231,13 @@ end;
 procedure TfmMain.DoAddFav(const fn: Widestring);
 var
   fn_ini: string;
-  L: TTntStringList;
+  L: TStringList;
 begin
   if fn='' then
     begin MsgBeep; Exit end;
   fn_ini:= SynFavIni;
 
-  L:= TTntStringList.Create;
+  L:= TStringList.Create;
   try
     if FileExists(fn_ini) then
       L.LoadFromFile(fn_ini);
@@ -20462,14 +20460,14 @@ procedure TfmMain.ProjFileOpen(Sender: TObject; Files: TTntStrings);
 var
   i: Integer;
   fn: Widestring;
-  Bads: TTntStringList;
+  Bads: TStringList;
 const
   cCnt = 10; //ask additional confirmation when many files opened
 begin
   if (Files.Count>cCnt) then
     if not MsgConfirmManyOpen(Files.Count) then Exit;
 
-  Bads:= TTntStringList.Create;
+  Bads:= TStringList.Create;
   try
     for i:= 0 to Files.Count-1 do
     begin
@@ -20637,7 +20635,7 @@ const
   cName = 'snippet';
 var
   fn: string;
-  L: TTntStringList;
+  L: TStringList;
   S: Widestring;
 begin
   S:= CurrentEditor.SelText;
@@ -20654,7 +20652,7 @@ begin
   if Assigned(fmClips) then
   begin
     fn:= fmClips.GetCurrentFN;
-    L:= TTntStringList.Create;
+    L:= TStringList.Create;
     try
       L.LoadFromFile(fn);
       L.Add(S);
@@ -23162,7 +23160,7 @@ var
   Ln1, Ln2: Integer;
   Pos1, Pos2, i: Integer;
   Col1, Col2: Integer;
-  L: TTntStringList;
+  L: TStringList;
   S: Widestring;
 begin
   Ed:= CurrentEditor;
@@ -23187,7 +23185,7 @@ begin
     Col2:= Ed.SelRect.Right;
   end;
 
-  L:= TTntStringList.Create;
+  L:= TStringList.Create;
   try
     for i:= Ln1 to Ln2 do
       L.Add(Ed.Lines[i]);
@@ -23913,14 +23911,14 @@ procedure TfmMain.ecProjectListExecute(Sender: TObject);
 var
   fn: Widestring;
   Ini: TIniFile;
-  Files: TTntStringList;
+  Files: TStringList;
   i: Integer;
 begin
   if (fmProj=nil) or (fmProj.TreeProj.Items.Count<=1) then
     begin MsgBeep; Exit end;
 
   Ini:= TIniFile.Create(SynIni);
-  Files:= TTntStringList.Create;
+  Files:= TStringList.Create;
 
   try
     for i:= 0 to fmProj.TreeProj.Items.Count-1 do

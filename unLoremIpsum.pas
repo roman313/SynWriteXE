@@ -4,12 +4,10 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls,
-  TntForms, TntStdCtrls,
-  Spin, DKLang;
+  Dialogs, StdCtrls, Spin, DKLang;
 
 type
-  TfmLoremIpsum = class(TTntForm)
+  TfmLoremIpsum = class(TForm)
     bOk: TSpTBXButton;
     bCopy: TSpTBXButton;
     bCan: TSpTBXButton;

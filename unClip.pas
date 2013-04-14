@@ -3,8 +3,7 @@ unit unClip;
 interface 
 
 uses
-  Windows, Messages, Forms, Classes, Controls, StdCtrls, TntStdCtrls,
-  TntClasses;
+  Windows, Messages, Forms, Classes, Controls, StdCtrls;
 
 type 
   TfmClip = class(TForm)
@@ -17,7 +16,7 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     FNextClipboardViewer: HWND;
-    FItems: TTntStringList;
+    FItems: TStringList;
     procedure Unset;
   protected
     procedure WMChangeCBChain(var Msg : TWMChangeCBChain); message WM_CHANGECBCHAIN;
@@ -45,7 +44,7 @@ begin
   { Initialize variable }
   FNextClipboardViewer:= 0;
   //Props
-  FItems:= TTntStringList.Create;
+  FItems:= TStringList.Create;
   FColorSel:= clHighlightText;
   FColorSelBk:= clHighlight;
 end;

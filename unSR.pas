@@ -4,9 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ExtCtrls, TntStdCtrls, TntClasses, TntForms, DKLang,
-  ComCtrls, Menus, TntMenus, Buttons,
-  unSearch;
+  Dialogs, StdCtrls, ExtCtrls, DKLang, ComCtrls, Menus, Buttons, unSearch;
 
 type
   TTrackBar = class(ComCtrls.TTrackBar)
@@ -50,7 +48,7 @@ procedure ReadFindOptions(
   var OptBkmk, OptExtSel: boolean);
 
 type
-  TfmSR = class(TTntForm)
+  TfmSR = class(TForm)
     bFindNext: TSpTBXButton;
     bFindAll: TSpTBXButton;
     bRepNext: TSpTBXButton;

@@ -4,12 +4,10 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Spin,
-  TntStdCtrls, TntForms,
-  DKLang;
+  Dialogs, StdCtrls, Spin, DKLang;
 
 type
-  TfmInsTxt = class(TTntForm)
+  TfmInsTxt = class(TForm)
     TntGroupBox1: TSpTBXGroupBox;
     bText: TSpTBXRadioButton;
     bNumber: TSpTBXRadioButton;

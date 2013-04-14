@@ -4,12 +4,10 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, TntStdCtrls,
-  TntForms,
-  DKLang;
+  Dialogs, StdCtrls, DKLang;
 
 type
-  TfmSRTree = class(TTntForm)
+  TfmSRTree = class(TForm)
     edText: TSpTBXComboBox;
     TntLabel1: TSpTBXLabel;
     gOp: TSpTBXGroupBox;

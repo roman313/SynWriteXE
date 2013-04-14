@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, TntStdCtrls, DKLang, ComCtrls, TntComCtrls;
+  Dialogs, StdCtrls, DKLang, ComCtrls;
 
 type
   TfmProps = class(TForm)

@@ -4,12 +4,10 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls,
-  TntStdCtrls, TntForms, TntClasses,
-  ecKeyMap, ExtCtrls, unProj;
+  Dialogs, StdCtrls, ecKeyMap, ExtCtrls, unProj;
 
 type
-  TfmProjList = class(TTntForm)
+  TfmProjList = class(TForm)
     List: TSpTBXListBox;
     Edit: TSpTBXEdit;
     TimerType: TTimer;
@@ -39,7 +37,7 @@ type
     fmProj: TfmProj;
     FColorSel: TColor;
     FColorSelBk: TColor;
-    FListFiles: TTntStringList;
+    FListFiles: TStringList;
   end;
 
 implementation

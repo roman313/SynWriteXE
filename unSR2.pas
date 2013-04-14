@@ -4,12 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, ExtCtrls, StdCtrls,
-  TntStdCtrls,
-  TntClasses,
-  TntDialogs,
-  TntForms,
-  DKLang;
+  Dialogs, ExtCtrls, StdCtrls, DKLang;
 
 type
    TTntCombobox = class(TntStdCtrls.TTntComboBox)
@@ -22,7 +17,7 @@ type
    end;
   
 type
-  TfmSRFiles = class(TTntForm)
+  TfmSRFiles = class(TForm)
     Label2: TSpTBXLabel;
     ed1: TSpTBXComboBox;
     Label4: TSpTBXLabel;
