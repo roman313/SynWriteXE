@@ -4,7 +4,9 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ExtCtrls, DKLang, ComCtrls, Menus, Buttons, unSearch;
+  Dialogs, StdCtrls, ExtCtrls, DKLang,
+  ComCtrls, Menus, Buttons,
+  unSearch;
 
 type
   TTrackBar = class(ComCtrls.TTrackBar)
@@ -13,10 +15,10 @@ type
   end;
 
 type
-   TTntCombobox = class(TntStdCtrls.TTntComboBox)
+   TCombobox = class(StdCtrls.TComboBox)
    public
      refSpec,
-     refRE: TSpTBXCheckBox;
+     refRE: TCheckBox;
    protected
      procedure ComboWndProc(var Message: TMessage; ComboWnd: HWnd;
        ComboProc: Pointer); override;
@@ -49,55 +51,55 @@ procedure ReadFindOptions(
 
 type
   TfmSR = class(TForm)
-    bFindNext: TSpTBXButton;
-    bFindAll: TSpTBXButton;
-    bRepNext: TSpTBXButton;
-    bRepAll: TSpTBXButton;
-    bCancel: TSpTBXButton;
-    ed1: TSpTBXComboBox;
-    labEd1: TSpTBXLabel;
-    ed2: TSpTBXComboBox;
-    labEd2: TSpTBXLabel;
-    gOp: TSpTBXGroupBox;
-    cbRE: TSpTBXCheckBox;
-    cbCase: TSpTBXCheckBox;
-    cbWords: TSpTBXCheckBox;
-    gScop: TSpTBXGroupBox;
-    gDir: TSpTBXGroupBox;
-    bFor: TSpTBXRadioButton;
-    bBack: TSpTBXRadioButton;
-    bHelp: TSpTBXButton;
-    cbSpec: TSpTBXCheckBox;
+    bFindNext: TButton;
+    bFindAll: TButton;
+    bRepNext: TButton;
+    bRepAll: TButton;
+    bCancel: TButton;
+    ed1: TComboBox;
+    labEd1: TLabel;
+    ed2: TComboBox;
+    labEd2: TLabel;
+    gOp: TGroupBox;
+    cbRE: TCheckBox;
+    cbCase: TCheckBox;
+    cbWords: TCheckBox;
+    gScop: TGroupBox;
+    gDir: TGroupBox;
+    bFor: TRadioButton;
+    bBack: TRadioButton;
+    bHelp: TButton;
+    cbSpec: TCheckBox;
     DKLanguageController1: TDKLanguageController;
-    cbCfm: TSpTBXCheckBox;
-    bCount: TSpTBXButton;
-    bRepInTabs: TSpTBXButton;
-    labRes: TSpTBXLabel;
+    cbCfm: TCheckBox;
+    bCount: TButton;
+    bRepInTabs: TButton;
+    labRes: TLabel;
     Timer1: TTimer;
-    bSkip: TSpTBXButton;
-    PanelTr: TSpTBXPanel;
-    labTr: TSpTBXLabel;
+    bSkip: TButton;
+    PanelTr: TPanel;
+    labTr: TLabel;
     TrackBar1: TTrackBar;
-    cbLoose: TSpTBXCheckBox;
-    labStyle: TSpTBXLabel;
-    labCnt: TSpTBXLabel;
+    cbLoose: TCheckBox;
+    labStyle: TLabel;
+    labCnt: TLabel;
     TimerCnt: TTimer;
-    mnuRe: TSpTBXPopupMenu;
-    labRe: TSpTBXLabel;
-    cbBk: TSpTBXCheckBox;
-    cbSel: TSpTBXCheckBox;
-    cbFromCur: TSpTBXCheckBox;
-    cbWrap: TSpTBXCheckBox;
-    cbExtSel: TSpTBXCheckBox;
-    bFindInTabs: TSpTBXButton;
-    cbSkipCol: TSpTBXCheckBox;
-    cbTokens: TSpTBXComboBox;
-    labMultiline: TSpTBXLabel;
-    ed1Memo: TTntMemo;
-    ed2Memo: TTntMemo;
+    mnuRe: TPopupMenu;
+    labRe: TLabel;
+    cbBk: TCheckBox;
+    cbSel: TCheckBox;
+    cbFromCur: TCheckBox;
+    cbWrap: TCheckBox;
+    cbExtSel: TCheckBox;
+    bFindInTabs: TButton;
+    cbSkipCol: TCheckBox;
+    cbTokens: TComboBox;
+    labMultiline: TLabel;
+    ed1Memo: TMemo;
+    ed2Memo: TMemo;
     bCombo1: TSpeedButton;
     bCombo2: TSpeedButton;
-    mnuCombo: TSpTBXPopupMenu;
+    mnuCombo: TPopupMenu;
     procedure FormShow(Sender: TObject);
     procedure ed1Change(Sender: TObject);
     procedure bHelpClick(Sender: TObject);
@@ -149,7 +151,7 @@ type
     FTopGScope,
     FHeight0: Integer;
     procedure mnuComboClick(Sender: TObject);
-    procedure DoCombo(ed: TSpTBXComboBox; edMemo: TTntMemo; edNum: integer);
+    procedure DoCombo(ed: TComboBox; edMemo: TMemo; edNum: integer);
     procedure ReClick(Sender: TObject);
     procedure DoAct(act: TSRAction);
     procedure SetOrig;
@@ -599,10 +601,10 @@ var
   S: string;
   ch: char;
 begin
-  if C is TTntCheckbox then S:= (C as TTntCheckbox).Caption else
-   if C is TTntRadioButton then S:= (C as TTntRadioButton).Caption else
-    if C is TTntLabel then S:= (C as TTntLabel).Caption else
-     if C is TTntButton then S:= (C as TTntButton).Caption else
+  if C is TCheckbox then S:= (C as TCheckbox).Caption else
+   if C is TRadioButton then S:= (C as TRadioButton).Caption else
+    if C is TLabel then S:= (C as TLabel).Caption else
+     if C is TButton then S:= (C as TButton).Caption else
       Exception.Create('Unknown control type: '+C.Name);
 
   ch:= #0;    
@@ -616,7 +618,7 @@ begin
     Result:= (ch=ch1) or (ch=ch2);
 end;
 
-  function H(C: TSpTBXCheckBox; ch1, ch2: char): boolean; overload;
+  function H(C: TCheckBox; ch1, ch2: char): boolean; overload;
   begin
     Result:= IsShortcutOk(C, ch1, ch2);
     if Result then
@@ -627,7 +629,7 @@ end;
       end;
   end;
 
-  function H(C: TSpTBXRadioButton; ch1, ch2: char): boolean; overload;
+  function H(C: TRadioButton; ch1, ch2: char): boolean; overload;
   begin
     Result:= IsShortcutOk(C, ch1, ch2);
     if Result then
@@ -640,7 +642,7 @@ end;
     end;
   end;
 
-  function H(C: TSpTBXLabel; ch1, ch2: char): boolean; overload;
+  function H(C: TLabel; ch1, ch2: char): boolean; overload;
   begin
     Result:= IsShortcutOk(C, ch1, ch2);
     if Result then
@@ -652,7 +654,7 @@ end;
     end;
   end;
 
-  function H(C: TSpTBXButton; ch1, ch2: char): boolean; overload;
+  function H(C: TButton; ch1, ch2: char): boolean; overload;
   begin
     Result:= IsShortcutOk(C, ch1, ch2);
     if Result then
@@ -680,23 +682,23 @@ begin
             Result := GetWindow(Result, GW_HWNDNEXT);
         end;
     end
-    else if (Target is TTntComboBox) then
+    else if (Target is TComboBox) then
     begin
         Result := GetWindow((Target as TWinControl).Handle, GW_CHILD);
         if (Result <> 0) then
         begin
-          if ((Target as TTntComboBox).Style = csSimple) then
+          if ((Target as TComboBox).Style = csSimple) then
             Result := GetWindow(Result, GW_HWNDNEXT);
         end;
     end;
 end;
 
-procedure DoUndo(ed: TSpTBXComboBox);
+procedure DoUndo(ed: TComboBox);
 begin
   SendMessage(GetEditHandle(ed), wm_undo, 0, 0);
 end;
 
-procedure DoCopy(ed: TSpTBXComboBox);
+procedure DoCopy(ed: TComboBox);
 begin
   SendMessage(GetEditHandle(ed), wm_copy, 0, 0);
 end;
@@ -728,10 +730,10 @@ begin
   if (key=Ord('Z')) and (Shift=[ssCtrl]) then
   begin
     if ed1.Focused or ed2.Focused then
-      DoUndo(ActiveControl as TTntCombobox)
+      DoUndo(ActiveControl as TCombobox)
     else
     if ed1Memo.Focused or ed2Memo.Focused then
-      (ActiveControl as TTntMemo).Undo;
+      (ActiveControl as TMemo).Undo;
     Handled:= true;
     Exit;
   end;
@@ -773,7 +775,7 @@ begin
        ((Key=vk_insert) and (Shift=[ssShift])) ) and
      (ed1Memo.Focused or ed2Memo.Focused) then
   begin
-    (ActiveControl as TTntMemo).PasteFromClipboard;
+    (ActiveControl as TMemo).PasteFromClipboard;
     Handled:= true;
     Exit
   end;
@@ -782,7 +784,7 @@ begin
   if (Key=Ord('C')) and (Shift=[ssCtrl]) then
     if ed1Memo.Focused or ed2Memo.Focused then
   begin
-    (ActiveControl as TTntMemo).CopyToClipboard;
+    (ActiveControl as TMemo).CopyToClipboard;
     Handled:= true;
     Exit
   end;
@@ -791,7 +793,7 @@ begin
   if (Key=Ord('X')) and (Shift=[ssCtrl]) then
     if ed1Memo.Focused or ed2Memo.Focused then
   begin
-    (ActiveControl as TTntMemo).CutToClipboard;
+    (ActiveControl as TMemo).CutToClipboard;
     Handled:= true;
     Exit
   end;
@@ -800,7 +802,7 @@ begin
   if (Key=Ord('A')) and (Shift=[ssCtrl]) then
     if ed1Memo.Focused or ed2Memo.Focused then
   begin
-    (ActiveControl as TTntMemo).SelectAll;
+    (ActiveControl as TMemo).SelectAll;
     Handled:= true;
     Exit
   end;
@@ -953,14 +955,14 @@ const
 procedure TfmSR.mnuRePopup(Sender: TObject);
 var
   i: Integer;
-  m: TTntMenuitem;
+  m: TMenuitem;
 begin
   with mnuRe do
   begin
     Items.Clear;
     for i:= 0 to High(cRe) do
     begin
-      m:= TTntMenuItem.Create(Self);
+      m:= TMenuItem.Create(Self);
       if cRe[i].id = '' then
         m.Caption:= '-'
       else
@@ -974,8 +976,8 @@ end;
 
 procedure TfmSR.ReClick(Sender: TObject);
 var
-  ed: TSpTBXComboBox;
-  edMemo: TTntMemo;
+  ed: TComboBox;
+  edMemo: TMemo;
   S: Widestring;
   N: Integer;
 begin
@@ -1052,7 +1054,7 @@ begin
   cbWrap.Enabled:= cbFromCur.Enabled and cbFromCur.Checked;
 end;
 
-procedure TTntCombobox.ComboWndProc(var Message: TMessage;
+procedure TCombobox.ComboWndProc(var Message: TMessage;
   ComboWnd: HWnd; ComboProc: Pointer);
 begin
   if (Message.Msg = WM_PASTE) and
@@ -1212,8 +1214,8 @@ end;
 
 procedure TfmSR.mnuComboClick(Sender: TObject);
 var
-  ed: TSpTBXComboBox;
-  edMemo: TTntMemo;
+  ed: TComboBox;
+  edMemo: TMemo;
   n: Integer;
 begin
   if mnuCombo.Tag=1 then
@@ -1232,10 +1234,10 @@ begin
     edMemo.SetFocus;
 end;
 
-procedure TfmSR.DoCombo(ed: TSpTBXComboBox; edMemo: TTntMemo; edNum: integer);
+procedure TfmSR.DoCombo(ed: TComboBox; edMemo: TMemo; edNum: integer);
 var
   i: Integer;
-  mi: TTntMenuItem;
+  mi: TMenuItem;
   p: TPoint;
 begin
   with mnuCombo do
@@ -1244,7 +1246,7 @@ begin
     Items.Clear;
     for i:= 0 to ed.Items.Count-1 do
     begin
-      mi:= TTntMenuitem.Create(Self);
+      mi:= TMenuitem.Create(Self);
       mi.Caption:= ed.Items[i];
       mi.OnClick:= mnuComboClick;
       mi.Tag:= i;

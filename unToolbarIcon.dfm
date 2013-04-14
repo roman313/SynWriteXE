@@ -17,13 +17,13 @@ object fmToolbarIcon: TfmToolbarIcon
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object GroupBox1: TSpTBXGroupBox
+  object GroupBox1: TGroupBox
     Left = 8
     Top = 4
     Width = 385
     Height = 197
     TabOrder = 0
-    object Label2: TSpTBXLabel
+    object Label2: TLabel
       Left = 8
       Top = 96
       Width = 55
@@ -37,7 +37,7 @@ object fmToolbarIcon: TfmToolbarIcon
       Height = 65
       Center = True
     end
-    object LabelErr: TSpTBXLabel
+    object LabelErr: TLabel
       Left = 8
       Top = 176
       Width = 10
@@ -51,7 +51,7 @@ object fmToolbarIcon: TfmToolbarIcon
       ParentFont = False
       Visible = False
     end
-    object btnDLL: TSpTBXRadioButton
+    object btnDLL: TRadioButton
       Left = 8
       Top = 16
       Width = 273
@@ -61,7 +61,7 @@ object fmToolbarIcon: TfmToolbarIcon
       TabOrder = 0
       TabStop = True
     end
-    object btnPNG: TSpTBXRadioButton
+    object btnPNG: TRadioButton
       Left = 8
       Top = 32
       Width = 273
@@ -69,7 +69,7 @@ object fmToolbarIcon: TfmToolbarIcon
       Caption = 'Read PNG image'
       TabOrder = 1
     end
-    object btnBrowse: TSpTBXButton
+    object btnBrowse: TButton
       Left = 8
       Top = 60
       Width = 97
@@ -78,7 +78,7 @@ object fmToolbarIcon: TfmToolbarIcon
       TabOrder = 2
       OnClick = btnBrowseClick
     end
-    object ListBox1: TSpTBXListBox
+    object ListBox1: TListBox
       Left = 9
       Top = 112
       Width = 368
@@ -91,7 +91,7 @@ object fmToolbarIcon: TfmToolbarIcon
       OnDrawItem = ListBox1DrawItem
       OnMeasureItem = ListBox1MeasureItem
     end
-    object btnShell32: TSpTBXButton
+    object btnShell32: TButton
       Left = 112
       Top = 60
       Width = 97
@@ -101,7 +101,7 @@ object fmToolbarIcon: TfmToolbarIcon
       OnClick = btnShell32Click
     end
   end
-  object bOk: TSpTBXButton
+  object bOk: TButton
     Left = 208
     Top = 208
     Width = 90
@@ -111,7 +111,7 @@ object fmToolbarIcon: TfmToolbarIcon
     TabOrder = 1
     OnClick = bOkClick
   end
-  object bCan: TSpTBXButton
+  object bCan: TButton
     Left = 304
     Top = 208
     Width = 90

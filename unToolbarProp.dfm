@@ -18,7 +18,7 @@ object fmToolbarProp: TfmToolbarProp
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object bOk: TSpTBXButton
+  object bOk: TButton
     Left = 208
     Top = 351
     Width = 90
@@ -28,7 +28,7 @@ object fmToolbarProp: TfmToolbarProp
     ModalResult = 1
     TabOrder = 1
   end
-  object bCan: TSpTBXButton
+  object bCan: TButton
     Left = 304
     Top = 351
     Width = 90
@@ -38,42 +38,42 @@ object fmToolbarProp: TfmToolbarProp
     ModalResult = 2
     TabOrder = 2
   end
-  object GroupBoxCmd: TSpTBXGroupBox
+  object GroupBoxCmd: TGroupBox
     Left = 8
     Top = 96
     Width = 385
     Height = 249
     Caption = 'Buttons'
     TabOrder = 0
-    object Label2: TSpTBXLabel
+    object Label2: TLabel
       Left = 8
       Top = 16
       Width = 52
       Height = 13
       Caption = 'Button list:'
     end
-    object LabelHint: TSpTBXLabel
+    object LabelHint: TLabel
       Left = 8
       Top = 124
       Width = 23
       Height = 13
       Caption = 'Hint:'
     end
-    object LabelCmd: TSpTBXLabel
+    object LabelCmd: TLabel
       Left = 8
       Top = 164
       Width = 51
       Height = 13
       Caption = 'Command:'
     end
-    object LabelIcon: TSpTBXLabel
+    object LabelIcon: TLabel
       Left = 8
       Top = 204
       Width = 25
       Height = 13
       Caption = 'Icon:'
     end
-    object ListBox1: TSpTBXListBox
+    object ListBox1: TListBox
       Left = 9
       Top = 32
       Width = 368
@@ -89,7 +89,7 @@ object fmToolbarProp: TfmToolbarProp
       OnDragOver = ListBox1DragOver
       OnDrawItem = ListBox1DrawItem
     end
-    object edHint: TSpTBXEdit
+    object edHint: TEdit
       Left = 8
       Top = 140
       Width = 265
@@ -97,7 +97,7 @@ object fmToolbarProp: TfmToolbarProp
       TabOrder = 3
       OnChange = edHintChange
     end
-    object edCmd: TSpTBXEdit
+    object edCmd: TEdit
       Left = 8
       Top = 180
       Width = 265
@@ -105,7 +105,7 @@ object fmToolbarProp: TfmToolbarProp
       TabOrder = 4
       OnChange = edCmdChange
     end
-    object btnBrowseIcon: TSpTBXButton
+    object btnBrowseIcon: TButton
       Left = 8
       Top = 220
       Width = 97
@@ -114,7 +114,7 @@ object fmToolbarProp: TfmToolbarProp
       TabOrder = 6
       OnClick = btnBrowseIconClick
     end
-    object btnBrowseCmd: TSpTBXButton
+    object btnBrowseCmd: TButton
       Left = 280
       Top = 180
       Width = 97
@@ -122,7 +122,7 @@ object fmToolbarProp: TfmToolbarProp
       Caption = 'Browse...'
       TabOrder = 5
     end
-    object btnAdd: TSpTBXButton
+    object btnAdd: TButton
       Left = 8
       Top = 96
       Width = 97
@@ -131,7 +131,7 @@ object fmToolbarProp: TfmToolbarProp
       TabOrder = 1
       OnClick = btnAddClick
     end
-    object btnDel: TSpTBXButton
+    object btnDel: TButton
       Left = 216
       Top = 96
       Width = 97
@@ -140,7 +140,7 @@ object fmToolbarProp: TfmToolbarProp
       TabOrder = 2
       OnClick = btnDelClick
     end
-    object btnSep: TSpTBXButton
+    object btnSep: TButton
       Left = 112
       Top = 96
       Width = 97
@@ -150,42 +150,42 @@ object fmToolbarProp: TfmToolbarProp
       OnClick = btnSepClick
     end
   end
-  object GroupBoxProp: TSpTBXGroupBox
+  object GroupBoxProp: TGroupBox
     Left = 8
     Top = 4
     Width = 385
     Height = 89
     Caption = 'Properties'
     TabOrder = 3
-    object Label6: TSpTBXLabel
+    object Label6: TLabel
       Left = 8
       Top = 16
       Width = 78
       Height = 13
       Caption = 'Toolbar caption:'
     end
-    object Label1: TSpTBXLabel
+    object Label1: TLabel
       Left = 8
       Top = 64
       Width = 51
       Height = 13
       Caption = 'Icons size:'
     end
-    object LabelSize: TSpTBXLabel
+    object LabelSize: TLabel
       Left = 120
       Top = 64
       Width = 30
       Height = 13
       Caption = '10x10'
     end
-    object edCaption: TSpTBXEdit
+    object edCaption: TEdit
       Left = 8
       Top = 32
       Width = 265
       Height = 21
       TabOrder = 0
     end
-    object btnIconSize: TSpTBXButton
+    object btnIconSize: TButton
       Left = 176
       Top = 58
       Width = 97

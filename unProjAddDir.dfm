@@ -17,7 +17,7 @@ object fmProjAddDir: TfmProjAddDir
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object btnOk: TSpTBXButton
+  object btnOk: TButton
     Left = 192
     Top = 204
     Width = 91
@@ -27,7 +27,7 @@ object fmProjAddDir: TfmProjAddDir
     ModalResult = 1
     TabOrder = 1
   end
-  object btnCan: TSpTBXButton
+  object btnCan: TButton
     Left = 288
     Top = 204
     Width = 91
@@ -37,48 +37,48 @@ object fmProjAddDir: TfmProjAddDir
     ModalResult = 2
     TabOrder = 2
   end
-  object GroupBox1: TSpTBXGroupBox
+  object GroupBox1: TGroupBox
     Left = 8
     Top = 4
     Width = 369
     Height = 193
     TabOrder = 0
-    object Label1: TSpTBXLabel
+    object Label1: TLabel
       Left = 8
       Top = 88
       Width = 289
       Height = 13
       Caption = 'Include file extensions, comma-separated (all files if empty):'
     end
-    object Label2: TSpTBXLabel
+    object Label2: TLabel
       Left = 8
       Top = 128
       Width = 283
       Height = 13
       Caption = 'Exclude file extensions, comma-separated (none if empty):'
     end
-    object Label3: TSpTBXLabel
+    object Label3: TLabel
       Left = 8
       Top = 12
       Width = 59
       Height = 13
       Caption = 'Folder path:'
     end
-    object edInc: TSpTBXEdit
+    object edInc: TEdit
       Left = 8
       Top = 104
       Width = 353
       Height = 21
       TabOrder = 2
     end
-    object edExc: TSpTBXEdit
+    object edExc: TEdit
       Left = 8
       Top = 144
       Width = 353
       Height = 21
       TabOrder = 3
     end
-    object cbNoBin: TSpTBXCheckBox
+    object cbNoBin: TCheckBox
       Left = 8
       Top = 168
       Width = 337
@@ -88,7 +88,7 @@ object fmProjAddDir: TfmProjAddDir
       State = cbChecked
       TabOrder = 4
     end
-    object edDir: TSpTBXEdit
+    object edDir: TEdit
       Left = 8
       Top = 28
       Width = 353
@@ -97,7 +97,7 @@ object fmProjAddDir: TfmProjAddDir
       ReadOnly = True
       TabOrder = 0
     end
-    object cbSubdir: TSpTBXCheckBox
+    object cbSubdir: TCheckBox
       Left = 8
       Top = 52
       Width = 337

@@ -8,17 +8,17 @@ uses
 
 type
   TfmProjAddDir = class(TForm)
-    btnOk: TSpTBXButton;
-    btnCan: TSpTBXButton;
-    GroupBox1: TSpTBXGroupBox;
-    Label1: TSpTBXLabel;
-    Label2: TSpTBXLabel;
-    edInc: TSpTBXEdit;
-    edExc: TSpTBXEdit;
-    cbNoBin: TSpTBXCheckBox;
-    Label3: TSpTBXLabel;
-    edDir: TSpTBXEdit;
-    cbSubdir: TSpTBXCheckBox;
+    btnOk: TButton;
+    btnCan: TButton;
+    GroupBox1: TGroupBox;
+    Label1: TLabel;
+    Label2: TLabel;
+    edInc: TEdit;
+    edExc: TEdit;
+    cbNoBin: TCheckBox;
+    Label3: TLabel;
+    edDir: TEdit;
+    cbSubdir: TCheckBox;
     DKLanguageController1: TDKLanguageController;
     procedure FormShow(Sender: TObject);
   private

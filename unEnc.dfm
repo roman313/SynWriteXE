@@ -16,7 +16,7 @@ object fmEnc: TfmEnc
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
-  object Button1: TSpTBXButton
+  object Button1: TButton
     Left = 16
     Top = 44
     Width = 257
@@ -26,7 +26,7 @@ object fmEnc: TfmEnc
     ModalResult = 6
     TabOrder = 0
   end
-  object Button2: TSpTBXButton
+  object Button2: TButton
     Left = 16
     Top = 72
     Width = 257

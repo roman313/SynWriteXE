@@ -8,24 +8,24 @@ uses
 
 type
   TfmSort = class(TForm)
-    bOk: TSpTBXButton;
-    bCan: TSpTBXButton;
-    boxGeneral: TSpTBXGroupBox;
-    cbAsc: TSpTBXRadioButton;
-    cbDesc: TSpTBXRadioButton;
-    cbCase: TSpTBXCheckBox;
-    cbRemDups: TSpTBXCheckBox;
-    boxColumn: TSpTBXGroupBox;
-    cbCol1: TSpTBXCheckBox;
-    cbCol2: TSpTBXCheckBox;
+    bOk: TButton;
+    bCan: TButton;
+    boxGeneral: TGroupBox;
+    cbAsc: TRadioButton;
+    cbDesc: TRadioButton;
+    cbCase: TCheckBox;
+    cbRemDups: TCheckBox;
+    boxColumn: TGroupBox;
+    cbCol1: TCheckBox;
+    cbCol2: TCheckBox;
     edCol1: TSpinEdit;
     edCol2: TSpinEdit;
-    boxType: TSpTBXGroupBox;
-    cbNumeric: TSpTBXRadioButton;
+    boxType: TGroupBox;
+    cbNumeric: TRadioButton;
     DKLanguageController1: TDKLanguageController;
-    cbAscii: TSpTBXRadioButton;
-    cbUnicodeRaw: TSpTBXRadioButton;
-    cbUnicode: TSpTBXRadioButton;
+    cbAscii: TRadioButton;
+    cbUnicodeRaw: TRadioButton;
+    cbUnicode: TRadioButton;
     procedure cbCol1Click(Sender: TObject);
     procedure cbCol2Click(Sender: TObject);
     procedure edCol1Change(Sender: TObject);

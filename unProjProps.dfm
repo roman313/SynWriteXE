@@ -16,7 +16,7 @@ object fmProjProps: TfmProjProps
   OnShow = TntFormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object btnOk: TSpTBXButton
+  object btnOk: TButton
     Left = 296
     Top = 296
     Width = 91
@@ -26,7 +26,7 @@ object fmProjProps: TfmProjProps
     ModalResult = 1
     TabOrder = 1
   end
-  object btnCan: TSpTBXButton
+  object btnCan: TButton
     Left = 392
     Top = 296
     Width = 91
@@ -36,72 +36,76 @@ object fmProjProps: TfmProjProps
     ModalResult = 2
     TabOrder = 2
   end
-  object Pages: TSpTBXTabControl
+  object Pages: TPageControl
     Left = 8
     Top = 4
     Width = 473
     Height = 285
     ActivePage = TntTabSheet1
     TabOrder = 0
-    object TntTabSheet1: TSpTBXTabSheet
+    object TntTabSheet1: TTabSheet
       Caption = 'General'
-      object Label4: TSpTBXLabel
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
+      object Label4: TLabel
         Left = 8
         Top = 76
         Width = 74
         Height = 13
         Caption = 'Working folder:'
       end
-      object TntLabel1: TSpTBXLabel
+      object TntLabel1: TLabel
         Left = 8
         Top = 116
         Width = 43
         Height = 13
         Caption = 'Main file:'
       end
-      object TntLabel3: TSpTBXLabel
+      object TntLabel3: TLabel
         Left = 8
         Top = 4
         Width = 75
         Height = 13
         Caption = 'New document:'
       end
-      object Label1: TSpTBXLabel
+      object Label1: TLabel
         Left = 8
         Top = 20
         Width = 47
         Height = 13
         Caption = 'Encoding:'
       end
-      object Label2: TSpTBXLabel
+      object Label2: TLabel
         Left = 144
         Top = 20
         Width = 49
         Height = 13
         Caption = 'Line ends:'
       end
-      object Label3: TSpTBXLabel
+      object Label3: TLabel
         Left = 280
         Top = 20
         Width = 31
         Height = 13
         Caption = 'Lexer:'
       end
-      object TntLabel4: TSpTBXLabel
+      object TntLabel4: TLabel
         Left = 8
         Top = 156
         Width = 61
         Height = 13
         Caption = 'Files sorting:'
       end
-      object edWorkDir: TSpTBXEdit
+      object edWorkDir: TEdit
         Left = 8
         Top = 92
         Width = 321
         Height = 21
         TabOrder = 3
       end
-      object edMainFN: TSpTBXEdit
+      object edMainFN: TEdit
         Left = 8
         Top = 132
         Width = 321
@@ -110,7 +114,7 @@ object fmProjProps: TfmProjProps
         ReadOnly = True
         TabOrder = 5
       end
-      object btnWorkDir: TSpTBXButton
+      object btnWorkDir: TButton
         Left = 336
         Top = 92
         Width = 91
@@ -119,13 +123,12 @@ object fmProjProps: TfmProjProps
         TabOrder = 4
         OnClick = btnWorkDirClick
       end
-      object cbEnc: TSpTBXComboBox
+      object cbEnc: TComboBox
         Left = 8
         Top = 36
         Width = 129
         Height = 21
         Style = csDropDownList
-        ItemHeight = 13
         TabOrder = 0
         Items.Strings = (
           'ANSI (Windows)'
@@ -135,37 +138,34 @@ object fmProjProps: TfmProjProps
           'UTF-16'
           'UTF-16 BE')
       end
-      object cbEnds: TSpTBXComboBox
+      object cbEnds: TComboBox
         Left = 144
         Top = 36
         Width = 129
         Height = 21
         Style = csDropDownList
-        ItemHeight = 13
         TabOrder = 1
         Items.Strings = (
           'Windows (CR LF)'
           'Unix (LF)'
           'Mac (CR)')
       end
-      object cbLexer: TSpTBXComboBox
+      object cbLexer: TComboBox
         Left = 280
         Top = 36
         Width = 177
         Height = 21
         Style = csDropDownList
         DropDownCount = 24
-        ItemHeight = 13
         Sorted = True
         TabOrder = 2
       end
-      object cbSort: TSpTBXComboBox
+      object cbSort: TComboBox
         Left = 8
         Top = 172
         Width = 169
         Height = 21
         Style = csDropDownList
-        ItemHeight = 13
         TabOrder = 6
         Items.Strings = (
           'Don'#39't sort'
@@ -177,9 +177,13 @@ object fmProjProps: TfmProjProps
           'By size, descending')
       end
     end
-    object TntTabSheet2: TSpTBXTabSheet
+    object TntTabSheet2: TTabSheet
       Caption = 'Search folders'
-      object TntLabel2: TSpTBXLabel
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
+      object TntLabel2: TLabel
         Left = 8
         Top = 168
         Width = 441
@@ -199,7 +203,7 @@ object fmProjProps: TfmProjProps
         TabOrder = 0
         OnKeyDown = edDirsKeyDown
       end
-      object btnDirAdd: TSpTBXButton
+      object btnDirAdd: TButton
         Left = 8
         Top = 140
         Width = 137

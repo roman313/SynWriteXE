@@ -4,7 +4,9 @@ interface
 
 uses
   Windows, Messages, SysUtils, Classes, Controls, Forms,
-  IniFiles, unMain, ATSynPlugins, XPMan, AppEvnts;
+  IniFiles,
+  unMain, ATSynPlugins,
+  XPMan, AppEvnts;
 
 type
   TfmSynEx = class(TForm)
@@ -43,8 +45,7 @@ implementation
 uses
   VistaAltFixUnit, DKLang,
   ShellApi,
-  ATxSProc, ATxFProc, unProc,
-  TntSystem, TntSysUtils;
+  ATxSProc, ATxFProc, unProc;
 
 {$R *.dfm}
 
@@ -81,7 +82,7 @@ begin
   Result:=
     (S='') or
     (S[1]='/') or
-    (WideLowerCase(WideExtractFileName(S))='notepad.exe');
+    (WideLowerCase(ExtractFileName(S))='notepad.exe');
   if not Result then
     FixFilenamePath(S);
 end;
@@ -104,7 +105,7 @@ begin
   f:= FindWindowW('TfmSynEx.UnicodeClass', nil);
   if f = 0 then Exit;
   Result:= false;
-  NParams:= WideParamCount;
+  NParams:= ParamCount;
 
   if NParams=0 then
   begin
@@ -117,7 +118,7 @@ begin
   else
   for i:= 1 to NParams do
   begin
-    S:= WideParamStr(i);
+    S:= ParamStr(i);
     if IsUnneededParam(S) then Continue;
 
     FillChar(Data, SizeOf(Data), 0);
@@ -177,7 +178,7 @@ begin
   end;
 
   if (SF <> '') and FBigSized(SF) then begin
-    Msg(WideFormat(DKLangConstW('MBig'), [WideExtractFileName(SF)]));
+    Msg(WideFormat(DKLangConstW('MBig'), [ExtractFileName(SF)]));
     Result:= false;
     Exit
   end;
@@ -193,9 +194,9 @@ var
   S: Widestring;
 begin
   Result:= True;
-  for i:= 1 to WideParamCount do
+  for i:= 1 to ParamCount do
   begin
-    S:= WideParamStr(i);
+    S:= ParamStr(i);
     if IsUnneededParam(S) then Continue;
 
     if not CheckFile(S) then
@@ -236,7 +237,7 @@ begin
   LoadPos;
   DragAcceptFiles(Handle, True);
 
-  if WideParamCount=0 then
+  if ParamCount=0 then
   begin
     //reopen session (only when no params)
     if fmMain.opHistSessionLoad then
@@ -247,9 +248,9 @@ begin
   end
   else
     //open params
-    for i:= 1 to WideParamCount do
+    for i:= 1 to ParamCount do
     begin
-      S:= WideParamStr(i);
+      S:= ParamStr(i);
       if IsUnneededParam(S) then Continue;
 
       //now open file or project

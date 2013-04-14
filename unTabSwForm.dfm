@@ -20,7 +20,7 @@ object fmTabSw: TfmTabSw
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 14
-  object Panel1: TSpTBXPanel
+  object Panel1: TPanel
     Left = 0
     Top = 0
     Width = 520
@@ -38,7 +38,7 @@ object fmTabSw: TfmTabSw
     DesignSize = (
       520
       164)
-    object List: TSpTBXListBox
+    object List: TListBox
       Left = 136
       Top = 4
       Width = 249
@@ -48,7 +48,7 @@ object fmTabSw: TfmTabSw
       TabOrder = 0
       OnClick = ListClick
     end
-    object Panel2: TSpTBXPanel
+    object Panel2: TPanel
       Left = 2
       Top = 124
       Width = 516
@@ -57,14 +57,14 @@ object fmTabSw: TfmTabSw
       BevelInner = bvLowered
       BevelOuter = bvLowered
       TabOrder = 1
-      object Label1: TSpTBXLabel
+      object Label1: TLabel
         Left = 6
         Top = 4
         Width = 35
         Height = 14
         Caption = 'Label1'
       end
-      object Label2: TSpTBXLabel
+      object Label2: TLabel
         Left = 6
         Top = 20
         Width = 35

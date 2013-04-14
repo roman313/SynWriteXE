@@ -4,7 +4,9 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Spin, ExtCtrls, PngImage, ImgList;
+  Dialogs, StdCtrls, TntStdCtrls, Spin, ExtCtrls,
+  TntForms,
+  PngImage, ImgList;
 
 type
   TToolbarProp = record
@@ -19,27 +21,27 @@ const
 
 type
   TfmToolbarProp = class(TForm)
-    bOk: TSpTBXButton;
-    bCan: TSpTBXButton;
-    GroupBoxCmd: TSpTBXGroupBox;
-    ListBox1: TSpTBXListBox;
-    Label2: TSpTBXLabel;
-    LabelHint: TSpTBXLabel;
-    edHint: TSpTBXEdit;
-    LabelCmd: TSpTBXLabel;
-    edCmd: TSpTBXEdit;
-    LabelIcon: TSpTBXLabel;
-    btnBrowseIcon: TSpTBXButton;
-    btnBrowseCmd: TSpTBXButton;
-    GroupBoxProp: TSpTBXGroupBox;
-    Label6: TSpTBXLabel;
-    edCaption: TSpTBXEdit;
-    Label1: TSpTBXLabel;
-    LabelSize: TSpTBXLabel;
-    btnIconSize: TSpTBXButton;
-    btnAdd: TSpTBXButton;
-    btnDel: TSpTBXButton;
-    btnSep: TSpTBXButton;
+    bOk: TButton;
+    bCan: TButton;
+    GroupBoxCmd: TGroupBox;
+    ListBox1: TListBox;
+    Label2: TLabel;
+    LabelHint: TLabel;
+    edHint: TEdit;
+    LabelCmd: TLabel;
+    edCmd: TEdit;
+    LabelIcon: TLabel;
+    btnBrowseIcon: TButton;
+    btnBrowseCmd: TButton;
+    GroupBoxProp: TGroupBox;
+    Label6: TLabel;
+    edCaption: TEdit;
+    Label1: TLabel;
+    LabelSize: TLabel;
+    btnIconSize: TButton;
+    btnAdd: TButton;
+    btnDel: TButton;
+    btnSep: TButton;
     procedure FormShow(Sender: TObject);
     procedure btnIconSizeClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -343,7 +345,7 @@ procedure TfmToolbarProp.ListBox1DragOver(Sender, Source: TObject; X,
   Y: Integer; State: TDragState; var Accept: Boolean);
 var
   Idx: integer;
-  List: TSpTBXListBox;
+  List: TListbox;
 begin
   List:= Listbox1;
   if Source = List then
@@ -359,7 +361,7 @@ procedure TfmToolbarProp.ListBox1DragDrop(Sender, Source: TObject; X,
   Y: Integer);
 var
   Idx, CurIdx: integer;
-  List: TSpTBXListBox;
+  List: TListbox;
 begin
   List:= Listbox1;
   if Source = List then

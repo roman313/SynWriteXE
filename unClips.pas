@@ -7,12 +7,15 @@ uses
   Dialogs, StdCtrls;
 
 type
+  WideString = String;
+
+type
   TClipsEvent = procedure(Sender: TObject; const S: Widestring) of object;
 
 type
   TfmClips = class(TForm)
-    Combo: TSpTBXComboBox;
-    List: TSpTBXListBox;
+    Combo: TComboBox;
+    List: TListBox;
     procedure ComboChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
@@ -43,7 +46,7 @@ implementation
 uses
   StrUtils,
   ATxSProc,
-  TntClipbrd;
+  Clipbrd;
 
 {$R *.dfm}
 
@@ -199,7 +202,7 @@ begin
   end;
   if (Key=Ord('C')) and (Shift=[ssCtrl]) then
   begin
-    TntClipboard.AsWideText:= GetCurrentClip;
+    Clipboard.AsText:= GetCurrentClip;
     Key:= 0;
     Exit
   end;

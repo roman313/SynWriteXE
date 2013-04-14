@@ -8,27 +8,27 @@ uses
 
 type
   TfmToolOutput = class(TForm)
-    bOk: TSpTBXButton;
-    bCancel: TSpTBXButton;
-    TntGroupBox1: TSpTBXGroupBox;
-    TntLabel1: TSpTBXLabel;
-    TntLabel2: TSpTBXLabel;
-    edRE: TSpTBXEdit;
-    TntLabel3: TSpTBXLabel;
-    TntLabel4: TSpTBXLabel;
-    edFN: TSpTBXComboBox;
-    edLn: TSpTBXComboBox;
-    edCol: TSpTBXComboBox;
-    TntLabel5: TSpTBXLabel;
+    bOk: TButton;
+    bCancel: TButton;
+    TntGroupBox1: TGroupBox;
+    TntLabel1: TLabel;
+    TntLabel2: TLabel;
+    edRE: TEdit;
+    TntLabel3: TLabel;
+    TntLabel4: TLabel;
+    edFN: TComboBox;
+    edLn: TComboBox;
+    edCol: TComboBox;
+    TntLabel5: TLabel;
     DKLanguageController1: TDKLanguageController;
-    TntLabel6: TSpTBXLabel;
-    edTest: TSpTBXEdit;
-    bTest: TSpTBXButton;
+    TntLabel6: TLabel;
+    edTest: TEdit;
+    bTest: TButton;
     Bevel1: TBevel;
-    bPre: TSpTBXButton;
+    bPre: TButton;
     Bevel2: TBevel;
-    mnuPreset: TSpTBXPopupMenu;
-    cbNoTag: TSpTBXCheckBox;
+    mnuPreset: TPopupMenu;
+    cbNoTag: TCheckBox;
     procedure TntFormCreate(Sender: TObject);
     procedure bTestClick(Sender: TObject);
     procedure bPreClick(Sender: TObject);

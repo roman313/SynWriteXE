@@ -3,16 +3,30 @@ unit unProc;
 interface
 
 uses
-  ExtCtrls, Types, Forms, SysUtils, Classes, Graphics, Controls,
-  Messages, ecSyntMemo, ecKeyMap, ecStrUtils, ecMemoStrings,
-  ecSyntDlg, ecSyntTree;
+  ExtCtrls, Types, Forms, SysUtils,
+  Classes,
+  Graphics,
+  Controls,
+  ComCtrls,
+  StdCtrls,
+  Messages,
+  ecSyntMemo,
+  ecKeyMap,
+  ecStrUtils,
+  ecMemoStrings,
+  ecSyntDlg,
+  ecSyntTree,
+  Clipbrd;
+
+type
+  WideString = String;
 
 function DoInputFilename(const dkmsg: string; var S: Widestring): boolean;
 function DoInputString(const dkmsg: string; var S: Widestring): boolean;
 
 function EditorGetCollapsedRanges(Ed: TSyntaxMemo): string;
 procedure EditorSetCollapsedRanges(Ed: TSyntaxMemo; S: Widestring);
-procedure DoDeleteComboItem(ed: TSpTBXComboBox);
+procedure DoDeleteComboItem(ed: TComboBox);
 procedure DoCheckDialogOverlapsCaret(Ed: TCustomSyntaxMemo; Form: TForm);
 function ScaleFontSize(Size: Integer; Form: TForm): Integer;
 function EditorTokenName(Ed: TSyntaxMemo; StartPos, EndPos: integer): string;
@@ -31,8 +45,8 @@ procedure FixLineEnds(var S: Widestring; const ATextFormat: TTextFormat);
 procedure FixFilenamePath(var S: Widestring);
 function IsDirOkForSaving(const S: Widestring): boolean;
 
-function IsImageHint(const S: string): boolean; overload;
-function IsImageHint(S: string; const SFilename: Widestring; var SResult: Widestring): boolean; overload;
+function IsImageHint(const S: AnsiString): boolean; overload;
+function IsImageHint(S: AnsiString; const SFilename: Widestring; var SResult: Widestring): boolean; overload;
 
 type
   TSynStrArray = array[0..7] of Widestring;
@@ -93,9 +107,9 @@ procedure DoAddColorToImageList(ImageList: TImageList;
 
 procedure DoListKeys(SyntKeymapping: TSyntKeyMapping;
   const fn: string);
-procedure DoCopyToEdit(ed: TSpTBXComboBox;
+procedure DoCopyToEdit(ed: TComboBox;
   IsSpec, IsRegex: boolean; const Str: Widestring);
-procedure DoPasteToEdit(ed: TSpTBXComboBox;
+procedure DoPasteToEdit(ed: TComboBox;
   IsSpec, IsRegex: boolean);
 
 function Min2(N, M: integer): integer;
@@ -106,9 +120,9 @@ function WideMinimizeName(const Filename: WideString; Canvas: TCanvas;
   MaxLen: Integer): WideString;
 procedure ShowHelp(const SynDir: string; ID: TSynHelpId; Handle: THandle);
 procedure CenterMemoPos(Ed: TCustomSyntaxMemo; AGotoMode: boolean);
-procedure SSave(ed: TSpTBXComboBox; SRCount: integer);
-procedure SSaveCombo(ed: TSpTBXComboBox; const fn, section: string);
-procedure SLoadCombo(ed: TSpTBXComboBox; const fn, section: string; UseLast: boolean = true);
+procedure SSave(ed: TComboBox; SRCount: integer);
+procedure SSaveCombo(ed: TComboBox; const fn, section: string);
+procedure SLoadCombo(ed: TComboBox; const fn, section: string; UseLast: boolean = true);
 
 type
   TFinderInTree = class(TecFindInTreeDialog)
@@ -122,7 +136,7 @@ type
   end;
 
 type
-  TTntPageControl = class(TntComCtrls.TTntPageControl)
+  TPageControl = class(ComCtrls.TPageControl)
   protected
     procedure AdjustClientRect(var Rect: TRect); override;
     procedure WMNCHitTest(var Message: TWMNCHitTest); message WM_NCHITTEST; //Info url below
@@ -130,8 +144,8 @@ type
 
 function FFreeFN(const Name, ext, Dir: Widestring): Widestring;
 function SFilterNum(const s: string): integer;
-function SFilterIdxToExt(const Filter: string; Index: integer): string;
-function SFilterNameToIdx(const Filter, name: string): integer;
+function SFilterIdxToExt(const Filter: AnsiString; Index: integer): AnsiString;
+function SFilterNameToIdx(const Filter, name: AnsiString): integer;
 
 procedure Msg(const S: WideString);
 procedure MsgInfo(const S: WideString);
@@ -188,8 +202,6 @@ uses
   DKLang,
   Math,
   Dialogs,
-  TntClipbrd,
-  TntSysUtils,
   unSRTree, unRename;
 
 procedure Msg(const S: WideString);
@@ -221,7 +233,7 @@ begin
   MsgError(S + #13#13 + E.ClassName + #13 + E.Message);
 end;
 
-procedure TTntPageControl.AdjustClientRect(var Rect: TRect);
+procedure TPageControl.AdjustClientRect(var Rect: TRect);
 begin
   Rect:= DisplayRect;
   Rect:= Types.Rect(Rect.Left-4, Rect.Top-6, Rect.Right+4, Rect.Bottom+4);
@@ -388,9 +400,9 @@ begin
 end;
 
 // 'Text files (*.txt)|*.TXT|Pascal files (*.pas)|*.PAS'
-function SFilterIdxToExt(const Filter: string; Index: integer): string;
+function SFilterIdxToExt(const Filter: AnsiString; Index: integer): AnsiString;
 var
-  s: string;
+  s: AnsiString;
   i: Integer;
 begin
   S:= Filter;
@@ -410,9 +422,9 @@ end;
 
 // 'Text files (*.txt)|*.TXT|Pascal files (*.pas)|*.PAS'
 // 'Text files' - 1, 'Pascal files' - 2
-function SFilterNameToIdx(const Filter, name: string): integer;
+function SFilterNameToIdx(const Filter, name: AnsiString): integer;
 var
-  s, ss: string;
+  s, ss: AnsiString;
   i:Integer;
 begin
   Result:= 1;
@@ -476,7 +488,7 @@ const
   SRCount = 50;
   SR_EOL = '<<SW_EOL>>';
 
-procedure SSaveCombo(ed: TSpTBXComboBox; const fn, section: string);
+procedure SSaveCombo(ed: TComboBox; const fn, section: string);
 var
   i: Integer;
   S: Ansistring;
@@ -499,7 +511,7 @@ begin
   end;
 end;
 
-procedure SLoadCombo(ed: TSpTBXComboBox; const fn, section: string;
+procedure SLoadCombo(ed: TComboBox; const fn, section: string;
   UseLast: boolean = true);
 var
   i: Integer;
@@ -525,7 +537,7 @@ begin
   end;
 end;
 
-procedure SSave(ed: TSpTBXComboBox; SRCount: integer);
+procedure SSave(ed: TComboBox; SRCount: integer);
 var
   idx: integer;
   S: Widestring;
@@ -650,12 +662,12 @@ begin
   if N>M then Result:= N else Result:= M;
 end;
 
-procedure DoPasteToEdit(ed: TSpTBXComboBox;
+procedure DoPasteToEdit(ed: TComboBox;
   IsSpec, IsRegex: boolean);
 var
   S: Widestring;
 begin
-  S:= TntClipboard.AsWideText;
+  S:= Clipboard.AsText;
   if IsSpec then
     ed.SelText:= SEscapeSpec(S)
   else
@@ -665,7 +677,7 @@ begin
     ed.SelText:= S;
 end;
 
-procedure DoCopyToEdit(ed: TSpTBXComboBox;
+procedure DoCopyToEdit(ed: TComboBox;
   IsSpec, IsRegex: boolean; const Str: Widestring);
 begin
   if IsSpec then
@@ -757,8 +769,8 @@ begin
       end;
 
       sname:= SyntKeyMapping.Items[i].DisplayName;
-      SReplaceAll(sname, '<', '&lt;');
-      SReplaceAll(sname, '>', '&gt;');
+      SReplaceAllW(sname, '<', '&lt;');
+      SReplaceAllW(sname, '>', '&gt;');
 
       Writeln(f, '<tr><td>');
       Write(f, '  '+sname);
@@ -816,8 +828,8 @@ var
   Name: WideString;
 begin
   Result := FileName;
-  Dir := WideExtractFilePath(Result);
-  Name := WideExtractFileName(Result);
+  Dir := ExtractFilePath(Result);
+  Name := ExtractFileName(Result);
 
   if (Length(Dir) >= 2) and (Dir[2] = ':') then
   begin
@@ -961,8 +973,8 @@ end;
 function CompareListDate(List: TStringList; Index1, Index2: Integer): Integer;
 var d1, d2: integer;
 begin
-  d1:= WideFileAge(List[Index1]);
-  d2:= WideFileAge(List[Index2]);
+  d1:= FileAge(List[Index1]);
+  d2:= FileAge(List[Index2]);
   Result:= Trunc(FileDateToDateTime(d1) - FileDateToDateTime(d2));
 end;
 
@@ -1065,7 +1077,7 @@ begin
   end;
 end;
 
-procedure TTntPageControl.WMNCHitTest(var Message: TWMNCHitTest);
+procedure TPageControl.WMNCHitTest(var Message: TWMNCHitTest);
 // http://stackoverflow.com/questions/14283304/delphi-how-to-handle-click-on-pagecontrols-empty-space
 begin
   inherited;
@@ -1077,12 +1089,12 @@ end;
 const
   cImageHintList = 'jpg,jpeg,jpe,jfif,bmp,png,gif,ico';
 
-function IsImageHint(const S: string): boolean;
+function IsImageHint(const S: AnsiString): boolean;
 begin
   Result:= SFileExtensionMatch(S, cImageHintList);
 end;  
 
-function IsImageHint(S: string; const SFilename: Widestring; var SResult: Widestring): boolean;
+function IsImageHint(S: AnsiString; const SFilename: Widestring; var SResult: Widestring): boolean;
 begin
   Result:= false;
   SResult:= '';
@@ -1101,7 +1113,7 @@ begin
     SReplaceAll(S, '/', '\');
     //append path only for local filenames w/o drive, w/o "http://"
     if Pos(':', S)=0 then
-      SResult:= WideExtractFilePath(SFileName) + S
+      SResult:= ExtractFilePath(SFileName) + S
     else
       SResult:= S;
   end;
@@ -1123,8 +1135,8 @@ end;
 
 procedure FixFilenamePath(var S: Widestring);
 begin
-  if WideExtractFileDir(S)='' then
-    S:= WideExcludeTrailingBackslash(WideGetCurrentDir)+'\'+S;
+  if ExtractFileDir(S)='' then
+    S:= ExcludeTrailingBackslash(GetCurrentDir)+'\'+S;
 end;
 
 procedure FixLineEnds(var S: Widestring; const ATextFormat: TTextFormat);
@@ -1418,7 +1430,7 @@ begin
   end;
 end;
 
-procedure DoDeleteComboItem(ed: TSpTBXComboBox);
+procedure DoDeleteComboItem(ed: TComboBox);
 begin
   if ed.DroppedDown then
     ed.Items.Delete(ed.ItemIndex);
@@ -1455,8 +1467,8 @@ begin
   try
     labRename.Caption:= DKLangConstW(dkmsg);
 
-    edName.Text:= WideChangeFileExt(S, '');
-    edExt.Text:= Copy(WideExtractFileExt(S), 2, MaxInt);
+    edName.Text:= ChangeFileExt(S, '');
+    edExt.Text:= Copy(ExtractFileExt(S), 2, MaxInt);
 
     Result:= ShowModal=mrOk;
     if Result then

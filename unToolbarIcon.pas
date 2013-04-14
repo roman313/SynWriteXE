@@ -4,28 +4,30 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ImgList, ExtDlgs, ExtCtrls, PngImage;
+  Dialogs, StdCtrls, TntStdCtrls, ImgList, ExtDlgs, ExtCtrls,
+  TntForms,
+  PngImage;
 
 const
   MsgIcoCannotSave = 'Can''t save icon as png';
 
 type
   TfmToolbarIcon = class(TForm)
-    GroupBox1: TSpTBXGroupBox;
-    btnDLL: TSpTBXRadioButton;
-    btnPNG: TSpTBXRadioButton;
-    btnBrowse: TSpTBXButton;
-    bOk: TSpTBXButton;
-    bCan: TSpTBXButton;
-    ListBox1: TSpTBXListBox;
-    Label2: TSpTBXLabel;
+    GroupBox1: TGroupBox;
+    btnDLL: TRadioButton;
+    btnPNG: TRadioButton;
+    btnBrowse: TButton;
+    bOk: TButton;
+    bCan: TButton;
+    ListBox1: TListBox;
+    Label2: TLabel;
     ImageList32: TImageList;
     ImageList16: TImageList;
     OpenDialogDLL: TOpenDialog;
     OpenDialogPNG: TOpenDialog;
     Image1: TImage;
-    LabelErr: TSpTBXLabel;
-    btnShell32: TSpTBXButton;
+    LabelErr: TLabel;
+    btnShell32: TButton;
     procedure ListBox1MeasureItem(Control: TWinControl; Index: Integer;
       var Height: Integer);
     procedure ListBox1DrawItem(Control: TWinControl; Index: Integer;

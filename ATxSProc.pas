@@ -5,6 +5,9 @@ interface
 uses
   Windows, SysUtils;
 
+type
+  WideString = String;
+
 type TSynCharArray = array[1..50] of Integer;
 procedure SGetCharArray(S, Filter: Widestring; var Arr: TSynCharArray);
 function SSubstringMatch(const Str, SFilter: Widestring): boolean;
@@ -37,9 +40,9 @@ function SNumLeadSpaces(const s: Widestring): integer;
 function SFormatNum(N, Digits: Integer): string;
 function SDelLastCR(const s: Widestring): Widestring;
 function SDeleteTags(const s: Widestring): Widestring;
-procedure SDeleteTo(var s: string; const sto: string);
+procedure SDeleteTo(var s: AnsiString; const sto: AnsiString);
 procedure SDeleteToW(var s: Widestring; const sto: Widestring);
-procedure SDeleteFrom(var S: string; const SubStr: string);
+procedure SDeleteFrom(var S: AnsiString; const SubStr: AnsiString);
 procedure SDeleteFromW(var S: Widestring; const SubStr: Widestring);
 function SGetItem(var S: Widestring; const sep: Char = ','): Widestring;
 function SExpandVars(const S: WideString): WideString;
@@ -47,9 +50,9 @@ function SExpanded(const S: WideString): Boolean;
 
 procedure SReplace(var S: string; const SFrom, STo: string);
 procedure SReplaceW(var S: WideString; const SFrom, STo: WideString);
-procedure SReplaceAll(var S: string; const SFrom, STo: string);
+procedure SReplaceAll(var S: AnsiString; const SFrom, STo: AnsiString);
 procedure SReplaceAllW(var S: WideString; const SFrom, STo: WideString);
-procedure SReplaceIAll(var S: string; const SFrom, STo: string);
+procedure SReplaceIAll(var S: AnsiString; const SFrom, STo: AnsiString);
 
 type
 {  TStringDecodeRec = record
@@ -148,7 +151,7 @@ begin
   end;
 end;
 
-procedure SReplaceAll(var S: string; const SFrom, STo: string);
+procedure SReplaceAll(var S: AnsiString; const SFrom, STo: AnsiString);
 var
   i: Integer;
 begin
@@ -172,7 +175,7 @@ begin
   until False;
 end;
 
-procedure SReplaceIAll(var S: string; const SFrom, STo: string);
+procedure SReplaceIAll(var S: AnsiString; const SFrom, STo: AnsiString);
 var
   i: Integer;
 begin
@@ -716,7 +719,7 @@ begin
   Delete(s, 1, i);
 end;
 
-procedure SDeleteFrom(var S: string; const SubStr: string);
+procedure SDeleteFrom(var S: AnsiString; const SubStr: AnsiString);
 var
   N: Integer;
 begin
@@ -747,7 +750,7 @@ begin
   until false;
 end;
 
-procedure SDeleteTo(var s: string; const sto: string);
+procedure SDeleteTo(var s: AnsiString; const sto: AnsiString);
 var
   i: integer;
 begin

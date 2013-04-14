@@ -7,7 +7,6 @@
 unit unHints;
 
 interface
-
 uses
   Windows, SysUtils, Controls, Forms, Classes, Graphics, Messages;
 

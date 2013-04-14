@@ -4,33 +4,36 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ComCtrls, DKLang;
+  Dialogs, StdCtrls, ComCtrls, DKLang, FileCtrl;
+
+type
+  WideString = String;
 
 type
   TfmProjProps = class(TForm)
-    btnOk: TSpTBXButton;
-    btnCan: TSpTBXButton;
-    Pages: TTntPageControl;
-    TntTabSheet1: TTntTabSheet;
-    TntTabSheet2: TTntTabSheet;
-    edDirs: TTntMemo;
-    Label4: TSpTBXLabel;
-    edWorkDir: TSpTBXEdit;
-    TntLabel1: TSpTBXLabel;
-    edMainFN: TSpTBXEdit;
-    btnWorkDir: TSpTBXButton;
-    TntLabel3: TSpTBXLabel;
-    Label1: TSpTBXLabel;
-    cbEnc: TSpTBXComboBox;
-    Label2: TSpTBXLabel;
-    cbEnds: TSpTBXComboBox;
-    Label3: TSpTBXLabel;
-    cbLexer: TSpTBXComboBox;
-    btnDirAdd: TSpTBXButton;
-    TntLabel2: TSpTBXLabel;
+    btnOk: TButton;
+    btnCan: TButton;
+    Pages: TPageControl;
+    TntTabSheet1: TTabSheet;
+    TntTabSheet2: TTabSheet;
+    edDirs: TMemo;
+    Label4: TLabel;
+    edWorkDir: TEdit;
+    TntLabel1: TLabel;
+    edMainFN: TEdit;
+    btnWorkDir: TButton;
+    TntLabel3: TLabel;
+    Label1: TLabel;
+    cbEnc: TComboBox;
+    Label2: TLabel;
+    cbEnds: TComboBox;
+    Label3: TLabel;
+    cbLexer: TComboBox;
+    btnDirAdd: TButton;
+    TntLabel2: TLabel;
     DKLanguageController1: TDKLanguageController;
-    TntLabel4: TSpTBXLabel;
-    cbSort: TSpTBXComboBox;
+    TntLabel4: TLabel;
+    cbSort: TComboBox;
     procedure btnWorkDirClick(Sender: TObject);
     procedure btnDirAddClick(Sender: TObject);
     procedure TntFormShow(Sender: TObject);
@@ -44,9 +47,6 @@ type
 
 implementation
 
-uses
-  TntFileCtrl;
-
 {$R *.dfm}
 
 procedure TfmProjProps.btnWorkDirClick(Sender: TObject);
@@ -54,7 +54,7 @@ var
   SDir: Widestring;
 begin
   SDir:= edWorkDir.Text;
-  if WideSelectDirectory('', '', SDir) then
+  if SelectDirectory('', '', SDir) then
     edWorkDir.Text:= SDir;
 end;
 
@@ -63,7 +63,7 @@ var
   SDir: Widestring;
 begin
   SDir:= edWorkDir.Text;
-  if WideSelectDirectory('', '', SDir) then
+  if SelectDirectory('', '', SDir) then
     edDirs.Lines.Add(SDir);
 end;
 

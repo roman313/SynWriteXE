@@ -18,7 +18,7 @@ object fmToolOutput: TfmToolOutput
   OnShow = TntFormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object bOk: TSpTBXButton
+  object bOk: TButton
     Left = 128
     Top = 222
     Width = 90
@@ -28,7 +28,7 @@ object fmToolOutput: TfmToolOutput
     ModalResult = 1
     TabOrder = 1
   end
-  object bCancel: TSpTBXButton
+  object bCancel: TButton
     Left = 224
     Top = 222
     Width = 90
@@ -38,13 +38,13 @@ object fmToolOutput: TfmToolOutput
     ModalResult = 2
     TabOrder = 2
   end
-  object TntGroupBox1: TSpTBXGroupBox
+  object TntGroupBox1: TGroupBox
     Left = 8
     Top = 0
     Width = 305
     Height = 217
     TabOrder = 0
-    object TntLabel1: TSpTBXLabel
+    object TntLabel1: TLabel
       Left = 8
       Top = 44
       Width = 96
@@ -52,7 +52,7 @@ object fmToolOutput: TfmToolOutput
       Caption = '&Regular expression:'
       FocusControl = edRE
     end
-    object TntLabel2: TSpTBXLabel
+    object TntLabel2: TLabel
       Left = 8
       Top = 100
       Width = 46
@@ -60,14 +60,14 @@ object fmToolOutput: TfmToolOutput
       Caption = '&Filename:'
       FocusControl = edFN
     end
-    object TntLabel3: TSpTBXLabel
+    object TntLabel3: TLabel
       Left = 8
       Top = 84
       Width = 123
       Height = 13
       Caption = 'Subexpressions numbers:'
     end
-    object TntLabel4: TSpTBXLabel
+    object TntLabel4: TLabel
       Left = 104
       Top = 100
       Width = 23
@@ -75,7 +75,7 @@ object fmToolOutput: TfmToolOutput
       Caption = '&Line:'
       FocusControl = edLn
     end
-    object TntLabel5: TSpTBXLabel
+    object TntLabel5: TLabel
       Left = 200
       Top = 100
       Width = 39
@@ -83,7 +83,7 @@ object fmToolOutput: TfmToolOutput
       Caption = '&Column:'
       FocusControl = edCol
     end
-    object TntLabel6: TSpTBXLabel
+    object TntLabel6: TLabel
       Left = 8
       Top = 172
       Width = 79
@@ -105,14 +105,14 @@ object fmToolOutput: TfmToolOutput
       Height = 9
       Shape = bsBottomLine
     end
-    object edRE: TSpTBXEdit
+    object edRE: TEdit
       Left = 8
       Top = 60
       Width = 289
       Height = 21
       TabOrder = 1
     end
-    object edFN: TSpTBXComboBox
+    object edFN: TComboBox
       Left = 8
       Top = 116
       Width = 73
@@ -122,7 +122,7 @@ object fmToolOutput: TfmToolOutput
       ItemHeight = 13
       TabOrder = 2
     end
-    object edLn: TSpTBXComboBox
+    object edLn: TComboBox
       Left = 104
       Top = 116
       Width = 73
@@ -132,7 +132,7 @@ object fmToolOutput: TfmToolOutput
       ItemHeight = 13
       TabOrder = 3
     end
-    object edCol: TSpTBXComboBox
+    object edCol: TComboBox
       Left = 200
       Top = 116
       Width = 73
@@ -142,7 +142,7 @@ object fmToolOutput: TfmToolOutput
       ItemHeight = 13
       TabOrder = 4
     end
-    object edTest: TSpTBXEdit
+    object edTest: TEdit
       Left = 8
       Top = 188
       Width = 193
@@ -150,7 +150,7 @@ object fmToolOutput: TfmToolOutput
       TabOrder = 6
       OnChange = edTestChange
     end
-    object bTest: TSpTBXButton
+    object bTest: TButton
       Left = 208
       Top = 188
       Width = 89
@@ -159,7 +159,7 @@ object fmToolOutput: TfmToolOutput
       TabOrder = 7
       OnClick = bTestClick
     end
-    object bPre: TSpTBXButton
+    object bPre: TButton
       Left = 8
       Top = 12
       Width = 97
@@ -168,7 +168,7 @@ object fmToolOutput: TfmToolOutput
       TabOrder = 0
       OnClick = bPreClick
     end
-    object cbNoTag: TSpTBXCheckBox
+    object cbNoTag: TCheckBox
       Left = 8
       Top = 144
       Width = 289
@@ -196,7 +196,7 @@ object fmToolOutput: TfmToolOutput
       74696F6E000600426576656C32000009006D6E75507265736574000007006362
       4E6F54616701010000000D000000070043617074696F6E00}
   end
-  object mnuPreset: TSpTBXPopupMenu
+  object mnuPreset: TPopupMenu
     OnPopup = mnuPresetPopup
     Left = 264
     Top = 32

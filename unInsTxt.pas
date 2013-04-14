@@ -4,43 +4,44 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Spin, DKLang;
+  Dialogs, StdCtrls, Spin,
+  DKLang;
 
 type
   TfmInsTxt = class(TForm)
-    TntGroupBox1: TSpTBXGroupBox;
-    bText: TSpTBXRadioButton;
-    bNumber: TSpTBXRadioButton;
-    bBullets: TSpTBXRadioButton;
-    TntLabel1: TSpTBXLabel;
-    TntLabel2: TSpTBXLabel;
-    ed1: TSpTBXComboBox;
-    ed2: TSpTBXComboBox;
+    TntGroupBox1: TGroupBox;
+    bText: TRadioButton;
+    bNumber: TRadioButton;
+    bBullets: TRadioButton;
+    TntLabel1: TLabel;
+    TntLabel2: TLabel;
+    ed1: TComboBox;
+    ed2: TComboBox;
     edStart: TSpinEdit;
     edDigits: TSpinEdit;
-    edTail: TSpTBXComboBox;
-    TntLabel3: TSpTBXLabel;
-    TntLabel4: TSpTBXLabel;
-    lab1: TSpTBXLabel;
-    lab2: TSpTBXLabel;
-    TntGroupBox2: TSpTBXGroupBox;
-    TntLabel8: TSpTBXLabel;
-    bAtCol: TSpTBXRadioButton;
-    bAfterSp: TSpTBXRadioButton;
+    edTail: TComboBox;
+    TntLabel3: TLabel;
+    TntLabel4: TLabel;
+    lab1: TLabel;
+    lab2: TLabel;
+    TntGroupBox2: TGroupBox;
+    TntLabel8: TLabel;
+    bAtCol: TRadioButton;
+    bAfterSp: TRadioButton;
     edCol: TSpinEdit;
-    cbSkip: TSpTBXCheckBox;
-    bOk: TSpTBXButton;
-    bCan: TSpTBXButton;
-    bAfterStr: TSpTBXRadioButton;
-    edStrAfter: TSpTBXComboBox;
+    cbSkip: TCheckBox;
+    bOk: TButton;
+    bCan: TButton;
+    bAfterStr: TRadioButton;
+    edStrAfter: TComboBox;
     DKLanguageController1: TDKLanguageController;
-    TntLabel5: TSpTBXLabel;
-    TntLabel6: TSpTBXLabel;
-    edBegin: TSpTBXComboBox;
-    TntGroupBox3: TSpTBXGroupBox;
-    labNoteSel: TSpTBXLabel;
-    labNoteNoSel: TSpTBXLabel;
-    labCounter: TSpTBXLabel;
+    TntLabel5: TLabel;
+    TntLabel6: TLabel;
+    edBegin: TComboBox;
+    TntGroupBox3: TGroupBox;
+    labNoteSel: TLabel;
+    labNoteNoSel: TLabel;
+    labCounter: TLabel;
     edCounter: TSpinEdit;
     procedure edStartChange(Sender: TObject);
     procedure FormShow(Sender: TObject);

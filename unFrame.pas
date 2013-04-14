@@ -27,19 +27,19 @@ type
     ecSpellChecker: TecSpellChecker;
     HyperlinkHighlighter: THyperlinkHighlighter;
     TextSource: TecEmbeddedObjects;
-    PopupSplitter: TSpTBXPopupMenu;
-    TBXItemSplitHorz: TSpTBXItem;
-    TBXItemSplit70_30: TSpTBXItem;
-    TBXItemSplit60_40: TSpTBXItem;
-    TBXItemSplit50_50: TSpTBXItem;
-    TBXItemSplit40_60: TSpTBXItem;
-    TBXItemSplit30_70: TSpTBXItem;
-    TBXItemSplit20_80: TSpTBXItem;
-    TBXItemSplit80_20: TSpTBXItem;
-    TBXSeparatorItem1: TSpTBXSeparatorItem;
-    TBXItemSplitCaption: TSpTBXItem;
+    PopupSplitter: TTBXPopupMenu;
+    TBXItemSplitHorz: TTBXItem;
+    TBXItemSplit70_30: TTBXItem;
+    TBXItemSplit60_40: TTBXItem;
+    TBXItemSplit50_50: TTBXItem;
+    TBXItemSplit40_60: TTBXItem;
+    TBXItemSplit30_70: TTBXItem;
+    TBXItemSplit20_80: TTBXItem;
+    TBXItemSplit80_20: TTBXItem;
+    TBXSeparatorItem1: TTBXSeparatorItem;
+    TBXItemSplitCaption: TTBXItem;
     PanelMap: TPaintBox;
-    Panel1: TSpTBXPanel;
+    Panel1: TPanel;
     EditorMaster: TSyntaxMemo;
     Splitter2: TSplitter;
     EditorSlave: TSyntaxMemo;
@@ -92,7 +92,7 @@ type
     procedure PanelMapMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
     procedure ecSpellCheckerCheckWord(Sender: TObject;
-      const AWord: WideString; APos: Integer; var Valid: Boolean);
+      const AWord: String; APos: Integer; var Valid: Boolean);
     procedure EditorMasterContextPopup(Sender: TObject; MousePos: TPoint;
       var Handled: Boolean);
     procedure EditorMasterFinishAnalysis(Sender: TObject);
@@ -202,9 +202,7 @@ uses
   ATxImgHint,
   DKLang,
 
-  TntComCtrls,
-  TntSysUtils,
-  Dialogs, TntDialogs;
+  Dialogs;
 
 {$R *.dfm}
 
@@ -310,8 +308,11 @@ begin
   EditorSlave.Gutter.Images:= TfmMain(Owner).ImgListGutter;
 
   //AT2
+  // #WARNING PROP NOT EXISTS
+  (*
   EditorMaster.OnShowHint:= EditorShowHint;
   EditorSlave.OnShowHint:= EditorShowHint;
+  *)
 
   TControlHack(Splitter2).PopupMenu:= PopupSplitter;
   TControlHack(Splitter2).OnDblClick:= SplitterDblClick;
@@ -350,13 +351,13 @@ procedure TEditorFrame.SaveFile(const AFileName: Widestring);
   procedure Err;
   begin
     MessageBoxW(Handle,
-      PWChar(WideFormat(DKLangConstW('MAtt'), [WideExtractFileName(AFileName)])),
+      PWChar(WideFormat(DKLangConstW('MAtt'), [ExtractFileName(AFileName)])),
       'SynWrite', mb_ok or mb_iconerror);
   end;
   function CfmOvr: boolean;
   begin
     Result:= MessageBoxW(Handle,
-      PWChar(WideFormat(DKLangConstW('MOver'), [WideExtractFileName(AFileName)])),
+      PWChar(WideFormat(DKLangConstW('MOver'), [ExtractFileName(AFileName)])),
       'SynWrite', mb_okcancel or MB_ICONWARNING) = id_ok;
   end;
 var
@@ -432,7 +433,7 @@ begin
   if FFileName='' then
     Result:= DKLangConstW('Untitled')
   else
-    Result:= WideExtractFileName(FFileName);
+    Result:= ExtractFileName(FFileName);
 
   MaxLen:= TfmMain(Owner).opTabMaxLen;
   if (MaxLen>0) and (Length(Result)>MaxLen) then
@@ -460,8 +461,8 @@ end;
 procedure TEditorFrame.DoTitleChanged;
 begin
   if Parent<>nil then
-    if Parent is TTntTabSheet then
-      (Parent as TTntTabSheet).Caption := Title;
+    if Parent is TTabSheet then
+      (Parent as TTabSheet).Caption := Title;
   if Assigned(FOnTitleChanged) then
     FOnTitleChanged(Self);
 end;
@@ -789,7 +790,7 @@ begin
   if Modified then
   begin
     b:= (MessageBoxW(Handle,
-      PWChar(WideFormat(DKLangConstW('MRelMod'), [WideExtractFileName(FileName)])),
+      PWChar(WideFormat(DKLangConstW('MRelMod'), [ExtractFileName(FileName)])),
       'SynWrite', MB_okcancel or MB_iconwarning) = id_ok);
   end
   else
@@ -799,7 +800,7 @@ begin
   begin
     b:= (TfmMain(Owner).opNotif = 1) or
     (MessageBoxW(Handle,
-      PWChar(WideFormat(DKLangConstW('MRel'), [WideExtractFileName(FileName)])),
+      PWChar(WideFormat(DKLangConstW('MRel'), [ExtractFileName(FileName)])),
       'SynWrite', MB_okcancel or MB_iconwarning) = id_ok);
   end
   else
@@ -813,8 +814,8 @@ begin
       if not b then
       begin
         MsgBeep;
-        r:= WideMessageDlg(
-          WideFormat(DKLangConstW('MRel'), [WideExtractFileName(FileName)]),
+        r:= MessageDlg(
+          WideFormat(DKLangConstW('MRel'), [ExtractFileName(FileName)]),
           mtWarning, [mbOk, mbCancel, mbYesToAll, mbNoToAll], 0);
         NotifAll:= r = mrYesToAll;
         NotifNAll:= r = mrNoToAll;
@@ -1367,7 +1368,7 @@ begin
 end;
 
 procedure TEditorFrame.ecSpellCheckerCheckWord(Sender: TObject;
-  const AWord: WideString; APos: Integer; var Valid: Boolean);
+  const AWord: String; APos: Integer; var Valid: Boolean);
 begin
   TfmMain(Owner).SynSpellCheckerCheckWord(Self, AWord, APos, Valid);
 end;

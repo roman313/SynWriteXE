@@ -15,7 +15,7 @@ object fmSort: TfmSort
   Position = poScreenCenter
   PixelsPerInch = 96
   TextHeight = 13
-  object bOk: TSpTBXButton
+  object bOk: TButton
     Left = 216
     Top = 172
     Width = 89
@@ -25,7 +25,7 @@ object fmSort: TfmSort
     ModalResult = 1
     TabOrder = 3
   end
-  object bCan: TSpTBXButton
+  object bCan: TButton
     Left = 312
     Top = 172
     Width = 89
@@ -35,14 +35,14 @@ object fmSort: TfmSort
     ModalResult = 2
     TabOrder = 4
   end
-  object boxGeneral: TSpTBXGroupBox
+  object boxGeneral: TGroupBox
     Left = 8
     Top = 4
     Width = 194
     Height = 101
     Caption = 'General'
     TabOrder = 0
-    object cbAsc: TSpTBXRadioButton
+    object cbAsc: TRadioButton
       Left = 8
       Top = 16
       Width = 180
@@ -52,7 +52,7 @@ object fmSort: TfmSort
       TabOrder = 0
       TabStop = True
     end
-    object cbDesc: TSpTBXRadioButton
+    object cbDesc: TRadioButton
       Left = 8
       Top = 32
       Width = 180
@@ -60,7 +60,7 @@ object fmSort: TfmSort
       Caption = 'Descending'
       TabOrder = 1
     end
-    object cbCase: TSpTBXCheckBox
+    object cbCase: TCheckBox
       Left = 8
       Top = 56
       Width = 180
@@ -68,7 +68,7 @@ object fmSort: TfmSort
       Caption = 'Case sensitive'
       TabOrder = 2
     end
-    object cbRemDups: TSpTBXCheckBox
+    object cbRemDups: TCheckBox
       Left = 8
       Top = 72
       Width = 180
@@ -77,14 +77,14 @@ object fmSort: TfmSort
       TabOrder = 3
     end
   end
-  object boxColumn: TSpTBXGroupBox
+  object boxColumn: TGroupBox
     Left = 208
     Top = 4
     Width = 194
     Height = 101
     Caption = 'Columns'
     TabOrder = 1
-    object cbCol1: TSpTBXCheckBox
+    object cbCol1: TCheckBox
       Left = 8
       Top = 16
       Width = 180
@@ -93,7 +93,7 @@ object fmSort: TfmSort
       TabOrder = 0
       OnClick = cbCol1Click
     end
-    object cbCol2: TSpTBXCheckBox
+    object cbCol2: TCheckBox
       Left = 8
       Top = 56
       Width = 180
@@ -129,14 +129,14 @@ object fmSort: TfmSort
       OnKeyDown = edCol1KeyDown
     end
   end
-  object boxType: TSpTBXGroupBox
+  object boxType: TGroupBox
     Left = 8
     Top = 108
     Width = 194
     Height = 89
     Caption = 'Sorting type'
     TabOrder = 2
-    object cbNumeric: TSpTBXRadioButton
+    object cbNumeric: TRadioButton
       Left = 8
       Top = 64
       Width = 180
@@ -144,7 +144,7 @@ object fmSort: TfmSort
       Caption = 'Numeric'
       TabOrder = 2
     end
-    object cbAscii: TSpTBXRadioButton
+    object cbAscii: TRadioButton
       Left = 8
       Top = 48
       Width = 180
@@ -152,7 +152,7 @@ object fmSort: TfmSort
       Caption = 'ASCII'
       TabOrder = 1
     end
-    object cbUnicodeRaw: TSpTBXRadioButton
+    object cbUnicodeRaw: TRadioButton
       Left = 8
       Top = 16
       Width = 180
@@ -162,7 +162,7 @@ object fmSort: TfmSort
       TabOrder = 0
       TabStop = True
     end
-    object cbUnicode: TSpTBXRadioButton
+    object cbUnicode: TRadioButton
       Left = 8
       Top = 32
       Width = 180

@@ -1,8 +1,8 @@
 object fmMain: TfmMain
   Left = 229
   Top = 235
-  Width = 776
-  Height = 651
+  ClientHeight = 613
+  ClientWidth = 760
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -23,429 +23,403 @@ object fmMain: TfmMain
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object TBXDockTop: TSpTBXDock
+  object TBXDockTop: TTBXDock
     Left = 0
-    Top = 24
-    Width = 768
+    Top = 25
+    Width = 760
     Height = 26
-    object tbFile: TSpTBXToolbar
+    object tbFile: TTBXToolbar
       Left = 0
       Top = 0
+      Caption = 'File'
       Images = ImageListIconsStd
       TabOrder = 0
       OnClose = tbQsClose
       OnMove = tbViewMove
-      Caption = 'File'
-      object TBXItemToolNew: TSpTBXSubmenuItem
+      object TBXItemToolNew: TTBXSubmenuItem
         Tag = 700
         Action = fNew
         DropdownCombo = True
         LinkSubitems = TBXSubmenuItemFNew
         OnSelect = ButtonOnSelect
       end
-      object TBXSubmenuItemToolOpen: TSpTBXSubmenuItem
+      object TBXSubmenuItemToolOpen: TTBXSubmenuItem
         Tag = 701
         Action = fOpen
         DropdownCombo = True
         OnSelect = ButtonOnSelect
-        object MRUtbx: TSpTBXMRUListItem
+        object MRUtbx: TTBXMRUListItem
           MRUList = MRU
-          Caption = '(TBX MRU List)'
-          Hint = ''
         end
-        object TBXSeparatorItem7: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
+        object TBXSeparatorItem7: TTBXSeparatorItem
         end
-        object TBXItemClr: TSpTBXItem
+        object TBXItemClr: TTBXItem
+          Caption = 'Clear list'
+          Hint = 'Clear recent file list'
           Images = ImageListIconsStd
           OnClick = TBXItemClrClick
           OnSelect = ButtonOnSelect
-          Caption = 'Clear list'
-          Hint = 'Clear recent file list'
         end
       end
-      object TBXSubmenuItemToolSave: TSpTBXSubmenuItem
+      object TBXSubmenuItemToolSave: TTBXSubmenuItem
         Tag = 702
         Action = fSave
         DropdownCombo = True
         OnSelect = ButtonOnSelect
-        object TBXItem4: TSpTBXItem
+        object TBXItem4: TTBXItem
           Tag = 703
           Action = fSaveAs
           OnSelect = ButtonOnSelect
         end
-        object TBXItem11: TSpTBXItem
+        object TBXItem11: TTBXItem
           Tag = 705
           Action = fExportHTMLAction
           OnSelect = ButtonOnSelect
         end
-        object TBXItem15: TSpTBXItem
+        object TBXItem15: TTBXItem
           Tag = 704
           Action = fExportRTFAction
           OnSelect = ButtonOnSelect
         end
       end
-      object TBXItemToolPrint: TSpTBXSubmenuItem
+      object TBXItemToolPrint: TTBXSubmenuItem
         Tag = 630
         Action = ecPrintAction
         DropdownCombo = True
         OnSelect = ButtonOnSelect
-        object TBXItemPreview: TSpTBXItem
+        object TBXItemPreview: TTBXItem
           Action = ecPreviewAction
           OnSelect = ButtonOnSelect
         end
-        object TBXItemPageS: TSpTBXItem
+        object TBXItemPageS: TTBXItem
           Action = ecPageSetupAction
           OnSelect = ButtonOnSelect
         end
-        object TBXItemPrintS: TSpTBXItem
+        object TBXItemPrintS: TTBXItem
+          Caption = 'Printer setup...'
+          Hint = 'Printer setup'
           ImageIndex = 35
           OnClick = ecPrinterSetupExecute
           OnSelect = ButtonOnSelect
-          Caption = 'Printer setup...'
-          Hint = 'Printer setup'
         end
       end
-      object TBXSeparatorItem8: TSpTBXSeparatorItem
-        Caption = ''
-        Hint = ''
+      object TBXSeparatorItem8: TTBXSeparatorItem
       end
-      object TBXSubmenuItemTbFind: TSpTBXSubmenuItem
+      object TBXSubmenuItemTbFind: TTBXSubmenuItem
         Tag = 600
         Action = ecFind
-        DropdownCombo = True
-        OnSelect = ButtonOnSelect
         Caption = 'Find'
+        DropdownCombo = True
         Hint = 'Show "Find" dialog'
-        object TBXItemFNext: TSpTBXItem
-          OnClick = TBXItemFNextClick
-          OnSelect = ButtonOnSelect
+        OnSelect = ButtonOnSelect
+        object TBXItemFNext: TTBXItem
           Caption = 'Find next'
           Hint = 'Find next occurance of search string'
-        end
-        object TBXItemFPrev: TSpTBXItem
-          OnClick = TBXItemFPrevClick
+          OnClick = TBXItemFNextClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemFPrev: TTBXItem
           Caption = 'Find previous'
           Hint = 'Find previous occurance of search string'
-        end
-        object TBXItem8: TSpTBXItem
-          Action = ecReplace
+          OnClick = TBXItemFPrevClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItem8: TTBXItem
+          Action = ecReplace
           Caption = 'Replace...'
           Hint = 'Show "Replace" dialog'
+          OnSelect = ButtonOnSelect
         end
-        object TBXItemRFiles: TSpTBXItem
+        object TBXItemRFiles: TTBXItem
           Action = ecReplaceInFiles
-          OnSelect = ButtonOnSelect
           Caption = 'Find/replace in files...'
-        end
-        object TBXSeparatorItem9: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemWNext: TSpTBXItem
-          OnClick = TBXItemWNextClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXSeparatorItem9: TTBXSeparatorItem
+        end
+        object TBXItemWNext: TTBXItem
           Caption = 'Find current word next'
           Hint = 'Find next occurance of word at cursor'
-        end
-        object TBXItemWPrior: TSpTBXItem
-          OnClick = TBXItemWPriorClick
+          OnClick = TBXItemWNextClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemWPrior: TTBXItem
           Caption = 'Find current word prior'
           Hint = 'Find previous occurance of word at cursor'
-        end
-        object TBXSeparatorItem11: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItem2: TSpTBXItem
-          OnClick = TBXItem2Click
+          OnClick = TBXItemWPriorClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXSeparatorItem11: TTBXSeparatorItem
+        end
+        object TBXItem2: TTBXItem
           Caption = 'Clear search marks'
           Hint = 'Clear search marks'
+          OnClick = TBXItem2Click
+          OnSelect = ButtonOnSelect
         end
       end
-      object TBXItemTbGoto: TSpTBXItem
+      object TBXItemTbGoto: TTBXItem
         Action = ecGoto
-        ImageIndex = 26
-        OnSelect = ButtonOnSelect
         Caption = 'Go to line'
         Hint = 'Show "Go to" dialog'
+        ImageIndex = 26
+        OnSelect = ButtonOnSelect
       end
-      object TBXSeparatorItem1: TSpTBXSeparatorItem
-        Caption = ''
-        Hint = ''
+      object TBXSeparatorItem1: TTBXSeparatorItem
       end
-      object TBXSubmenuItemTbSetup: TSpTBXSubmenuItem
+      object TBXSubmenuItemTbSetup: TTBXSubmenuItem
         Tag = 709
         Action = fSetup
+        Caption = 'Setup'
         DropdownCombo = True
         OnSelect = ButtonOnSelect
-        Caption = 'Setup'
-        object TBXItemOOLex: TSpTBXItem
+        object TBXItemOOLex: TTBXItem
           Action = fCustomizeLexer
           OnSelect = ButtonOnSelect
         end
-        object TBXItemOOLexSt: TSpTBXItem
+        object TBXItemOOLexSt: TTBXItem
           Action = fCustomizeHi
-          OnSelect = ButtonOnSelect
           Caption = 'Customize lexer &styles...'
           Hint = 'Customize current lexer'#39's highlighting properties'
+          OnSelect = ButtonOnSelect
         end
-        object TBXItemOOLexLib: TSpTBXItem
+        object TBXItemOOLexLib: TTBXItem
           Action = fCustomizeLexerLib
           OnSelect = ButtonOnSelect
         end
       end
-      object TBXSeparatorItem48: TSpTBXSeparatorItem
-        Caption = ''
-        Hint = ''
+      object TBXSeparatorItem48: TTBXSeparatorItem
       end
-      object TBXItemTbSpellLive: TSpTBXSubmenuItem
+      object TBXItemTbSpellLive: TTBXSubmenuItem
         Action = ecSpellLive
+        Caption = 'Live spelling'
         DropdownCombo = True
+        Hint = 'Enable live spelling (red underlines)'
         ImageIndex = 44
         OnSelect = ButtonOnSelect
-        Caption = 'Live spelling'
-        Hint = 'Enable live spelling (red underlines)'
-        object TBXItemTbSpellCheck: TSpTBXItem
+        object TBXItemTbSpellCheck: TTBXItem
+          Caption = 'Spell check'
+          Hint = 'Perform spell checking of current document'
           ImageIndex = 43
           OnClick = TBXItemTbSpellCheckClick
           OnSelect = ButtonOnSelect
-          Caption = 'Spell check'
-          Hint = 'Perform spell checking of current document'
         end
       end
     end
-    object tbEdit: TSpTBXToolbar
-      Left = 303
+    object tbEdit: TTBXToolbar
+      Left = 261
       Top = 0
+      Caption = 'Edit'
       DockPos = 204
       Images = ImageListIconsStd
       TabOrder = 1
       OnClose = tbQsClose
       OnMove = tbViewMove
-      Caption = 'Edit'
-      object TBXItemTbCopy: TSpTBXItem
+      object TBXItemTbCopy: TTBXItem
         Tag = 301
         Action = ecCopy
         OnSelect = ButtonOnSelect
       end
-      object TBXItemTbCut: TSpTBXItem
+      object TBXItemTbCut: TTBXItem
         Tag = 302
         Action = ecCut
         OnSelect = ButtonOnSelect
       end
-      object TBXItemTbPaste: TSpTBXItem
+      object TBXItemTbPaste: TTBXItem
         Tag = 303
         Action = ecPaste
         OnSelect = ButtonOnSelect
       end
-      object TBXItemTbDel: TSpTBXItem
+      object TBXItemTbDel: TTBXItem
         Tag = 307
         Action = ecClear
         OnSelect = ButtonOnSelect
       end
-      object TBXItemTbSelAll: TSpTBXItem
+      object TBXItemTbSelAll: TTBXItem
         Tag = 306
         Action = ecSelectAll
-        OnSelect = ButtonOnSelect
         Hint = 'Select all'
+        OnSelect = ButtonOnSelect
       end
-      object TBXSeparatorItem3: TSpTBXSeparatorItem
-        Caption = ''
-        Hint = ''
+      object TBXSeparatorItem3: TTBXSeparatorItem
       end
-      object TBXItemTbUndo: TSpTBXItem
+      object TBXItemTbUndo: TTBXItem
         Tag = 304
         Action = ecUndo
         OnSelect = ButtonOnSelect
       end
-      object TBXItemTbRedo: TSpTBXItem
+      object TBXItemTbRedo: TTBXItem
         Tag = 305
         Action = ecRedo
         OnSelect = ButtonOnSelect
       end
-      object TBXSeparatorItem4: TSpTBXSeparatorItem
-        Caption = ''
-        Hint = ''
+      object TBXSeparatorItem4: TTBXSeparatorItem
       end
-      object TBXSubmenuItemSort: TSpTBXSubmenuItem
+      object TBXSubmenuItemSort: TTBXSubmenuItem
         Action = ecSortDialog
+        Caption = 'Sort'
         DropdownCombo = True
+        Hint = 'Show "Sort lines" dialog'
         ImageIndex = 16
         Options = [tboDropdownArrow]
         OnSelect = ButtonOnSelect
-        Caption = 'Sort'
-        Hint = 'Show "Sort lines" dialog'
-        object TBXItemTbSortDialog: TSpTBXItem
+        object TBXItemTbSortDialog: TTBXItem
           Action = ecSortDialog
-          OnSelect = ButtonOnSelect
           Caption = 'Sort dialog...'
           Hint = 'Show "Sort lines" dialog'
+          OnSelect = ButtonOnSelect
         end
-        object TBXSeparatorItem86: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
+        object TBXSeparatorItem86: TTBXSeparatorItem
         end
-        object TBXItemTbSortAsc: TSpTBXItem
+        object TBXItemTbSortAsc: TTBXItem
           Tag = 562
           Action = ecSortAscending
           OnSelect = ButtonOnSelect
         end
-        object TBXItemTbSortDesc: TSpTBXItem
+        object TBXItemTbSortDesc: TTBXItem
           Tag = 563
           Action = ecSortDescending
           OnSelect = ButtonOnSelect
         end
-        object TBXItemTbRemoveDups: TSpTBXItem
+        object TBXItemTbRemoveDups: TTBXItem
           Action = ecRemoveDups
-          OnSelect = ButtonOnSelect
           Caption = 'Remove adjacent duplicates'
           Hint = 'Remove adjacent duplicate lines from selection'
+          OnSelect = ButtonOnSelect
         end
       end
-      object TBXSubmenuCase: TSpTBXSubmenuItem
+      object TBXSubmenuCase: TTBXSubmenuItem
+        Caption = 'Change case'
+        Hint = 'Selection case changing'
         ImageIndex = 18
         Options = [tboDropdownArrow]
         OnSelect = ButtonOnSelect
-        Caption = 'Change case'
-        Hint = 'Selection case changing'
-        object TBXItemCCUpper: TSpTBXItem
+        object TBXItemCCUpper: TTBXItem
           Tag = 365
           Action = ecUpperCase
-          OnSelect = ButtonOnSelect
           Caption = 'UPPER CASE'
           Hint = 'Selection - to upper case'
+          OnSelect = ButtonOnSelect
         end
-        object TBXItemCCLower: TSpTBXItem
+        object TBXItemCCLower: TTBXItem
           Tag = 366
           Action = ecLowerCase
-          OnSelect = ButtonOnSelect
           Caption = 'lower case'
           Hint = 'Selection - to lower case'
+          OnSelect = ButtonOnSelect
         end
-        object TBXItemCCTitle: TSpTBXItem
+        object TBXItemCCTitle: TTBXItem
           Tag = 368
           Action = ecTitleCase
-          OnSelect = ButtonOnSelect
           Caption = 'Title Case'
           Hint = 'Selection - to title case'
+          OnSelect = ButtonOnSelect
         end
-        object TBXItemCCSent: TSpTBXItem
+        object TBXItemCCSent: TTBXItem
           Tag = 369
           Action = ecSentCase
-          OnSelect = ButtonOnSelect
           Hint = 'Selection - to sentence case'
+          OnSelect = ButtonOnSelect
         end
-        object TBXItemCCInv: TSpTBXItem
+        object TBXItemCCInv: TTBXItem
           Tag = 365
           Action = ecToggleCase
-          OnSelect = ButtonOnSelect
           Caption = 'iNVERT cASE'
           Hint = 'Invert selection case'
+          OnSelect = ButtonOnSelect
         end
       end
     end
   end
-  object TBXDockLeft: TSpTBXDock
+  object TBXDockLeft: TTBXDock
     Left = 0
-    Top = 50
+    Top = 51
     Width = 201
-    Height = 377
+    Height = 372
     Position = dpLeft
-    object tbView: TSpTBXToolbar
+    object tbView: TTBXToolbar
       Left = 174
       Top = 0
+      Caption = 'View'
       DockPos = -8
       DockRow = 1
       Images = ImageListIconsStd
       TabOrder = 0
       OnClose = tbQsClose
       OnMove = tbViewMove
-      Caption = 'View'
-      object TBXItemVTree: TSpTBXItem
+      object TBXItemVTree: TTBXItem
         Tag = 715
         Action = ecTree
-        OnSelect = ButtonOnSelect
         Caption = 'Toggle structure/project'
         Hint = 'Toggle structure/project panel'
+        OnSelect = ButtonOnSelect
       end
-      object TBXItemVFold: TSpTBXItem
+      object TBXItemVFold: TTBXItem
         Tag = 732
         Action = ecFold
         OnSelect = ButtonOnSelect
       end
-      object TBXItemVWrap: TSpTBXItem
+      object TBXItemVWrap: TTBXItem
         Tag = 730
         Action = ecWrap
         OnSelect = ButtonOnSelect
       end
-      object TBXItemVNums: TSpTBXItem
+      object TBXItemVNums: TTBXItem
         Tag = 731
         Action = ecLines
         OnSelect = ButtonOnSelect
       end
-      object TBXItemVNonpr: TSpTBXItem
+      object TBXItemVNonpr: TTBXItem
         Tag = 733
         Action = ecNPrint
         OnSelect = ButtonOnSelect
       end
-      object TBXItemVOut: TSpTBXItem
+      object TBXItemVOut: TTBXItem
         Action = ecOut
+        Hint = 'Toggle output panel'
         ImageIndex = 40
         OnSelect = ButtonOnSelect
-        Hint = 'Toggle output panel'
       end
-      object TBXSeparatorItem2: TSpTBXSeparatorItem
-        Caption = ''
-        Hint = ''
+      object TBXSeparatorItem2: TTBXSeparatorItem
       end
-      object TBXItemVComm: TSpTBXItem
+      object TBXItemVComm: TTBXItem
         Tag = 560
         Action = ecCommentLines
-        OnSelect = ButtonOnSelect
         Hint = 'Comment selected lines'
+        OnSelect = ButtonOnSelect
       end
-      object TBXItemVUncom: TSpTBXItem
+      object TBXItemVUncom: TTBXItem
         Tag = 561
         Action = ecUnCommentLines
-        OnSelect = ButtonOnSelect
         Hint = 'Uncomment selected lines'
+        OnSelect = ButtonOnSelect
       end
-      object TBXSeparatorItem10: TSpTBXSeparatorItem
-        Caption = ''
-        Hint = ''
+      object TBXSeparatorItem10: TTBXSeparatorItem
       end
-      object TBXItemVInd: TSpTBXItem
+      object TBXItemVInd: TTBXItem
         Tag = 350
         Action = ecIndent
         OnSelect = ButtonOnSelect
       end
-      object TBXItemVUnind: TSpTBXItem
+      object TBXItemVUnind: TTBXItem
         Tag = 351
         Action = ecUnindent
         OnSelect = ButtonOnSelect
       end
-      object TBXSeparatorItem44: TSpTBXSeparatorItem
-        Caption = ''
-        Hint = ''
+      object TBXSeparatorItem44: TTBXSeparatorItem
       end
-      object TBXItemVSyncH: TSpTBXItem
+      object TBXItemVSyncH: TTBXItem
         Action = ecSyncH
-        OnSelect = ButtonOnSelect
         Hint = 'Synchronize horizontal scrolling'
-      end
-      object TBXItemVSyncV: TSpTBXItem
-        Action = ecSyncV
         OnSelect = ButtonOnSelect
+      end
+      object TBXItemVSyncV: TTBXItem
+        Action = ecSyncV
         Hint = 'Synchronize vertical scrolling'
+        OnSelect = ButtonOnSelect
       end
     end
-    object plTree: TSpTBXDockablePanel
+    object plTree: TTBXDockablePanel
       Left = 0
       Top = 0
       ActivateParent = False
@@ -456,6 +430,7 @@ object fmMain: TfmMain
       FloatingWidth = 173
       FloatingHeight = 300
       HideWhenInactive = False
+      SupportedDocks = [dkStandardDock, dkMultiDock]
       TabOrder = 1
       OnContextPopup = plTreeContextPopup
       OnMove = tbViewMove
@@ -485,27 +460,24 @@ object fmMain: TfmMain
         OnKeyDown = TreeKeyDown
         OnKeyPress = TreeKeyPress
       end
-      object tbPlLeft: TSpTBXToolbar
+      object tbPlLeft: TTBXToolbar
         Left = 0
-        Top = 336
+        Top = 329
         Width = 170
-        Height = 19
+        Height = 21
         Align = alBottom
         TabOrder = 1
-        object TBXItemLeftTree: TSpTBXItem
-          OnClick = TBXItemLeftTreeClick
+        object TBXItemLeftTree: TTBXItem
           Caption = 'Tree'
-          Hint = ''
+          OnClick = TBXItemLeftTreeClick
         end
-        object TBXItemLeftProj: TSpTBXItem
-          OnClick = TBXItemLeftProjClick
+        object TBXItemLeftProj: TTBXItem
           Caption = 'Project'
-          Hint = ''
+          OnClick = TBXItemLeftProjClick
         end
-        object TBXItemLeftTabs: TSpTBXItem
-          OnClick = TBXItemLeftTabsClick
+        object TBXItemLeftTabs: TTBXItem
           Caption = 'Tabs'
-          Hint = ''
+          OnClick = TBXItemLeftTabsClick
         end
       end
       object ListTabs: TListView
@@ -538,15 +510,16 @@ object fmMain: TfmMain
       end
     end
   end
-  object TBXDockBottom: TSpTBXDock
+  object TBXDockBottom: TTBXDock
     Left = 0
-    Top = 427
-    Width = 768
+    Top = 423
+    Width = 760
     Height = 171
     Position = dpBottom
-    object tbQs: TSpTBXToolbar
+    object tbQs: TTBXToolbar
       Left = 0
       Top = 139
+      Caption = 'Quick search'
       CloseButtonWhenDocked = True
       DockableTo = [dpTop, dpBottom]
       DockPos = 0
@@ -554,39 +527,36 @@ object fmMain: TfmMain
       Images = ImageListIconsTango22
       TabOrder = 0
       OnClose = tbQsClose
-      Caption = 'Quick search'
       object TBControlItem1aa: TTBControlItem
         Control = edQs
-        Caption = ''
-        Hint = ''
       end
-      object TBXItemFFNext: TSpTBXItem
+      object TBXItemFFNext: TTBXItem
+        Caption = 'Next'
         Enabled = False
+        Hint = 'Find next'
         ImageIndex = 36
         OnClick = TBXItemFFNextClick
-        Caption = 'Next'
-        Hint = 'Find next'
       end
-      object TBXItemFFPrev: TSpTBXItem
+      object TBXItemFFPrev: TTBXItem
+        Caption = 'Previous'
         Enabled = False
+        Hint = 'Find previous'
         ImageIndex = 37
         OnClick = TBXItemFFPrevClick
-        Caption = 'Previous'
-        Hint = 'Find previous'
       end
-      object cbCase: TSpTBXItem
-        ImageIndex = 38
-        OnClick = cbCaseClick
+      object cbCase: TTBXItem
         Caption = 'Case sensitive'
         Hint = 'Case sensitive'
+        ImageIndex = 38
+        OnClick = cbCaseClick
       end
-      object cbWord: TSpTBXItem
-        ImageIndex = 39
-        OnClick = cbWordClick
+      object cbWord: TTBXItem
         Caption = 'Whole words'
         Hint = 'Whole words only'
+        ImageIndex = 39
+        OnClick = cbWordClick
       end
-      object edQs: TSpTBXEdit
+      object edQs: TEdit
         Left = 0
         Top = 3
         Width = 121
@@ -598,23 +568,24 @@ object fmMain: TfmMain
         OnKeyDown = edQsKeyDown
       end
     end
-    object plOut: TSpTBXDockablePanel
+    object plOut: TTBXDockablePanel
       Left = 0
       Top = 0
+      Caption = 'Output'
       CaptionRotation = dpcrAlwaysHorz
       DockedHeight = 135
       DockPos = 0
+      SupportedDocks = [dkStandardDock, dkMultiDock]
       TabOrder = 1
       OnContextPopup = plOutContextPopup
       OnMove = tbViewMove
       OnResize = plOutResize
       OnVisibleChanged = plOutVisibleChanged
-      Caption = 'Output'
-      object ListOut: TSpTBXListBox
+      object ListOut: TListBox
         Left = 0
         Top = 0
         Width = 112
-        Height = 98
+        Height = 96
         Style = lbOwnerDrawFixed
         Align = alLeft
         Font.Charset = DEFAULT_CHARSET
@@ -633,40 +604,35 @@ object fmMain: TfmMain
         OnMouseDown = ListOutMouseDown
         OnMouseMove = ListOutMouseMove
       end
-      object tbPlOut: TSpTBXToolbar
+      object tbPlOut: TTBXToolbar
         Left = 0
-        Top = 98
-        Width = 764
-        Height = 19
+        Top = 96
+        Width = 756
+        Height = 21
         Align = alBottom
         TabOrder = 1
-        object TBXItemOOOut: TSpTBXItem
-          OnClick = TBXItemOOOutClick
+        object TBXItemOOOut: TTBXItem
           Caption = 'Output'
-          Hint = ''
+          OnClick = TBXItemOOOutClick
         end
-        object TBXItemOOFind: TSpTBXItem
-          OnClick = TBXItemOOFindClick
+        object TBXItemOOFind: TTBXItem
           Caption = 'Search Results'
-          Hint = ''
+          OnClick = TBXItemOOFindClick
         end
-        object TBXItemOOVal: TSpTBXItem
-          OnClick = TBXItemOOValClick
+        object TBXItemOOVal: TTBXItem
           Caption = 'Validation'
-          Hint = ''
+          OnClick = TBXItemOOValClick
         end
-        object TBXItemOOPLog: TSpTBXItem
+        object TBXItemOOPLog: TTBXItem
           Visible = False
           OnClick = TBXItemOOPLogClick
-          Caption = ''
-          Hint = ''
         end
       end
-      object ListVal: TSpTBXListBox
+      object ListVal: TListBox
         Left = 112
         Top = 0
         Width = 112
-        Height = 98
+        Height = 96
         Style = lbOwnerDrawFixed
         Align = alLeft
         Font.Charset = DEFAULT_CHARSET
@@ -688,7 +654,7 @@ object fmMain: TfmMain
         Left = 224
         Top = 0
         Width = 113
-        Height = 98
+        Height = 96
         Align = alLeft
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -708,11 +674,11 @@ object fmMain: TfmMain
         OnKeyDown = TreeFindKeyDown
         OnKeyPress = TreeKeyPress
       end
-      object ListPLog: TSpTBXListBox
+      object ListPLog: TListBox
         Left = 337
         Top = 0
         Width = 121
-        Height = 98
+        Height = 96
         Style = lbOwnerDrawFixed
         Align = alLeft
         ItemHeight = 13
@@ -725,13 +691,13 @@ object fmMain: TfmMain
       end
     end
   end
-  object TBXDockRight: TSpTBXDock
-    Left = 636
-    Top = 50
+  object TBXDockRight: TTBXDock
+    Left = 628
+    Top = 51
     Width = 132
-    Height = 377
+    Height = 372
     Position = dpRight
-    object plClip: TSpTBXDockablePanel
+    object plClip: TTBXDockablePanel
       Left = 0
       Top = 0
       Font.Charset = DEFAULT_CHARSET
@@ -740,39 +706,37 @@ object fmMain: TfmMain
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
+      SupportedDocks = [dkStandardDock, dkMultiDock]
       TabOrder = 0
       OnContextPopup = plClipContextPopup
       OnResize = plClipResize
       OnVisibleChanged = plClipVisibleChanged
-      object tbClipMap: TSpTBXToolbar
+      object tbClipMap: TTBXToolbar
         Left = 0
-        Top = 336
+        Top = 329
         Width = 128
-        Height = 19
+        Height = 21
         Align = alBottom
         TabOrder = 0
-        object TBXItemRightClip: TSpTBXItem
-          OnClick = TBXItemRightClipClick
+        object TBXItemRightClip: TTBXItem
           Caption = 'Clipboard'
-          Hint = ''
+          OnClick = TBXItemRightClipClick
         end
-        object TBXItemRightMap: TSpTBXItem
-          OnClick = TBXItemRightMapClick
+        object TBXItemRightMap: TTBXItem
           Caption = 'Minimap'
-          Hint = ''
+          OnClick = TBXItemRightMapClick
         end
-        object TBXItemRightClips: TSpTBXItem
-          OnClick = TBXItemRightClipsClick
+        object TBXItemRightClips: TTBXItem
           Caption = 'Clips'
-          Hint = ''
+          OnClick = TBXItemRightClipsClick
         end
       end
     end
   end
-  object SB2: TSpTBXStatusBar
+  object SB2: TTBXStatusBar
     Left = 0
-    Top = 598
-    Width = 768
+    Top = 594
+    Width = 760
     Height = 19
     Images = ImageListStatus
     Panels = <
@@ -783,59 +747,59 @@ object fmMain: TfmMain
       end
       item
         Alignment = taCenter
+        Hint = 'Encoding (click to change)'
         Size = 90
         Tag = 0
-        Hint = 'Encoding (click to change)'
       end
       item
         Alignment = taCenter
+        Hint = 'Line endings (click to change)'
         Size = 30
         Tag = 0
-        Hint = 'Line endings (click to change)'
       end
       item
         Alignment = taCenter
+        Hint = 'Lexer (click to change)'
         Size = 130
         Tag = 0
-        Hint = 'Lexer (click to change)'
       end
       item
         Alignment = taCenter
+        Hint = '"Char at cursor" info (click for Character Table)'
         Size = 80
         Tag = 0
-        Hint = '"Char at cursor" info (click for Character Table)'
       end
       item
         Alignment = taCenter
+        Hint = 'Read-only (click to change)'
         ImageIndex = 1
         Size = 20
         Tag = 0
-        Hint = 'Read-only (click to change)'
       end
       item
         Alignment = taCenter
+        Hint = 'Word-wrap mode (click to change)'
         ImageIndex = 3
         Size = 20
         Tag = 0
-        Hint = 'Word-wrap mode (click to change)'
       end
       item
+        Hint = 'Selection mode (click to change)'
         ImageIndex = 5
         Size = 20
         Tag = 0
-        Hint = 'Selection mode (click to change)'
       end
       item
         Alignment = taCenter
+        Hint = 'Insert/Overwrite mode (click to change)'
         Size = 30
         Tag = 0
-        Hint = 'Insert/Overwrite mode (click to change)'
       end
       item
         Alignment = taCenter
+        Hint = 'Zoom value (click to change)'
         Size = 35
         Tag = 0
-        Hint = 'Zoom value (click to change)'
       end
       item
         Alignment = taCenter
@@ -850,14 +814,15 @@ object fmMain: TfmMain
     UseSystemFont = False
     OnPanelClick = SB2PanelClick
   end
-  object Menu: TSpTBXDock
+  object Menu: TTBXDock
     Left = 0
     Top = 0
-    Width = 768
-    Height = 24
-    object tbMenu: TSpTBXToolbar
+    Width = 760
+    Height = 25
+    object tbMenu: TTBXToolbar
       Left = 0
       Top = 0
+      Caption = 'Menu'
       CloseButton = False
       DockMode = dmCannotFloatOrChangeDocks
       DockPos = 0
@@ -866,2105 +831,1841 @@ object fmMain: TfmMain
       ShrinkMode = tbsmWrap
       TabOrder = 0
       OnShortCut = tbMenuShortCut
-      Caption = 'Menu'
-      object TBXSubmenuItemFile: TSpTBXSubmenuItem
+      object TBXSubmenuItemFile: TTBXSubmenuItem
         Caption = '&File'
-        Hint = ''
-        object TBXSubmenuItemFNew: TSpTBXSubmenuItem
+        object TBXSubmenuItemFNew: TTBXSubmenuItem
+          Caption = '&New'
           OnPopup = TBXSubmenuItemFNewPopup
           OnSelect = ButtonOnSelect
-          Caption = '&New'
-          Hint = ''
-          object TBXItemFNew: TSpTBXItem
+          object TBXItemFNew: TTBXItem
+            Caption = 'New file'
+            Hint = 'Create new file'
             ImageIndex = 34
             OnClick = TBXItemFNewClick
             OnSelect = ButtonOnSelect
-            Caption = 'New file'
-            Hint = 'Create new file'
           end
-          object TBXItemFNewWin: TSpTBXItem
+          object TBXItemFNewWin: TTBXItem
             Action = fNewWin
-            OnSelect = ButtonOnSelect
             Hint = 'Create new window'
+            OnSelect = ButtonOnSelect
           end
-          object TBXSeparatorItem28: TSpTBXSeparatorItem
-            Caption = ''
-            Hint = ''
+          object TBXSeparatorItem28: TTBXSeparatorItem
           end
         end
-        object TBXItemFOpen: TSpTBXItem
+        object TBXItemFOpen: TTBXItem
           Action = fOpen
-          OnSelect = ButtonOnSelect
           Caption = '&Open...'
-        end
-        object TBXSubmenuItem25: TSpTBXSubmenuItem
-          Caption = 'Recen&t files'
-          Hint = ''
-          object MRUtbx2: TSpTBXMRUListItem
-            MRUList = MRU
-            Caption = '(TBX MRU List)'
-            Hint = ''
-          end
-          object TBXSeparatorItem30: TSpTBXSeparatorItem
-            Caption = ''
-            Hint = ''
-          end
-          object TBXItemFClr: TSpTBXItem
-            OnClick = TBXItemFClrClick
-            Caption = 'Clear list'
-            Hint = ''
-          end
-        end
-        object TBXItemFReopen: TSpTBXItem
-          OnClick = TBXItemFReopenClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXSubmenuItem25: TTBXSubmenuItem
+          Caption = 'Recen&t files'
+          object MRUtbx2: TTBXMRUListItem
+            MRUList = MRU
+          end
+          object TBXSeparatorItem30: TTBXSeparatorItem
+          end
+          object TBXItemFClr: TTBXItem
+            Caption = 'Clear list'
+            OnClick = TBXItemFClrClick
+          end
+        end
+        object TBXItemFReopen: TTBXItem
           Caption = '&Reopen'
           Hint = 'Reopen file'
+          OnClick = TBXItemFReopenClick
+          OnSelect = ButtonOnSelect
         end
-        object TBXItemFSave: TSpTBXItem
+        object TBXItemFSave: TTBXItem
           Action = fSave
-          OnSelect = ButtonOnSelect
           Caption = '&Save'
+          OnSelect = ButtonOnSelect
         end
-        object TBXItemFSaveAs: TSpTBXItem
+        object TBXItemFSaveAs: TTBXItem
           Action = fSaveAs
-          OnSelect = ButtonOnSelect
           Caption = 'Save &as...'
-        end
-        object TBXItemFSaveAll: TSpTBXItem
-          Action = fSaveAll
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemFSaveAll: TTBXItem
+          Action = fSaveAll
           Caption = 'Save a&ll'
           Hint = 'Save all tabs'
-        end
-        object TBXItemFRename: TSpTBXItem
-          Action = fRename
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemFRename: TTBXItem
+          Action = fRename
           Caption = 'Rename...'
           Hint = 'Rename current file'
-        end
-        object TBXItemFClose: TSpTBXItem
-          Action = fClose
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemFClose: TTBXItem
+          Action = fClose
           Caption = '&Close'
           Hint = 'Close current tab'
-        end
-        object TBXItemFCloseAll: TSpTBXItem
-          Action = fCloseAll
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemFCloseAll: TTBXItem
+          Action = fCloseAll
           Caption = 'Close all'
           Hint = 'Close all tabs'
-        end
-        object TBXItemFCloseOth: TSpTBXItem
-          Action = fCloseOth
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemFCloseOth: TTBXItem
+          Action = fCloseOth
           Caption = 'Close ot&her tabs'
           Hint = 'Close all but current tab'
-        end
-        object TBXItemFCloseDel: TSpTBXItem
-          Action = fCloseDel
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemFCloseDel: TTBXItem
+          Action = fCloseDel
           Caption = 'Close and &delete'
           Hint = 'Close current tab and delete its file'
-        end
-        object TBXSeparatorItem22: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemFProps: TSpTBXItem
-          OnClick = TBXItemFPropsClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXSeparatorItem22: TTBXSeparatorItem
+        end
+        object TBXItemFProps: TTBXItem
           Caption = 'Properties...'
           Hint = 'Show properties of current file/document'
-        end
-        object TBXItemFEmail: TSpTBXItem
-          OnClick = TBXItemFEmailClick
+          OnClick = TBXItemFPropsClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemFEmail: TTBXItem
           Caption = 'Send to E-&mail'
           Hint = 'Send current file to e-mail via MS Outlook'
-        end
-        object TBXSubmenuItem12: TSpTBXSubmenuItem
+          OnClick = TBXItemFEmailClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXSubmenuItem12: TTBXSubmenuItem
           Caption = 'Export'
-          Hint = ''
-          object TBXItemFExpHtml: TSpTBXItem
+          OnSelect = ButtonOnSelect
+          object TBXItemFExpHtml: TTBXItem
             Action = fExportHTMLAction
-            OnSelect = ButtonOnSelect
             Caption = 'Export to &HTML...'
+            OnSelect = ButtonOnSelect
           end
-          object TBXItemFExpRtf: TSpTBXItem
+          object TBXItemFExpRtf: TTBXItem
             Action = fExportRTFAction
-            OnSelect = ButtonOnSelect
             Caption = 'Export to &RTF...'
+            OnSelect = ButtonOnSelect
           end
         end
-        object TBXSeparatorItem16: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
+        object TBXSeparatorItem16: TTBXSeparatorItem
         end
-        object TBXItemFPrint: TSpTBXItem
+        object TBXItemFPrint: TTBXItem
           Action = ecPrintAction
-          OnSelect = ButtonOnSelect
           Caption = '&Print...'
+          OnSelect = ButtonOnSelect
         end
-        object TBXItemFPreview: TSpTBXItem
+        object TBXItemFPreview: TTBXItem
           Action = ecPreviewAction
-          OnSelect = ButtonOnSelect
           Caption = 'Pre&view...'
+          OnSelect = ButtonOnSelect
         end
-        object TBXItemFPageSetup: TSpTBXItem
+        object TBXItemFPageSetup: TTBXItem
           Action = ecPageSetupAction
-          OnSelect = ButtonOnSelect
           Caption = 'Pa&ge setup...'
-        end
-        object TBXItemFPrinterSetup: TSpTBXItem
-          Action = ecPrinterSetup
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemFPrinterSetup: TTBXItem
+          Action = ecPrinterSetup
           Caption = 'Print&er setup...'
+          OnSelect = ButtonOnSelect
         end
-        object TBXSeparatorItem15: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
+        object TBXSeparatorItem15: TTBXSeparatorItem
         end
-        object TBXSubmenuFav: TSpTBXSubmenuItem
-          OnPopup = TBXSubmenuFavPopup
+        object TBXSubmenuFav: TTBXSubmenuItem
           Caption = 'Favorites'
-          Hint = ''
-          object TBXItemFavAddFile: TSpTBXItem
-            OnClick = TBXItemFavAddFileClick
-            OnSelect = ButtonOnSelect
+          OnPopup = TBXSubmenuFavPopup
+          object TBXItemFavAddFile: TTBXItem
             Caption = 'Add current file'
             Hint = 'Add current file to favorites list'
-          end
-          object TBXItemFavAddProj: TSpTBXItem
-            OnClick = TBXItemFavAddProjClick
+            OnClick = TBXItemFavAddFileClick
             OnSelect = ButtonOnSelect
+          end
+          object TBXItemFavAddProj: TTBXItem
             Caption = 'Add current project'
             Hint = 'Add current project to favorites list'
-          end
-          object TBXItemFavManage: TSpTBXItem
-            OnClick = TBXItemFavManageClick
+            OnClick = TBXItemFavAddProjClick
             OnSelect = ButtonOnSelect
+          end
+          object TBXItemFavManage: TTBXItem
             Caption = 'Organize...'
             Hint = 'Manage favorites list'
+            OnClick = TBXItemFavManageClick
+            OnSelect = ButtonOnSelect
           end
         end
-        object TBXSubmenuItem2: TSpTBXSubmenuItem
+        object TBXSubmenuItem2: TTBXSubmenuItem
           Caption = 'Sess&ions'
-          Hint = ''
-          object TBXItemFSesOpen: TSpTBXItem
-            OnClick = TBXItemFSesOpenClick
-            OnSelect = ButtonOnSelect
+          object TBXItemFSesOpen: TTBXItem
             Caption = '&Open session...'
             Hint = 'Open saved tabs list'
-          end
-          object TBXItemFSesAdd: TSpTBXItem
-            OnClick = TBXItemFSesAddClick
+            OnClick = TBXItemFSesOpenClick
             OnSelect = ButtonOnSelect
+          end
+          object TBXItemFSesAdd: TTBXItem
             Caption = 'Open/A&dd session...'
             Hint = 'Add saved tabs list to current tabs'
-          end
-          object TBXItemFSesSave: TSpTBXItem
-            OnClick = TBXItemFSesSaveClick
+            OnClick = TBXItemFSesAddClick
             OnSelect = ButtonOnSelect
+          end
+          object TBXItemFSesSave: TTBXItem
             Caption = '&Save session'
             Hint = 'Save tabs list (keep current session name)'
-          end
-          object TBXItemFSesSaveAs: TSpTBXItem
-            OnClick = TBXItemFSesSaveAsClick
+            OnClick = TBXItemFSesSaveClick
             OnSelect = ButtonOnSelect
+          end
+          object TBXItemFSesSaveAs: TTBXItem
             Caption = 'Save session &as...'
             Hint = 'Save tabs list to chosen file'
-          end
-          object TBXItemFSesClose: TSpTBXItem
-            OnClick = TBXItemFSesCloseClick
+            OnClick = TBXItemFSesSaveAsClick
             OnSelect = ButtonOnSelect
+          end
+          object TBXItemFSesClose: TTBXItem
             Caption = '&Close session'
             Hint = 'Clear name of current tabs list'
+            OnClick = TBXItemFSesCloseClick
+            OnSelect = ButtonOnSelect
           end
-          object TBXSubmenuItemSess: TSpTBXSubmenuItem
+          object TBXSubmenuItemSess: TTBXSubmenuItem
             Caption = 'Recen&t sessions'
-            Hint = ''
-            object TBXMRUListItem1: TSpTBXMRUListItem
+            object TBXMRUListItem1: TTBXMRUListItem
               MRUList = MRU_Sess
-              Caption = '(TBX MRU List)'
-              Hint = ''
             end
-            object TBXSeparatorItem59: TSpTBXSeparatorItem
-              Caption = ''
-              Hint = ''
+            object TBXSeparatorItem59: TTBXSeparatorItem
             end
-            object TBXItemSessClr: TSpTBXItem
-              OnClick = TBXItemSessClrClick
+            object TBXItemSessClr: TTBXItem
               Caption = '&Clear list'
-              Hint = ''
+              OnClick = TBXItemSessClrClick
             end
           end
         end
-        object TBXSeparatorItem29: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
+        object TBXSeparatorItem29: TTBXSeparatorItem
         end
-        object TBXItemFExit: TSpTBXItem
-          OnClick = TBXItemFExitClick
-          OnSelect = ButtonOnSelect
+        object TBXItemFExit: TTBXItem
           Caption = 'E&xit'
           Hint = 'Close editor'
+          OnClick = TBXItemFExitClick
+          OnSelect = ButtonOnSelect
         end
       end
-      object TBXSubmenuItemEd: TSpTBXSubmenuItem
-        OnPopup = TBXSubmenuItemEdPopup
+      object TBXSubmenuItemEd: TTBXSubmenuItem
         Caption = '&Edit'
-        Hint = ''
-        object TBXItemEUndo: TSpTBXItem
+        OnPopup = TBXSubmenuItemEdPopup
+        object TBXItemEUndo: TTBXItem
+          Caption = '&Undo'
+          Hint = 'Undo last action'
           ImageIndex = 12
           ShortCut = 16474
           OnClick = TBXItemEUndoClick
           OnSelect = ButtonOnSelect
-          Caption = '&Undo'
-          Hint = 'Undo last action'
         end
-        object TBXItemERedo: TSpTBXItem
+        object TBXItemERedo: TTBXItem
           Action = ecRedo
-          OnSelect = ButtonOnSelect
           Caption = '&Redo'
+          OnSelect = ButtonOnSelect
         end
-        object TBXSeparatorItem6: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
+        object TBXSeparatorItem6: TTBXSeparatorItem
         end
-        object TBXItemECut: TSpTBXItem
+        object TBXItemECut: TTBXItem
+          Caption = '&Cut'
+          Hint = 'Cut selection to clipboard'
           ImageIndex = 8
           ShortCut = 16472
           OnClick = TBXItemECutClick
           OnSelect = ButtonOnSelect
-          Caption = '&Cut'
-          Hint = 'Cut selection to clipboard'
         end
-        object TBXItemECopy: TSpTBXItem
+        object TBXItemECopy: TTBXItem
+          Caption = 'C&opy'
+          Hint = 'Copy selection to clipboard'
           ImageIndex = 7
           ShortCut = 16451
           OnClick = TBXItemECopyClick
           OnSelect = ButtonOnSelect
-          Caption = 'C&opy'
-          Hint = 'Copy selection to clipboard'
         end
-        object TBXItemEPaste: TSpTBXItem
+        object TBXItemEPaste: TTBXItem
+          Caption = '&Paste'
+          Hint = 'Paste clipboard'
           ImageIndex = 9
           ShortCut = 16470
           OnClick = TBXItemEPasteClick
           OnSelect = ButtonOnSelect
-          Caption = '&Paste'
-          Hint = 'Paste clipboard'
         end
-        object TBXItemEDelete: TSpTBXItem
+        object TBXItemEDelete: TTBXItem
+          Caption = '&Delete'
+          Hint = 'Clear current selection'
           ImageIndex = 10
           ShortCut = 16430
           OnClick = TBXItemEDeleteClick
           OnSelect = ButtonOnSelect
-          Caption = '&Delete'
-          Hint = 'Clear current selection'
         end
-        object TBXItemESelectAll: TSpTBXItem
+        object TBXItemESelectAll: TTBXItem
+          Caption = '&Select all'
+          Hint = 'Select all text'
           ImageIndex = 11
           ShortCut = 16449
           OnClick = TBXItemESelectAllClick
           OnSelect = ButtonOnSelect
-          Caption = '&Select all'
-          Hint = 'Select all text'
         end
-        object TBXSeparatorItem35: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
+        object TBXSeparatorItem35: TTBXSeparatorItem
         end
-        object TBXSubmenuItem18: TSpTBXSubmenuItem
+        object TBXSubmenuItem18: TTBXSubmenuItem
           Caption = 'Copy to clipboard'
-          Hint = ''
-          object TBXItemECopyLine: TSpTBXItem
+          object TBXItemECopyLine: TTBXItem
             Action = ecCopyLine
-            OnSelect = ButtonOnSelect
             Caption = 'Copy current line'
             Hint = 'Copy current line to clipboard'
-          end
-          object TBXItemECutLine: TSpTBXItem
-            Action = ecCutLine
             OnSelect = ButtonOnSelect
+          end
+          object TBXItemECutLine: TTBXItem
+            Action = ecCutLine
             Caption = 'Cut current line'
             Hint = 'Cut current line to clipboard'
+            OnSelect = ButtonOnSelect
           end
-          object TBXSeparatorItem54: TSpTBXSeparatorItem
-            Caption = ''
-            Hint = ''
+          object TBXSeparatorItem54: TTBXSeparatorItem
           end
-          object TBXItemECopyApp: TSpTBXItem
+          object TBXItemECopyApp: TTBXItem
             Action = ecCopyApp
-            OnSelect = ButtonOnSelect
             Caption = 'Copy/Append'
-          end
-          object TBXItemECutApp: TSpTBXItem
-            Action = ecCutApp
             OnSelect = ButtonOnSelect
+          end
+          object TBXItemECutApp: TTBXItem
+            Action = ecCutApp
             Caption = 'Cut/Append'
+            OnSelect = ButtonOnSelect
           end
-          object TBXSeparatorItem17: TSpTBXSeparatorItem
-            Caption = ''
-            Hint = ''
+          object TBXSeparatorItem17: TTBXSeparatorItem
           end
-          object TBXItemECpFN: TSpTBXItem
-            OnClick = TBXItemECpFNClick
+          object TBXItemECpFN: TTBXItem
             Caption = 'Copy filename to clipboard'
-            Hint = ''
+            OnClick = TBXItemECpFNClick
           end
-          object TBXItemECpFullPath: TSpTBXItem
-            OnClick = TBXItemECpFullPathClick
+          object TBXItemECpFullPath: TTBXItem
             Caption = 'Copy full path to clipboard'
-            Hint = ''
+            OnClick = TBXItemECpFullPathClick
           end
-          object TBXItemECpDirPath: TSpTBXItem
-            OnClick = TBXItemECpDirPathClick
+          object TBXItemECpDirPath: TTBXItem
             Caption = 'Copy dir path to clipboard'
-            Hint = ''
+            OnClick = TBXItemECpDirPathClick
           end
         end
-        object TBXSubmenuItem16: TSpTBXSubmenuItem
+        object TBXSubmenuItem16: TTBXSubmenuItem
           Caption = 'Indents'
-          Hint = ''
-          object TBXItemEInd: TSpTBXItem
+          object TBXItemEInd: TTBXItem
             Action = ecIndent
-            OnSelect = ButtonOnSelect
             Caption = '&Indent'
+            OnSelect = ButtonOnSelect
           end
-          object TBXItemEUnind: TSpTBXItem
+          object TBXItemEUnind: TTBXItem
+            Caption = 'Unind&ent'
+            Hint = 'Unindent selection'
             ImageIndex = 15
             ShortCut = 8201
             OnClick = TBXItemEUnindClick
             OnSelect = ButtonOnSelect
-            Caption = 'Unind&ent'
-            Hint = 'Unindent selection'
           end
-          object TBXSeparatorItem33: TSpTBXSeparatorItem
-            Caption = ''
-            Hint = ''
+          object TBXSeparatorItem33: TTBXSeparatorItem
           end
-          object TBXItemEIndentLike1st: TSpTBXItem
+          object TBXItemEIndentLike1st: TTBXItem
             Action = ecIndentLike1st
-            OnSelect = ButtonOnSelect
             Caption = 'Indent like 1st line'
             Hint = 'Make all selection lines indents equal to first line'#39's one'
+            OnSelect = ButtonOnSelect
           end
         end
-        object TBXSubmenuItem17: TSpTBXSubmenuItem
+        object TBXSubmenuItem17: TTBXSubmenuItem
           Caption = 'Line operations'
-          Hint = ''
-          object TBXItemEDup: TSpTBXItem
-            OnClick = TBXItemEDupClick
-            OnSelect = ButtonOnSelect
+          object TBXItemEDup: TTBXItem
             Caption = '&Duplicate line'
             Hint = 'Duplicate current line'
-          end
-          object TBXItemEDelLn: TSpTBXItem
-            OnClick = TBXItemEDelLnClick
+            OnClick = TBXItemEDupClick
             OnSelect = ButtonOnSelect
+          end
+          object TBXItemEDelLn: TTBXItem
             Caption = 'D&elete line'
             Hint = 'Delete current line'
-          end
-          object TBXSeparatorItem49: TSpTBXSeparatorItem
-            Caption = ''
-            Hint = ''
-          end
-          object TBXItemEJoin: TSpTBXItem
-            Action = ecJoinLines
+            OnClick = TBXItemEDelLnClick
             OnSelect = ButtonOnSelect
+          end
+          object TBXSeparatorItem49: TTBXSeparatorItem
+          end
+          object TBXItemEJoin: TTBXItem
+            Action = ecJoinLines
             Caption = '&Join lines'
             Hint = 'Join (concatenate) selected lines'
-          end
-          object TBXItemESplit: TSpTBXItem
-            Action = ecSplitLines
             OnSelect = ButtonOnSelect
+          end
+          object TBXItemESplit: TTBXItem
+            Action = ecSplitLines
             Caption = '&Split lines'
             Hint = 'Split current line/ selected lines to shorter lines'
-          end
-          object TBXSeparatorItem47: TSpTBXSeparatorItem
-            Caption = ''
-            Hint = ''
-          end
-          object TBXItemEMoveUp: TSpTBXItem
-            OnClick = TBXItemEMoveUpClick
             OnSelect = ButtonOnSelect
+          end
+          object TBXSeparatorItem47: TTBXSeparatorItem
+          end
+          object TBXItemEMoveUp: TTBXItem
             Caption = 'Move lines &up'
             Hint = 'Move selected line(s) up'
-          end
-          object TBXItemEMoveDn: TSpTBXItem
-            OnClick = TBXItemEMoveDnClick
+            OnClick = TBXItemEMoveUpClick
             OnSelect = ButtonOnSelect
+          end
+          object TBXItemEMoveDn: TTBXItem
             Caption = 'Move lines &down'
             Hint = 'Move selected line(s) down'
+            OnClick = TBXItemEMoveDnClick
+            OnSelect = ButtonOnSelect
           end
         end
-        object TBXSubmenuItem1: TSpTBXSubmenuItem
+        object TBXSubmenuItem1: TTBXSubmenuItem
           Caption = 'Blank operations'
-          Hint = ''
-          object TBXItemERemBlanks: TSpTBXItem
+          object TBXItemERemBlanks: TTBXItem
             Action = ecRemoveBlanks
-            OnSelect = ButtonOnSelect
             Caption = '&Remove blank lines'
             Hint = 'Remove blank lines (from selection or all document)'
-          end
-          object TBXItemEReduceBlanks: TSpTBXItem
-            Action = ecReduceBlanks
             OnSelect = ButtonOnSelect
+          end
+          object TBXItemEReduceBlanks: TTBXItem
+            Action = ecReduceBlanks
             Caption = 'Reduce &blank lines'
             Hint = 'Remove adjacent duplicate blank lines'
-          end
-          object TBXSeparatorItem60: TSpTBXSeparatorItem
-            Caption = ''
-            Hint = ''
-          end
-          object TBXItemETrimLead: TSpTBXItem
-            Action = ecTrimLead
             OnSelect = ButtonOnSelect
+          end
+          object TBXSeparatorItem60: TTBXSeparatorItem
+          end
+          object TBXItemETrimLead: TTBXItem
+            Action = ecTrimLead
             Caption = 'Trim &leading spaces'
             Hint = 'Remove leading spaces from lines'
-          end
-          object TBXItemETrimTrail: TSpTBXItem
-            Action = ecTrimTrail
             OnSelect = ButtonOnSelect
+          end
+          object TBXItemETrimTrail: TTBXItem
+            Action = ecTrimTrail
             Caption = 'Trim &trailing spaces'
             Hint = 'Remove trailing spaces from lines'
-          end
-          object TBXItemETrimAll: TSpTBXItem
-            Action = ecTrimAll
             OnSelect = ButtonOnSelect
+          end
+          object TBXItemETrimAll: TTBXItem
+            Action = ecTrimAll
             Caption = 'Trim leading/trailing &spaces'
             Hint = 'Remove leading+trailing spaces from lines'
-          end
-          object TBXItemERemDupSp: TSpTBXItem
-            Action = ecRemoveDupSpaces
             OnSelect = ButtonOnSelect
+          end
+          object TBXItemERemDupSp: TTBXItem
+            Action = ecRemoveDupSpaces
             Caption = 'Remove &duplicate spaces'
             Hint = 'Remove duplicate (adjacent) spaces from lines'
-          end
-          object TBXSeparatorItem61: TSpTBXSeparatorItem
-            Caption = ''
-            Hint = ''
-          end
-          object TBXItemETabToSp: TSpTBXItem
-            Action = ecTabToSp
             OnSelect = ButtonOnSelect
+          end
+          object TBXSeparatorItem61: TTBXSeparatorItem
+          end
+          object TBXItemETabToSp: TTBXItem
+            Action = ecTabToSp
             Caption = 'T&abs to spaces'
             Hint = 'Replace Tab characters to spaces'
-          end
-          object TBXItemESpToTab: TSpTBXItem
-            Action = ecSpToTab
             OnSelect = ButtonOnSelect
+          end
+          object TBXItemESpToTab: TTBXItem
+            Action = ecSpToTab
             Caption = 'Spac&es to tabs (all)'
             Hint = 'Replace spaces to Tab characters'
-          end
-          object TBXItemESpToTabLead: TSpTBXItem
-            Action = ecSpToTabLeading
             OnSelect = ButtonOnSelect
+          end
+          object TBXItemESpToTabLead: TTBXItem
+            Action = ecSpToTabLeading
             Caption = 'Spaces to tabs (leading)'
             Hint = 'Replace leading spaces to Tab characters'
-          end
-          object TBXSeparatorItem83: TSpTBXSeparatorItem
-            Caption = ''
-            Hint = ''
-          end
-          object TBXItemECenterLines: TSpTBXItem
-            Action = ecCenterLines
             OnSelect = ButtonOnSelect
+          end
+          object TBXSeparatorItem83: TTBXSeparatorItem
+          end
+          object TBXItemECenterLines: TTBXItem
+            Action = ecCenterLines
             Caption = 'Center lines'
             Hint = 'Center selected lines by right margin position'
+            OnSelect = ButtonOnSelect
           end
         end
-        object TBXSubmenuItem13: TSpTBXSubmenuItem
+        object TBXSubmenuItem13: TTBXSubmenuItem
           Caption = 'Comments'
-          Hint = ''
-          object TBXItemEToggleLineComment: TSpTBXItem
-            OnClick = TBXItemEToggleLineCommentClick
-            OnSelect = ButtonOnSelect
+          object TBXItemEToggleLineComment: TTBXItem
             Caption = 'Toggle &block comment'
             Hint = 'Toggle line comment for selected lines'
-          end
-          object TBXItemEToggleLineCommentAlt: TSpTBXItem
-            OnClick = TBXItemEToggleLineCommentAltClick
+            OnClick = TBXItemEToggleLineCommentClick
             OnSelect = ButtonOnSelect
+          end
+          object TBXItemEToggleLineCommentAlt: TTBXItem
             Caption = 'Toggle block comment (alt.)'
             Hint = 
               'Toggle line comment (comment chars placed on 1st non-space posit' +
               'ion)'
-          end
-          object TBXItemEComm: TSpTBXItem
-            Action = ecCommentLines
+            OnClick = TBXItemEToggleLineCommentAltClick
             OnSelect = ButtonOnSelect
+          end
+          object TBXItemEComm: TTBXItem
+            Action = ecCommentLines
             Caption = 'Block &comment'
             Hint = 'Comment selected lines'
-          end
-          object TBXItemEUncomm: TSpTBXItem
-            Action = ecUnCommentLines
             OnSelect = ButtonOnSelect
+          end
+          object TBXItemEUncomm: TTBXItem
+            Action = ecUnCommentLines
             Caption = 'Block &uncomment'
             Hint = 'Uncomment selected lines'
-          end
-          object TBXItemEToggleStreamComment: TSpTBXItem
-            OnClick = TBXItemEToggleStreamCommentClick
             OnSelect = ButtonOnSelect
+          end
+          object TBXItemEToggleStreamComment: TTBXItem
             Caption = 'Toggle &stream comment'
             Hint = 'Toggle stream comment for selected lines'
+            OnClick = TBXItemEToggleStreamCommentClick
+            OnSelect = ButtonOnSelect
           end
         end
-        object TBXSubmenuItem19: TSpTBXSubmenuItem
+        object TBXSubmenuItem19: TTBXSubmenuItem
+          Caption = 'Sorting'
           ImageIndex = 16
           Options = [tboDropdownArrow]
           OnSelect = ButtonOnSelect
-          Caption = 'Sorting'
-          Hint = ''
-          object TBXItemESortAsc: TSpTBXItem
+          object TBXItemESortAsc: TTBXItem
             Tag = 562
             Action = ecSortAscending
-            OnSelect = ButtonOnSelect
             Caption = 'Sort &ascending'
+            OnSelect = ButtonOnSelect
           end
-          object TBXItemESortDesc: TSpTBXItem
+          object TBXItemESortDesc: TTBXItem
             Tag = 563
             Action = ecSortDescending
-            OnSelect = ButtonOnSelect
             Caption = 'Sort &descending'
-          end
-          object TBXItemERemoveDups: TSpTBXItem
-            Action = ecRemoveDups
             OnSelect = ButtonOnSelect
+          end
+          object TBXItemERemoveDups: TTBXItem
+            Action = ecRemoveDups
             Caption = '&Remove adjacent duplicates'
             Hint = 'Remove adjacent duplicate lines from selection'
-          end
-          object TBXSeparatorItem85: TSpTBXSeparatorItem
-            Caption = ''
-            Hint = ''
-          end
-          object TBXItemESortDialog: TSpTBXItem
-            Action = ecSortDialog
             OnSelect = ButtonOnSelect
+          end
+          object TBXSeparatorItem85: TTBXSeparatorItem
+          end
+          object TBXItemESortDialog: TTBXItem
+            Action = ecSortDialog
             Caption = '&Sort dialog...'
             Hint = 'Show "Sort lines" dialog'
+            OnSelect = ButtonOnSelect
           end
         end
-        object TBXSubmenuItem20: TSpTBXSubmenuItem
+        object TBXSubmenuItem20: TTBXSubmenuItem
+          Caption = 'Change case'
           ImageIndex = 18
           Options = [tboDropdownArrow]
           OnSelect = ButtonOnSelect
-          Caption = 'Change case'
-          Hint = ''
-          object TBXItemECaseUpper: TSpTBXItem
+          object TBXItemECaseUpper: TTBXItem
             Tag = 365
             Action = ecUpperCase
-            OnSelect = ButtonOnSelect
             Caption = '&UPPER CASE'
             Hint = 'Selection - to upper case'
+            OnSelect = ButtonOnSelect
           end
-          object TBXItemECaseLower: TSpTBXItem
+          object TBXItemECaseLower: TTBXItem
             Tag = 366
             Action = ecLowerCase
-            OnSelect = ButtonOnSelect
             Caption = '&lower case'
             Hint = 'Selection - to lower case'
+            OnSelect = ButtonOnSelect
           end
-          object TBXItemECaseTitle: TSpTBXItem
+          object TBXItemECaseTitle: TTBXItem
             Tag = 368
             Action = ecTitleCase
-            OnSelect = ButtonOnSelect
             Caption = '&Title Case'
             Hint = 'Selection - to title case'
+            OnSelect = ButtonOnSelect
           end
-          object TBXItemECaseSent: TSpTBXItem
+          object TBXItemECaseSent: TTBXItem
             Tag = 369
             Action = ecSentCase
-            OnSelect = ButtonOnSelect
             Hint = 'Selection - to sentence case'
+            OnSelect = ButtonOnSelect
           end
-          object TBXItemECaseInvert: TSpTBXItem
+          object TBXItemECaseInvert: TTBXItem
             Tag = 365
             Action = ecToggleCase
-            OnSelect = ButtonOnSelect
             Caption = '&iNVERT cASE'
             Hint = 'Invert selection case'
+            OnSelect = ButtonOnSelect
           end
         end
-        object TBXSubmenuItemAbbrev: TSpTBXSubmenuItem
+        object TBXSubmenuItemAbbrev: TTBXSubmenuItem
           Caption = 'Abbreviations'
-          Hint = ''
-          object TBXItemEZenExpand: TSpTBXItem
+          object TBXItemEZenExpand: TTBXItem
             Action = ecZenExpand
-            OnSelect = ButtonOnSelect
             Caption = 'Emmet - Expand abbreviation'
-          end
-          object TBXItemEZenWrap: TSpTBXItem
-            Action = ecZenWrap
             OnSelect = ButtonOnSelect
+          end
+          object TBXItemEZenWrap: TTBXItem
+            Action = ecZenWrap
             Caption = 'Emmet - Wrap with abbreviation...'
+            OnSelect = ButtonOnSelect
           end
         end
-        object TBXSeparatorItem39: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
+        object TBXSeparatorItem39: TTBXSeparatorItem
         end
-        object TBXItemETable: TSpTBXItem
-          OnClick = TBXItemETableClick
-          OnSelect = ButtonOnSelect
+        object TBXItemETable: TTBXItem
           Caption = 'Insert character'
           Hint = 'Show "Character Table" dialog'
-        end
-        object TBXItemEInsText: TSpTBXItem
-          OnClick = TBXItemEInsTextClick
+          OnClick = TBXItemETableClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemEInsText: TTBXItem
           Caption = 'Insert text...'
           Hint = 'Show "Insert text" dialog'
-        end
-        object TBXItemEColor: TSpTBXItem
-          Action = ecInsertColor
+          OnClick = TBXItemEInsTextClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemEColor: TTBXItem
+          Action = ecInsertColor
           Caption = 'Insert color...'
           Hint = 'Show "Color picker" dialog'
-        end
-        object TBXItemEImage: TSpTBXItem
-          Action = ecInsertImage
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemEImage: TTBXItem
+          Action = ecInsertImage
           Caption = 'Insert image tag...'
           Hint = 'Show file dialog for inserting <img> tag'
-        end
-        object TBXItemETime: TSpTBXItem
-          OnClick = TBXItemETimeClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemETime: TTBXItem
           Caption = 'Insert date/time'
           Hint = 'Insert current date/time into text'
-        end
-        object TBXSeparatorItem71: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemEFillBlock: TSpTBXItem
-          OnClick = TBXItemEFillBlockClick
+          OnClick = TBXItemETimeClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXSeparatorItem71: TTBXSeparatorItem
+        end
+        object TBXItemEFillBlock: TTBXItem
           Caption = 'Fill block...'
           Hint = 'Fill column block lines with custom string'
-        end
-        object TBXItemESyncEd: TSpTBXItem
-          OnClick = TBXItemESyncEdClick
+          OnClick = TBXItemEFillBlockClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemESyncEd: TTBXItem
           Caption = 'Toggle S&yncEditing'
           Hint = 'Start/cancel Synchronized Editing mode'
-        end
-        object TBXItemERepeatCmd: TSpTBXItem
-          Action = ecRepeatCmd
+          OnClick = TBXItemESyncEdClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemERepeatCmd: TTBXItem
+          Action = ecRepeatCmd
           Caption = 'Repeat last edit command'
           Hint = 'Repeat last command which edits text'
-        end
-        object TBXItemECommandList: TSpTBXItem
-          Action = ecCommandsList
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemECommandList: TTBXItem
+          Action = ecCommandsList
           Caption = 'Show commands list'
           Hint = 'Show "Commands list" dialog'
+          OnSelect = ButtonOnSelect
         end
       end
-      object TBXSubmenuItemSr: TSpTBXSubmenuItem
+      object TBXSubmenuItemSr: TTBXSubmenuItem
         Caption = '&Search'
-        Hint = ''
-        object TBXItemSFind: TSpTBXItem
+        object TBXItemSFind: TTBXItem
           Action = ecFind
-          OnSelect = ButtonOnSelect
           Caption = '&Find...'
           Hint = 'Show "Find" dialog'
-        end
-        object TBXItemSNext: TSpTBXItem
-          OnClick = TBXItemFNextClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemSNext: TTBXItem
           Caption = 'Find &next'
           Hint = 'Find next occurance of search string'
-        end
-        object TBXItemSPrev: TSpTBXItem
-          OnClick = TBXItemFPrevClick
+          OnClick = TBXItemFNextClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemSPrev: TTBXItem
           Caption = 'Find &previous'
           Hint = 'Find previous occurance of search string'
-        end
-        object TBXItemQs: TSpTBXItem
-          OnClick = TBXItemQsClick
+          OnClick = TBXItemFPrevClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemQs: TTBXItem
           Caption = '&Quick search'
           Hint = 'Show "Quick Search" panel'
-        end
-        object TBXItemSRep: TSpTBXItem
-          Action = ecReplace
+          OnClick = TBXItemQsClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemSRep: TTBXItem
+          Action = ecReplace
           Caption = '&Replace...'
           Hint = 'Show "Replace" dialog'
+          OnSelect = ButtonOnSelect
         end
-        object TBXItemSRepFiles: TSpTBXItem
+        object TBXItemSRepFiles: TTBXItem
           Action = ecReplaceInFiles
-          OnSelect = ButtonOnSelect
           Caption = 'Find/replace in fil&es...'
-        end
-        object TBXItemEExtr: TSpTBXItem
-          OnClick = TBXItemEExtrClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemEExtr: TTBXItem
           Caption = 'E&xtract strings...'
           Hint = 'Show "Extract strings" dialog'
-        end
-        object TBXSeparatorItem19: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemSWordNext: TSpTBXItem
-          OnClick = TBXItemWNextClick
+          OnClick = TBXItemEExtrClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXSeparatorItem19: TTBXSeparatorItem
+        end
+        object TBXItemSWordNext: TTBXItem
           Caption = 'Find current &word next'
           Hint = 'Find next occurance of word at caret'
-        end
-        object TBXItemSWordPrior: TSpTBXItem
-          OnClick = TBXItemWPriorClick
+          OnClick = TBXItemWNextClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemSWordPrior: TTBXItem
           Caption = 'Find current w&ord prior'
           Hint = 'Find previous occurance of word at caret'
-        end
-        object TBXSeparatorItem20: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemSMarkAll: TSpTBXItem
-          OnClick = TBXItemSMarkAllClick
+          OnClick = TBXItemWPriorClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXSeparatorItem20: TTBXSeparatorItem
+        end
+        object TBXItemSMarkAll: TTBXItem
           Caption = '&Mark all occurrences'
           Hint = 'Mark all occurrences of search string (place search marks)'
-        end
-        object TBXItemSMarkNext: TSpTBXItem
-          OnClick = TBXItemSMarkNextClick
+          OnClick = TBXItemSMarkAllClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemSMarkNext: TTBXItem
           Caption = 'Ne&xt search mark'
           Hint = 'Go to next search mark'
-        end
-        object TBXItemSMarkPrev: TSpTBXItem
-          OnClick = TBXItemSMarkPrevClick
+          OnClick = TBXItemSMarkNextClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemSMarkPrev: TTBXItem
           Caption = 'Previous &search mark'
           Hint = 'Go to previous search mark'
-        end
-        object TBXItemSMarkClear: TSpTBXItem
-          OnClick = TBXItem2Click
+          OnClick = TBXItemSMarkPrevClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemSMarkClear: TTBXItem
           Caption = '&Clear search marks'
           Hint = 'Clear search marks, which were left by "Find all" command'
-        end
-        object TBXSeparatorItem40: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemSResNext: TSpTBXItem
-          Action = ecGotoNextFindResult
+          OnClick = TBXItem2Click
           OnSelect = ButtonOnSelect
+        end
+        object TBXSeparatorItem40: TTBXSeparatorItem
+        end
+        object TBXItemSResNext: TTBXItem
+          Action = ecGotoNextFindResult
           Caption = 'Next mass search result'
           Hint = 'Open next result of "Find in files" operation'
-        end
-        object TBXItemSResPrev: TSpTBXItem
-          Action = ecGotoPrevFindResult
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemSResPrev: TTBXItem
+          Action = ecGotoPrevFindResult
           Caption = 'Previous mass search result'
           Hint = 'Open previous result of "Find in files" operation'
-        end
-        object TBXSeparatorItem21: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemSSelToken: TSpTBXItem
-          OnClick = TBXItemSSelTokenClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXSeparatorItem21: TTBXSeparatorItem
+        end
+        object TBXItemSSelToken: TTBXItem
           Caption = 'Select token'
           Hint = 'Select entire token at current caret position'
-        end
-        object TBXItemSSelBrackets: TSpTBXItem
-          OnClick = TBXItemSSelBracketsClick
+          OnClick = TBXItemSSelTokenClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemSSelBrackets: TTBXItem
           Caption = 'Select brackets'
           Hint = 'Select the range from the current bracket to matching one'
-        end
-        object TBXItemSGoBracket: TSpTBXItem
-          OnClick = TBXItemSGoBracketClick
+          OnClick = TBXItemSSelBracketsClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemSGoBracket: TTBXItem
           Caption = 'Go to matching bracket'
           Hint = 'Go to bracket, which matches the bracket under caret'
-        end
-        object TBXItemSGoto: TSpTBXItem
-          Action = ecGoto
+          OnClick = TBXItemSGoBracketClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemSGoto: TTBXItem
+          Action = ecGoto
           Caption = '&Go to line...'
           Hint = 'Show "Go to" dialog'
-        end
-        object TBXItemSGotoFile: TSpTBXItem
-          Action = ecProjectList
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemSGotoFile: TTBXItem
+          Action = ecProjectList
           Caption = 'Go to project file...'
           Hint = 'Show "Project files list" dialog'
+          OnSelect = ButtonOnSelect
         end
       end
-      object TBXSubmenuItemEnc: TSpTBXSubmenuItem
+      object TBXSubmenuItemEnc: TTBXSubmenuItem
         Caption = 'E&ncoding'
-        Hint = ''
-        object TBXSubmenuEnc: TSpTBXSubmenuItem
-          OnPopup = TBXSubmenuEncPopup
-          OnSelect = ButtonOnSelect
+        object TBXSubmenuEnc: TTBXSubmenuItem
           Caption = '&Change encoding'
           Hint = 'Reload file in other encoding or change current encoding'
-        end
-        object TBXSubmenuEnc2: TSpTBXSubmenuItem
-          OnPopup = TBXSubmenuEnc2Popup
+          OnPopup = TBXSubmenuEncPopup
           OnSelect = ButtonOnSelect
+        end
+        object TBXSubmenuEnc2: TTBXSubmenuItem
           Caption = 'Con&vert encoding to'
           Hint = 'Change current encoding w/o reloading the file'
+          OnPopup = TBXSubmenuEnc2Popup
+          OnSelect = ButtonOnSelect
         end
-        object TBXSubmenuLineEnds: TSpTBXSubmenuItem
+        object TBXSubmenuLineEnds: TTBXSubmenuItem
+          Caption = 'Change &line endings'
           OnPopup = TBXSubmenuLineEndsPopup
           OnSelect = ButtonOnSelect
-          Caption = 'Change &line endings'
-          Hint = ''
-          object TBXItemEndMWin: TSpTBXItem
+          object TBXItemEndMWin: TTBXItem
             Tag = 1
+            Caption = '&Windows (CR LF)'
             Checked = True
             GroupIndex = 1
             RadioItem = True
             OnClick = SetFormat
-            Caption = '&Windows (CR LF)'
-            Hint = ''
           end
-          object TBXItemEndMUn: TSpTBXItem
+          object TBXItemEndMUn: TTBXItem
             Tag = 3
-            GroupIndex = 1
-            RadioItem = True
-            OnClick = SetFormat
             Caption = '&Unix (LF)'
-            Hint = ''
-          end
-          object TBXItemEndMMac: TSpTBXItem
-            Tag = 2
             GroupIndex = 1
             RadioItem = True
             OnClick = SetFormat
+          end
+          object TBXItemEndMMac: TTBXItem
+            Tag = 2
             Caption = '&Mac (CR)'
-            Hint = ''
+            GroupIndex = 1
+            RadioItem = True
+            OnClick = SetFormat
           end
         end
       end
-      object TBXSubmenuItemLexer: TSpTBXSubmenuItem
-        OnPopup = TBXSubmenuItemLexerPopup
+      object TBXSubmenuItemLexer: TTBXSubmenuItem
         Caption = '&Lexer'
-        Hint = ''
+        OnPopup = TBXSubmenuItemLexerPopup
       end
-      object TBXSubmenuItemBk: TSpTBXSubmenuItem
+      object TBXSubmenuItemBk: TTBXSubmenuItem
         Caption = '&Bookmarks'
-        Hint = ''
-        object TBXSubmenuItemBkSet: TSpTBXSubmenuItem
-          OnPopup = TBXSubmenuItem8Popup
-          OnSelect = ButtonOnSelect
+        object TBXSubmenuItemBkSet: TTBXSubmenuItem
           Caption = '&Set numbered bookmark'
           Hint = 'Set numbered (0-9) bookmark for current line'
-          object TBXItemG0: TSpTBXItem
-            Images = ImageListIconsStd
-            OnClick = bbg0Click
+          OnPopup = TBXSubmenuItem8Popup
+          OnSelect = ButtonOnSelect
+          object TBXItemG0: TTBXItem
             Caption = '0'
-            Hint = ''
-          end
-          object TBXItemG1: TSpTBXItem
             Images = ImageListIconsStd
             OnClick = bbg0Click
+          end
+          object TBXItemG1: TTBXItem
             Caption = '1'
-            Hint = ''
-          end
-          object TBXItemG2: TSpTBXItem
             Images = ImageListIconsStd
             OnClick = bbg0Click
+          end
+          object TBXItemG2: TTBXItem
             Caption = '2'
-            Hint = ''
-          end
-          object TBXItemG3: TSpTBXItem
             Images = ImageListIconsStd
             OnClick = bbg0Click
+          end
+          object TBXItemG3: TTBXItem
             Caption = '3'
-            Hint = ''
-          end
-          object TBXItemG4: TSpTBXItem
             Images = ImageListIconsStd
             OnClick = bbg0Click
+          end
+          object TBXItemG4: TTBXItem
             Caption = '4'
-            Hint = ''
-          end
-          object TBXItemG5: TSpTBXItem
             Images = ImageListIconsStd
             OnClick = bbg0Click
+          end
+          object TBXItemG5: TTBXItem
             Caption = '5'
-            Hint = ''
-          end
-          object TBXItemG6: TSpTBXItem
             Images = ImageListIconsStd
             OnClick = bbg0Click
+          end
+          object TBXItemG6: TTBXItem
             Caption = '6'
-            Hint = ''
-          end
-          object TBXItemG7: TSpTBXItem
             Images = ImageListIconsStd
             OnClick = bbg0Click
+          end
+          object TBXItemG7: TTBXItem
             Caption = '7'
-            Hint = ''
-          end
-          object TBXItemG8: TSpTBXItem
             Images = ImageListIconsStd
             OnClick = bbg0Click
+          end
+          object TBXItemG8: TTBXItem
             Caption = '8'
-            Hint = ''
-          end
-          object TBXItemG9: TSpTBXItem
             Images = ImageListIconsStd
             OnClick = bbg0Click
+          end
+          object TBXItemG9: TTBXItem
             Caption = '9'
-            Hint = ''
+            Images = ImageListIconsStd
+            OnClick = bbg0Click
           end
         end
-        object TBXSubmenuItemBkGoto: TSpTBXSubmenuItem
-          OnPopup = TBXSubmenuItem3Popup
-          OnSelect = ButtonOnSelect
+        object TBXSubmenuItemBkGoto: TTBXSubmenuItem
           Caption = '&Go to numbered bookmark'
           Hint = 'Go to any numbered bookmark'
-          object TBXItemB0: TSpTBXItem
-            Images = ImageListIconsStd
-            OnClick = bBk0Click
+          OnPopup = TBXSubmenuItem3Popup
+          OnSelect = ButtonOnSelect
+          object TBXItemB0: TTBXItem
             Caption = '0'
-            Hint = ''
-          end
-          object TBXItemB1: TSpTBXItem
             Images = ImageListIconsStd
             OnClick = bBk0Click
+          end
+          object TBXItemB1: TTBXItem
             Caption = '1'
-            Hint = ''
-          end
-          object TBXItemB2: TSpTBXItem
             Images = ImageListIconsStd
             OnClick = bBk0Click
+          end
+          object TBXItemB2: TTBXItem
             Caption = '2'
-            Hint = ''
-          end
-          object TBXItemB3: TSpTBXItem
             Images = ImageListIconsStd
             OnClick = bBk0Click
+          end
+          object TBXItemB3: TTBXItem
             Caption = '3'
-            Hint = ''
-          end
-          object TBXItemB4: TSpTBXItem
             Images = ImageListIconsStd
             OnClick = bBk0Click
+          end
+          object TBXItemB4: TTBXItem
             Caption = '4'
-            Hint = ''
-          end
-          object TBXItemB5: TSpTBXItem
             Images = ImageListIconsStd
             OnClick = bBk0Click
+          end
+          object TBXItemB5: TTBXItem
             Caption = '5'
-            Hint = ''
-          end
-          object TBXItemB6: TSpTBXItem
             Images = ImageListIconsStd
             OnClick = bBk0Click
+          end
+          object TBXItemB6: TTBXItem
             Caption = '6'
-            Hint = ''
-          end
-          object TBXItemB7: TSpTBXItem
             Images = ImageListIconsStd
             OnClick = bBk0Click
+          end
+          object TBXItemB7: TTBXItem
             Caption = '7'
-            Hint = ''
-          end
-          object TBXItemB8: TSpTBXItem
             Images = ImageListIconsStd
             OnClick = bBk0Click
+          end
+          object TBXItemB8: TTBXItem
             Caption = '8'
-            Hint = ''
-          end
-          object TBXItemB9: TSpTBXItem
             Images = ImageListIconsStd
             OnClick = bBk0Click
+          end
+          object TBXItemB9: TTBXItem
             Caption = '9'
-            Hint = ''
+            Images = ImageListIconsStd
+            OnClick = bBk0Click
           end
         end
-        object TBXItemBkToggle: TSpTBXItem
+        object TBXItemBkToggle: TTBXItem
           Action = ecBkToggle
-          OnSelect = ButtonOnSelect
           Caption = '&Toggle bookmark'
           Hint = 'Toggle bookmark for current line'
-        end
-        object TBXItemBkClear: TSpTBXItem
-          Action = ecBkClearAll
-          Images = ImageListIconsStd
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemBkClear: TTBXItem
+          Action = ecBkClearAll
           Caption = '&Clear all bookmarks'
           Hint = 'Remove all bookmarks in current file'
-        end
-        object TBXItemBkInverse: TSpTBXItem
-          Action = ecBkInverse
+          Images = ImageListIconsStd
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemBkInverse: TTBXItem
+          Action = ecBkInverse
           Caption = '&Inverse bookmarks'
           Hint = 'Toggle bookmarks for all lines in file'
-        end
-        object TBXItemBkNext: TSpTBXItem
-          Action = ecBkNext
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemBkNext: TTBXItem
+          Action = ecBkNext
           Caption = '&Next bookmark'
           Hint = 'Go to next bookmark'
-        end
-        object TBXItemBkPrev: TSpTBXItem
-          Action = ecBkPrev
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemBkPrev: TTBXItem
+          Action = ecBkPrev
           Caption = '&Previous bookmark'
           Hint = 'Go to previous bookmark'
-        end
-        object TBXSeparatorItem63: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemBkCopy: TSpTBXItem
-          Action = ecBkCopy
           OnSelect = ButtonOnSelect
+        end
+        object TBXSeparatorItem63: TTBXSeparatorItem
+        end
+        object TBXItemBkCopy: TTBXItem
+          Action = ecBkCopy
           Caption = 'Copy bookmarked lines'
           Hint = 'Copy bookmarked lines to clipboard'
-        end
-        object TBXItemBkCut: TSpTBXItem
-          Action = ecBkCut
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemBkCut: TTBXItem
+          Action = ecBkCut
           Caption = 'Cut bookmarked lines'
           Hint = 'Cut bookmarked lines to clipboard'
-        end
-        object TBXItemBkPaste: TSpTBXItem
-          Action = ecBkPaste
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemBkPaste: TTBXItem
+          Action = ecBkPaste
           Caption = 'Paste into bookmarked lines'
           Hint = 'Paste from clipboard and replace bookmarked lines'
-        end
-        object TBXItemBkDel: TSpTBXItem
-          Action = ecBkDelete
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemBkDel: TTBXItem
+          Action = ecBkDelete
           Caption = 'Delete bookmarked lines'
           Hint = 'Delete bookmarked lines from file'
-        end
-        object TBXItemBkDelUnmk: TSpTBXItem
-          Action = ecBkDeleteUnmk
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemBkDelUnmk: TTBXItem
+          Action = ecBkDeleteUnmk
           Caption = 'Delete unmarked lines'
           Hint = 'Delete non-bookmarked lines from file'
-        end
-        object TBXItemBkGoto: TSpTBXItem
-          OnClick = TBXItemBkGotoClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemBkGoto: TTBXItem
           Caption = 'Go to bookmark...'
           Hint = 'Show "Go to bookmark" dialog'
-        end
-        object TBXSeparatorItem78: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemBkDropPortable: TSpTBXItem
-          OnClick = TBXItemBkDropPortableClick
+          OnClick = TBXItemBkGotoClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXSeparatorItem78: TTBXSeparatorItem
+        end
+        object TBXItemBkDropPortable: TTBXItem
           Caption = 'Drop portable bookmark'
           Hint = 'Add so called "portable bookmark" on current line'
-        end
-        object TBXItemBkGotoPortable: TSpTBXItem
-          Action = ecGotoPortableBk
+          OnClick = TBXItemBkDropPortableClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemBkGotoPortable: TTBXItem
+          Action = ecGotoPortableBk
           Caption = 'Go to portable bookmark...'
           Hint = 'Show "Go to portable bookmark" dialog'
-        end
-        object TBXSeparatorItem27: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMarkDrop: TSpTBXItem
-          OnClick = TBXItemMarkDropClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXSeparatorItem27: TTBXSeparatorItem
+        end
+        object TBXItemMarkDrop: TTBXItem
           Caption = '&Drop marker'
           Hint = 'Drop marker to current file position'
-        end
-        object TBXItemMarkColl: TSpTBXItem
-          OnClick = TBXItemMarkCollClick
+          OnClick = TBXItemMarkDropClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemMarkColl: TTBXItem
           Caption = 'C&ollect marker'
           Hint = 'Remove last marker'
-        end
-        object TBXItemMarkSwap: TSpTBXItem
-          OnClick = TBXItemMarkSwapClick
+          OnClick = TBXItemMarkCollClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemMarkSwap: TTBXItem
           Caption = '&Swap marker'
           Hint = 'Swap last marker and current file position'
-        end
-        object TBXItemMarkGoLast: TSpTBXItem
-          Action = ecJumpToLastMarker
+          OnClick = TBXItemMarkSwapClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemMarkGoLast: TTBXItem
+          Action = ecJumpToLastMarker
           Caption = 'Go to last marker'
           Hint = 'Go to last marker, don'#39't delete it'
-        end
-        object TBXItemMarkClear: TSpTBXItem
-          Action = ecMarkersClear
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemMarkClear: TTBXItem
+          Action = ecMarkersClear
           Caption = 'Clear markers'
           Hint = 'Clear all markers in current file'
+          OnSelect = ButtonOnSelect
         end
       end
-      object TBXSubmenuItemView: TSpTBXSubmenuItem
+      object TBXSubmenuItemView: TTBXSubmenuItem
         Caption = '&View'
-        Hint = ''
-        object TBXItemOTree: TSpTBXItem
+        object TBXItemOTree: TTBXItem
           Action = ecTree
-          OnSelect = ButtonOnSelect
           Caption = 'Toggle &structure/project panel'
           Hint = 'Show/hide structure/project panel'
-        end
-        object TBXItemOOut: TSpTBXItem
-          Action = ecOut
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemOOut: TTBXItem
+          Action = ecOut
           Caption = 'Toggle &output panel'
           Hint = 'Show/hide output window'
-        end
-        object TBXItemOClip: TSpTBXItem
-          Action = ecClip
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemOClip: TTBXItem
+          Action = ecClip
           Caption = 'Toggle clipboar&d/minimap panel'
           Hint = 'Show/hide clipboard and mini-map panel'
-        end
-        object TBXSubmenuItemToolbars: TSpTBXSubmenuItem
           OnSelect = ButtonOnSelect
+        end
+        object TBXSubmenuItemToolbars: TTBXSubmenuItem
           Caption = 'Tool&bars'
-          Hint = ''
-          object TBXItemTFile: TSpTBXItem
-            OnClick = TBXItemTFileClick
-            OnSelect = ButtonOnSelect
+          OnSelect = ButtonOnSelect
+          object TBXItemTFile: TTBXItem
             Caption = 'File'
             Hint = 'Toggle File toolbar'
-          end
-          object TBXItemTEdit: TSpTBXItem
-            OnClick = TBXItemTEditClick
+            OnClick = TBXItemTFileClick
             OnSelect = ButtonOnSelect
+          end
+          object TBXItemTEdit: TTBXItem
             Caption = 'Edit'
             Hint = 'Toggle Edit toolbar'
-          end
-          object TBXItemTView: TSpTBXItem
-            OnClick = TBXItemTViewClick
+            OnClick = TBXItemTEditClick
             OnSelect = ButtonOnSelect
+          end
+          object TBXItemTView: TTBXItem
             Caption = 'View'
             Hint = 'Toggle View toolbar'
-          end
-          object TBXItemTQs: TSpTBXItem
-            OnClick = TBXItemTQsClick
+            OnClick = TBXItemTViewClick
             OnSelect = ButtonOnSelect
+          end
+          object TBXItemTQs: TTBXItem
             Caption = 'Quick search'
             Hint = 'Toggle Quick Search toolbar'
+            OnClick = TBXItemTQsClick
+            OnSelect = ButtonOnSelect
           end
         end
-        object TBXSeparatorItem25: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
+        object TBXSeparatorItem25: TTBXSeparatorItem
         end
-        object TBXItemORO: TSpTBXItem
+        object TBXItemORO: TTBXItem
           Action = ecReadOnly
-          OnSelect = ButtonOnSelect
           Caption = 'Toggle &read-only'
+          OnSelect = ButtonOnSelect
         end
-        object TBXItemOFold: TSpTBXItem
+        object TBXItemOFold: TTBXItem
           Action = ecFold
-          OnSelect = ButtonOnSelect
           Caption = 'Toggle &code folding'
+          OnSelect = ButtonOnSelect
         end
-        object TBXItemOWrap: TSpTBXItem
+        object TBXItemOWrap: TTBXItem
           Action = ecWrap
-          OnSelect = ButtonOnSelect
           Caption = 'Toggle &word wrap'
+          OnSelect = ButtonOnSelect
         end
-        object TBXItemONums: TSpTBXItem
+        object TBXItemONums: TTBXItem
           Action = ecLines
-          OnSelect = ButtonOnSelect
           Caption = 'Toggle line &numbers'
+          OnSelect = ButtonOnSelect
         end
-        object TBXItemONPrint: TSpTBXItem
+        object TBXItemONPrint: TTBXItem
           Action = ecNPrint
-          OnSelect = ButtonOnSelect
           Caption = 'Toggle non-&printable chars'
-        end
-        object TBXItemORuler: TSpTBXItem
-          Action = ecRuler
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemORuler: TTBXItem
+          Action = ecRuler
           Caption = 'Toggle ruler'
           Hint = 'Toggle horizontal ruler'
-        end
-        object TBXSeparatorItem50: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemVSpellLive: TSpTBXItem
-          Action = ecSpellLive
           OnSelect = ButtonOnSelect
+        end
+        object TBXSeparatorItem50: TTBXSeparatorItem
+        end
+        object TBXItemVSpellLive: TTBXItem
+          Action = ecSpellLive
           Caption = '&Live spelling'
           Hint = 'Toggle live spelling mode (red underlines)'
-        end
-        object TBXItemVSpellCheck: TSpTBXItem
-          Action = ecSpellCheck
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemVSpellCheck: TTBXItem
+          Action = ecSpellCheck
           Caption = 'Sp&ell check'
           Hint = 'Perform spell check of current document'
-        end
-        object TBXSeparatorItem12: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemVSyncHorz: TSpTBXItem
-          Action = ecSyncH
           OnSelect = ButtonOnSelect
+        end
+        object TBXSeparatorItem12: TTBXSeparatorItem
+        end
+        object TBXItemVSyncHorz: TTBXItem
+          Action = ecSyncH
           Caption = 'Sync horizontal scrolling'
           Hint = 'Synchronize horizontal scrolling (when both views opened)'
-        end
-        object TBXItemVSyncVert: TSpTBXItem
-          Action = ecSyncV
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemVSyncVert: TTBXItem
+          Action = ecSyncV
           Caption = 'Sync vertical scrolling'
           Hint = 'Synchronize vertical scrolling (when both views opened)'
-        end
-        object TBXSeparatorItem26: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemOFullScr: TSpTBXItem
-          Action = ecFullScr
           OnSelect = ButtonOnSelect
+        end
+        object TBXSeparatorItem26: TTBXSeparatorItem
+        end
+        object TBXItemOFullScr: TTBXItem
+          Action = ecFullScr
           Caption = 'F&ull screen'
           Hint = 'Toggle full screen mode'
-        end
-        object TBXItemOOnTop: TSpTBXItem
-          Action = ecOnTop
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemOOnTop: TTBXItem
+          Action = ecOnTop
           Caption = '&Always on top'
           Hint = 'Always show main form on top'
-        end
-        object TBXItemViewColMarkers: TSpTBXItem
-          Action = fColumnMarkers
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemViewColMarkers: TTBXItem
+          Action = fColumnMarkers
           Caption = 'Column markers...'
           Hint = 'Set column markers for the current file'
+          OnSelect = ButtonOnSelect
         end
-        object TBXSubmenuFolding: TSpTBXSubmenuItem
+        object TBXSubmenuFolding: TTBXSubmenuItem
           Caption = 'Folding'
-          Hint = ''
-          object TBXItemFoldAll: TSpTBXItem
-            OnClick = TBXItemFoldAllClick
+          object TBXItemFoldAll: TTBXItem
             Caption = 'Collapse all'
-            Hint = ''
+            OnClick = TBXItemFoldAllClick
           end
-          object TBXItemUnfoldAll: TSpTBXItem
-            OnClick = TBXItemUnfoldAllClick
+          object TBXItemUnfoldAll: TTBXItem
             Caption = 'Expand all'
-            Hint = ''
+            OnClick = TBXItemUnfoldAllClick
           end
-          object TBXSeparatorItem87: TSpTBXSeparatorItem
-            Caption = ''
-            Hint = ''
+          object TBXSeparatorItem87: TTBXSeparatorItem
           end
-          object TBXItemUnfoldLine: TSpTBXItem
-            OnClick = TBXItemUnfoldLineClick
+          object TBXItemUnfoldLine: TTBXItem
             Caption = 'Expand current block'
-            Hint = ''
+            OnClick = TBXItemUnfoldLineClick
           end
-          object TBXItemFoldNearestBlock: TSpTBXItem
-            OnClick = TBXItemFoldNearestBlockClick
+          object TBXItemFoldNearestBlock: TTBXItem
             Caption = 'Collapse/expand nearest block'
-            Hint = ''
+            OnClick = TBXItemFoldNearestBlockClick
           end
-          object TBXItemFoldSelBlock: TSpTBXItem
-            OnClick = TBXItemFoldSelBlockClick
+          object TBXItemFoldSelBlock: TTBXItem
             Caption = 'Collapse selection'
-            Hint = ''
+            OnClick = TBXItemFoldSelBlockClick
           end
-          object TBXSeparatorItem89: TSpTBXSeparatorItem
-            Caption = ''
-            Hint = ''
+          object TBXSeparatorItem89: TTBXSeparatorItem
           end
-          object TBXItemFoldRangesInSel: TSpTBXItem
-            OnClick = TBXItemFoldRangesInSelClick
+          object TBXItemFoldRangesInSel: TTBXItem
             Caption = 'Collapse ranges in selection'
-            Hint = ''
+            OnClick = TBXItemFoldRangesInSelClick
           end
-          object TBXItemUnfoldRangesInSel: TSpTBXItem
-            OnClick = TBXItemUnfoldRangesInSelClick
+          object TBXItemUnfoldRangesInSel: TTBXItem
             Caption = 'Expand ranges in selection'
-            Hint = ''
+            OnClick = TBXItemUnfoldRangesInSelClick
           end
-          object TBXSeparatorItem88: TSpTBXSeparatorItem
+          object TBXSeparatorItem88: TTBXSeparatorItem
             Visible = False
-            Caption = ''
-            Hint = ''
           end
-          object TBXItemFoldParent: TSpTBXItem
+          object TBXItemFoldParent: TTBXItem
+            Caption = 'Collapse parent block'
             Visible = False
             OnClick = TBXItemFoldParentClick
-            Caption = 'Collapse parent block'
-            Hint = ''
           end
-          object TBXItemFoldWithNested: TSpTBXItem
+          object TBXItemFoldWithNested: TTBXItem
+            Caption = 'Collapse/expand current and nested blocks'
             Visible = False
             OnClick = TBXItemFoldWithNestedClick
-            Caption = 'Collapse/expand current and nested blocks'
-            Hint = ''
           end
         end
-        object TBXSubmenuItemZoom: TSpTBXSubmenuItem
-          OnSelect = ButtonOnSelect
+        object TBXSubmenuItemZoom: TTBXSubmenuItem
           Caption = '&Zoom'
-          Hint = ''
-          object TBXItemZIn: TSpTBXItem
+          OnSelect = ButtonOnSelect
+          object TBXItemZIn: TTBXItem
+            Caption = 'Zoom &in'
             OnClick = TBXItemZInClick
             OnSelect = ButtonOnSelect
-            Caption = 'Zoom &in'
-            Hint = ''
           end
-          object TBXItemZOut: TSpTBXItem
+          object TBXItemZOut: TTBXItem
+            Caption = 'Zoom &out'
             OnClick = TBXItemZOutClick
             OnSelect = ButtonOnSelect
-            Caption = 'Zoom &out'
-            Hint = ''
           end
-          object TBXItemZ0: TSpTBXItem
+          object TBXItemZ0: TTBXItem
+            Caption = '&Original size'
             OnClick = TBXItemZ0Click
             OnSelect = ButtonOnSelect
-            Caption = '&Original size'
-            Hint = ''
           end
         end
       end
-      object TBXSubmenuItemOpt: TSpTBXSubmenuItem
+      object TBXSubmenuItemOpt: TTBXSubmenuItem
         Caption = '&Options'
-        Hint = ''
-        object TBXItemOSetup: TSpTBXItem
+        object TBXItemOSetup: TTBXItem
           Action = fSetup
-          OnSelect = ButtonOnSelect
           Caption = '&Customize...'
-        end
-        object TBXItemOTools: TSpTBXItem
-          OnClick = TBXItemOToolsClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemOTools: TTBXItem
           Caption = '&External tools...'
           Hint = 'Customize additional tools'
-        end
-        object TBXItemOShell: TSpTBXItem
-          OnClick = TBXItemOShellClick
+          OnClick = TBXItemOToolsClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemOShell: TTBXItem
           Caption = 'E&xplorer integration...'
           Hint = 'Customize integration with Windows Explorer'
+          OnClick = TBXItemOShellClick
+          OnSelect = ButtonOnSelect
         end
-        object TBXSeparatorItem38: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
+        object TBXSeparatorItem38: TTBXSeparatorItem
         end
-        object TBXItemOLexer: TSpTBXItem
+        object TBXItemOLexer: TTBXItem
           Action = fCustomizeLexer
-          OnSelect = ButtonOnSelect
           Caption = 'Customi&ze lexer...'
-        end
-        object TBXItemOLexerHi: TSpTBXItem
-          Action = fCustomizeHi
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemOLexerHi: TTBXItem
+          Action = fCustomizeHi
           Caption = 'Customize lexer &styles...'
           Hint = 'Customize current lexer'#39's highlighting properties'
-        end
-        object TBXItemOLexerLib: TSpTBXItem
-          Action = fCustomizeLexerLib
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemOLexerLib: TTBXItem
+          Action = fCustomizeLexerLib
           Caption = 'Customize &lexers library...'
+          OnSelect = ButtonOnSelect
         end
-        object TBXSeparatorItem24: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
+        object TBXSeparatorItem24: TTBXSeparatorItem
         end
-        object TBXSubmenuItem10: TSpTBXSubmenuItem
+        object TBXSubmenuItem10: TTBXSubmenuItem
           Caption = '&Advanced'
-          Hint = ''
-          object TBXItemORestoreStyles: TSpTBXItem
-            OnClick = TBXItemORestoreStylesClick
-            OnSelect = ButtonOnSelect
+          object TBXItemORestoreStyles: TTBXItem
             Caption = '&Restore lexer styles...'
             Hint = 'Restore auto-backuped lexers styles'
-          end
-          object TBXSeparatorItem84: TSpTBXSeparatorItem
-            Caption = ''
-            Hint = ''
-          end
-          object TBXItemOOpenPluginsIni: TSpTBXItem
-            OnClick = TBXItemOOpenPluginsIniClick
+            OnClick = TBXItemORestoreStylesClick
             OnSelect = ButtonOnSelect
+          end
+          object TBXSeparatorItem84: TTBXSeparatorItem
+          end
+          object TBXItemOOpenPluginsIni: TTBXItem
             Caption = '&Open SynPlugins.ini file'
             Hint = 'Open SynPlugins.ini file, to customize plugins registration'
+            OnClick = TBXItemOOpenPluginsIniClick
+            OnSelect = ButtonOnSelect
           end
         end
       end
-      object TBXSubmenuItemRun: TSpTBXSubmenuItem
-        OnPopup = TBXSubmenuItemRunPopup
+      object TBXSubmenuItemRun: TTBXSubmenuItem
         Caption = '&Run'
-        Hint = ''
-        object TBXItemT1: TSpTBXItem
+        OnPopup = TBXSubmenuItemRunPopup
+        object TBXItemT1: TTBXItem
+          Caption = '-'
           OnClick = fTool1Execute
           OnSelect = ButtonOnSelect
-          Caption = '-'
-          Hint = ''
         end
-        object TBXItemT2: TSpTBXItem
+        object TBXItemT2: TTBXItem
+          Caption = '-'
           OnClick = fTool2Execute
           OnSelect = ButtonOnSelect
-          Caption = '-'
-          Hint = ''
         end
-        object TBXItemT3: TSpTBXItem
+        object TBXItemT3: TTBXItem
+          Caption = '-'
           OnClick = fTool3Execute
           OnSelect = ButtonOnSelect
-          Caption = '-'
-          Hint = ''
         end
-        object TBXItemT4: TSpTBXItem
+        object TBXItemT4: TTBXItem
+          Caption = '-'
           OnClick = fTool4Execute
           OnSelect = ButtonOnSelect
-          Caption = '-'
-          Hint = ''
         end
-        object TBXItemT5: TSpTBXItem
+        object TBXItemT5: TTBXItem
+          Caption = '-'
           OnClick = TBXItemT5Click
           OnSelect = ButtonOnSelect
-          Caption = '-'
-          Hint = ''
         end
-        object TBXItemT6: TSpTBXItem
+        object TBXItemT6: TTBXItem
+          Caption = '-'
           OnClick = TBXItemT6Click
           OnSelect = ButtonOnSelect
-          Caption = '-'
-          Hint = ''
         end
-        object TBXItemT7: TSpTBXItem
+        object TBXItemT7: TTBXItem
+          Caption = '-'
           OnClick = TBXItemT7Click
           OnSelect = ButtonOnSelect
-          Caption = '-'
-          Hint = ''
         end
-        object TBXItemT8: TSpTBXItem
+        object TBXItemT8: TTBXItem
+          Caption = '-'
           OnClick = TBXItemT8Click
           OnSelect = ButtonOnSelect
-          Caption = '-'
-          Hint = ''
         end
-        object TBXItemT9: TSpTBXItem
+        object TBXItemT9: TTBXItem
+          Caption = '-'
           OnClick = TBXItemT9Click
           OnSelect = ButtonOnSelect
-          Caption = '-'
-          Hint = ''
         end
-        object TBXItemT10: TSpTBXItem
+        object TBXItemT10: TTBXItem
+          Caption = '-'
           OnClick = TBXItemT10Click
           OnSelect = ButtonOnSelect
-          Caption = '-'
-          Hint = ''
         end
-        object TBXItemT11: TSpTBXItem
+        object TBXItemT11: TTBXItem
+          Caption = '-'
           OnClick = TBXItemT11Click
           OnSelect = ButtonOnSelect
-          Caption = '-'
-          Hint = ''
         end
-        object TBXItemT12: TSpTBXItem
+        object TBXItemT12: TTBXItem
+          Caption = '-'
           OnClick = TBXItemT12Click
           OnSelect = ButtonOnSelect
-          Caption = '-'
-          Hint = ''
         end
-        object TBXSeparatorItem31: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
+        object TBXSeparatorItem31: TTBXSeparatorItem
         end
-        object TBXSubmenuItemBr: TSpTBXSubmenuItem
-          OnPopup = TBXSubmenuItemBrPopup
+        object TBXSubmenuItemBr: TTBXSubmenuItem
           Caption = '&Browsers'
-          Hint = ''
-          object TBXItemRunPreview: TSpTBXItem
-            OnClick = TBXItemRunPreviewClick
-            OnSelect = ButtonOnSelect
+          OnPopup = TBXSubmenuItemBrPopup
+          object TBXItemRunPreview: TTBXItem
             Caption = '&Preview HTML code'
             Hint = 'Preview selected HTML code in default browser'
-          end
-          object TBXSeparatorItem52: TSpTBXSeparatorItem
-            Caption = ''
-            Hint = ''
-          end
-          object TBXItemRunFirefox: TSpTBXItem
-            OnClick = TBXItemRunFirefoxClick
+            OnClick = TBXItemRunPreviewClick
             OnSelect = ButtonOnSelect
+          end
+          object TBXSeparatorItem52: TTBXSeparatorItem
+          end
+          object TBXItemRunFirefox: TTBXItem
             Caption = 'Open in &Firefox'
             Hint = 'Open file in Firefox browser'
-          end
-          object TBXItemRunMSIE: TSpTBXItem
-            OnClick = TBXItemRunMSIEClick
+            OnClick = TBXItemRunFirefoxClick
             OnSelect = ButtonOnSelect
+          end
+          object TBXItemRunMSIE: TTBXItem
             Caption = 'Open in &IE'
             Hint = 'Open file in Internet Explorer browser'
-          end
-          object TBXItemRunChrome: TSpTBXItem
-            OnClick = TBXItemRunChromeClick
+            OnClick = TBXItemRunMSIEClick
             OnSelect = ButtonOnSelect
+          end
+          object TBXItemRunChrome: TTBXItem
             Caption = 'Open in &Chrome'
             Hint = 'Open file in Google Chrome browser'
-          end
-          object TBXItemRunSafari: TSpTBXItem
-            OnClick = TBXItemRunSafariClick
+            OnClick = TBXItemRunChromeClick
             OnSelect = ButtonOnSelect
+          end
+          object TBXItemRunSafari: TTBXItem
             Caption = 'Open in &Safari'
             Hint = 'Open file in Safari browser'
+            OnClick = TBXItemRunSafariClick
+            OnSelect = ButtonOnSelect
           end
         end
-        object TBXSubmenuItemWb: TSpTBXSubmenuItem
+        object TBXSubmenuItemWb: TTBXSubmenuItem
           Caption = '&Online help'
-          Hint = ''
-          object TBXItemRunFindGoogle: TSpTBXItem
-            OnClick = TBXItemRunFindGoogleClick
-            OnSelect = ButtonOnSelect
+          object TBXItemRunFindGoogle: TTBXItem
             Caption = '&Google search'
             Hint = 'Perform Google search for the current word or selection'
-          end
-          object TBXItemRunFindWiki: TSpTBXItem
-            OnClick = TBXItemRunFindWikiClick
+            OnClick = TBXItemRunFindGoogleClick
             OnSelect = ButtonOnSelect
+          end
+          object TBXItemRunFindWiki: TTBXItem
             Caption = '&Wikipedia search'
             Hint = 'Perform Wikipedia search for the current word or selection'
-          end
-          object TBXItemRunFindMSDN: TSpTBXItem
-            OnClick = TBXItemRunFindMSDNClick
+            OnClick = TBXItemRunFindWikiClick
             OnSelect = ButtonOnSelect
+          end
+          object TBXItemRunFindMSDN: TTBXItem
             Caption = '&MSDN search'
             Hint = 'Perform online MSDN search for the current word or selection'
-          end
-          object TBXSeparatorItem73: TSpTBXSeparatorItem
-            Caption = ''
-            Hint = ''
-          end
-          object TBXItemRunFindPhp: TSpTBXItem
-            OnClick = TBXItemRunFindPhpClick
+            OnClick = TBXItemRunFindMSDNClick
             OnSelect = ButtonOnSelect
+          end
+          object TBXSeparatorItem73: TTBXSeparatorItem
+          end
+          object TBXItemRunFindPhp: TTBXItem
             Caption = '&PHP help'
             Hint = 'Perform PHP.net search for the current word'
-          end
-          object TBXSeparatorItem74: TSpTBXSeparatorItem
-            Caption = ''
-            Hint = ''
-          end
-          object TbxItemRunFindHtml4: TSpTBXItem
-            OnClick = TbxItemRunFindHtml4Click
+            OnClick = TBXItemRunFindPhpClick
             OnSelect = ButtonOnSelect
+          end
+          object TBXSeparatorItem74: TTBXSeparatorItem
+          end
+          object TbxItemRunFindHtml4: TTBXItem
             Caption = 'Help for HTML4 tag'
             Hint = 'Show online help on current HTML4 tag'
-          end
-          object TbxItemRunFindHtml5: TSpTBXItem
-            OnClick = TbxItemRunFindHtml5Click
+            OnClick = TbxItemRunFindHtml4Click
             OnSelect = ButtonOnSelect
+          end
+          object TbxItemRunFindHtml5: TTBXItem
             Caption = 'Help for HTML5 tag'
             Hint = 'Show online help on current HTML5 tag'
+            OnClick = TbxItemRunFindHtml5Click
+            OnSelect = ButtonOnSelect
           end
         end
-        object TBXSubmenuItemTidy: TSpTBXSubmenuItem
-          OnPopup = TBXSubmenuItemTidyPopup
+        object TBXSubmenuItemTidy: TTBXSubmenuItem
           Caption = '&HTML Tidy'
-          Hint = ''
-          object TBXItemTidyVal: TSpTBXItem
-            OnClick = TBXItemTidyValClick
-            OnSelect = ButtonOnSelect
+          OnPopup = TBXSubmenuItemTidyPopup
+          object TBXItemTidyVal: TTBXItem
             Caption = 'Validate document'
             Hint = 'Validate current file using HTML Tidy tool'
-          end
-          object TBXItemTidyCfg: TSpTBXItem
-            OnClick = TBXItemTidyCfgClick
+            OnClick = TBXItemTidyValClick
             OnSelect = ButtonOnSelect
+          end
+          object TBXItemTidyCfg: TTBXItem
             Caption = 'Configure'
             Hint = 'Edit HTML Tidy configurations file'
+            OnClick = TBXItemTidyCfgClick
+            OnSelect = ButtonOnSelect
           end
-          object TBXSeparatorItem55: TSpTBXSeparatorItem
-            Caption = ''
-            Hint = ''
+          object TBXSeparatorItem55: TTBXSeparatorItem
           end
         end
-        object TBXItemRunNumConv: TSpTBXItem
-          OnClick = TBXItemRunNumConvClick
-          OnSelect = ButtonOnSelect
+        object TBXItemRunNumConv: TTBXItem
           Caption = 'Numeric converter...'
           Hint = 'Show "Numeric converter" dialog'
-        end
-        object TBXItemRunLoremIpsum: TSpTBXItem
-          OnClick = TBXItemRunLoremIpsumClick
+          OnClick = TBXItemRunNumConvClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemRunLoremIpsum: TTBXItem
           Caption = 'Lorem Ipsum generator...'
           Hint = 'Show "Lorem Ipsum generator" dialog'
-        end
-        object TBXItemRunEncodeHtml: TSpTBXItem
-          OnClick = TBXItemRunEncodeHtmlClick
+          OnClick = TBXItemRunLoremIpsumClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemRunEncodeHtml: TTBXItem
           Caption = 'Encode HTML chars'
           Hint = 'Encode special HTML chars in selection: && < > "'
-        end
-        object TBXSeparatorItem70: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemRunOpenFile: TSpTBXItem
-          OnClick = TBXItemRunOpenFileClick
+          OnClick = TBXItemRunEncodeHtmlClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXSeparatorItem70: TTBXSeparatorItem
+        end
+        object TBXItemRunOpenFile: TTBXItem
           Caption = 'O&pen file'
           Hint = 'Launch current file using Windows Explorer association'
-        end
-        object TBXItemRunOpenDir: TSpTBXItem
-          OnClick = TBXItemRunOpenDirClick
+          OnClick = TBXItemRunOpenFileClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemRunOpenDir: TTBXItem
           Caption = '&Open containing folder'
           Hint = 'Open folder containing the current file'
-        end
-        object TBXSeparatorItem58: TSpTBXSeparatorItem
-          Visible = False
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemWin0: TSpTBXItem
-          Tag = 1
-          Visible = False
-          OnClick = TabClick
-          Caption = '-'
-          Hint = ''
-        end
-        object TBXItemWin1: TSpTBXItem
-          Tag = 2
-          Visible = False
-          OnClick = TabClick
-          Caption = '-'
-          Hint = ''
-        end
-        object TBXItemWin2: TSpTBXItem
-          Tag = 3
-          Visible = False
-          OnClick = TabClick
-          Caption = '-'
-          Hint = ''
-        end
-        object TBXItemWin3: TSpTBXItem
-          Tag = 4
-          Visible = False
-          OnClick = TabClick
-          Caption = '-'
-          Hint = ''
-        end
-        object TBXItemWin4: TSpTBXItem
-          Tag = 5
-          Visible = False
-          OnClick = TabClick
-          Caption = '-'
-          Hint = ''
-        end
-        object TBXItemWin5: TSpTBXItem
-          Tag = 6
-          Visible = False
-          OnClick = TabClick
-          Caption = '-'
-          Hint = ''
-        end
-        object TBXItemWin6: TSpTBXItem
-          Tag = 7
-          Visible = False
-          OnClick = TabClick
-          Caption = '-'
-          Hint = ''
-        end
-        object TBXItemWin7: TSpTBXItem
-          Tag = 8
-          Visible = False
-          OnClick = TabClick
-          Caption = '-'
-          Hint = ''
-        end
-        object TBXItemWin8: TSpTBXItem
-          Tag = 9
-          Visible = False
-          OnClick = TabClick
-          Caption = '-'
-          Hint = ''
-        end
-        object TBXItemWin9: TSpTBXItem
-          Tag = 10
-          Visible = False
-          OnClick = TabClick
-          Caption = '-'
-          Hint = ''
-        end
-      end
-      object TBXSubmenuItemPlugins: TSpTBXSubmenuItem
-        Visible = False
-        Caption = '&Plugins'
-        Hint = ''
-      end
-      object TBXSubmenuItemMacros: TSpTBXSubmenuItem
-        OnPopup = TBXSubmenuItemMacrosPopup
-        Caption = '&Macros'
-        Hint = ''
-        object TBXItemMacroRecord: TSpTBXItem
-          Action = ecMacroRecord1
+          OnClick = TBXItemRunOpenDirClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXSeparatorItem58: TTBXSeparatorItem
+          Visible = False
+        end
+        object TBXItemWin0: TTBXItem
+          Tag = 1
+          Caption = '-'
+          Visible = False
+          OnClick = TabClick
+        end
+        object TBXItemWin1: TTBXItem
+          Tag = 2
+          Caption = '-'
+          Visible = False
+          OnClick = TabClick
+        end
+        object TBXItemWin2: TTBXItem
+          Tag = 3
+          Caption = '-'
+          Visible = False
+          OnClick = TabClick
+        end
+        object TBXItemWin3: TTBXItem
+          Tag = 4
+          Caption = '-'
+          Visible = False
+          OnClick = TabClick
+        end
+        object TBXItemWin4: TTBXItem
+          Tag = 5
+          Caption = '-'
+          Visible = False
+          OnClick = TabClick
+        end
+        object TBXItemWin5: TTBXItem
+          Tag = 6
+          Caption = '-'
+          Visible = False
+          OnClick = TabClick
+        end
+        object TBXItemWin6: TTBXItem
+          Tag = 7
+          Caption = '-'
+          Visible = False
+          OnClick = TabClick
+        end
+        object TBXItemWin7: TTBXItem
+          Tag = 8
+          Caption = '-'
+          Visible = False
+          OnClick = TabClick
+        end
+        object TBXItemWin8: TTBXItem
+          Tag = 9
+          Caption = '-'
+          Visible = False
+          OnClick = TabClick
+        end
+        object TBXItemWin9: TTBXItem
+          Tag = 10
+          Caption = '-'
+          Visible = False
+          OnClick = TabClick
+        end
+      end
+      object TBXSubmenuItemPlugins: TTBXSubmenuItem
+        Caption = '&Plugins'
+        Visible = False
+      end
+      object TBXSubmenuItemMacros: TTBXSubmenuItem
+        Caption = '&Macros'
+        OnPopup = TBXSubmenuItemMacrosPopup
+        object TBXItemMacroRecord: TTBXItem
+          Action = ecMacroRecord1
           Caption = 'Start &recording'
           Hint = 'Record a new macro'
-        end
-        object TBXItemMacroStop: TSpTBXItem
-          Action = ecMacroStop1
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemMacroStop: TTBXItem
+          Action = ecMacroStop1
           Caption = '&Stop recording'
           Hint = 'Stop current macro recording'
-        end
-        object TBXItemMacroCancel: TSpTBXItem
-          Action = ecMacroCancel1
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemMacroCancel: TTBXItem
+          Action = ecMacroCancel1
           Caption = '&Cancel recording'
           Hint = 'Cancel currently recorded macro'
-        end
-        object TBXSeparatorItem51: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMacro1: TSpTBXItem
-          OnClick = TBXItemMacro1Click
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMacro2: TSpTBXItem
-          OnClick = TBXItemMacro2Click
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMacro3: TSpTBXItem
-          OnClick = TBXItemMacro3Click
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMacro4: TSpTBXItem
-          OnClick = TBXItemMacro4Click
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMacro5: TSpTBXItem
-          OnClick = TBXItemMacro5Click
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMacro6: TSpTBXItem
-          OnClick = TBXItemMacro6Click
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMacro7: TSpTBXItem
-          OnClick = TBXItemMacro7Click
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMacro8: TSpTBXItem
-          OnClick = TBXItemMacro8Click
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMacro9: TSpTBXItem
-          OnClick = TBXItemMacro9Click
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMacro10: TSpTBXItem
-          OnClick = TBXItemMacro10Click
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMacro11: TSpTBXItem
-          OnClick = TBXItemMacro11Click
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMacro12: TSpTBXItem
-          OnClick = TBXItemMacro12Click
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMacro13: TSpTBXItem
-          OnClick = TBXItemMacro13Click
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMacro14: TSpTBXItem
-          OnClick = TBXItemMacro14Click
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMacro15: TSpTBXItem
-          OnClick = TBXItemMacro15Click
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMacro16: TSpTBXItem
-          OnClick = TBXItemMacro16Click
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMacro17: TSpTBXItem
-          OnClick = TBXItemMacro17Click
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMacro18: TSpTBXItem
-          OnClick = TBXItemMacro18Click
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMacro19: TSpTBXItem
-          OnClick = TBXItemMacro19Click
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMacro20: TSpTBXItem
-          OnClick = TBXItemMacro20Click
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMacro21: TSpTBXItem
-          OnClick = TBXItemMacro21Click
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMacro22: TSpTBXItem
-          OnClick = TBXItemMacro22Click
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMacro23: TSpTBXItem
-          OnClick = TBXItemMacro23Click
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMacro24: TSpTBXItem
-          OnClick = TBXItemMacro24Click
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMacro25: TSpTBXItem
-          OnClick = TBXItemMacro25Click
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMacro26: TSpTBXItem
-          OnClick = TBXItemMacro26Click
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMacro27: TSpTBXItem
-          OnClick = TBXItemMacro27Click
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMacro28: TSpTBXItem
-          OnClick = TBXItemMacro28Click
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMacro29: TSpTBXItem
-          OnClick = TBXItemMacro29Click
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMacro30: TSpTBXItem
-          OnClick = TBXItemMacro30Click
-          Caption = ''
-          Hint = ''
-        end
-        object TBXSeparatorItem62: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMacroPlay: TSpTBXItem
-          Action = ecMacroPlay1
           OnSelect = ButtonOnSelect
+        end
+        object TBXSeparatorItem51: TTBXSeparatorItem
+        end
+        object TBXItemMacro1: TTBXItem
+          OnClick = TBXItemMacro1Click
+        end
+        object TBXItemMacro2: TTBXItem
+          OnClick = TBXItemMacro2Click
+        end
+        object TBXItemMacro3: TTBXItem
+          OnClick = TBXItemMacro3Click
+        end
+        object TBXItemMacro4: TTBXItem
+          OnClick = TBXItemMacro4Click
+        end
+        object TBXItemMacro5: TTBXItem
+          OnClick = TBXItemMacro5Click
+        end
+        object TBXItemMacro6: TTBXItem
+          OnClick = TBXItemMacro6Click
+        end
+        object TBXItemMacro7: TTBXItem
+          OnClick = TBXItemMacro7Click
+        end
+        object TBXItemMacro8: TTBXItem
+          OnClick = TBXItemMacro8Click
+        end
+        object TBXItemMacro9: TTBXItem
+          OnClick = TBXItemMacro9Click
+        end
+        object TBXItemMacro10: TTBXItem
+          OnClick = TBXItemMacro10Click
+        end
+        object TBXItemMacro11: TTBXItem
+          OnClick = TBXItemMacro11Click
+        end
+        object TBXItemMacro12: TTBXItem
+          OnClick = TBXItemMacro12Click
+        end
+        object TBXItemMacro13: TTBXItem
+          OnClick = TBXItemMacro13Click
+        end
+        object TBXItemMacro14: TTBXItem
+          OnClick = TBXItemMacro14Click
+        end
+        object TBXItemMacro15: TTBXItem
+          OnClick = TBXItemMacro15Click
+        end
+        object TBXItemMacro16: TTBXItem
+          OnClick = TBXItemMacro16Click
+        end
+        object TBXItemMacro17: TTBXItem
+          OnClick = TBXItemMacro17Click
+        end
+        object TBXItemMacro18: TTBXItem
+          OnClick = TBXItemMacro18Click
+        end
+        object TBXItemMacro19: TTBXItem
+          OnClick = TBXItemMacro19Click
+        end
+        object TBXItemMacro20: TTBXItem
+          OnClick = TBXItemMacro20Click
+        end
+        object TBXItemMacro21: TTBXItem
+          OnClick = TBXItemMacro21Click
+        end
+        object TBXItemMacro22: TTBXItem
+          OnClick = TBXItemMacro22Click
+        end
+        object TBXItemMacro23: TTBXItem
+          OnClick = TBXItemMacro23Click
+        end
+        object TBXItemMacro24: TTBXItem
+          OnClick = TBXItemMacro24Click
+        end
+        object TBXItemMacro25: TTBXItem
+          OnClick = TBXItemMacro25Click
+        end
+        object TBXItemMacro26: TTBXItem
+          OnClick = TBXItemMacro26Click
+        end
+        object TBXItemMacro27: TTBXItem
+          OnClick = TBXItemMacro27Click
+        end
+        object TBXItemMacro28: TTBXItem
+          OnClick = TBXItemMacro28Click
+        end
+        object TBXItemMacro29: TTBXItem
+          OnClick = TBXItemMacro29Click
+        end
+        object TBXItemMacro30: TTBXItem
+          OnClick = TBXItemMacro30Click
+        end
+        object TBXSeparatorItem62: TTBXSeparatorItem
+        end
+        object TBXItemMacroPlay: TTBXItem
+          Action = ecMacroPlay1
           Caption = '&Play last macro'
           Hint = 'Play last macro'
+          OnSelect = ButtonOnSelect
         end
-        object TBXItemMacroRepeat: TSpTBXItem
+        object TBXItemMacroRepeat: TTBXItem
           Action = ecMacroRepeat
-          OnSelect = ButtonOnSelect
           Hint = 'Repeat last played macro'
-        end
-        object TBXSeparatorItem53: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemMacroDlg: TSpTBXItem
-          Action = ecMacroDlg
           OnSelect = ButtonOnSelect
+        end
+        object TBXSeparatorItem53: TTBXSeparatorItem
+        end
+        object TBXItemMacroDlg: TTBXItem
+          Action = ecMacroDlg
           Caption = 'R&un/customize macros...'
           Hint = 'Show macros customization dialog'
+          OnSelect = ButtonOnSelect
         end
       end
-      object tbxWin: TSpTBXSubmenuItem
-        OnPopup = tbxWinPopup
+      object tbxWin: TTBXSubmenuItem
         Caption = '&Window'
-        Hint = ''
-        object TBXSepWin: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
+        OnPopup = tbxWinPopup
+        object TBXSepWin: TTBXSeparatorItem
         end
-        object TBXSubWin: TSpTBXSubmenuItem
+        object TBXSubWin: TTBXSubmenuItem
           Caption = 'Panels'
-          Hint = ''
-          object TBXItemWinTree: TSpTBXItem
+          object TBXItemWinTree: TTBXItem
             Action = ecToggleFocusTree
             Caption = 'Structure pane'
           end
-          object TBXItemWinProj: TSpTBXItem
+          object TBXItemWinProj: TTBXItem
             Action = ecToggleFocusProject
             Caption = 'Project pane'
           end
-          object TBXItemWinClip: TSpTBXItem
+          object TBXItemWinClip: TTBXItem
             Action = ecToggleFocusClip
             Caption = 'Clipboard pane'
           end
-          object TBXItemWinMap: TSpTBXItem
+          object TBXItemWinMap: TTBXItem
             Action = ecToggleFocusMap
             Caption = 'Mini-map pane'
           end
-          object TBXItemWinOut: TSpTBXItem
+          object TBXItemWinOut: TTBXItem
             Action = ecToggleFocusOutput
             Caption = 'Output pane'
           end
-          object TBXItemWinFRes: TSpTBXItem
+          object TBXItemWinFRes: TTBXItem
             Action = ecToggleFocusFindRes
             Caption = 'Find Results pane'
           end
-          object TBXItemWinVal: TSpTBXItem
+          object TBXItemWinVal: TTBXItem
             Action = ecToggleFocusValidate
             Caption = 'Validate pane'
           end
-          object TbxItemWinClips: TSpTBXItem
+          object TbxItemWinClips: TTBXItem
             Action = ecToggleFocusClips
             Caption = 'Text Clips pane'
           end
-          object TbxItemWinTabs: TSpTBXItem
+          object TbxItemWinTabs: TTBXItem
             Action = ecToggleFocusTabs
             Caption = 'Tabs pane'
           end
         end
       end
-      object TBXSubmenuItemHelp: TSpTBXSubmenuItem
+      object TBXSubmenuItemHelp: TTBXSubmenuItem
         Caption = '&Help'
-        Hint = ''
-        object TBXItemHHelp: TSpTBXItem
-          OnClick = TBXItemHHelpClick
-          OnSelect = ButtonOnSelect
+        object TBXItemHHelp: TTBXItem
           Caption = '&Help topics'
           Hint = 'Show help file'
+          OnClick = TBXItemHHelpClick
+          OnSelect = ButtonOnSelect
         end
-        object TBXSeparatorItem79: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
+        object TBXSeparatorItem79: TTBXSeparatorItem
         end
-        object TBXSubmenuItemHelpAbbrev: TSpTBXSubmenuItem
+        object TBXSubmenuItemHelpAbbrev: TTBXSubmenuItem
           Caption = 'Cheat sheets'
-          Hint = ''
-          object TBXItemHEmmet: TSpTBXItem
+          object TBXItemHEmmet: TTBXItem
+            Caption = 'Emmet'
             OnClick = TBXItemHEmmetClick
             OnSelect = ButtonOnSelect
-            Caption = 'Emmet'
-            Hint = ''
           end
         end
-        object TBXItemHKeyMap: TSpTBXItem
-          OnClick = TBXItemHKeyMapClick
-          OnSelect = ButtonOnSelect
+        object TBXItemHKeyMap: TTBXItem
           Caption = 'Show &keyboard mapping'
           Hint = 'Show keyboard mapping as HTML page'
-        end
-        object TBXItemHRead: TSpTBXItem
-          OnClick = TBXItemHReadClick
+          OnClick = TBXItemHKeyMapClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemHRead: TTBXItem
           Caption = '&Browse Readme folder'
           Hint = 'Browse Readme folder in Explorer'
-        end
-        object TBXSeparatorItem46: TSpTBXSeparatorItem
-          Caption = ''
-          Hint = ''
-        end
-        object TBXItemHDonate: TSpTBXItem
-          OnClick = TBXItemHDonateClick
+          OnClick = TBXItemHReadClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXSeparatorItem46: TTBXSeparatorItem
+        end
+        object TBXItemHDonate: TTBXItem
           Caption = '&Donate...'
           Hint = 'Show "Donate" help topic'
-        end
-        object TBXItemHAbout: TSpTBXItem
-          OnClick = TBXItemAbClick
+          OnClick = TBXItemHDonateClick
           OnSelect = ButtonOnSelect
+        end
+        object TBXItemHAbout: TTBXItem
           Caption = '&About...'
           Hint = 'Show About dialog'
+          OnClick = TBXItemAbClick
+          OnSelect = ButtonOnSelect
         end
       end
-      object TBXItemTbClose: TSpTBXItem
+      object TBXItemTbClose: TTBXItem
+        Caption = '-'
+        Hint = 'Close current tab'
         ImageIndex = 0
         Images = ImageListCloseBtn
         OnClick = TBXItemTbCloseClick
         OnSelect = ButtonOnSelect
-        Caption = '-'
-        Hint = 'Close current tab'
       end
-      object TBXItemTbCloseAll: TSpTBXItem
+      object TBXItemTbCloseAll: TTBXItem
+        Caption = '-'
+        Hint = 'Close all tabs'
         ImageIndex = 2
         Images = ImageListCloseBtn
         OnClick = TBXItemTbCloseAllClick
         OnSelect = ButtonOnSelect
-        Caption = '-'
-        Hint = 'Close all tabs'
       end
-      object TBXMnuRecentColors: TSpTBXSubmenuItem
+      object TBXMnuRecentColors: TTBXSubmenuItem
+        Hint = 'Recent colors menu'
         ImageIndex = 0
         Images = ImageListColorRecent
         Visible = False
         OnPopup = TBXMnuRecentColorsPopup
         OnSelect = ButtonOnSelect
-        Caption = ''
-        Hint = 'Recent colors menu'
       end
     end
   end
-  object Panel1: TSpTBXPanel
+  object Panel1: TPanel
     Left = 201
-    Top = 50
-    Width = 435
-    Height = 377
+    Top = 51
+    Width = 427
+    Height = 372
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 6
     OnResize = Panel1Resize
     object Splitter1: TSplitter
-      Left = 315
+      Left = 307
       Top = 0
       Width = 5
-      Height = 377
+      Height = 372
       Align = alRight
       AutoSnap = False
       MinSize = 50
       OnCanResize = Splitter1CanResize
       OnMoved = Splitter1Moved
       OnPaint = Splitter1Paint
+      ExplicitLeft = 315
+      ExplicitHeight = 377
     end
-    object PageControl1: TSpTBXTabControl
+    object PageControl1: TPageControl
       Left = 0
       Top = 0
-      Width = 315
-      Height = 377
+      Width = 307
+      Height = 372
       Align = alClient
       OwnerDraw = True
       TabHeight = 20
@@ -3055,6 +2756,7 @@ object fmMain: TfmMain
       HintProps.Formated = True
       HintProps.ShowFirstLine = True
       UserRanges = <>
+      UndoLimit = 0
       StaplePen.Color = clGray
       StaplePen.Style = psDot
       StapleOffset = -1
@@ -3159,11 +2861,11 @@ object fmMain: TfmMain
       TabOrder = 1
       Visible = False
     end
-    object PageControl2: TSpTBXTabControl
-      Left = 320
+    object PageControl2: TPageControl
+      Left = 312
       Top = 0
       Width = 115
-      Height = 377
+      Height = 372
       Align = alRight
       OwnerDraw = True
       TabHeight = 20
@@ -4343,333 +4045,166 @@ object fmMain: TfmMain
     Left = 453
     Top = 264
   end
-  object PopupEditor: TSpTBXPopupMenu
+  object PopupEditor: TTBXPopupMenu
     Images = ImageListIconsStd
     OnPopup = PopupEditorPopup
     Left = 296
     Top = 304
-    object TBXItemCtxUndo: TSpTBXItem
+    object TBXItemCtxUndo: TTBXItem
       Action = ecUndo
       OnSelect = ButtonOnSelect
     end
-    object TBXItemCtxRedo: TSpTBXItem
+    object TBXItemCtxRedo: TTBXItem
       Action = ecRedo
       OnSelect = ButtonOnSelect
     end
-    object TBXSeparatorItem14: TSpTBXSeparatorItem
-      Caption = ''
-      Hint = ''
+    object TBXSeparatorItem14: TTBXSeparatorItem
     end
-    object TBXItemCtxCut: TSpTBXItem
+    object TBXItemCtxCut: TTBXItem
       Action = ecCut
       OnSelect = ButtonOnSelect
     end
-    object TBXItemCtxCopy: TSpTBXItem
+    object TBXItemCtxCopy: TTBXItem
       Action = ecCopy
       OnSelect = ButtonOnSelect
     end
-    object TBXItemCtxPaste: TSpTBXItem
+    object TBXItemCtxPaste: TTBXItem
       Action = ecPaste
       OnSelect = ButtonOnSelect
     end
-    object TBXItemCtxDel: TSpTBXItem
+    object TBXItemCtxDel: TTBXItem
       Action = ecClear
       OnSelect = ButtonOnSelect
     end
-    object TBXSeparatorItem13: TSpTBXSeparatorItem
-      Caption = ''
-      Hint = ''
+    object TBXSeparatorItem13: TTBXSeparatorItem
     end
-    object TBXItemCtxSelectAll: TSpTBXItem
+    object TBXItemCtxSelectAll: TTBXItem
       Action = ecSelectAll
       OnSelect = ButtonOnSelect
     end
-    object TBXSeparatorItem23: TSpTBXSeparatorItem
-      Caption = ''
-      Hint = ''
+    object TBXSeparatorItem23: TTBXSeparatorItem
     end
-    object TBXItemCtxCopyUrl: TSpTBXItem
+    object TBXItemCtxCopyUrl: TTBXItem
+      Caption = 'Copy link'
       Enabled = False
+      Hint = 'Copy URL to clipboard'
       ImageIndex = 33
       OnClick = TBXItemCtxCopyUrlClick
       OnSelect = ButtonOnSelect
-      Caption = 'Copy link'
-      Hint = 'Copy URL to clipboard'
     end
-    object TBXItemCtxOpenSel: TSpTBXItem
+    object TBXItemCtxOpenSel: TTBXItem
       Enabled = False
+      Hint = 'Open selected filename in separate tab'
       ImageIndex = 0
       OnClick = TBXItemCtxOpenSelClick
       OnSelect = ButtonOnSelect
-      Caption = ''
-      Hint = 'Open selected filename in separate tab'
     end
-    object TBXItemCtxAddColor: TSpTBXItem
+    object TBXItemCtxAddColor: TTBXItem
+      Caption = 'Add to recent colors'
       Enabled = False
+      Hint = 'Add color token to "Recent colors" menu'
       OnClick = TBXItemCtxAddColorClick
       OnSelect = ButtonOnSelect
-      Caption = 'Add to recent colors'
-      Hint = 'Add color token to "Recent colors" menu'
     end
-    object TBXItemCtxFindID: TSpTBXItem
+    object TBXItemCtxFindID: TTBXItem
+      Caption = 'Find ID'
       Enabled = False
+      Hint = 'Find current ID declaration (only for few lexers)'
       OnClick = TBXItemCtxFindIDClick
       OnSelect = ButtonOnSelect
-      Caption = 'Find ID'
-      Hint = 'Find current ID declaration (only for few lexers)'
     end
-    object TBXSubmenuItemCtxMore: TSpTBXSubmenuItem
-      OnPopup = TBXSubmenuItemCtxMorePopup
+    object TBXSubmenuItemCtxMore: TTBXSubmenuItem
       Caption = 'more'
-      Hint = ''
-      object TBXItemCtxPasteNoCurChange: TSpTBXItem
+      OnPopup = TBXSubmenuItemCtxMorePopup
+      object TBXItemCtxPasteNoCurChange: TTBXItem
         Action = ecPasteNoCurChange
-        OnSelect = ButtonOnSelect
         Caption = 'Paste, keep position'
         Hint = 'Paste from clipboard, and then restore caret position'
-      end
-      object TBXItemCtxPasteToColumn1: TSpTBXItem
-        Action = ecPasteToColumn1
         OnSelect = ButtonOnSelect
+      end
+      object TBXItemCtxPasteToColumn1: TTBXItem
+        Action = ecPasteToColumn1
         Caption = 'Paste to 1st column'
         Hint = 'Paste into first line column'
-      end
-      object TBXSeparatorItem80: TSpTBXSeparatorItem
-        Caption = ''
-        Hint = ''
-      end
-      object TBXItemCtxCopyAppend: TSpTBXItem
-        OnClick = TBXItemCtxCopyAppendClick
         OnSelect = ButtonOnSelect
+      end
+      object TBXSeparatorItem80: TTBXSeparatorItem
+      end
+      object TBXItemCtxCopyAppend: TTBXItem
         Caption = 'Copy/Append'
         Hint = 'Append selection to clipboard'
-      end
-      object TBXItemCtxCutAppend: TSpTBXItem
-        OnClick = TBXItemCtxCutAppendClick
+        OnClick = TBXItemCtxCopyAppendClick
         OnSelect = ButtonOnSelect
+      end
+      object TBXItemCtxCutAppend: TTBXItem
         Caption = 'Cut/Append'
         Hint = 'Cut selection and append it to clipboard'
+        OnClick = TBXItemCtxCutAppendClick
+        OnSelect = ButtonOnSelect
       end
-      object TBXSeparatorItem34: TSpTBXSeparatorItem
-        Caption = ''
-        Hint = ''
+      object TBXSeparatorItem34: TTBXSeparatorItem
       end
-      object TBXItemCtxCopyHTML: TSpTBXItem
+      object TBXItemCtxCopyHTML: TTBXItem
         Action = ecCopyAsHTML
-        OnSelect = ButtonOnSelect
         Hint = 'Copy to clipboard in HTML format'
-      end
-      object TBXItemCtxCopyRTF: TSpTBXItem
-        Action = ecCopyAsRTF
         OnSelect = ButtonOnSelect
+      end
+      object TBXItemCtxCopyRTF: TTBXItem
+        Action = ecCopyAsRTF
         Hint = 'Copy to clipboard in RTF format'
+        OnSelect = ButtonOnSelect
       end
     end
-    object TBXItemCtxCustomize: TSpTBXItem
+    object TBXItemCtxCustomize: TTBXItem
+      Caption = 'Customize...'
       ImageIndex = 4
       OnClick = TBXItemCtxCustomizeClick
-      Caption = 'Customize...'
-      Hint = ''
     end
-    object TBXSeparatorItem45: TSpTBXSeparatorItem
-      Caption = ''
-      Hint = ''
+    object TBXSeparatorItem45: TTBXSeparatorItem
     end
-    object TBXItemCC1: TSpTBXItem
+    object TBXItemCC1: TTBXItem
       OnClick = TBXItemCC1Click
-      Caption = ''
-      Hint = ''
     end
-    object TBXItemCC2: TSpTBXItem
+    object TBXItemCC2: TTBXItem
       OnClick = TBXItemCC2Click
-      Caption = ''
-      Hint = ''
     end
-    object TBXItemCC3: TSpTBXItem
+    object TBXItemCC3: TTBXItem
       OnClick = TBXItemCC3Click
-      Caption = ''
-      Hint = ''
     end
-    object TBXItemCC4: TSpTBXItem
+    object TBXItemCC4: TTBXItem
       OnClick = TBXItemCC4Click
-      Caption = ''
-      Hint = ''
     end
-    object TBXItemCC5: TSpTBXItem
+    object TBXItemCC5: TTBXItem
       OnClick = TBXItemCC5Click
-      Caption = ''
-      Hint = ''
     end
-    object TBXItemCC6: TSpTBXItem
+    object TBXItemCC6: TTBXItem
       OnClick = TBXItemCC6Click
-      Caption = ''
-      Hint = ''
     end
-    object TBXItemCC7: TSpTBXItem
+    object TBXItemCC7: TTBXItem
       OnClick = TBXItemCC7Click
-      Caption = ''
-      Hint = ''
     end
-    object TBXItemCC8: TSpTBXItem
+    object TBXItemCC8: TTBXItem
       OnClick = TBXItemCC8Click
-      Caption = ''
-      Hint = ''
     end
-    object TBXItemCC9: TSpTBXItem
+    object TBXItemCC9: TTBXItem
       OnClick = TBXItemCC9Click
-      Caption = ''
-      Hint = ''
     end
-    object TBXItemCC10: TSpTBXItem
+    object TBXItemCC10: TTBXItem
       OnClick = TBXItemCC10Click
-      Caption = ''
-      Hint = ''
     end
-    object TBXItemCC11: TSpTBXItem
+    object TBXItemCC11: TTBXItem
       OnClick = TBXItemCC11Click
-      Caption = ''
-      Hint = ''
     end
-    object TBXItemCC12: TSpTBXItem
+    object TBXItemCC12: TTBXItem
       OnClick = TBXItemCC12Click
-      Caption = ''
-      Hint = ''
     end
   end
-  object ImgListGutter: TTBImageList
+  object ImgListGutter: TImageList
     Left = 232
     Top = 244
     Bitmap = {
-      494C01010E001300040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
-      0000000000003600000028000000400000005000000001002000000000000050
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
+      494C01010E001300080010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      0000000000003600000028000000400000004000000001002000000000000040
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -5183,12 +4718,8 @@ object fmMain: TfmMain
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000424D3E000000000000003E000000
-      2800000040000000500000000100010000000000800200000000000000000000
-      000000000000000000000000FFFFFF0000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      00000000000000000000000000000000FFFFFFFF000000008007FFFF00000000
+      2800000040000000400000000100010000000000000200000000000000000000
+      000000000000000000000000FFFFFF00FFFFFFFF000000008007FFFF00000000
       8007FFFF000000008007FEFF000000008007FCFF000000008007F83F00000000
       8007FCDF000000008007FEDF000000008007FFDF000000008007FFDF00000000
       8007FFDF000000008007FFDF000000008007FE3F000000008017FFFF00000000
@@ -5207,13 +4738,13 @@ object fmMain: TfmMain
       8007800780078007FFFFFFFFFFFFFFFF00000000000000000000000000000000
       000000000000}
   end
-  object TBXSwitcher: TSpTBXSwitcher
+  object TBXSwitcher: TTBXSwitcher
     Theme = 'Default'
     FlatMenuStyle = fmsEnable
     Left = 576
     Top = 232
   end
-  object MRU: TSpTBXMRUList
+  object MRU: TTBXMRUList
     HidePathExtension = False
     MaxItems = 9
     Prefix = 'MRU'
@@ -8953,46 +8484,43 @@ object fmMain: TfmMain
     Left = 296
     Top = 360
   end
-  object PopupCP: TSpTBXPopupMenu
+  object PopupCP: TTBXPopupMenu
     OnPopup = PopupCPPopup
     Left = 232
     Top = 304
   end
-  object PopupLE: TSpTBXPopupMenu
+  object PopupLE: TTBXPopupMenu
     OnPopup = PopupLEPopup
     Left = 264
     Top = 304
-    object TBXItemEndWin: TSpTBXItem
+    object TBXItemEndWin: TTBXItem
       Tag = 1
+      Caption = 'Windows (CR LF)'
       Checked = True
       GroupIndex = 1
       RadioItem = True
       OnClick = SetFormat
-      Caption = 'Windows (CR LF)'
-      Hint = ''
     end
-    object TBXItemEndUn: TSpTBXItem
+    object TBXItemEndUn: TTBXItem
       Tag = 3
-      GroupIndex = 1
-      RadioItem = True
-      OnClick = SetFormat
       Caption = 'Unix (LF)'
-      Hint = ''
-    end
-    object TBXItemEndMac: TSpTBXItem
-      Tag = 2
       GroupIndex = 1
       RadioItem = True
       OnClick = SetFormat
+    end
+    object TBXItemEndMac: TTBXItem
+      Tag = 2
       Caption = 'Mac (CR)'
-      Hint = ''
+      GroupIndex = 1
+      RadioItem = True
+      OnClick = SetFormat
     end
   end
   object ImgListTree: TImageList
     Left = 256
     Top = 244
     Bitmap = {
-      494C010108000900040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010108000900080010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000003000000001002000000000000030
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -9467,7 +8995,6 @@ object fmMain: TfmMain
     Top = 264
   end
   object ecACP: TAutoCompletePopup
-    ShowWhenNone = False
     Images = ImgListTree
     Delay = 200
     Styles = SyntStyles
@@ -9497,6 +9024,7 @@ object fmMain: TfmMain
     ToolHint.Active = True
     ToolHint.Styles = SyntStyles
     ToolHint.Formatted = True
+    ToolHint.Text = ''
     Controls = <>
     OnChange = ecACPChange
     OnCloseUp = ecACPCloseUp
@@ -9520,6 +9048,7 @@ object fmMain: TfmMain
     ToolHint.Top = 0
     ToolHint.Width = 0
     ToolHint.Height = 0
+    ToolHint.Text = ''
     Controls = <>
     CommandID = 652
     Left = 512
@@ -9541,12 +9070,13 @@ object fmMain: TfmMain
     ToolHint.Width = 0
     ToolHint.Height = 0
     ToolHint.Styles = SyntStyles
+    ToolHint.Text = ''
     Controls = <>
     OnShow = TemplatePopupShow
     Left = 544
     Top = 232
   end
-  object PopupLex: TSpTBXPopupMenu
+  object PopupLex: TTBXPopupMenu
     OnPopup = PopupLexPopup
     Left = 320
     Top = 304
@@ -9555,136 +9085,8 @@ object fmMain: TfmMain
     Left = 256
     Top = 168
     Bitmap = {
-      494C01012D003100040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
-      000000000000360000002800000040000000D0000000010020000000000000D0
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
+      494C01012D003100080010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      000000000000360000002800000040000000C0000000010020000000000000C0
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -11222,12 +10624,8 @@ object fmMain: TfmMain
       000000000000000000000000000000000000000000000000000000000000FF00
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000424D3E000000000000003E000000
-      2800000040000000D00000000100010000000000800600000000000000000000
-      000000000000000000000000FFFFFF0000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      00000000000000000000000000000000FFFF000000000000FFFF000000000000
+      2800000040000000C00000000100010000000000000600000000000000000000
+      000000000000000000000000FFFFFF00FFFF000000000000FFFF000000000000
       FFFF000000000000C007000000000000C007000000000000FFFF000000000000
       C447000000000000C51F000000000000E51F000000000000C447000000000000
       FDFF000000000000FDFF000000000000FFFF000000000000FFFF000000000000
@@ -11278,7 +10676,7 @@ object fmMain: TfmMain
       FF8F80018001C7FFFFFFFFFFFFFFEFFF00000000000000000000000000000000
       000000000000}
   end
-  object ImageListIconsFogue16: TSpTBXImageList
+  object ImageListIconsFogue16: TTBXImageList
     Left = 264
     Top = 216
     PngDIB = {
@@ -11871,7 +11269,7 @@ object fmMain: TfmMain
       E0E3C94E121BF97A585245AE504E87FAFFA6F0FF002446B4A31C7DB9D1000000
       0049454E4400000000}
   end
-  object ImageListIconsTango22: TSpTBXImageList
+  object ImageListIconsTango22: TTBXImageList
     Height = 22
     Width = 22
     Left = 248
@@ -12898,7 +12296,7 @@ object fmMain: TfmMain
       9A9D96EFD9B48CB98ACCD6DB91125683E4BFB509AF6E2BB578C87A8C872CD5CE
       96EF5FFD9FAF81FF0714FA46F8954BF4450000000049454E4400000000}
   end
-  object ImageListIconsTango16: TSpTBXImageList
+  object ImageListIconsTango16: TTBXImageList
     Left = 272
     Top = 192
     PngDIB = {
@@ -13481,7 +12879,7 @@ object fmMain: TfmMain
       4BB91F5C702365AA50B20E4ED40FF06123171B067A5BC70A5D89996FADF77F00
       FF7F41EA7458D2579C450000000049454E4400000000}
   end
-  object ImageListIconsFogue24: TSpTBXImageList
+  object ImageListIconsFogue24: TTBXImageList
     Height = 24
     Width = 24
     Left = 240
@@ -14523,7 +13921,7 @@ object fmMain: TfmMain
       67981EDFF0EA6BAFE93CE5FF75F81F2FC082BD7ABA28F80000000049454E4400
       000000}
   end
-  object ImageListIconsGnome: TSpTBXImageList
+  object ImageListIconsGnome: TTBXImageList
     Height = 24
     Width = 24
     Left = 280
@@ -15487,6 +14885,7 @@ object fmMain: TfmMain
     ToolHint.Width = 0
     ToolHint.Height = 0
     ToolHint.Active = True
+    ToolHint.Text = ''
     Controls = <>
     OnChange = ecSelCharPopup1Change
     OnShow = ecSelCharPopup1Show
@@ -17212,97 +16611,74 @@ object fmMain: TfmMain
     Left = 344
     Top = 360
   end
-  object PopupTb: TSpTBXPopupMenu
+  object PopupTb: TTBXPopupMenu
     OnPopup = PopupTbPopup
     Left = 344
     Top = 304
-    object TBXItemTbCl: TSpTBXItem
-      OnClick = TBXItemTbClClick
+    object TBXItemTbCl: TTBXItem
       Caption = 'Close tab'
-      Hint = ''
+      OnClick = TBXItemTbClClick
     end
-    object TBXItemTbOth: TSpTBXItem
-      OnClick = TBXItemTbOthClick
+    object TBXItemTbOth: TTBXItem
       Caption = 'Close other tabs'
-      Hint = ''
+      OnClick = TBXItemTbOthClick
     end
-    object TBXItemTbNew: TSpTBXItem
-      OnClick = TBXItemTbNewClick
+    object TBXItemTbNew: TTBXItem
       Caption = 'New tab'
-      Hint = ''
+      OnClick = TBXItemTbNewClick
     end
-    object TBXSeparatorItem42: TSpTBXSeparatorItem
-      Caption = ''
-      Hint = ''
+    object TBXSeparatorItem42: TTBXSeparatorItem
     end
-    object TBXItemTbMoveToView: TSpTBXItem
-      OnClick = TBXItemTbMoveToViewClick
+    object TBXItemTbMoveToView: TTBXItem
       Caption = 'Move to other view'
-      Hint = ''
+      OnClick = TBXItemTbMoveToViewClick
     end
-    object TBXItemTbMoveToWindow: TSpTBXItem
-      OnClick = TBXItemTbMoveToWindowClick
+    object TBXItemTbMoveToWindow: TTBXItem
       Caption = 'Move to new window'
-      Hint = ''
+      OnClick = TBXItemTbMoveToWindowClick
     end
-    object TBXItemTbOpenInWindow: TSpTBXItem
-      OnClick = TBXItemTbOpenInWindowClick
+    object TBXItemTbOpenInWindow: TTBXItem
       Caption = 'Open in new window'
-      Hint = ''
+      OnClick = TBXItemTbOpenInWindowClick
     end
-    object TBXSeparatorItem41: TSpTBXSeparatorItem
-      Caption = ''
-      Hint = ''
+    object TBXSeparatorItem41: TTBXSeparatorItem
     end
-    object TBXItemTbCpFN: TSpTBXItem
-      OnClick = TBXItemTbCpFNClick
+    object TBXItemTbCpFN: TTBXItem
       Caption = 'Copy filename to clipboard'
-      Hint = ''
+      OnClick = TBXItemTbCpFNClick
     end
-    object TBXItemTbCpFull: TSpTBXItem
-      OnClick = TBXItemTbCpFullClick
+    object TBXItemTbCpFull: TTBXItem
       Caption = 'Copy full path to clipboard'
-      Hint = ''
+      OnClick = TBXItemTbCpFullClick
     end
-    object TBXItemTbCpDir: TSpTBXItem
-      OnClick = TBXItemTbCpDirClick
+    object TBXItemTbCpDir: TTBXItem
       Caption = 'Copy dir path to clipboard'
-      Hint = ''
+      OnClick = TBXItemTbCpDirClick
     end
-    object TBXSeparatorItem75: TSpTBXSeparatorItem
-      Caption = ''
-      Hint = ''
+    object TBXSeparatorItem75: TTBXSeparatorItem
     end
-    object TBXItemTbAddToProj: TSpTBXItem
-      OnClick = TBXItemTbAddToProjClick
+    object TBXItemTbAddToProj: TTBXItem
       Caption = 'Add to project'
-      Hint = ''
+      OnClick = TBXItemTbAddToProjClick
     end
-    object TBXSubmenuTabColor: TSpTBXSubmenuItem
-      OnPopup = TBXSubmenuTabColorPopup
+    object TBXSubmenuTabColor: TTBXSubmenuItem
       Caption = 'Set color'
-      Hint = ''
-      object TBXItemTabColorDef: TSpTBXItem
+      OnPopup = TBXSubmenuTabColorPopup
+      object TBXItemTabColorDef: TTBXItem
+        Caption = 'Default'
         RadioItem = True
         OnClick = TBXItemTabColorDefClick
-        Caption = 'Default'
-        Hint = ''
       end
-      object TBXTabColor: TSpTBXColorPalette
+      object TBXTabColor: TTBXColorPalette
         ColorSet = TBXColors
         PaletteOptions = [tpoCustomImages]
         OnChange = TBXTabColorChange
-        Caption = ''
-        Hint = ''
       end
-      object TBXSeparatorItem77: TSpTBXSeparatorItem
-        Caption = ''
-        Hint = ''
+      object TBXSeparatorItem77: TTBXSeparatorItem
       end
-      object TBXItemTabColorMisc: TSpTBXItem
-        OnClick = TBXItemTabColorMiscClick
+      object TBXItemTabColorMisc: TTBXItem
         Caption = 'Custom...'
-        Hint = ''
+        OnClick = TBXItemTabColorMiscClick
       end
     end
   end
@@ -17312,7 +16688,7 @@ object fmMain: TfmMain
     Left = 305
     Top = 245
     Bitmap = {
-      494C01010300040004000E000E00FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010300040008000E000E00FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000380000000E0000000100200000000000400C
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -17447,63 +16823,50 @@ object fmMain: TfmMain
     Left = 392
     Top = 360
   end
-  object PopupOut: TSpTBXPopupMenu
+  object PopupOut: TTBXPopupMenu
     OnPopup = PopupOutPopup
     Left = 368
     Top = 304
-    object TBXItemONav: TSpTBXItem
-      OnClick = TBXItemONavClick
+    object TBXItemONav: TTBXItem
       Caption = 'Navigate'
-      Hint = ''
+      OnClick = TBXItemONavClick
     end
-    object TBXSeparatorItem18: TSpTBXSeparatorItem
-      Caption = ''
-      Hint = ''
+    object TBXSeparatorItem18: TTBXSeparatorItem
     end
-    object TBXItemOCp: TSpTBXItem
-      OnClick = TBXItemOCpClick
+    object TBXItemOCp: TTBXItem
       Caption = 'Copy selected'
-      Hint = ''
+      OnClick = TBXItemOCpClick
     end
-    object TBXItemOCpAll: TSpTBXItem
-      OnClick = TBXItemOCpAllClick
+    object TBXItemOCpAll: TTBXItem
       Caption = 'Copy all'
-      Hint = ''
+      OnClick = TBXItemOCpAllClick
     end
-    object TBXSeparatorItem32: TSpTBXSeparatorItem
-      Caption = ''
-      Hint = ''
+    object TBXSeparatorItem32: TTBXSeparatorItem
     end
-    object TBXItemODel: TSpTBXItem
-      OnClick = TBXItemODelClick
+    object TBXItemODel: TTBXItem
       Caption = 'Delete selected'
-      Hint = ''
+      OnClick = TBXItemODelClick
     end
-    object TBXItemODelN: TSpTBXItem
-      OnClick = TBXItemODelNClick
+    object TBXItemODelN: TTBXItem
       Caption = 'Delete non-parsable'
-      Hint = ''
+      OnClick = TBXItemODelNClick
     end
-    object TBXItemOClr: TSpTBXItem
-      OnClick = TBXItemOClrClick
+    object TBXItemOClr: TTBXItem
       Caption = 'Clear'
-      Hint = ''
+      OnClick = TBXItemOClrClick
     end
-    object TBXSeparatorItem67: TSpTBXSeparatorItem
-      Caption = ''
-      Hint = ''
+    object TBXSeparatorItem67: TTBXSeparatorItem
     end
-    object TBXItemOFind: TSpTBXItem
-      OnClick = TBXItemOFindClick
+    object TBXItemOFind: TTBXItem
       Caption = 'Find...'
-      Hint = ''
+      OnClick = TBXItemOFindClick
     end
   end
   object ImageListStatus: TImageList
     Left = 280
     Top = 244
     Bitmap = {
-      494C01010C000E00040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C000E00080010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000004000000001002000000000000040
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -18038,158 +17401,123 @@ object fmMain: TfmMain
       F81FFC3FFFFFFFFFFFFFFFFFFFFFFFFF00000000000000000000000000000000
       000000000000}
   end
-  object PopupFind: TSpTBXPopupMenu
+  object PopupFind: TTBXPopupMenu
     OnPopup = PopupFindPopup
     Left = 368
     Top = 332
-    object TBXItemTreeFindNav: TSpTBXItem
-      OnClick = TBXItemTreeFindNavClick
+    object TBXItemTreeFindNav: TTBXItem
       Caption = 'Navigate'
-      Hint = ''
+      OnClick = TBXItemTreeFindNavClick
     end
-    object TBXSeparatorItem69: TSpTBXSeparatorItem
-      Caption = ''
-      Hint = ''
+    object TBXSeparatorItem69: TTBXSeparatorItem
     end
-    object TBXItemTreeFindExpand: TSpTBXItem
-      OnClick = TBXItemTreeFindExpandClick
+    object TBXItemTreeFindExpand: TTBXItem
       Caption = 'Expand all'
-      Hint = ''
+      OnClick = TBXItemTreeFindExpandClick
     end
-    object TBXItemTreeFindExpandCur: TSpTBXItem
-      OnClick = TBXItemTreeFindExpandCurClick
+    object TBXItemTreeFindExpandCur: TTBXItem
       Caption = 'Expand current node'
-      Hint = ''
+      OnClick = TBXItemTreeFindExpandCurClick
     end
-    object TBXItemTreeFindCollapse: TSpTBXItem
-      OnClick = TBXItemTreeFindCollapseClick
+    object TBXItemTreeFindCollapse: TTBXItem
       Caption = 'Collapse all'
-      Hint = ''
+      OnClick = TBXItemTreeFindCollapseClick
     end
-    object TBXSeparatorItem36: TSpTBXSeparatorItem
-      Caption = ''
-      Hint = ''
+    object TBXSeparatorItem36: TTBXSeparatorItem
     end
-    object TBXItemTreeFindCopyToClipNode: TSpTBXItem
-      OnClick = TBXItemTreeFindCopyToClipNodeClick
+    object TBXItemTreeFindCopyToClipNode: TTBXItem
       Caption = 'Copy selected node'
-      Hint = ''
+      OnClick = TBXItemTreeFindCopyToClipNodeClick
     end
-    object TBXItemTreeFindCopyToClip: TSpTBXItem
-      OnClick = TBXItemTreeFindCopyToClipClick
+    object TBXItemTreeFindCopyToClip: TTBXItem
       Caption = 'Copy selected search'
-      Hint = ''
+      OnClick = TBXItemTreeFindCopyToClipClick
     end
-    object TBXItemTreeFindCopyToTab: TSpTBXItem
-      OnClick = TBXItemTreeFindCopyToTabClick
+    object TBXItemTreeFindCopyToTab: TTBXItem
       Caption = 'Copy selected search to tab'
-      Hint = ''
+      OnClick = TBXItemTreeFindCopyToTabClick
     end
-    object TBXSeparatorItem37: TSpTBXSeparatorItem
-      Caption = ''
-      Hint = ''
+    object TBXSeparatorItem37: TTBXSeparatorItem
     end
-    object TBXItemTreeFindClear: TSpTBXItem
-      OnClick = TBXItemTreeFindClearClick
+    object TBXItemTreeFindClear: TTBXItem
       Caption = 'Clear'
-      Hint = ''
+      OnClick = TBXItemTreeFindClearClick
     end
-    object TBXSeparatorItem65: TSpTBXSeparatorItem
-      Caption = ''
-      Hint = ''
+    object TBXSeparatorItem65: TTBXSeparatorItem
     end
-    object TBXItemTreeFindFind: TSpTBXItem
-      OnClick = TBXItemTreeFindFindClick
+    object TBXItemTreeFindFind: TTBXItem
       Caption = 'Find...'
-      Hint = ''
+      OnClick = TBXItemTreeFindFindClick
     end
   end
-  object PopupZoom: TSpTBXPopupMenu
+  object PopupZoom: TTBXPopupMenu
     Left = 344
     Top = 332
-    object TBXItemZSet: TSpTBXItem
+    object TBXItemZSet: TTBXItem
       Tag = 25
-      OnClick = TBXItemZSetClick
       Caption = '25%'
-      Hint = ''
+      OnClick = TBXItemZSetClick
     end
-    object TBXItemZSet50: TSpTBXItem
+    object TBXItemZSet50: TTBXItem
       Tag = 50
-      OnClick = TBXItemZSetClick
       Caption = '50%'
-      Hint = ''
+      OnClick = TBXItemZSetClick
     end
-    object TBXItemZSet75: TSpTBXItem
+    object TBXItemZSet75: TTBXItem
       Tag = 75
-      OnClick = TBXItemZSetClick
       Caption = '75%'
-      Hint = ''
+      OnClick = TBXItemZSetClick
     end
-    object TBXItemZSet100: TSpTBXItem
+    object TBXItemZSet100: TTBXItem
       Tag = 100
-      OnClick = TBXItemZSetClick
       Caption = '100%'
-      Hint = ''
+      OnClick = TBXItemZSetClick
     end
-    object TBXItemZSet150: TSpTBXItem
+    object TBXItemZSet150: TTBXItem
       Tag = 150
-      OnClick = TBXItemZSetClick
       Caption = '150%'
-      Hint = ''
+      OnClick = TBXItemZSetClick
     end
-    object TBXItemZSet200: TSpTBXItem
+    object TBXItemZSet200: TTBXItem
       Tag = 200
-      OnClick = TBXItemZSetClick
       Caption = '200%'
-      Hint = ''
-    end
-    object TBXItemZSet300: TSpTBXItem
-      Tag = 300
       OnClick = TBXItemZSetClick
+    end
+    object TBXItemZSet300: TTBXItem
+      Tag = 300
       Caption = '300%'
-      Hint = ''
+      OnClick = TBXItemZSetClick
     end
-    object TBXSeparatorItem5: TSpTBXSeparatorItem
-      Caption = ''
-      Hint = ''
+    object TBXSeparatorItem5: TTBXSeparatorItem
     end
-    object TBXItemZOther: TSpTBXItem
-      OnClick = TBXItemZOtherClick
+    object TBXItemZOther: TTBXItem
       Caption = 'Custom zoom...'
-      Hint = ''
+      OnClick = TBXItemZOtherClick
     end
   end
-  object PopupClip: TSpTBXPopupMenu
+  object PopupClip: TTBXPopupMenu
     OnPopup = PopupClipPopup
     Left = 320
     Top = 332
-    object TBXItemClipCopyToEd: TSpTBXItem
-      OnClick = TBXItemClipCopyToEdClick
+    object TBXItemClipCopyToEd: TTBXItem
       Caption = 'Copy to editor'
-      Hint = ''
+      OnClick = TBXItemClipCopyToEdClick
     end
-    object TBXItemClipCopyToClip: TSpTBXItem
-      OnClick = TBXItemClipCopyToClipClick
+    object TBXItemClipCopyToClip: TTBXItem
       Caption = 'Copy to clipboard'
-      Hint = ''
+      OnClick = TBXItemClipCopyToClipClick
     end
-    object TBXSeparatorItem72: TSpTBXSeparatorItem
-      Caption = ''
-      Hint = ''
+    object TBXSeparatorItem72: TTBXSeparatorItem
     end
-    object TBXItemClipClr: TSpTBXItem
-      OnClick = TBXItemClipClrClick
+    object TBXItemClipClr: TTBXItem
       Caption = 'Clear'
-      Hint = ''
+      OnClick = TBXItemClipClrClick
     end
-    object TBXSeparatorItem64: TSpTBXSeparatorItem
-      Caption = ''
-      Hint = ''
+    object TBXSeparatorItem64: TTBXSeparatorItem
     end
-    object TBXItemClipFind: TSpTBXItem
-      OnClick = TBXItemClipFindClick
+    object TBXItemClipFind: TTBXItem
       Caption = 'Find...'
-      Hint = ''
+      OnClick = TBXItemClipFindClick
     end
   end
   object TimerBrackets: TTimer
@@ -18199,51 +17527,46 @@ object fmMain: TfmMain
     Left = 416
     Top = 360
   end
-  object PopupSplitter: TSpTBXPopupMenu
+  object PopupSplitter: TTBXPopupMenu
     OnPopup = PopupSplitterPopup
     Left = 288
     Top = 332
-    object TBXItemSplitCaption: TSpTBXItem
+    object TBXItemSplitCaption: TTBXItem
       Enabled = False
-      Caption = ''
-      Hint = ''
     end
-    object TBXItemSp20: TSpTBXItem
+    object TBXItemSp20: TTBXItem
       Action = ecSplit20_80
       Caption = '20/80'
     end
-    object TBXItemSp30: TSpTBXItem
+    object TBXItemSp30: TTBXItem
       Action = ecSplit30_70
       Caption = '30/70'
     end
-    object TBXItemSp40: TSpTBXItem
+    object TBXItemSp40: TTBXItem
       Action = ecSplit40_60
       Caption = '40/60'
     end
-    object TBXItemSp50: TSpTBXItem
+    object TBXItemSp50: TTBXItem
       Action = ecSplit50_50
       Caption = '50/50'
     end
-    object TBXItemSp60: TSpTBXItem
+    object TBXItemSp60: TTBXItem
       Action = ecSplit60_40
       Caption = '60/40'
     end
-    object TBXItemSp70: TSpTBXItem
+    object TBXItemSp70: TTBXItem
       Action = ecSplit70_30
       Caption = '70/30'
     end
-    object TBXItemSp80: TSpTBXItem
+    object TBXItemSp80: TTBXItem
       Action = ecSplit80_20
       Caption = '80/20'
     end
-    object TBXSeparatorItem43: TSpTBXSeparatorItem
-      Caption = ''
-      Hint = ''
+    object TBXSeparatorItem43: TTBXSeparatorItem
     end
-    object TBXItemSpHorz: TSpTBXItem
-      OnClick = TBXItemSpHorzClick
+    object TBXItemSpHorz: TTBXItem
       Caption = 'Split horizontally'
-      Hint = ''
+      OnClick = TBXItemSpHorzClick
     end
   end
   object ecMacroRecorder1: TecMacroRecorder
@@ -18260,49 +17583,38 @@ object fmMain: TfmMain
     Left = 320
     Top = 280
   end
-  object PopupValidate: TSpTBXPopupMenu
+  object PopupValidate: TTBXPopupMenu
     OnPopup = PopupValidatePopup
     Left = 392
     Top = 332
-    object TBXItemValNav: TSpTBXItem
-      OnClick = TBXItemValNavClick
+    object TBXItemValNav: TTBXItem
       Caption = 'Navigate'
-      Hint = ''
+      OnClick = TBXItemValNavClick
     end
-    object TBXSeparatorItem56: TSpTBXSeparatorItem
-      Caption = ''
-      Hint = ''
+    object TBXSeparatorItem56: TTBXSeparatorItem
     end
-    object TBXItemValCp: TSpTBXItem
-      OnClick = TBXItemValCpClick
+    object TBXItemValCp: TTBXItem
       Caption = 'Copy selected'
-      Hint = ''
+      OnClick = TBXItemValCpClick
     end
-    object TBXItemValCpAll: TSpTBXItem
-      OnClick = TBXItemValCpAllClick
+    object TBXItemValCpAll: TTBXItem
       Caption = 'Copy all'
-      Hint = ''
+      OnClick = TBXItemValCpAllClick
     end
-    object TBXSeparatorItem57: TSpTBXSeparatorItem
-      Caption = ''
-      Hint = ''
+    object TBXSeparatorItem57: TTBXSeparatorItem
     end
-    object TBXItemValClr: TSpTBXItem
-      OnClick = TBXItemValClrClick
+    object TBXItemValClr: TTBXItem
       Caption = 'Clear'
-      Hint = ''
+      OnClick = TBXItemValClrClick
     end
-    object TBXSeparatorItem66: TSpTBXSeparatorItem
-      Caption = ''
-      Hint = ''
+    object TBXSeparatorItem66: TTBXSeparatorItem
     end
-    object TBXItemValFind: TSpTBXItem
-      OnClick = TBXItemValFindClick
+    object TBXItemValFind: TTBXItem
       Caption = 'Find...'
-      Hint = ''
+      OnClick = TBXItemValFindClick
     end
   end
-  object MRU_Sess: TSpTBXMRUList
+  object MRU_Sess: TTBXMRUList
     AddFullPath = False
     HidePathExtension = False
     MaxItems = 20
@@ -18310,28 +17622,23 @@ object fmMain: TfmMain
     Left = 320
     Top = 388
   end
-  object PopupTree: TSpTBXPopupMenu
+  object PopupTree: TTBXPopupMenu
     OnPopup = PopupTreePopup
     Left = 417
     Top = 330
-    object TBXItemTreeExpand: TSpTBXItem
-      OnClick = TBXItemTreeExpandClick
+    object TBXItemTreeExpand: TTBXItem
       Caption = 'Expand'
-      Hint = ''
+      OnClick = TBXItemTreeExpandClick
     end
-    object TBXItemTreeCollapse: TSpTBXItem
-      OnClick = TBXItemTreeCollapseClick
+    object TBXItemTreeCollapse: TTBXItem
       Caption = 'Collapse'
-      Hint = ''
+      OnClick = TBXItemTreeCollapseClick
     end
-    object TBXSeparatorItem68: TSpTBXSeparatorItem
-      Caption = ''
-      Hint = ''
+    object TBXSeparatorItem68: TTBXSeparatorItem
     end
-    object TBXItemTreeFind: TSpTBXItem
-      OnClick = TBXItemTreeFindClick
+    object TBXItemTreeFind: TTBXItem
       Caption = 'Find...'
-      Hint = ''
+      OnClick = TBXItemTreeFindClick
     end
   end
   object TimerAutoSave: TTimer
@@ -18347,7 +17654,7 @@ object fmMain: TfmMain
     Left = 329
     Top = 246
     Bitmap = {
-      494C010101000400040028000E00FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010101000400080028000E00FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000A00000000E00000001002000000000000023
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -18642,41 +17949,32 @@ object fmMain: TfmMain
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000000000000000000000000000}
   end
-  object PopupClips: TSpTBXPopupMenu
+  object PopupClips: TTBXPopupMenu
     Left = 392
     Top = 304
-    object TBXItemClipsAddText: TSpTBXItem
-      OnClick = TBXItemClipsAddTextClick
+    object TBXItemClipsAddText: TTBXItem
       Caption = 'Add clip...'
-      Hint = ''
+      OnClick = TBXItemClipsAddTextClick
     end
-    object TBXItemClipsDelText: TSpTBXItem
-      OnClick = TBXItemClipsDelTextClick
+    object TBXItemClipsDelText: TTBXItem
       Caption = 'Delete clip'
-      Hint = ''
+      OnClick = TBXItemClipsDelTextClick
     end
-    object TBXSeparatorItem90: TSpTBXSeparatorItem
-      Caption = ''
-      Hint = ''
+    object TBXSeparatorItem90: TTBXSeparatorItem
     end
-    object TBXItemClipsEdit: TSpTBXItem
-      OnClick = TBXItemClipsEditClick
+    object TBXItemClipsEdit: TTBXItem
       Caption = 'Edit this file'
-      Hint = ''
+      OnClick = TBXItemClipsEditClick
     end
-    object TBXItemClipsAddFile: TSpTBXItem
-      OnClick = TBXItemClipsAddFileClick
+    object TBXItemClipsAddFile: TTBXItem
       Caption = 'Add new file...'
-      Hint = ''
+      OnClick = TBXItemClipsAddFileClick
     end
-    object TBXSeparatorItem76: TSpTBXSeparatorItem
-      Caption = ''
-      Hint = ''
+    object TBXSeparatorItem76: TTBXSeparatorItem
     end
-    object TBXItemClipsDir: TSpTBXItem
-      OnClick = TBXItemClipsDirClick
+    object TBXItemClipsDir: TTBXItem
       Caption = 'Browse folder'
-      Hint = ''
+      OnClick = TBXItemClipsDirClick
     end
   end
   object OD_Swatch: TOpenDialog
@@ -18693,7 +17991,7 @@ object fmMain: TfmMain
     Left = 609
     Top = 358
   end
-  object TBXColors: TSpTBXColorSet
+  object TBXColors: TTBXColorSet
     ColCount = 5
     RowCount = 2
     OnGetColorInfo = TBXColorsGetColorInfo
@@ -18706,7 +18004,7 @@ object fmMain: TfmMain
     Left = 353
     Top = 246
     Bitmap = {
-      494C01010200040004000A000A00FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010200040008000A000A00FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000280000000A00000001002000000000004006
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -18765,51 +18063,40 @@ object fmMain: TfmMain
       0070700000000000006DB0000000000080FDF00000000000C1FFF00000000000
       00000000000000000000000000000000000000000000}
   end
-  object PopupPluginsLog: TSpTBXPopupMenu
+  object PopupPluginsLog: TTBXPopupMenu
     OnPopup = PopupOutPopup
     Left = 440
     Top = 332
-    object TBXItemPLogCopySel: TSpTBXItem
-      OnClick = TBXItemPLogCopySelClick
+    object TBXItemPLogCopySel: TTBXItem
       Caption = 'Copy selected'
-      Hint = ''
+      OnClick = TBXItemPLogCopySelClick
     end
-    object TBXItemPLogCopyAll: TSpTBXItem
-      OnClick = TBXItemPLogCopyAllClick
+    object TBXItemPLogCopyAll: TTBXItem
       Caption = 'Copy all'
-      Hint = ''
+      OnClick = TBXItemPLogCopyAllClick
     end
-    object TBXSeparatorItem81: TSpTBXSeparatorItem
-      Caption = ''
-      Hint = ''
+    object TBXSeparatorItem81: TTBXSeparatorItem
     end
-    object TBXItemPLogDelete: TSpTBXItem
-      OnClick = TBXItemPLogDeleteClick
+    object TBXItemPLogDelete: TTBXItem
       Caption = 'Delete selected'
-      Hint = ''
+      OnClick = TBXItemPLogDeleteClick
     end
-    object TBXItemPLogClear: TSpTBXItem
-      OnClick = TBXItemPLogClearClick
+    object TBXItemPLogClear: TTBXItem
       Caption = 'Clear'
-      Hint = ''
+      OnClick = TBXItemPLogClearClick
     end
-    object TBXSeparatorItem82: TSpTBXSeparatorItem
-      Caption = ''
-      Hint = ''
+    object TBXSeparatorItem82: TTBXSeparatorItem
     end
-    object TBXItemPLogFind: TSpTBXItem
-      OnClick = TBXItemPLogFindClick
+    object TBXItemPLogFind: TTBXItem
       Caption = 'Find...'
-      Hint = ''
+      OnClick = TBXItemPLogFindClick
     end
-    object TBXItemPLogSaveAs: TSpTBXItem
-      OnClick = TBXItemPLogSaveAsClick
+    object TBXItemPLogSaveAs: TTBXItem
       Caption = 'Save as...'
-      Hint = ''
+      OnClick = TBXItemPLogSaveAsClick
     end
   end
   object PluginACP: TAutoCompletePopup
-    ShowWhenNone = True
     Images = ImgListTree
     Delay = 200
     FixedItemHeight = True
@@ -18835,6 +18122,7 @@ object fmMain: TfmMain
     ToolHint.Active = True
     ToolHint.Styles = SyntStyles
     ToolHint.Formatted = True
+    ToolHint.Text = ''
     Controls = <>
     Left = 456
     Top = 232

@@ -18,14 +18,14 @@ object fmInsTxt: TfmInsTxt
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object TntGroupBox1: TSpTBXGroupBox
+  object TntGroupBox1: TGroupBox
     Left = 8
     Top = 4
     Width = 401
     Height = 185
     Caption = 'What to insert'
     TabOrder = 0
-    object TntLabel1: TSpTBXLabel
+    object TntLabel1: TLabel
       Left = 97
       Top = 36
       Width = 62
@@ -33,7 +33,7 @@ object fmInsTxt: TfmInsTxt
       Alignment = taRightJustify
       Caption = 'at line begin:'
     end
-    object TntLabel2: TSpTBXLabel
+    object TntLabel2: TLabel
       Left = 105
       Top = 60
       Width = 54
@@ -41,49 +41,49 @@ object fmInsTxt: TfmInsTxt
       Alignment = taRightJustify
       Caption = 'at line end:'
     end
-    object TntLabel3: TSpTBXLabel
+    object TntLabel3: TLabel
       Left = 168
       Top = 96
       Width = 51
       Height = 13
       Caption = 'Start num:'
     end
-    object TntLabel4: TSpTBXLabel
+    object TntLabel4: TLabel
       Left = 240
       Top = 96
       Width = 30
       Height = 13
       Caption = 'Digits:'
     end
-    object lab1: TSpTBXLabel
+    object lab1: TLabel
       Left = 168
       Top = 136
       Width = 10
       Height = 13
       Caption = '1.'
     end
-    object lab2: TSpTBXLabel
+    object lab2: TLabel
       Left = 168
       Top = 148
       Width = 10
       Height = 13
       Caption = '2.'
     end
-    object TntLabel5: TSpTBXLabel
+    object TntLabel5: TLabel
       Left = 312
       Top = 96
       Width = 32
       Height = 13
       Caption = 'Suffix:'
     end
-    object TntLabel6: TSpTBXLabel
+    object TntLabel6: TLabel
       Left = 88
       Top = 96
       Width = 32
       Height = 13
       Caption = 'Prefix:'
     end
-    object bText: TSpTBXRadioButton
+    object bText: TRadioButton
       Left = 8
       Top = 16
       Width = 161
@@ -94,7 +94,7 @@ object fmInsTxt: TfmInsTxt
       TabStop = True
       OnClick = bTextClick
     end
-    object bNumber: TSpTBXRadioButton
+    object bNumber: TRadioButton
       Left = 8
       Top = 80
       Width = 161
@@ -103,7 +103,7 @@ object fmInsTxt: TfmInsTxt
       TabOrder = 1
       OnClick = bTextClick
     end
-    object bBullets: TSpTBXRadioButton
+    object bBullets: TRadioButton
       Left = 8
       Top = 160
       Width = 161
@@ -112,20 +112,18 @@ object fmInsTxt: TfmInsTxt
       TabOrder = 2
       OnClick = bTextClick
     end
-    object ed1: TSpTBXComboBox
+    object ed1: TComboBox
       Left = 168
       Top = 32
       Width = 161
       Height = 21
-      ItemHeight = 13
       TabOrder = 3
     end
-    object ed2: TSpTBXComboBox
+    object ed2: TComboBox
       Left = 168
       Top = 56
       Width = 161
       Height = 21
-      ItemHeight = 13
       TabOrder = 4
     end
     object edStart: TSpinEdit
@@ -152,40 +150,38 @@ object fmInsTxt: TfmInsTxt
       OnChange = edStartChange
       OnKeyDown = edCounterKeyDown
     end
-    object edTail: TSpTBXComboBox
+    object edTail: TComboBox
       Left = 312
       Top = 112
       Width = 73
       Height = 21
-      ItemHeight = 13
       TabOrder = 8
       OnChange = edStartChange
     end
-    object edBegin: TSpTBXComboBox
+    object edBegin: TComboBox
       Left = 88
       Top = 112
       Width = 73
       Height = 21
-      ItemHeight = 13
       TabOrder = 5
       OnChange = edStartChange
     end
   end
-  object TntGroupBox2: TSpTBXGroupBox
+  object TntGroupBox2: TGroupBox
     Left = 8
     Top = 192
     Width = 401
     Height = 125
     Caption = 'Options'
     TabOrder = 1
-    object TntLabel8: TSpTBXLabel
+    object TntLabel8: TLabel
       Left = 8
       Top = 16
       Width = 82
       Height = 13
       Caption = 'Insert beginning:'
     end
-    object bAtCol: TSpTBXRadioButton
+    object bAtCol: TRadioButton
       Left = 8
       Top = 32
       Width = 169
@@ -195,7 +191,7 @@ object fmInsTxt: TfmInsTxt
       TabOrder = 0
       TabStop = True
     end
-    object bAfterSp: TSpTBXRadioButton
+    object bAfterSp: TRadioButton
       Left = 8
       Top = 52
       Width = 169
@@ -203,7 +199,7 @@ object fmInsTxt: TfmInsTxt
       Caption = 'after leading spaces'
       TabOrder = 1
     end
-    object cbSkip: TSpTBXCheckBox
+    object cbSkip: TCheckBox
       Left = 8
       Top = 100
       Width = 305
@@ -222,7 +218,7 @@ object fmInsTxt: TfmInsTxt
       Value = 1
       OnKeyDown = edCounterKeyDown
     end
-    object bAfterStr: TSpTBXRadioButton
+    object bAfterStr: TRadioButton
       Left = 8
       Top = 72
       Width = 169
@@ -230,16 +226,15 @@ object fmInsTxt: TfmInsTxt
       Caption = 'after string:'
       TabOrder = 2
     end
-    object edStrAfter: TSpTBXComboBox
+    object edStrAfter: TComboBox
       Left = 176
       Top = 72
       Width = 161
       Height = 21
-      ItemHeight = 13
       TabOrder = 4
     end
   end
-  object bOk: TSpTBXButton
+  object bOk: TButton
     Left = 224
     Top = 388
     Width = 90
@@ -249,7 +244,7 @@ object fmInsTxt: TfmInsTxt
     ModalResult = 1
     TabOrder = 3
   end
-  object bCan: TSpTBXButton
+  object bCan: TButton
     Left = 320
     Top = 388
     Width = 90
@@ -259,14 +254,14 @@ object fmInsTxt: TfmInsTxt
     ModalResult = 2
     TabOrder = 4
   end
-  object TntGroupBox3: TSpTBXGroupBox
+  object TntGroupBox3: TGroupBox
     Left = 8
     Top = 320
     Width = 401
     Height = 61
     Caption = 'Counter'
     TabOrder = 2
-    object labNoteNoSel: TSpTBXLabel
+    object labNoteNoSel: TLabel
       Left = 8
       Top = 16
       Width = 320
@@ -275,14 +270,14 @@ object fmInsTxt: TfmInsTxt
         'Note: insert operation will be performed specified number of tim' +
         'es.'
     end
-    object labNoteSel: TSpTBXLabel
+    object labNoteSel: TLabel
       Left = 8
       Top = 16
       Width = 205
       Height = 13
       Caption = 'Note: only selected lines will be processed.'
     end
-    object labCounter: TSpTBXLabel
+    object labCounter: TLabel
       Left = 8
       Top = 36
       Width = 79

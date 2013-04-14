@@ -4,17 +4,18 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ecKeyMap, ExtCtrls;
+  Dialogs, StdCtrls,
+  ecKeyMap, ExtCtrls;
 
 type
   TfmCmdList = class(TForm)
-    List: TSpTBXListBox;
+    List: TListBox;
     Keys: TSyntKeyMapping;
-    Edit: TSpTBXEdit;
+    Edit: TEdit;
     TimerType: TTimer;
-    Panel1: TSpTBXPanel;
-    cbFuzzy: TSpTBXCheckBox;
-    labHelp: TSpTBXLabel;
+    Panel1: TPanel;
+    cbFuzzy: TCheckBox;
+    labHelp: TLabel;
     procedure FormKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
     procedure FormShow(Sender: TObject);
@@ -42,7 +43,10 @@ type
 implementation
 
 uses
-  Math, ecStrUtils, unProc, ATxSProc;
+  Math,
+  ecStrUtils,
+  unProc,
+  ATxSProc;
 
 {$R *.dfm}
 
@@ -169,7 +173,7 @@ var
   i, n: Integer;
   Arr: TSynCharArray;
 begin
-  with Control as TTntListbox do
+  with Control as TListbox do
   begin
     if odSelected in State then
       Canvas.Brush.Color:= FColorSelBk

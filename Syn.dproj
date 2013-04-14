@@ -45,7 +45,7 @@
         <DCC_E>false</DCC_E>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
-        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <Icon_MainIcon>Syn_Icon.ico</Icon_MainIcon>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
@@ -160,18 +160,18 @@
         </DCCReference>
         <DCCReference Include="unProjAddDir.pas">
             <Form>fmProjAddDir</Form>
-            <DesignClass>TTntForm</DesignClass>
+            <DesignClass>TForm</DesignClass>
         </DCCReference>
         <DCCReference Include="unProjProps.pas">
             <Form>fmProjProps</Form>
-            <DesignClass>TTntForm</DesignClass>
+            <DesignClass>TForm</DesignClass>
         </DCCReference>
         <DCCReference Include="unClips.pas">
             <Form>fmClips</Form>
         </DCCReference>
         <DCCReference Include="unNumConv.pas">
             <Form>fmNumConv</Form>
-            <DesignClass>TTntForm</DesignClass>
+            <DesignClass>TForm</DesignClass>
         </DCCReference>
         <DCCReference Include="ATSynPlugins.pas"/>
         <DCCReference Include="unFillBlock.pas">
@@ -186,11 +186,11 @@
         </DCCReference>
         <DCCReference Include="unProjList.pas">
             <Form>fmProjList</Form>
-            <DesignClass>TTntForm</DesignClass>
+            <DesignClass>TForm</DesignClass>
         </DCCReference>
         <DCCReference Include="unRename.pas">
             <Form>fmRename</Form>
-            <DesignClass>TTntForm</DesignClass>
+            <DesignClass>TForm</DesignClass>
         </DCCReference>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_2</Key>

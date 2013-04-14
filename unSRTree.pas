@@ -8,19 +8,19 @@ uses
 
 type
   TfmSRTree = class(TForm)
-    edText: TSpTBXComboBox;
-    TntLabel1: TSpTBXLabel;
-    gOp: TSpTBXGroupBox;
-    cbRE: TSpTBXCheckBox;
-    cbCase: TSpTBXCheckBox;
-    cbWords: TSpTBXCheckBox;
-    gDir: TSpTBXGroupBox;
-    bFor: TSpTBXRadioButton;
-    bBack: TSpTBXRadioButton;
-    gScop: TSpTBXGroupBox;
-    cbFromCur: TSpTBXCheckBox;
-    bFNext: TSpTBXButton;
-    bCan: TSpTBXButton;
+    edText: TComboBox;
+    TntLabel1: TLabel;
+    gOp: TGroupBox;
+    cbRE: TCheckBox;
+    cbCase: TCheckBox;
+    cbWords: TCheckBox;
+    gDir: TGroupBox;
+    bFor: TRadioButton;
+    bBack: TRadioButton;
+    gScop: TGroupBox;
+    cbFromCur: TCheckBox;
+    bFNext: TButton;
+    bCan: TButton;
     DKLanguageController1: TDKLanguageController;
     procedure edTextChange(Sender: TObject);
     procedure FormShow(Sender: TObject);

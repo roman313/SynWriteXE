@@ -8,23 +8,23 @@ uses
 
 type
   TfmAb = class(TForm)
-    GroupBox4: TSpTBXGroupBox;
-    Label12: TSpTBXLabel;
-    Label11: TSpTBXLabel;
-    Label9: TSpTBXLabel;
-    LabelWn: TSpTBXLabel;
-    GroupBox5: TSpTBXGroupBox;
-    LabelW1: TSpTBXLabel;
-    Button1: TSpTBXButton;
-    Labelw2: TSpTBXLabel;
-    LabelW0: TSpTBXLabel;
-    Label4: TSpTBXLabel;
-    LabelWEm: TSpTBXLabel;
+    GroupBox4: TGroupBox;
+    Label12: TLabel;
+    Label11: TLabel;
+    Label9: TLabel;
+    LabelWn: TLabel;
+    GroupBox5: TGroupBox;
+    LabelW1: TLabel;
+    Button1: TButton;
+    Labelw2: TLabel;
+    LabelW0: TLabel;
+    Label4: TLabel;
+    LabelWEm: TLabel;
     DKLanguageController1: TDKLanguageController;
-    LabelWV: TSpTBXLabel;
-    Labelw3: TSpTBXLabel;
-    LabelWA: TSpTBXLabel;
-    LabelForum: TSpTBXLabel;
+    LabelWV: TLabel;
+    Labelw3: TLabel;
+    LabelWA: TLabel;
+    LabelForum: TLabel;
     procedure Button1Click(Sender: TObject);
     procedure LabelWEmClick(Sender: TObject);
     procedure LabelW1Click(Sender: TObject);

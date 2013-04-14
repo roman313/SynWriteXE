@@ -2,7 +2,6 @@ object fmProps: TfmProps
   Left = 272
   Top = 555
   ActiveControl = Pages
-  AutoScroll = False
   BorderIcons = [biSystemMenu]
   Caption = 'File/document properties'
   ClientHeight = 243
@@ -24,7 +23,7 @@ object fmProps: TfmProps
     243)
   PixelsPerInch = 96
   TextHeight = 13
-  object bOk: TSpTBXButton
+  object bOk: TButton
     Left = 280
     Top = 212
     Width = 90
@@ -36,7 +35,7 @@ object fmProps: TfmProps
     ModalResult = 1
     TabOrder = 1
   end
-  object Pages: TSpTBXTabControl
+  object Pages: TPageControl
     Left = 8
     Top = 4
     Width = 362
@@ -44,33 +43,37 @@ object fmProps: TfmProps
     ActivePage = tabFile
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 0
-    object tabFile: TSpTBXTabSheet
+    object tabFile: TTabSheet
       Caption = 'File'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         354
         173)
-      object TntLabel1: TSpTBXLabel
+      object TntLabel1: TLabel
         Left = 8
         Top = 4
         Width = 45
         Height = 13
         Caption = 'Full path:'
       end
-      object TntLabel2: TSpTBXLabel
+      object TntLabel2: TLabel
         Left = 8
         Top = 56
         Width = 84
         Height = 13
         Caption = 'Modification time:'
       end
-      object TntLabel3: TSpTBXLabel
+      object TntLabel3: TLabel
         Left = 8
         Top = 80
         Width = 59
         Height = 13
         Caption = 'Size on disk:'
       end
-      object edPath: TSpTBXEdit
+      object edPath: TEdit
         Left = 8
         Top = 20
         Width = 339
@@ -80,7 +83,7 @@ object fmProps: TfmProps
         ReadOnly = True
         TabOrder = 0
       end
-      object edTime: TSpTBXEdit
+      object edTime: TEdit
         Left = 128
         Top = 52
         Width = 219
@@ -90,7 +93,7 @@ object fmProps: TfmProps
         ReadOnly = True
         TabOrder = 1
       end
-      object edSize: TSpTBXEdit
+      object edSize: TEdit
         Left = 128
         Top = 76
         Width = 219
@@ -101,33 +104,37 @@ object fmProps: TfmProps
         TabOrder = 2
       end
     end
-    object tabDoc: TSpTBXTabSheet
+    object tabDoc: TTabSheet
       Caption = 'Text'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         354
         173)
-      object TntLabel4: TSpTBXLabel
+      object TntLabel4: TLabel
         Left = 8
         Top = 8
         Width = 57
         Height = 13
         Caption = 'Characters:'
       end
-      object TntLabel5: TSpTBXLabel
+      object TntLabel5: TLabel
         Left = 8
         Top = 32
         Width = 35
         Height = 13
         Caption = 'Words:'
       end
-      object TntLabel6: TSpTBXLabel
+      object TntLabel6: TLabel
         Left = 8
         Top = 56
         Width = 28
         Height = 13
         Caption = 'Lines:'
       end
-      object edChars: TSpTBXEdit
+      object edChars: TEdit
         Left = 152
         Top = 4
         Width = 188
@@ -137,7 +144,7 @@ object fmProps: TfmProps
         ReadOnly = True
         TabOrder = 0
       end
-      object edWords: TSpTBXEdit
+      object edWords: TEdit
         Left = 152
         Top = 28
         Width = 188
@@ -147,7 +154,7 @@ object fmProps: TfmProps
         ReadOnly = True
         TabOrder = 1
       end
-      object edLines: TSpTBXEdit
+      object edLines: TEdit
         Left = 152
         Top = 52
         Width = 188

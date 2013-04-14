@@ -8,9 +8,9 @@ uses
 
 type
   TfmEnc = class(TForm)
-    Button1: TSpTBXButton;
-    Button2: TSpTBXButton;
-    StaticText1: TTntStaticText;
+    Button1: TButton;
+    Button2: TButton;
+    StaticText1: TStaticText;
     DKLanguageController1: TDKLanguageController;
   private
     { Private declarations }

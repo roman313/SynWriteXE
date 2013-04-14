@@ -4,16 +4,17 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ecKeyMap, ExtCtrls, unProj;
+  Dialogs, StdCtrls,
+  ecKeyMap, ExtCtrls, unProj;
 
 type
   TfmProjList = class(TForm)
-    List: TSpTBXListBox;
-    Edit: TSpTBXEdit;
+    List: TListBox;
+    Edit: TEdit;
     TimerType: TTimer;
-    Panel1: TSpTBXPanel;
-    labHelp: TSpTBXLabel;
-    cbFuzzy: TSpTBXCheckBox;
+    Panel1: TPanel;
+    labHelp: TLabel;
+    cbFuzzy: TCheckBox;
     procedure FormKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
     procedure FormShow(Sender: TObject);
@@ -43,8 +44,6 @@ type
 implementation
 
 uses
-  TntSysUtils,
-  TntWideStrings,
   Math,
   ecStrUtils,
   unProc,
@@ -97,12 +96,12 @@ procedure TfmProjList.DoFilter;
   var
     S1, S2, SFilter, SFilterFN, SFilterDir: Widestring;
   begin
-    S1:= WideExtractFileName(S);
-    S2:= WideExtractFileDir(S);
+    S1:= ExtractFileName(S);
+    S2:= ExtractFileDir(S);
 
     SFilter:= Edit.Text;
-    SFilterDir:= WideExtractFileDir(SFilter);
-    SFilterFN:= WideExtractFileName(SFilter);
+    SFilterDir:= ExtractFileDir(SFilter);
+    SFilterFN:= ExtractFileName(SFilter);
 
     if cbFuzzy.Checked then
       Result:= SFuzzyMatch(S1, SFilterFN) and SFuzzyMatch(S2, SFilterDir)
@@ -171,7 +170,7 @@ var
   i, n: Integer;
   Arr: TSynCharArray;
 begin
-  with Control as TTntListbox do
+  with Control as TListbox do
   begin
     if odSelected in State then
       Canvas.Brush.Color:= FColorSelBk
@@ -181,8 +180,8 @@ begin
     Inc(Rect.Left, 2);
 
     S:= Items[Index];
-    S1:= WideExtractFileName(S);
-    S2:= WideExtractFileDir(S);
+    S1:= ExtractFileName(S);
+    S2:= ExtractFileDir(S);
 
     //icon
     if not Assigned(fmProj) then

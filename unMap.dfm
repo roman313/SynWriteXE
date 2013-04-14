@@ -156,7 +156,7 @@ object fmMap: TfmMap
     OnMouseMove = edMapMouseMove
     OnMouseUp = edMapMouseUp
   end
-  object PopupMenu1: TSpTBXPopupMenu
+  object PopupMenu1: TPopupMenu
     Left = 96
     Top = 104
   end

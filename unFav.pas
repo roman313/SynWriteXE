@@ -8,13 +8,13 @@ uses
 
 type
   TfmFav = class(TForm)
-    btnOk: TSpTBXButton;
-    btnCan: TSpTBXButton;
-    cbPaths: TSpTBXCheckBox;
-    List: TSpTBXListBox;
-    btnUp: TSpTBXButton;
-    btnDown: TSpTBXButton;
-    btnDel: TSpTBXButton;
+    btnOk: TButton;
+    btnCan: TButton;
+    cbPaths: TCheckBox;
+    List: TListBox;
+    btnUp: TButton;
+    btnDown: TButton;
+    btnDel: TButton;
     DKLanguageController1: TDKLanguageController;
     procedure TntFormShow(Sender: TObject);
     procedure TntFormCreate(Sender: TObject);
@@ -44,8 +44,7 @@ type
 implementation
 
 uses
-  ATxSProc,
-  TntSysUtils;
+  ATxSProc;
 
 {$R *.dfm}
 
@@ -72,12 +71,12 @@ begin
         Delete(S, 1, N+1);
       end;
 
-      SShort:= WideExtractFileName(s);
+      SShort:= ExtractFileName(s);
       if SShort='' then
         SShort:= s;
 
       if cbPaths.Checked then
-        s:= SShort + '  (' + WideExtractFileDir(s) + ')'
+        s:= SShort + '  (' + ExtractFileDir(s) + ')'
       else
         s:= SShort;
 

@@ -4,64 +4,65 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, TntDialogs, StdCtrls, DKLang, ComCtrls, Menus, ecHotKeyEdit;
+  Dialogs, StdCtrls, DKLang, ComCtrls, FileCtrl,
+  Menus, ecHotKeyEdit;
 
 type
   TfmTools = class(TForm)
     TntOpenDialog1: TOpenDialog;
-    TntGroupBox1: TSpTBXGroupBox;
-    TntLabel1: TSpTBXLabel;
-    edFN: TSpTBXEdit;
-    bBr: TSpTBXButton;
-    TntLabel2: TSpTBXLabel;
-    edPar: TSpTBXEdit;
-    TntLabel3: TSpTBXLabel;
-    edDir: TSpTBXEdit;
-    bOk: TSpTBXButton;
-    bCancel: TSpTBXButton;
+    TntGroupBox1: TGroupBox;
+    TntLabel1: TLabel;
+    edFN: TEdit;
+    bBr: TButton;
+    TntLabel2: TLabel;
+    edPar: TEdit;
+    TntLabel3: TLabel;
+    edDir: TEdit;
+    bOk: TButton;
+    bCancel: TButton;
     DKLanguageController1: TDKLanguageController;
-    TntGroupBox2: TSpTBXGroupBox;
+    TntGroupBox2: TGroupBox;
     List: TListView;
-    bBr2: TSpTBXButton;
-    bUp: TSpTBXButton;
-    bDn: TSpTBXButton;
-    bPar: TSpTBXButton;
-    mnuPar: TSpTBXPopupMenu;
+    bBr2: TButton;
+    bUp: TButton;
+    bDn: TButton;
+    bPar: TButton;
+    mnuPar: TPopupMenu;
     pFileName: TMenuItem;
     pFileDir: TMenuItem;
     pCurWord: TMenuItem;
     pCurLineNum: TMenuItem;
-    cbOut: TSpTBXCheckBox;
-    bOut: TSpTBXButton;
-    TntLabel4: TSpTBXLabel;
-    edCap: TSpTBXEdit;
-    bClr: TSpTBXButton;
-    TntLabel5: TSpTBXLabel;
+    cbOut: TCheckBox;
+    bOut: TButton;
+    TntLabel4: TLabel;
+    edCap: TEdit;
+    bClr: TButton;
+    TntLabel5: TLabel;
     edKey: TecHotKey;
-    TntLabel6: TSpTBXLabel;
-    edLexer: TSpTBXComboBox;
-    bLex: TSpTBXButton;
-    bKey: TSpTBXButton;
-    TntLabel7: TSpTBXLabel;
-    edSave: TSpTBXComboBox;
+    TntLabel6: TLabel;
+    edLexer: TComboBox;
+    bLex: TButton;
+    bKey: TButton;
+    TntLabel7: TLabel;
+    edSave: TComboBox;
     pCurLine: TMenuItem;
     pCurColNum: TMenuItem;
     N1: TMenuItem;
     N2: TMenuItem;
     pFileNameOnly: TMenuItem;
-    cbCtx: TSpTBXCheckBox;
-    bHelp: TSpTBXButton;
+    cbCtx: TCheckBox;
+    bHelp: TButton;
     N3: TMenuItem;
     pInter: TMenuItem;
     pInterFile: TMenuItem;
     pInterDir: TMenuItem;
-    edOutType: TSpTBXComboBox;
-    TntLabel8: TSpTBXLabel;
-    TntLabel9: TSpTBXLabel;
+    edOutType: TComboBox;
+    TntLabel8: TLabel;
+    TntLabel9: TLabel;
     pFileExt: TMenuItem;
     pFileNameNoExt: TMenuItem;
     pSelText: TMenuItem;
-    edOutEnc: TSpTBXComboBox;
+    edOutEnc: TComboBox;
     N4: TMenuItem;
     pProj1: TMenuItem;
     pProj2: TMenuItem;
@@ -116,7 +117,7 @@ var
 
 implementation
 
-uses tntSysUtils, TntFileCtrl, unTool2,
+uses unTool2,
   atxSProc, atxFProc, unProc;
 
 {$R *.dfm}
@@ -157,7 +158,7 @@ begin
     if Execute then
     begin
       edFN.Text:= FileName;
-      edDir.Text:= WideExtractFileDir(FileName);
+      edDir.Text:= ExtractFileDir(FileName);
       edFNChange(Self);
       edDirChange(Self);
       if SFileExtensionMatch(FileName, 'chm') then
@@ -174,7 +175,7 @@ procedure TfmTools.bBr2Click(Sender: TObject);
 var fn: WideString;
 begin
   fn:= edDir.Text;
-  if WideSelectDirectory('', '', fn) then
+  if SelectDirectory('', '', fn) then
   begin
     edDir.Text:= fn;
     edDirChange(Self);

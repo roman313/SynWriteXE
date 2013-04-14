@@ -4,7 +4,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, DKLang, Gauges, ExtCtrls;
+  Dialogs, StdCtrls,
+  DKLang, Gauges, ExtCtrls;
 
 type
   TProgressType = (
@@ -18,16 +19,16 @@ type
 
 type
   TfmProgress = class(TForm)
-    laFile: TSpTBXLabel;
+    laFile: TLabel;
     DKLanguageController1: TDKLanguageController;
-    bCan: TSpTBXButton;
-    laBin: TSpTBXLabel;
+    bCan: TButton;
+    laBin: TLabel;
     Pro: TGauge;
-    LaBk: TSpTBXLabel;
+    LaBk: TLabel;
     TimerOnTop: TTimer;
-    laText: TSpTBXLabel;
-    labCount: TSpTBXLabel;
-    laSort: TSpTBXLabel;
+    laText: TLabel;
+    labCount: TLabel;
+    laSort: TLabel;
     procedure bCanClick(Sender: TObject);
     procedure TimerOnTopTimer(Sender: TObject);
   private
@@ -46,7 +47,7 @@ uses
 
 procedure TfmProgress.SetMode(m: TProgressType);
  //Align center
- procedure A(L: TSpTBXLabel);
+ procedure A(L: TLabel);
  begin
    L.Left:= (Width-L.Width) div 2;
  end;

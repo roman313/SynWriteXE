@@ -22,7 +22,7 @@ object fmSR: TfmSR
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object labEd1: TSpTBXLabel
+  object labEd1: TLabel
     Left = 8
     Top = 8
     Width = 54
@@ -30,7 +30,7 @@ object fmSR: TfmSR
     Caption = '&Search for:'
     FocusControl = ed1
   end
-  object labEd2: TSpTBXLabel
+  object labEd2: TLabel
     Left = 8
     Top = 52
     Width = 65
@@ -38,7 +38,7 @@ object fmSR: TfmSR
     Caption = '&Replace with:'
     FocusControl = ed2
   end
-  object labRes: TSpTBXLabel
+  object labRes: TLabel
     Left = 228
     Top = 48
     Width = 125
@@ -54,7 +54,7 @@ object fmSR: TfmSR
     ParentFont = False
     Visible = False
   end
-  object labStyle: TSpTBXLabel
+  object labStyle: TLabel
     Left = 290
     Top = 4
     Width = 26
@@ -70,7 +70,7 @@ object fmSR: TfmSR
     ParentFont = False
     OnClick = labStyleClick
   end
-  object labCnt: TSpTBXLabel
+  object labCnt: TLabel
     Left = 298
     Top = 48
     Width = 55
@@ -86,7 +86,7 @@ object fmSR: TfmSR
     ParentFont = False
     Visible = False
   end
-  object labRe: TSpTBXLabel
+  object labRe: TLabel
     Left = 338
     Top = 4
     Width = 13
@@ -102,7 +102,7 @@ object fmSR: TfmSR
     ParentFont = False
     OnClick = labReClick
   end
-  object labMultiline: TSpTBXLabel
+  object labMultiline: TLabel
     Left = 200
     Top = 4
     Width = 44
@@ -208,7 +208,7 @@ object fmSR: TfmSR
       00FF0000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
     OnClick = bCombo2Click
   end
-  object bFindNext: TSpTBXButton
+  object bFindNext: TButton
     Left = 360
     Top = 8
     Width = 114
@@ -218,7 +218,7 @@ object fmSR: TfmSR
     TabOrder = 5
     OnClick = bFindNextClick
   end
-  object bCancel: TSpTBXButton
+  object bCancel: TButton
     Left = 360
     Top = 170
     Width = 114
@@ -229,38 +229,36 @@ object fmSR: TfmSR
     TabOrder = 14
     OnClick = bCancelClick
   end
-  object ed1: TSpTBXComboBox
+  object ed1: TComboBox
     Left = 8
     Top = 24
     Width = 345
     Height = 21
     AutoComplete = False
     DropDownCount = 15
-    ItemHeight = 13
     TabOrder = 0
     OnChange = ed1Change
     OnKeyDown = ed1KeyDown
     OnSelect = ed1Change
   end
-  object ed2: TSpTBXComboBox
+  object ed2: TComboBox
     Left = 8
     Top = 68
     Width = 345
     Height = 21
     AutoComplete = False
     DropDownCount = 15
-    ItemHeight = 13
     TabOrder = 1
     OnKeyDown = ed2KeyDown
   end
-  object gOp: TSpTBXGroupBox
+  object gOp: TGroupBox
     Left = 8
     Top = 96
     Width = 170
     Height = 181
     Caption = 'Options'
     TabOrder = 2
-    object cbRE: TSpTBXCheckBox
+    object cbRE: TCheckBox
       Left = 8
       Top = 60
       Width = 160
@@ -269,7 +267,7 @@ object fmSR: TfmSR
       TabOrder = 2
       OnClick = cbREClick
     end
-    object cbCase: TSpTBXCheckBox
+    object cbCase: TCheckBox
       Left = 8
       Top = 24
       Width = 160
@@ -277,7 +275,7 @@ object fmSR: TfmSR
       Caption = '&Case sensitive'
       TabOrder = 0
     end
-    object cbWords: TSpTBXCheckBox
+    object cbWords: TCheckBox
       Left = 8
       Top = 42
       Width = 160
@@ -285,7 +283,7 @@ object fmSR: TfmSR
       Caption = '&Whole words'
       TabOrder = 1
     end
-    object cbSpec: TSpTBXCheckBox
+    object cbSpec: TCheckBox
       Left = 8
       Top = 78
       Width = 160
@@ -294,7 +292,7 @@ object fmSR: TfmSR
       TabOrder = 3
       OnClick = cbSpecClick
     end
-    object cbCfm: TSpTBXCheckBox
+    object cbCfm: TCheckBox
       Left = 8
       Top = 116
       Width = 160
@@ -302,7 +300,7 @@ object fmSR: TfmSR
       Caption = 'Pro&mpt on replace'
       TabOrder = 4
     end
-    object cbBk: TSpTBXCheckBox
+    object cbBk: TCheckBox
       Left = 8
       Top = 134
       Width = 160
@@ -310,7 +308,7 @@ object fmSR: TfmSR
       Caption = 'Boo&kmark results'
       TabOrder = 5
     end
-    object cbExtSel: TSpTBXCheckBox
+    object cbExtSel: TCheckBox
       Left = 8
       Top = 152
       Width = 160
@@ -319,7 +317,7 @@ object fmSR: TfmSR
       TabOrder = 6
     end
   end
-  object bFindAll: TSpTBXButton
+  object bFindAll: TButton
     Left = 360
     Top = 38
     Width = 114
@@ -328,14 +326,14 @@ object fmSR: TfmSR
     TabOrder = 6
     OnClick = bFindAllClick
   end
-  object gScop: TSpTBXGroupBox
+  object gScop: TGroupBox
     Left = 184
     Top = 156
     Width = 170
     Height = 121
     Caption = 'Scope'
     TabOrder = 4
-    object cbSel: TSpTBXCheckBox
+    object cbSel: TCheckBox
       Left = 8
       Top = 16
       Width = 160
@@ -344,7 +342,7 @@ object fmSR: TfmSR
       TabOrder = 0
       OnClick = cbSelClick
     end
-    object cbFromCur: TSpTBXCheckBox
+    object cbFromCur: TCheckBox
       Left = 8
       Top = 34
       Width = 160
@@ -353,7 +351,7 @@ object fmSR: TfmSR
       TabOrder = 1
       OnClick = cbFromCurClick
     end
-    object cbWrap: TSpTBXCheckBox
+    object cbWrap: TCheckBox
       Left = 8
       Top = 52
       Width = 160
@@ -361,7 +359,7 @@ object fmSR: TfmSR
       Caption = 'Wrap searc&h'
       TabOrder = 2
     end
-    object cbSkipCol: TSpTBXCheckBox
+    object cbSkipCol: TCheckBox
       Left = 8
       Top = 70
       Width = 160
@@ -369,13 +367,12 @@ object fmSR: TfmSR
       Caption = 'Skip collapsed'
       TabOrder = 3
     end
-    object cbTokens: TSpTBXComboBox
+    object cbTokens: TComboBox
       Left = 8
       Top = 92
       Width = 153
       Height = 21
       Style = csDropDownList
-      ItemHeight = 13
       TabOrder = 4
       Items.Strings = (
         'Entire text'
@@ -385,14 +382,14 @@ object fmSR: TfmSR
         'Except comments/strings')
     end
   end
-  object gDir: TSpTBXGroupBox
+  object gDir: TGroupBox
     Left = 184
     Top = 96
     Width = 170
     Height = 57
     Caption = 'Direction'
     TabOrder = 3
-    object bFor: TSpTBXRadioButton
+    object bFor: TRadioButton
       Left = 8
       Top = 16
       Width = 160
@@ -400,7 +397,7 @@ object fmSR: TfmSR
       Caption = 'Forwar&d'
       TabOrder = 0
     end
-    object bBack: TSpTBXRadioButton
+    object bBack: TRadioButton
       Left = 8
       Top = 34
       Width = 160
@@ -409,7 +406,7 @@ object fmSR: TfmSR
       TabOrder = 1
     end
   end
-  object bHelp: TSpTBXButton
+  object bHelp: TButton
     Left = 360
     Top = 140
     Width = 114
@@ -418,7 +415,7 @@ object fmSR: TfmSR
     TabOrder = 13
     OnClick = bHelpClick
   end
-  object bCount: TSpTBXButton
+  object bCount: TButton
     Left = 360
     Top = 68
     Width = 114
@@ -427,7 +424,7 @@ object fmSR: TfmSR
     TabOrder = 11
     OnClick = bCountClick
   end
-  object bRepNext: TSpTBXButton
+  object bRepNext: TButton
     Left = 408
     Top = 38
     Width = 114
@@ -436,7 +433,7 @@ object fmSR: TfmSR
     TabOrder = 8
     OnClick = bRepNextClick
   end
-  object bRepAll: TSpTBXButton
+  object bRepAll: TButton
     Left = 408
     Top = 68
     Width = 114
@@ -445,7 +442,7 @@ object fmSR: TfmSR
     TabOrder = 9
     OnClick = bRepAllClick
   end
-  object bSkip: TSpTBXButton
+  object bSkip: TButton
     Left = 408
     Top = 8
     Width = 114
@@ -455,14 +452,14 @@ object fmSR: TfmSR
     TabOrder = 7
     OnClick = bSkipClick
   end
-  object PanelTr: TSpTBXPanel
+  object PanelTr: TPanel
     Left = 360
     Top = 208
     Width = 121
     Height = 69
     BevelOuter = bvNone
     TabOrder = 15
-    object labTr: TSpTBXLabel
+    object labTr: TLabel
       Left = 3
       Top = 0
       Width = 70
@@ -482,7 +479,7 @@ object fmSR: TfmSR
       TickMarks = tmBoth
       OnChange = TrackBar1Change
     end
-    object cbLoose: TSpTBXCheckBox
+    object cbLoose: TCheckBox
       Left = 0
       Top = 48
       Width = 121
@@ -492,7 +489,7 @@ object fmSR: TfmSR
       OnClick = cbLooseClick
     end
   end
-  object bFindInTabs: TSpTBXButton
+  object bFindInTabs: TButton
     Left = 360
     Top = 99
     Width = 114
@@ -502,7 +499,7 @@ object fmSR: TfmSR
     WordWrap = True
     OnClick = bFindInTabsClick
   end
-  object bRepInTabs: TSpTBXButton
+  object bRepInTabs: TButton
     Left = 408
     Top = 99
     Width = 114
@@ -512,7 +509,7 @@ object fmSR: TfmSR
     WordWrap = True
     OnClick = bRepInTabsClick
   end
-  object ed1Memo: TSpTBXMemo
+  object ed1Memo: TMemo
     Left = 432
     Top = 132
     Width = 330
@@ -525,7 +522,7 @@ object fmSR: TfmSR
     OnChange = ed1Change
     OnKeyDown = ed1MemoKeyDown
   end
-  object ed2Memo: TSpTBXMemo
+  object ed2Memo: TMemo
     Left = 441
     Top = 144
     Width = 330
@@ -594,13 +591,13 @@ object fmSR: TfmSR
     Left = 112
     Top = 4
   end
-  object mnuRe: TSpTBXPopupMenu
+  object mnuRe: TPopupMenu
     AutoHotkeys = maManual
     OnPopup = mnuRePopup
     Left = 136
     Top = 4
   end
-  object mnuCombo: TSpTBXPopupMenu
+  object mnuCombo: TPopupMenu
     AutoHotkeys = maManual
     AutoLineReduction = maManual
     OnPopup = mnuRePopup

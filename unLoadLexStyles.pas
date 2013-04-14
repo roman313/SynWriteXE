@@ -4,18 +4,20 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, CheckLst, DKLang;
+  Dialogs, StdCtrls,
+  CheckLst,
+  DKLang;
 
 type
   TfmLoadLex = class(TForm)
-    Label1: TSpTBXLabel;
-    TntGroupBox1: TSpTBXGroupBox;
+    Label1: TLabel;
+    TntGroupBox1: TGroupBox;
     List: TCheckListBox;
-    bSAll: TSpTBXButton;
-    bSNone: TSpTBXButton;
-    bRem: TSpTBXButton;
-    bOk: TSpTBXButton;
-    bCan: TSpTBXButton;
+    bSAll: TButton;
+    bSNone: TButton;
+    bRem: TButton;
+    bOk: TButton;
+    bCan: TButton;
     DKLanguageController1: TDKLanguageController;
     procedure FormShow(Sender: TObject);
     procedure bSAllClick(Sender: TObject);

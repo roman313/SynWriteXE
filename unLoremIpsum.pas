@@ -4,21 +4,22 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Spin, DKLang;
+  Dialogs, StdCtrls,
+  Spin, DKLang;
 
 type
   TfmLoremIpsum = class(TForm)
-    bOk: TSpTBXButton;
-    bCopy: TSpTBXButton;
-    bCan: TSpTBXButton;
-    GroupBox1: TSpTBXGroupBox;
-    cbSent: TSpTBXRadioButton;
-    cbPara: TSpTBXRadioButton;
+    bOk: TButton;
+    bCopy: TButton;
+    bCan: TButton;
+    GroupBox1: TGroupBox;
+    cbSent: TRadioButton;
+    cbPara: TRadioButton;
     edCount: TSpinEdit;
-    Label1: TSpTBXLabel;
-    cbTags: TSpTBXCheckBox;
+    Label1: TLabel;
+    cbTags: TCheckBox;
     DKLanguageController1: TDKLanguageController;
-    Label2: TSpTBXLabel;
+    Label2: TLabel;
     procedure edCountKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
     procedure cbWordsClick(Sender: TObject);

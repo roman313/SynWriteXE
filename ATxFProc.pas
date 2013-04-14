@@ -6,6 +6,9 @@ uses
   Windows, Classes;
 
 type
+  WideString = String;
+
+type
   TExecCode = (exOk, exCannotRun, exExcept);
 
 var
@@ -89,7 +92,7 @@ uses
   SysUtils, StrUtils,
   ShellAPI,
   SHFolder,
-  TntSysUtils, Forms,
+  Forms,
   ATxUTF8Detect;
 
 function IsFilenameFixed(const fn: Widestring): Boolean;
@@ -784,7 +787,7 @@ procedure FFindToList(List: TStringList;
   ANoHidFiles: boolean;
   ANoHidFolders: boolean);
 var
-  f: TSearchRecW;
+  f: TSearchRec;
   s, msk: WideString;
   a: integer;
 begin
@@ -800,7 +803,7 @@ begin
     if not ANoHidFiles then Inc(a, faHidden or faSysFile);
     //R/O inclusion to parameter doesn't work
 
-    if WideFindFirst(SDir+'\'+msk, a, F) = 0 then
+    if FindFirst(SDir+'\'+msk, a, F) = 0 then
     begin
       repeat
         //handle R/o here
@@ -808,8 +811,8 @@ begin
           Continue;
         if List.IndexOf(SDir+'\'+F.Name) < 0 then
           List.AddObject(SDir+'\'+F.Name, Pointer(DWORD(F.Size)));
-      until WideFindNext(F) <> 0;
-      WideFindClose(F);
+      until FindNext(F) <> 0;
+      FindClose(F);
     end;
   until False;
 
@@ -818,7 +821,7 @@ begin
   if not ANoHidFolders then Inc(a, faHidden or faSysFile);
 
   if ASubDir then
-  if WideFindFirst(SDir+'\*.*', a, F) = 0 then
+  if FindFirst(SDir+'\*.*', a, F) = 0 then
   begin
     repeat
       if (F.Name<>'.') and (F.Name<>'..') and IsDirExist(SDir+'\'+F.Name) then
@@ -827,8 +830,8 @@ begin
         FFindToList(List, SDir+'\'+F.Name, SMask, ASubDir,
           ANoRO, ANoHidFiles, ANoHidFolders);
       end;
-    until WideFindNext(F) <> 0;
-    WideFindClose(F);
+    until FindNext(F) <> 0;
+    FindClose(F);
   end;
 end;
 
@@ -1134,10 +1137,10 @@ begin
   if FileTimeToLocalFileTime(ft, lt) and FileTimeToSystemTime(lt, st) then
   begin
     Date:= Format('%2.2d%s%2.2d%s%d',
-      [st.wDay, DateSeparator, st.wMonth, DateSeparator, st.wYear]);
+      [st.wDay, FormatSettings.DateSeparator, st.wMonth, FormatSettings.DateSeparator, st.wYear]);
 
     Time:= Format('%2.2d%s%2.2d%s%2.2d',
-      [st.wHour, TimeSeparator, st.wMinute, TimeSeparator, st.wSecond]);
+      [st.wHour, FormatSettings.TimeSeparator, st.wMinute, FormatSettings.TimeSeparator, st.wSecond]);
 
     Result:= Date + ' ' + Time;
   end;
@@ -1154,10 +1157,10 @@ begin
   if FileTimeToLocalFileTime(ft, lt) and FileTimeToSystemTime(lt, st) then
   begin
     Date:= Format('%2.2d%s%2.2d%s%2.2d',
-      [st.wDay, DateSeparator, st.wMonth, DateSeparator, st.wYear mod 100]);
+      [st.wDay, FormatSettings.DateSeparator, st.wMonth, FormatSettings.DateSeparator, st.wYear mod 100]);
 
     Time:= Format('%2.2d%s%2.2d',
-      [st.wHour, TimeSeparator, st.wMinute]);
+      [st.wHour, FormatSettings.TimeSeparator, st.wMinute]);
 
     Result:= Date + ' ' + Time;
   end;

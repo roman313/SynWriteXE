@@ -5,9 +5,12 @@ interface
 uses
   Windows, Messages, Forms, Classes, Controls, StdCtrls;
 
+type
+  WideString = String;
+
 type 
   TfmClip = class(TForm)
-    ListClip: TSpTBXListBox;
+    ListClip: TListBox;
     procedure FormCreate(Sender : TObject);
     procedure FormDestroy(Sender : TObject);
     procedure FormShow(Sender: TObject);
@@ -34,7 +37,7 @@ type
 
 implementation
 
-uses Clipbrd, TntClipbrd,
+uses Clipbrd,
   SysUtils,
   Graphics, ATxSProc, ecStrUtils;
 {$R *.DFM}
@@ -93,7 +96,7 @@ begin
     if Clipboard.HasFormat(CF_TEXT) then
     begin
       try
-        S:= TntClipboard.AsWideText;
+        S:= Clipboard.AsText;
       except
         Exit
       end;
@@ -138,7 +141,7 @@ var c: TColor;
   S, SS:Widestring;
   n:Integer;
 begin
-  with TTntListbox(Control) do
+  with TListbox(Control) do
   begin
     if odSelected in State then
       Canvas.Brush.Color:= FColorSelBk

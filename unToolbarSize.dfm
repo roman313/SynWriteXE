@@ -15,20 +15,20 @@ object fmToolbarSize: TfmToolbarSize
   Position = poScreenCenter
   PixelsPerInch = 96
   TextHeight = 13
-  object GroupBoxIco: TSpTBXGroupBox
+  object GroupBoxIco: TGroupBox
     Left = 8
     Top = 4
     Width = 217
     Height = 97
     TabOrder = 0
-    object Label1: TSpTBXLabel
+    object Label1: TLabel
       Left = 102
       Top = 72
       Width = 6
       Height = 13
       Caption = 'x'
     end
-    object btn16: TSpTBXRadioButton
+    object btn16: TRadioButton
       Left = 8
       Top = 16
       Width = 73
@@ -36,7 +36,7 @@ object fmToolbarSize: TfmToolbarSize
       Caption = '16x16'
       TabOrder = 0
     end
-    object btn32: TSpTBXRadioButton
+    object btn32: TRadioButton
       Left = 8
       Top = 32
       Width = 73
@@ -44,7 +44,7 @@ object fmToolbarSize: TfmToolbarSize
       Caption = '32x32'
       TabOrder = 1
     end
-    object btnSize: TSpTBXRadioButton
+    object btnSize: TRadioButton
       Left = 8
       Top = 48
       Width = 113
@@ -73,7 +73,7 @@ object fmToolbarSize: TfmToolbarSize
       Value = 22
     end
   end
-  object bOk: TSpTBXButton
+  object bOk: TButton
     Left = 24
     Top = 107
     Width = 90
@@ -83,7 +83,7 @@ object fmToolbarSize: TfmToolbarSize
     ModalResult = 1
     TabOrder = 1
   end
-  object bCan: TSpTBXButton
+  object bCan: TButton
     Left = 120
     Top = 107
     Width = 90

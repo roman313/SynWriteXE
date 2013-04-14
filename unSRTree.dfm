@@ -17,30 +17,29 @@ object fmSRTree: TfmSRTree
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object TntLabel1: TSpTBXLabel
+  object TntLabel1: TLabel
     Left = 8
     Top = 4
     Width = 54
     Height = 13
     Caption = 'Search for:'
   end
-  object edText: TSpTBXComboBox
+  object edText: TComboBox
     Left = 8
     Top = 20
     Width = 313
     Height = 21
-    ItemHeight = 13
     TabOrder = 0
     OnChange = edTextChange
   end
-  object gOp: TSpTBXGroupBox
+  object gOp: TGroupBox
     Left = 8
     Top = 56
     Width = 153
     Height = 97
     Caption = 'Options'
     TabOrder = 1
-    object cbRE: TSpTBXCheckBox
+    object cbRE: TCheckBox
       Left = 8
       Top = 60
       Width = 140
@@ -48,7 +47,7 @@ object fmSRTree: TfmSRTree
       Caption = 'Regular e&xpressions'
       TabOrder = 2
     end
-    object cbCase: TSpTBXCheckBox
+    object cbCase: TCheckBox
       Left = 8
       Top = 24
       Width = 140
@@ -56,7 +55,7 @@ object fmSRTree: TfmSRTree
       Caption = '&Case sensitive'
       TabOrder = 0
     end
-    object cbWords: TSpTBXCheckBox
+    object cbWords: TCheckBox
       Left = 8
       Top = 42
       Width = 140
@@ -65,14 +64,14 @@ object fmSRTree: TfmSRTree
       TabOrder = 1
     end
   end
-  object gDir: TSpTBXGroupBox
+  object gDir: TGroupBox
     Left = 168
     Top = 56
     Width = 153
     Height = 57
     Caption = 'Direction'
     TabOrder = 2
-    object bFor: TSpTBXRadioButton
+    object bFor: TRadioButton
       Left = 8
       Top = 16
       Width = 140
@@ -80,7 +79,7 @@ object fmSRTree: TfmSRTree
       Caption = 'Forwar&d'
       TabOrder = 0
     end
-    object bBack: TSpTBXRadioButton
+    object bBack: TRadioButton
       Left = 8
       Top = 34
       Width = 140
@@ -89,14 +88,14 @@ object fmSRTree: TfmSRTree
       TabOrder = 1
     end
   end
-  object gScop: TSpTBXGroupBox
+  object gScop: TGroupBox
     Left = 168
     Top = 116
     Width = 153
     Height = 37
     Caption = 'Scope'
     TabOrder = 3
-    object cbFromCur: TSpTBXCheckBox
+    object cbFromCur: TCheckBox
       Left = 8
       Top = 14
       Width = 140
@@ -105,7 +104,7 @@ object fmSRTree: TfmSRTree
       TabOrder = 0
     end
   end
-  object bFNext: TSpTBXButton
+  object bFNext: TButton
     Left = 328
     Top = 12
     Width = 97
@@ -115,7 +114,7 @@ object fmSRTree: TfmSRTree
     ModalResult = 1
     TabOrder = 4
   end
-  object bCan: TSpTBXButton
+  object bCan: TButton
     Left = 328
     Top = 42
     Width = 97

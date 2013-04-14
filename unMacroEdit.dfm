@@ -17,14 +17,14 @@ object fmMacroEdit: TfmMacroEdit
   OnDestroy = TntFormDestroy
   PixelsPerInch = 96
   TextHeight = 13
-  object boxList: TSpTBXGroupBox
+  object boxList: TGroupBox
     Left = 8
     Top = 4
     Width = 457
     Height = 189
     Caption = 'Macros'
     TabOrder = 0
-    object ButtonMRen: TSpTBXButton
+    object ButtonMRen: TButton
       Left = 360
       Top = 20
       Width = 87
@@ -32,7 +32,7 @@ object fmMacroEdit: TfmMacroEdit
       Action = MacrosRename
       TabOrder = 1
     end
-    object ButtonMDel: TSpTBXButton
+    object ButtonMDel: TButton
       Left = 360
       Top = 76
       Width = 87
@@ -40,7 +40,7 @@ object fmMacroEdit: TfmMacroEdit
       Action = MacrosDelete
       TabOrder = 3
     end
-    object ButtonMAdd: TSpTBXButton
+    object ButtonMAdd: TButton
       Left = 360
       Top = 48
       Width = 87
@@ -48,7 +48,7 @@ object fmMacroEdit: TfmMacroEdit
       Action = MacrosAdd
       TabOrder = 2
     end
-    object MacrosList: TSpTBXListBox
+    object MacrosList: TListBox
       Left = 8
       Top = 20
       Width = 345
@@ -62,14 +62,14 @@ object fmMacroEdit: TfmMacroEdit
       OnDragOver = MacrosListDragOver
     end
   end
-  object boxCmd: TSpTBXGroupBox
+  object boxCmd: TGroupBox
     Left = 8
     Top = 328
     Width = 457
     Height = 173
     Caption = 'Commands'
     TabOrder = 3
-    object ButtonCCh: TSpTBXButton
+    object ButtonCCh: TButton
       Left = 360
       Top = 20
       Width = 87
@@ -77,7 +77,7 @@ object fmMacroEdit: TfmMacroEdit
       Action = CommandChange
       TabOrder = 1
     end
-    object ButtonCDel: TSpTBXButton
+    object ButtonCDel: TButton
       Left = 360
       Top = 108
       Width = 87
@@ -85,7 +85,7 @@ object fmMacroEdit: TfmMacroEdit
       Action = CommandDelete
       TabOrder = 3
     end
-    object ButtonCAdd: TSpTBXButton
+    object ButtonCAdd: TButton
       Left = 360
       Top = 48
       Width = 87
@@ -93,7 +93,7 @@ object fmMacroEdit: TfmMacroEdit
       Action = CommandInsert
       TabOrder = 2
     end
-    object ButtonCClr: TSpTBXButton
+    object ButtonCClr: TButton
       Left = 360
       Top = 136
       Width = 87
@@ -130,7 +130,7 @@ object fmMacroEdit: TfmMacroEdit
       OnDragOver = CmdListDragOver
     end
   end
-  object ButtonOk: TSpTBXButton
+  object ButtonOk: TButton
     Left = 288
     Top = 508
     Width = 87
@@ -140,7 +140,7 @@ object fmMacroEdit: TfmMacroEdit
     ModalResult = 1
     TabOrder = 4
   end
-  object ButtonCan: TSpTBXButton
+  object ButtonCan: TButton
     Left = 380
     Top = 508
     Width = 87
@@ -150,7 +150,7 @@ object fmMacroEdit: TfmMacroEdit
     ModalResult = 2
     TabOrder = 5
   end
-  object boxKey: TSpTBXGroupBox
+  object boxKey: TGroupBox
     Left = 8
     Top = 196
     Width = 457
@@ -166,7 +166,7 @@ object fmMacroEdit: TfmMacroEdit
       HotKey = 0
       TabOrder = 0
     end
-    object ButtonShClr: TSpTBXButton
+    object ButtonShClr: TButton
       Left = 360
       Top = 40
       Width = 87
@@ -175,7 +175,7 @@ object fmMacroEdit: TfmMacroEdit
       TabOrder = 2
       OnClick = ButtonShClrClick
     end
-    object ButtonShSet: TSpTBXButton
+    object ButtonShSet: TButton
       Left = 360
       Top = 12
       Width = 87
@@ -185,14 +185,14 @@ object fmMacroEdit: TfmMacroEdit
       OnClick = ButtonShSetClick
     end
   end
-  object boxPlay: TSpTBXGroupBox
+  object boxPlay: TGroupBox
     Left = 8
     Top = 268
     Width = 457
     Height = 57
     Caption = 'Play selected macro'
     TabOrder = 2
-    object ButtonMPlay: TSpTBXButton
+    object ButtonMPlay: TButton
       Left = 360
       Top = 12
       Width = 87
@@ -213,7 +213,7 @@ object fmMacroEdit: TfmMacroEdit
       Value = 1
       OnKeyDown = edTimesKeyDown
     end
-    object bPlayTimes: TSpTBXRadioButton
+    object bPlayTimes: TRadioButton
       Left = 8
       Top = 16
       Width = 217
@@ -223,7 +223,7 @@ object fmMacroEdit: TfmMacroEdit
       TabOrder = 0
       TabStop = True
     end
-    object bPlayEof: TSpTBXRadioButton
+    object bPlayEof: TRadioButton
       Left = 8
       Top = 32
       Width = 217

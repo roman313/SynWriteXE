@@ -72,7 +72,7 @@ end;
 procedure SaveLexerStylesToFile(f: TSyntAnalyzer; const fn: string);
 var
   i: Integer;
-  s, si, sd: string;
+  s, si, sd: AnsiString;
 begin
   s:= f.LexerName;
   with TIniFile.Create(fn) do
@@ -131,7 +131,7 @@ end;
 procedure LoadLexerStylesFromFile(f: TSyntAnalyzer; const fn: string);
 var
   i, j, n:Integer;
-  s, si, sd: string;
+  s, si, sd: AnsiString;
   fm: TSyntaxFormat;
   tp: TCodeTemplate;
 begin

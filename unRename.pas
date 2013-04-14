@@ -7,13 +7,16 @@ uses
   StdCtrls;
 
 type
+  WideString = String;
+
+type
   TfmRename = class(TForm)
-    btnOK: TSpTBXButton;
-    btnCancel: TSpTBXButton;
-    edName: TSpTBXEdit;
-    labRename: TSpTBXLabel;
-    edExt: TSpTBXEdit;
-    Label1: TSpTBXLabel;
+    btnOK: TButton;
+    btnCancel: TButton;
+    edName: TEdit;
+    labRename: TLabel;
+    edExt: TEdit;
+    Label1: TLabel;
     procedure edNameChange(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure TntFormCreate(Sender: TObject);

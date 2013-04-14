@@ -6,6 +6,9 @@ uses
   Classes;
 
 type
+  WideString = String;
+
+type
   TTabSwitcherGetTab = procedure(N: integer;
     var ATitle, AFN, ALex: Widestring) of object;
 

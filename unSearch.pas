@@ -14,6 +14,9 @@ uses
   ecZRegExpr, ecSyntMemo, ecStrUtils;
 
 type
+  WideString = String;
+
+type
   TSearchOption = (
     ftCaseSensitive,
     ftWholeWordOnly,
@@ -125,7 +128,7 @@ implementation
 
 uses
   Windows, SysUtils,
-  Dialogs, TntDialogs,
+  Dialogs,
   DKLang,
   ATxFProc,
   ATxSProc,
@@ -462,6 +465,8 @@ begin
       EndPos2:= StrtPos - 1;
     end;
 
+  // #WARNING! FEW PROBLEMS
+  (*
   if UseFundamentals then
   begin
     cStrings.FundFinder:= Self; //set Fundamentals callback
@@ -475,6 +480,7 @@ begin
       FControl.ReplaceText(0, FControl.TextLength, S);
     Exit
   end;
+  *)
 
   if IsSel and not CntOnly then
     FControl.ResetSelection;
@@ -673,7 +679,7 @@ begin
     if ToAll then b:= b+ [mbCancel, mbAll];
 
     SetSearchMark(APos, ALen);
-    Result:= WideMessageDlg(DKLangConstW('Re'), mtConfirmation, b, -1);
+    Result:= MessageDlg(DKLangConstW('Re'), mtConfirmation, b, -1);
     ResetSearchMarks;
     BeginUpdate;
   end;

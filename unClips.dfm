@@ -1,7 +1,6 @@
 object fmClips: TfmClips
   Left = 326
   Top = 442
-  AutoScroll = False
   ClientHeight = 304
   ClientWidth = 174
   Color = clBtnFace
@@ -16,7 +15,7 @@ object fmClips: TfmClips
   OnDestroy = FormDestroy
   PixelsPerInch = 96
   TextHeight = 13
-  object Combo: TSpTBXComboBox
+  object Combo: TComboBox
     Left = 0
     Top = 0
     Width = 174
@@ -24,12 +23,11 @@ object fmClips: TfmClips
     Align = alTop
     Style = csDropDownList
     DropDownCount = 20
-    ItemHeight = 13
     Sorted = True
     TabOrder = 0
     OnChange = ComboChange
   end
-  object List: TSpTBXListBox
+  object List: TListBox
     Left = 0
     Top = 21
     Width = 174

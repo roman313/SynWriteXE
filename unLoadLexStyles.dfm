@@ -16,7 +16,7 @@ object fmLoadLex: TfmLoadLex
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object Label1: TSpTBXLabel
+  object Label1: TLabel
     Left = 8
     Top = 8
     Width = 441
@@ -33,7 +33,7 @@ object fmLoadLex: TfmLoadLex
       '.'
     WordWrap = True
   end
-  object TntGroupBox1: TSpTBXGroupBox
+  object TntGroupBox1: TGroupBox
     Left = 48
     Top = 80
     Width = 353
@@ -49,7 +49,7 @@ object fmLoadLex: TfmLoadLex
       ItemHeight = 13
       TabOrder = 0
     end
-    object bSAll: TSpTBXButton
+    object bSAll: TButton
       Left = 216
       Top = 20
       Width = 129
@@ -58,7 +58,7 @@ object fmLoadLex: TfmLoadLex
       TabOrder = 1
       OnClick = bSAllClick
     end
-    object bSNone: TSpTBXButton
+    object bSNone: TButton
       Left = 216
       Top = 48
       Width = 129
@@ -67,7 +67,7 @@ object fmLoadLex: TfmLoadLex
       TabOrder = 2
       OnClick = bSNoneClick
     end
-    object bRem: TSpTBXButton
+    object bRem: TButton
       Left = 216
       Top = 96
       Width = 129
@@ -77,7 +77,7 @@ object fmLoadLex: TfmLoadLex
       OnClick = bRemClick
     end
   end
-  object bOk: TSpTBXButton
+  object bOk: TButton
     Left = 136
     Top = 244
     Width = 90
@@ -87,7 +87,7 @@ object fmLoadLex: TfmLoadLex
     ModalResult = 1
     TabOrder = 1
   end
-  object bCan: TSpTBXButton
+  object bCan: TButton
     Left = 232
     Top = 244
     Width = 90

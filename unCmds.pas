@@ -333,7 +333,8 @@ begin
     smLowerCaseBlock,
     smToggleCaseBlock,
     smTitleCaseBlock,
-    smSentCaseBlock,
+    // #WARNING PROP NOT EXISTS
+    //smSentCaseBlock,
 
     smInsertMode,
     smOverwriteMode,

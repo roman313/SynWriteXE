@@ -16,7 +16,7 @@ object fmProgress: TfmProgress
   Position = poScreenCenter
   PixelsPerInch = 96
   TextHeight = 13
-  object laFile: TSpTBXLabel
+  object laFile: TLabel
     Left = 64
     Top = 24
     Width = 98
@@ -24,7 +24,7 @@ object fmProgress: TfmProgress
     Caption = 'Searching for files...'
     Visible = False
   end
-  object laBin: TSpTBXLabel
+  object laBin: TLabel
     Left = 104
     Top = 24
     Width = 112
@@ -41,7 +41,7 @@ object fmProgress: TfmProgress
     Progress = 20
     ShowText = False
   end
-  object LaBk: TSpTBXLabel
+  object LaBk: TLabel
     Left = 88
     Top = 24
     Width = 182
@@ -49,7 +49,7 @@ object fmProgress: TfmProgress
     Caption = 'Performing operation on bookmarks...'
     Visible = False
   end
-  object laText: TSpTBXLabel
+  object laText: TLabel
     Left = 8
     Top = 24
     Width = 99
@@ -57,7 +57,7 @@ object fmProgress: TfmProgress
     Caption = 'Searching for text...'
     Visible = False
   end
-  object labCount: TSpTBXLabel
+  object labCount: TLabel
     Left = 144
     Top = 44
     Width = 16
@@ -65,7 +65,7 @@ object fmProgress: TfmProgress
     Caption = '----'
     Visible = False
   end
-  object laSort: TSpTBXLabel
+  object laSort: TLabel
     Left = 224
     Top = 24
     Width = 82
@@ -73,7 +73,7 @@ object fmProgress: TfmProgress
     Caption = 'Sorting folders...'
     Visible = False
   end
-  object bCan: TSpTBXButton
+  object bCan: TButton
     Left = 112
     Top = 64
     Width = 97

@@ -16,7 +16,7 @@ object fmNumConv: TfmNumConv
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
-  object LabelErr: TSpTBXLabel
+  object LabelErr: TLabel
     Left = 96
     Top = 172
     Width = 62
@@ -30,13 +30,13 @@ object fmNumConv: TfmNumConv
     ParentFont = False
     Visible = False
   end
-  object GroupBox1: TSpTBXGroupBox
+  object GroupBox1: TGroupBox
     Left = 8
     Top = 4
     Width = 497
     Height = 161
     TabOrder = 0
-    object Label1: TSpTBXLabel
+    object Label1: TLabel
       Left = 8
       Top = 48
       Width = 40
@@ -44,7 +44,7 @@ object fmNumConv: TfmNumConv
       Caption = '&Decimal:'
       FocusControl = edDec
     end
-    object Label2: TSpTBXLabel
+    object Label2: TLabel
       Left = 8
       Top = 76
       Width = 23
@@ -52,7 +52,7 @@ object fmNumConv: TfmNumConv
       Caption = '&Hex:'
       FocusControl = edHex
     end
-    object Label3: TSpTBXLabel
+    object Label3: TLabel
       Left = 8
       Top = 104
       Width = 34
@@ -60,7 +60,7 @@ object fmNumConv: TfmNumConv
       Caption = '&Binary:'
       FocusControl = edBin
     end
-    object Label4: TSpTBXLabel
+    object Label4: TLabel
       Left = 8
       Top = 132
       Width = 29
@@ -68,7 +68,7 @@ object fmNumConv: TfmNumConv
       Caption = '&Octal:'
       FocusControl = edOct
     end
-    object TntLabel1: TSpTBXLabel
+    object TntLabel1: TLabel
       Left = 8
       Top = 20
       Width = 32
@@ -76,7 +76,7 @@ object fmNumConv: TfmNumConv
       Caption = '&ASCII:'
       FocusControl = edChar
     end
-    object edDec: TSpTBXEdit
+    object edDec: TEdit
       Left = 88
       Top = 44
       Width = 241
@@ -90,7 +90,7 @@ object fmNumConv: TfmNumConv
       TabOrder = 3
       OnChange = edDecChange
     end
-    object edHex: TSpTBXEdit
+    object edHex: TEdit
       Left = 88
       Top = 72
       Width = 241
@@ -104,7 +104,7 @@ object fmNumConv: TfmNumConv
       TabOrder = 6
       OnChange = edHexChange
     end
-    object edBin: TSpTBXEdit
+    object edBin: TEdit
       Left = 88
       Top = 100
       Width = 241
@@ -118,7 +118,7 @@ object fmNumConv: TfmNumConv
       TabOrder = 9
       OnChange = edBinChange
     end
-    object edOct: TSpTBXEdit
+    object edOct: TEdit
       Left = 88
       Top = 128
       Width = 241
@@ -132,7 +132,7 @@ object fmNumConv: TfmNumConv
       TabOrder = 12
       OnChange = edOctChange
     end
-    object bCopyDec: TSpTBXButton
+    object bCopyDec: TButton
       Left = 336
       Top = 44
       Width = 73
@@ -141,7 +141,7 @@ object fmNumConv: TfmNumConv
       TabOrder = 4
       OnClick = bCopyDecClick
     end
-    object bInsDec: TSpTBXButton
+    object bInsDec: TButton
       Left = 416
       Top = 44
       Width = 73
@@ -150,7 +150,7 @@ object fmNumConv: TfmNumConv
       TabOrder = 5
       OnClick = bInsDecClick
     end
-    object bInsHex: TSpTBXButton
+    object bInsHex: TButton
       Left = 416
       Top = 72
       Width = 73
@@ -159,7 +159,7 @@ object fmNumConv: TfmNumConv
       TabOrder = 8
       OnClick = bInsHexClick
     end
-    object bCopyHex: TSpTBXButton
+    object bCopyHex: TButton
       Left = 336
       Top = 72
       Width = 73
@@ -168,7 +168,7 @@ object fmNumConv: TfmNumConv
       TabOrder = 7
       OnClick = bCopyHexClick
     end
-    object bInsBin: TSpTBXButton
+    object bInsBin: TButton
       Left = 416
       Top = 100
       Width = 73
@@ -177,7 +177,7 @@ object fmNumConv: TfmNumConv
       TabOrder = 11
       OnClick = bInsBinClick
     end
-    object bCopyBin: TSpTBXButton
+    object bCopyBin: TButton
       Left = 336
       Top = 100
       Width = 73
@@ -186,7 +186,7 @@ object fmNumConv: TfmNumConv
       TabOrder = 10
       OnClick = bCopyBinClick
     end
-    object bInsOct: TSpTBXButton
+    object bInsOct: TButton
       Left = 416
       Top = 128
       Width = 73
@@ -195,7 +195,7 @@ object fmNumConv: TfmNumConv
       TabOrder = 14
       OnClick = bInsOctClick
     end
-    object bCopyOct: TSpTBXButton
+    object bCopyOct: TButton
       Left = 336
       Top = 128
       Width = 73
@@ -204,7 +204,7 @@ object fmNumConv: TfmNumConv
       TabOrder = 13
       OnClick = bCopyOctClick
     end
-    object edChar: TSpTBXEdit
+    object edChar: TEdit
       Left = 88
       Top = 16
       Width = 41
@@ -219,7 +219,7 @@ object fmNumConv: TfmNumConv
       TabOrder = 0
       OnChange = edCharChange
     end
-    object bCopyChar: TSpTBXButton
+    object bCopyChar: TButton
       Left = 336
       Top = 16
       Width = 73
@@ -228,7 +228,7 @@ object fmNumConv: TfmNumConv
       TabOrder = 1
       OnClick = bCopyCharClick
     end
-    object bInsChar: TSpTBXButton
+    object bInsChar: TButton
       Left = 416
       Top = 16
       Width = 73
@@ -238,7 +238,7 @@ object fmNumConv: TfmNumConv
       OnClick = bInsCharClick
     end
   end
-  object bClose: TSpTBXButton
+  object bClose: TButton
     Left = 408
     Top = 172
     Width = 97

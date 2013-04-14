@@ -7,21 +7,25 @@ interface
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ActnList, ecSyntMemo, ecMacroRec, ComCtrls, DKLang,
-  ecHotKeyEdit, Spin;
+  ecHotKeyEdit,
+  Spin, System.Actions;
+
+type
+  WideString = String;
 
 type
   TfmMacroEdit = class(TForm)
-    boxList: TSpTBXGroupBox;
-    MacrosList: TSpTBXListBox;
-    boxCmd: TSpTBXGroupBox;
-    ButtonOk: TSpTBXButton;
-    ButtonCan: TSpTBXButton;
-    ButtonMRen: TSpTBXButton;
-    ButtonMDel: TSpTBXButton;
-    ButtonCCh: TSpTBXButton;
-    ButtonCDel: TSpTBXButton;
-    ButtonCAdd: TSpTBXButton;
-    ButtonCClr: TSpTBXButton;
+    boxList: TGroupBox;
+    MacrosList: TListBox;
+    boxCmd: TGroupBox;
+    ButtonOk: TButton;
+    ButtonCan: TButton;
+    ButtonMRen: TButton;
+    ButtonMDel: TButton;
+    ButtonCCh: TButton;
+    ButtonCDel: TButton;
+    ButtonCAdd: TButton;
+    ButtonCClr: TButton;
     ActionList1: TActionList;
     MacrosPlay: TAction;
     MacrosRename: TAction;
@@ -32,18 +36,18 @@ type
     CommandDelete: TAction;
     CommandClear: TAction;
     CmdList: TListView;
-    ButtonMAdd: TSpTBXButton;
+    ButtonMAdd: TButton;
     MacrosAdd: TAction;
     DKLanguageController1: TDKLanguageController;
-    boxKey: TSpTBXGroupBox;
+    boxKey: TGroupBox;
     ecHotKey1: TecHotKey;
-    ButtonShClr: TSpTBXButton;
-    ButtonShSet: TSpTBXButton;
-    boxPlay: TSpTBXGroupBox;
-    ButtonMPlay: TSpTBXButton;
+    ButtonShClr: TButton;
+    ButtonShSet: TButton;
+    boxPlay: TGroupBox;
+    ButtonMPlay: TButton;
     edTimes: TSpinEdit;
-    bPlayTimes: TSpTBXRadioButton;
-    bPlayEof: TSpTBXRadioButton;
+    bPlayTimes: TRadioButton;
+    bPlayEof: TRadioButton;
     procedure FormCreate(Sender: TObject);
     procedure MacrosUpdate(Sender: TObject);
     procedure MacrosPlayUpdate(Sender: TObject);
@@ -97,8 +101,7 @@ implementation
 
 uses {$IFDEF EC_DOTNET}Types,{$ENDIF}
   ecKeyMap, ecMacroCmdEditDlg, ecStrUtils,
-  Menus,
-  TntDialogs;
+  Menus;
 
 {$R *.dfm}
 
@@ -141,6 +144,8 @@ begin
           else
           if bPlayEof.Checked then
           begin
+            // #WARNING PROP NOT EXISTS
+            (*
             AMacros.AtFileEnd:= false;
             i:= 0;
             repeat
@@ -151,7 +156,8 @@ begin
                 Application.MessageBox('Macro seems to be looped forever. Stopped.', 'SynWrite', mb_ok or mb_iconwarning);
                 Break
               end;
-            until AMacros.AtFileEnd;  
+            until AMacros.AtFileEnd;
+            *)
           end;
         end;
 
@@ -265,7 +271,7 @@ procedure TfmMacroEdit.MacrosRenameExecute(Sender: TObject);
 var S: Widestring;
 begin
   S:= Recorder[MacrosList.ItemIndex].Name;
-  if WideInputQuery(DKLangConstW('macName'), DKLangConstW('macName2'), S) then//AT
+  if InputQuery(DKLangConstW('macName'), DKLangConstW('macName2'), S) then//AT
     begin
       Recorder[MacrosList.ItemIndex].Name:= S;
       MacrosList.Items[MacrosList.ItemIndex]:= NameN(MacrosList.ItemIndex);

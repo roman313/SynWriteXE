@@ -4,21 +4,22 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, DKLang, CheckLst;
+  Dialogs, StdCtrls,
+  DKLang, CheckLst;
 
 type
   TfmShell = class(TForm)
-    GroupBoxEx: TSpTBXGroupBox;
-    cbShell: TSpTBXCheckBox;
-    bOk: TSpTBXButton;
+    GroupBoxEx: TGroupBox;
+    cbShell: TCheckBox;
+    bOk: TButton;
     DKLanguageController1: TDKLanguageController;
-    cbTxt: TSpTBXCheckBox;
-    cbIni: TSpTBXCheckBox;
-    ed: TSpTBXComboBox;
+    cbTxt: TCheckBox;
+    cbIni: TCheckBox;
+    ed: TComboBox;
     List: TCheckListBox;
-    TntLabel1: TSpTBXLabel;
-    bUn: TSpTBXButton;
-    cbProj: TSpTBXCheckBox;
+    TntLabel1: TLabel;
+    bUn: TButton;
+    cbProj: TCheckBox;
     procedure FormShow(Sender: TObject);
     procedure cbShellClick(Sender: TObject);
     procedure cbTxtClick(Sender: TObject);

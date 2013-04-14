@@ -12,29 +12,29 @@ type
 
 type
   TfmNumConv = class(TForm)
-    GroupBox1: TSpTBXGroupBox;
-    Label1: TSpTBXLabel;
-    Label2: TSpTBXLabel;
-    Label3: TSpTBXLabel;
-    Label4: TSpTBXLabel;
-    edDec: TSpTBXEdit;
-    edHex: TSpTBXEdit;
-    edBin: TSpTBXEdit;
-    edOct: TSpTBXEdit;
-    bCopyDec: TSpTBXButton;
-    bInsDec: TSpTBXButton;
-    bClose: TSpTBXButton;
-    bInsHex: TSpTBXButton;
-    bCopyHex: TSpTBXButton;
-    bInsBin: TSpTBXButton;
-    bCopyBin: TSpTBXButton;
-    bInsOct: TSpTBXButton;
-    bCopyOct: TSpTBXButton;
-    LabelErr: TSpTBXLabel;
-    TntLabel1: TSpTBXLabel;
-    edChar: TSpTBXEdit;
-    bCopyChar: TSpTBXButton;
-    bInsChar: TSpTBXButton;
+    GroupBox1: TGroupBox;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    edDec: TEdit;
+    edHex: TEdit;
+    edBin: TEdit;
+    edOct: TEdit;
+    bCopyDec: TButton;
+    bInsDec: TButton;
+    bClose: TButton;
+    bInsHex: TButton;
+    bCopyHex: TButton;
+    bInsBin: TButton;
+    bCopyBin: TButton;
+    bInsOct: TButton;
+    bCopyOct: TButton;
+    LabelErr: TLabel;
+    TntLabel1: TLabel;
+    edChar: TEdit;
+    bCopyChar: TButton;
+    bInsChar: TButton;
     DKLanguageController1: TDKLanguageController;
     procedure edDecChange(Sender: TObject);
     procedure edHexChange(Sender: TObject);
@@ -105,10 +105,10 @@ var
 begin
   case Typ of
     numChar,
-    numDec: N:= DecStrToLongWord(S, V);
-    numHex: N:= HexStrToLongWord(S, V);
-    numBin: N:= BinStrToLongWord(S, V);
-    numOct: N:= OctStrToLongWord(S, V);
+    numDec: V := {DecStr}TryStringToLongWord(S, N);
+    numHex: V := TryHexToLongWord(S, N);
+    numBin: V := TryBinToLongWord(S, N);
+    numOct: V := TryOctToLongWord(S, N);
     else N:= 0;
   end;
   LabelErr.Visible:= not V;

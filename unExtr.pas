@@ -4,25 +4,26 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ecSyntMemo, unSearch, DKLang;
+  Dialogs, StdCtrls,
+  ecSyntMemo, unSearch, DKLang;
 
 type
   TfmExtract = class(TForm)
-    b1: TSpTBXGroupBox;
-    bFind: TSpTBXButton;
-    bCopy: TSpTBXButton;
-    b2: TSpTBXGroupBox;
-    List: TSpTBXListBox;
-    ed: TSpTBXComboBox;
-    TntLabel1: TSpTBXLabel;
-    bCan: TSpTBXButton;
-    bHelp: TSpTBXButton;
-    bCase: TSpTBXCheckBox;
+    b1: TGroupBox;
+    bFind: TButton;
+    bCopy: TButton;
+    b2: TGroupBox;
+    List: TListBox;
+    ed: TComboBox;
+    TntLabel1: TLabel;
+    bCan: TButton;
+    bHelp: TButton;
+    bCase: TCheckBox;
     DKLanguageController1: TDKLanguageController;
-    bSel: TSpTBXCheckBox;
-    bTab: TSpTBXButton;
-    bCur: TSpTBXCheckBox;
-    labNot: TSpTBXLabel;
+    bSel: TCheckBox;
+    bTab: TButton;
+    bCur: TCheckBox;
+    labNot: TLabel;
     procedure bCopyClick(Sender: TObject);
     procedure bFindClick(Sender: TObject);
     procedure bHelpClick(Sender: TObject);
@@ -53,7 +54,7 @@ var
 
 implementation
 
-uses TntClipbrd,
+uses Clipbrd,
   Inifiles, ATxSProc,
   unSR, unProc, ecStrUtils, ecCmdConst;
 
@@ -64,7 +65,7 @@ const
 
 procedure TfmExtract.bCopyClick(Sender: TObject);
 begin
-  TntClipboard.AsWideText:= List.Items.Text;
+  Clipboard.AsText:= List.Items.Text;
   Close;
 end;
 
@@ -172,7 +173,7 @@ var c: TColor;
   S, SS:Widestring;
   n:Integer;
 begin
-  with TTntListbox(Control) do
+  with TListbox(Control) do
   begin
     if odSelected in State then
       Canvas.Brush.Color:= clMenuHighlight

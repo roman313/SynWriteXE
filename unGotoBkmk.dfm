@@ -2,7 +2,6 @@ object fmGotoBkmk: TfmGotoBkmk
   Left = 315
   Top = 446
   ActiveControl = List
-  AutoScroll = False
   BorderIcons = [biSystemMenu, biMaximize]
   Caption = 'Go to bookmark'
   ClientHeight = 305
@@ -20,14 +19,14 @@ object fmGotoBkmk: TfmGotoBkmk
     305)
   PixelsPerInch = 96
   TextHeight = 13
-  object TntLabel1: TSpTBXLabel
+  object TntLabel1: TLabel
     Left = 8
     Top = 8
     Width = 71
     Height = 13
     Caption = 'Bookmarks list:'
   end
-  object List: TSpTBXListBox
+  object List: TListBox
     Left = 8
     Top = 24
     Width = 465
@@ -37,7 +36,7 @@ object fmGotoBkmk: TfmGotoBkmk
     TabOrder = 0
     OnDblClick = ListDblClick
   end
-  object bOk: TSpTBXButton
+  object bOk: TButton
     Left = 288
     Top = 275
     Width = 90
@@ -48,7 +47,7 @@ object fmGotoBkmk: TfmGotoBkmk
     ModalResult = 1
     TabOrder = 1
   end
-  object bCan: TSpTBXButton
+  object bCan: TButton
     Left = 384
     Top = 275
     Width = 90

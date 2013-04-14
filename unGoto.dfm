@@ -18,7 +18,7 @@ object fmGoto: TfmGoto
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object Label1: TSpTBXLabel
+  object Label1: TLabel
     Left = 24
     Top = 28
     Width = 62
@@ -26,7 +26,7 @@ object fmGoto: TfmGoto
     Caption = '&Line number:'
     FocusControl = edLine
   end
-  object Label2: TSpTBXLabel
+  object Label2: TLabel
     Left = 24
     Top = 52
     Width = 78
@@ -48,7 +48,7 @@ object fmGoto: TfmGoto
     Height = 9
     Shape = bsTopLine
   end
-  object TntLabel1: TSpTBXLabel
+  object TntLabel1: TLabel
     Left = 24
     Top = 72
     Width = 249
@@ -64,10 +64,9 @@ object fmGoto: TfmGoto
     Top = 24
     Width = 105
     Height = 21
-    ItemHeight = 13
     TabOrder = 1
   end
-  object ButtonOk: TSpTBXButton
+  object ButtonOk: TButton
     Left = 57
     Top = 212
     Width = 80
@@ -78,7 +77,7 @@ object fmGoto: TfmGoto
     TabOrder = 8
     OnClick = ButtonOkClick
   end
-  object ButtonCan: TSpTBXButton
+  object ButtonCan: TButton
     Left = 145
     Top = 212
     Width = 80
@@ -93,10 +92,9 @@ object fmGoto: TfmGoto
     Top = 48
     Width = 105
     Height = 21
-    ItemHeight = 13
     TabOrder = 2
   end
-  object cbExtSel: TSpTBXCheckBox
+  object cbExtSel: TCheckBox
     Left = 8
     Top = 188
     Width = 265
@@ -104,7 +102,7 @@ object fmGoto: TfmGoto
     Caption = 'E&xtend selection'
     TabOrder = 7
   end
-  object cbPos: TSpTBXRadioButton
+  object cbPos: TRadioButton
     Left = 8
     Top = 6
     Width = 265
@@ -115,7 +113,7 @@ object fmGoto: TfmGoto
     TabStop = True
     OnClick = cbPosClick
   end
-  object cbPrev: TSpTBXRadioButton
+  object cbPrev: TRadioButton
     Left = 8
     Top = 108
     Width = 265
@@ -124,7 +122,7 @@ object fmGoto: TfmGoto
     TabOrder = 3
     OnClick = cbPosClick
   end
-  object cbNext: TSpTBXRadioButton
+  object cbNext: TRadioButton
     Left = 8
     Top = 124
     Width = 265
@@ -133,7 +131,7 @@ object fmGoto: TfmGoto
     TabOrder = 4
     OnClick = cbPosClick
   end
-  object cbNum: TSpTBXRadioButton
+  object cbNum: TRadioButton
     Left = 8
     Top = 140
     Width = 265
@@ -142,14 +140,13 @@ object fmGoto: TfmGoto
     TabOrder = 5
     OnClick = cbPosClick
   end
-  object edNum: TSpTBXComboBox
+  object edNum: TComboBox
     Left = 24
     Top = 158
     Width = 233
     Height = 21
     Style = csDropDownList
     DropDownCount = 20
-    ItemHeight = 13
     TabOrder = 6
     OnChange = edNumChange
   end

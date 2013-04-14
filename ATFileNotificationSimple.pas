@@ -40,6 +40,9 @@ uses
   Windows, SysUtils, Classes, ExtCtrls;
 
 type
+  WideString = String;
+
+type
   TATFileSimpleRec = record
     FExist: Boolean;
     FSizeLow,

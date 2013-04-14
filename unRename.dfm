@@ -18,7 +18,7 @@ object fmRename: TfmRename
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object labRename: TSpTBXLabel
+  object labRename: TLabel
     Left = 8
     Top = 8
     Width = 56
@@ -26,7 +26,7 @@ object fmRename: TfmRename
     Caption = 'Rename to:'
     FocusControl = edName
   end
-  object Label1: TSpTBXLabel
+  object Label1: TLabel
     Left = 282
     Top = 24
     Width = 4
@@ -40,7 +40,7 @@ object fmRename: TfmRename
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object btnOK: TSpTBXButton
+  object btnOK: TButton
     Left = 101
     Top = 56
     Width = 81
@@ -50,7 +50,7 @@ object fmRename: TfmRename
     ModalResult = 1
     TabOrder = 2
   end
-  object btnCancel: TSpTBXButton
+  object btnCancel: TButton
     Left = 189
     Top = 56
     Width = 81
@@ -60,7 +60,7 @@ object fmRename: TfmRename
     ModalResult = 2
     TabOrder = 3
   end
-  object edName: TSpTBXEdit
+  object edName: TEdit
     Left = 8
     Top = 24
     Width = 273
@@ -68,7 +68,7 @@ object fmRename: TfmRename
     TabOrder = 0
     OnChange = edNameChange
   end
-  object edExt: TSpTBXEdit
+  object edExt: TEdit
     Left = 288
     Top = 24
     Width = 73

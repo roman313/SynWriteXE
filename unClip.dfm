@@ -1,8 +1,8 @@
 object fmClip: TfmClip
   Left = 181
   Top = 234
-  Width = 157
-  Height = 283
+  ClientHeight = 245
+  ClientWidth = 141
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,11 +16,11 @@ object fmClip: TfmClip
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object ListClip: TSpTBXListBox
+  object ListClip: TListBox
     Left = 0
     Top = 0
-    Width = 149
-    Height = 249
+    Width = 141
+    Height = 245
     Style = lbOwnerDrawFixed
     Align = alClient
     ItemHeight = 13

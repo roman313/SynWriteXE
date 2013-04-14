@@ -8,20 +8,20 @@ uses
 
 type
   TfmSetupOvr = class(TForm)
-    ListLex: TSpTBXListBox;
-    Label1: TSpTBXLabel;
-    edTab: TSpTBXEdit;
-    LabelTabStop: TSpTBXLabel;
-    edTabMode: TSpTBXComboBox;
-    LabelTabMode: TSpTBXLabel;
+    ListLex: TListBox;
+    Label1: TLabel;
+    edTab: TEdit;
+    LabelTabStop: TLabel;
+    edTabMode: TComboBox;
+    LabelTabMode: TLabel;
     edText: TEdit;
-    cbOvr: TSpTBXCheckBox;
+    cbOvr: TCheckBox;
     DKLanguageController1: TDKLanguageController;
-    LabelWrap: TSpTBXLabel;
-    edWrap: TSpTBXComboBox;
-    LabelMargin: TSpTBXLabel;
+    LabelWrap: TLabel;
+    edWrap: TComboBox;
+    LabelMargin: TLabel;
     edMargin: TSpinEdit;
-    LabelSp: TSpTBXLabel;
+    LabelSp: TLabel;
     edSpacing: TSpinEdit;
     procedure cbOvrClick(Sender: TObject);
     procedure ListLexClick(Sender: TObject);

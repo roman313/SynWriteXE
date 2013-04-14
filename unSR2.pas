@@ -4,13 +4,16 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, ExtCtrls, StdCtrls, DKLang;
+  Dialogs, ExtCtrls, StdCtrls, FileCtrl, DKLang;
 
 type
-   TTntCombobox = class(TntStdCtrls.TTntComboBox)
+  WideString = String;
+
+type
+   TCombobox = class(StdCtrls.TComboBox)
    public
      refSpec,
-     refRE: TSpTBXCheckBox;
+     refRE: TCheckBox;
    protected
      procedure ComboWndProc(var Message: TMessage; ComboWnd: HWnd;
        ComboProc: Pointer); override;
@@ -18,49 +21,49 @@ type
   
 type
   TfmSRFiles = class(TForm)
-    Label2: TSpTBXLabel;
-    ed1: TSpTBXComboBox;
-    Label4: TSpTBXLabel;
-    ed2: TSpTBXComboBox;
-    bHelp: TSpTBXButton;
-    bCan: TSpTBXButton;
-    gOp: TSpTBXGroupBox;
-    cbRE: TSpTBXCheckBox;
-    cbCase: TSpTBXCheckBox;
-    cbWords: TSpTBXCheckBox;
-    cbSpec: TSpTBXCheckBox;
-    TntLabel1: TSpTBXLabel;
-    edDir: TSpTBXComboBox;
-    bBrowseDir: TSpTBXButton;
-    bRAll: TSpTBXButton;
-    cbSubDir: TSpTBXCheckBox;
-    TntLabel2: TSpTBXLabel;
-    edFile: TSpTBXComboBox;
-    bFAll: TSpTBXButton;
-    bCurrDir: TSpTBXButton;
+    Label2: TLabel;
+    ed1: TComboBox;
+    Label4: TLabel;
+    ed2: TComboBox;
+    bHelp: TButton;
+    bCan: TButton;
+    gOp: TGroupBox;
+    cbRE: TCheckBox;
+    cbCase: TCheckBox;
+    cbWords: TCheckBox;
+    cbSpec: TCheckBox;
+    TntLabel1: TLabel;
+    edDir: TComboBox;
+    bBrowseDir: TButton;
+    bRAll: TButton;
+    cbSubDir: TCheckBox;
+    TntLabel2: TLabel;
+    edFile: TComboBox;
+    bFAll: TButton;
+    bCurrDir: TButton;
     DKLanguageController1: TDKLanguageController;
-    gFile: TSpTBXGroupBox;
-    cbNoBin: TSpTBXCheckBox;
-    cbNoRO: TSpTBXCheckBox;
-    cbNoHid: TSpTBXCheckBox;
-    cbNoHid2: TSpTBXCheckBox;
-    gRes: TSpTBXGroupBox;
-    cbFnOnly: TSpTBXCheckBox;
-    cbOutTab: TSpTBXCheckBox;
-    LabelErr: TSpTBXLabel;
+    gFile: TGroupBox;
+    cbNoBin: TCheckBox;
+    cbNoRO: TCheckBox;
+    cbNoHid: TCheckBox;
+    cbNoHid2: TCheckBox;
+    gRes: TGroupBox;
+    cbFnOnly: TCheckBox;
+    cbOutTab: TCheckBox;
+    LabelErr: TLabel;
     Timer1: TTimer;
-    bCurFile: TSpTBXButton;
-    cbInOEM: TSpTBXCheckBox;
+    bCurFile: TButton;
+    cbInOEM: TCheckBox;
     Bevel1: TBevel;
-    cbInUTF8: TSpTBXCheckBox;
-    cbInUTF16: TSpTBXCheckBox;
-    bBrowseFile: TSpTBXButton;
+    cbInUTF8: TCheckBox;
+    cbInUTF16: TCheckBox;
+    bBrowseFile: TButton;
     TntOpenDialog1: TOpenDialog;
-    labFind: TSpTBXLabel;
-    labFindRep: TSpTBXLabel;
-    cbOutAppend: TSpTBXCheckBox;
-    TntLabel3: TSpTBXLabel;
-    edSort: TSpTBXComboBox;
+    labFind: TLabel;
+    labFindRep: TLabel;
+    cbOutAppend: TCheckBox;
+    TntLabel3: TLabel;
+    edSort: TComboBox;
     procedure FormCreate(Sender: TObject);
     procedure bHelpClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -90,7 +93,7 @@ type
       Shift: TShiftState);
   private
     { Private declarations }
-    procedure DoCopyToEdit(ed: TSpTBXComboBox;
+    procedure DoCopyToEdit(ed: TComboBox;
       IsSpec, IsRegex: boolean; const Str: Widestring);
   public
     { Public declarations }
@@ -122,7 +125,6 @@ implementation
 uses
   Menus,
   unSR, iniFiles, unProc,
-  TntFileCtrl, TntSysUtils,
   ATxFProc,
   ATxSProc;
 
@@ -157,7 +159,7 @@ begin
   //
 end;
 
-procedure TfmSRFiles.DoCopyToEdit(ed: TSpTBXComboBox;
+procedure TfmSRFiles.DoCopyToEdit(ed: TComboBox;
   IsSpec, IsRegex: boolean; const Str: Widestring);
 begin
   if IsSpec then
@@ -299,7 +301,7 @@ var
   S: Widestring;
 begin
   S:= edDir.Text;
-  if WideSelectDirectory('', '', S) then
+  if SelectDirectory('', '', S) then
   begin
     edDir.Text:= S;
     edDirChange(Self)
@@ -371,13 +373,13 @@ begin
 
     if CfmAppend then
     begin
-      edFile.Text:= edFile.Text+ ' "'+WideExtractFileName(FileName)+'"';
+      edFile.Text:= edFile.Text+ ' "'+ExtractFileName(FileName)+'"';
     end
     else
     begin
-      edDir.Text:= WideExtractFileDir(FileName);
+      edDir.Text:= ExtractFileDir(FileName);
       edDirChange(Self);
-      edFile.Text:= '"'+WideExtractFileName(FileName)+'"';
+      edFile.Text:= '"'+ExtractFileName(FileName)+'"';
     end;
 
     edFileChange(Self);
@@ -429,7 +431,7 @@ begin
   end;
 end;
 
-procedure TTntCombobox.ComboWndProc(var Message: TMessage;
+procedure TCombobox.ComboWndProc(var Message: TMessage;
   ComboWnd: HWnd; ComboProc: Pointer);
 begin
   if (Message.Msg = WM_PASTE) and

@@ -2,8 +2,6 @@ program Syn;
 
 uses
   FastMM4,
-  FastMove,
-  FastCode,
   Forms,
   unEx in 'unEx.pas' {fmSynEx},
   unMain in 'unMain.pas' {fmMain},
@@ -39,17 +37,17 @@ uses
   unLoremIpsum in 'unLoremIpsum.pas' {fmLoremIpsum},
   unFav in 'unFav.pas' {fmFav},
   unProj in 'unProj.pas' {fmProj},
-  unProjAddDir in 'unProjAddDir.pas' {fmProjAddDir: TTntForm},
-  unProjProps in 'unProjProps.pas' {fmProjProps: TTntForm},
+  unProjAddDir in 'unProjAddDir.pas' {fmProjAddDir: TForm},
+  unProjProps in 'unProjProps.pas' {fmProjProps: TForm},
   unClips in 'unClips.pas' {fmClips},
-  unNumConv in 'unNumConv.pas' {fmNumConv: TTntForm},
+  unNumConv in 'unNumConv.pas' {fmNumConv: TForm},
   ATSynPlugins in 'ATSynPlugins.pas',
   unFillBlock in 'unFillBlock.pas' {fmFillBlock},
   unSort in 'unSort.pas' {fmSort},
   unProcSort in 'unProcSort.pas',
   unCmdList in 'unCmdList.pas' {fmCmdList},
-  unProjList in 'unProjList.pas' {fmProjList: TTntForm},
-  unRename in 'unRename.pas' {fmRename: TTntForm};
+  unProjList in 'unProjList.pas' {fmProjList: TForm},
+  unRename in 'unRename.pas' {fmRename: TForm};
 
 {$R *.res}
 {$R *.dkl_const.res}

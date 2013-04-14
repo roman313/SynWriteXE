@@ -17,7 +17,7 @@ object fmLoremIpsum: TfmLoremIpsum
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object Label2: TSpTBXLabel
+  object Label2: TLabel
     Left = 280
     Top = 100
     Width = 11
@@ -32,7 +32,7 @@ object fmLoremIpsum: TfmLoremIpsum
     ParentFont = False
     OnClick = Label2Click
   end
-  object bOk: TSpTBXButton
+  object bOk: TButton
     Left = 240
     Top = 8
     Width = 97
@@ -42,7 +42,7 @@ object fmLoremIpsum: TfmLoremIpsum
     ModalResult = 1
     TabOrder = 0
   end
-  object bCopy: TSpTBXButton
+  object bCopy: TButton
     Left = 240
     Top = 36
     Width = 97
@@ -51,7 +51,7 @@ object fmLoremIpsum: TfmLoremIpsum
     ModalResult = 6
     TabOrder = 1
   end
-  object bCan: TSpTBXButton
+  object bCan: TButton
     Left = 240
     Top = 64
     Width = 97
@@ -61,20 +61,20 @@ object fmLoremIpsum: TfmLoremIpsum
     ModalResult = 2
     TabOrder = 2
   end
-  object GroupBox1: TSpTBXGroupBox
+  object GroupBox1: TGroupBox
     Left = 8
     Top = 4
     Width = 225
     Height = 121
     TabOrder = 3
-    object Label1: TSpTBXLabel
+    object Label1: TLabel
       Left = 72
       Top = 64
       Width = 29
       Height = 13
       Caption = 'Count'
     end
-    object cbSent: TSpTBXRadioButton
+    object cbSent: TRadioButton
       Left = 8
       Top = 16
       Width = 210
@@ -85,7 +85,7 @@ object fmLoremIpsum: TfmLoremIpsum
       TabStop = True
       OnClick = cbWordsClick
     end
-    object cbPara: TSpTBXRadioButton
+    object cbPara: TRadioButton
       Left = 8
       Top = 32
       Width = 210
@@ -105,7 +105,7 @@ object fmLoremIpsum: TfmLoremIpsum
       Value = 5
       OnKeyDown = edCountKeyDown
     end
-    object cbTags: TSpTBXCheckBox
+    object cbTags: TCheckBox
       Left = 8
       Top = 96
       Width = 209
@@ -125,7 +125,6 @@ object fmLoremIpsum: TfmLoremIpsum
       6253656E74010100000005000000070043617074696F6E000600636250617261
       010100000006000000070043617074696F6E0007006564436F756E7400000600
       4C6162656C31010100000008000000070043617074696F6E0006006362546167
-      73010100000009000000070043617074696F6E0006004C6162656C3201010000
-      000A000000070043617074696F6E00}
+      73010100000009000000070043617074696F6E0006004C6162656C320000}
   end
 end

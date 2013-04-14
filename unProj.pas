@@ -6,9 +6,12 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, ComCtrls, ImgList,
+  Dialogs, ComCtrls, ImgList, FileCtrl,
   TB2Item, TBX, TB2Dock, TB2Toolbar,
   ExtCtrls, Menus, DKLang, unProgress, TBXExtItems, TB2MRU;
+
+type
+  WideString = String;
 
 var
   SMsgProjNew: Widestring = 'Untitled';
@@ -20,7 +23,7 @@ var
   SMsgProjSortCfm: Widestring = 'Project now contains over %d new items, their sorting will be slow.'#13#13'Do you want to sort added items?';
 
 type
-  TListProc = procedure(Sender: TObject; Files: TTntStrings) of object;
+  TListProc = procedure(Sender: TObject; Files: TStrings) of object;
   TProjSort = (srNone, srName, srExt, srDate, srSize, srDateDesc, srSizeDesc);
 
 type
@@ -36,58 +39,58 @@ type
 
 type
   TfmProj = class(TForm)
-    TreeProj: TTntTreeView;
-    tbProject: TSpTBXToolbar;
-    TBXItemProjOpen: TSpTBXSubmenuItem;
-    TBXItemProjSave: TSpTBXItem;
-    TBXItemProjAddVirtDir: TSpTBXItem;
-    TBXItemProjAddFiles: TSpTBXItem;
-    TBXItemProjDelFiles: TSpTBXItem;
-    TBXItemProjRename: TSpTBXItem;
+    TreeProj: TTreeView;
+    tbProject: TTBXToolbar;
+    TBXItemProjOpen: TTBXSubmenuItem;
+    TBXItemProjSave: TTBXItem;
+    TBXItemProjAddVirtDir: TTBXItem;
+    TBXItemProjAddFiles: TTBXItem;
+    TBXItemProjDelFiles: TTBXItem;
+    TBXItemProjRename: TTBXItem;
     ImageList1: TImageList;
     ODFile: TOpenDialog;
     TimerHint: TTimer;
-    TBXItemProjOpenFiles: TSpTBXItem;
+    TBXItemProjOpenFiles: TTBXItem;
     ImageListTool: TImageList;
-    TBXItemProjProp: TSpTBXItem;
-    PopupProj: TSpTBXPopupMenu;
-    TbxItemMnuAdd: TSpTBXSubmenuItem;
-    TbxItemMnuAddFiles: TSpTBXItem;
-    TbxItemMnuAddDir: TSpTBXItem;
-    TbxItemMnuAddVDir: TSpTBXItem;
-    TbxItemMnuRename: TSpTBXItem;
-    TbxItemMnuRemove: TSpTBXItem;
-    TBXSeparatorItem1: TSpTBXSeparatorItem;
-    TBXItemMnuProjSaveAs: TSpTBXItem;
-    TBXItemMnuProjSave: TSpTBXItem;
-    TBXItemMnuProjOpen: TSpTBXItem;
-    TBXItemMnuProjClose: TSpTBXItem;
-    TBXItemMnuProjProp: TSpTBXItem;
-    TBXSeparatorItem2: TSpTBXSeparatorItem;
-    TBXItemMnuOpenFiles: TSpTBXItem;
+    TBXItemProjProp: TTBXItem;
+    PopupProj: TTBXPopupMenu;
+    TbxItemMnuAdd: TTBXSubmenuItem;
+    TbxItemMnuAddFiles: TTBXItem;
+    TbxItemMnuAddDir: TTBXItem;
+    TbxItemMnuAddVDir: TTBXItem;
+    TbxItemMnuRename: TTBXItem;
+    TbxItemMnuRemove: TTBXItem;
+    TBXSeparatorItem1: TTBXSeparatorItem;
+    TBXItemMnuProjSaveAs: TTBXItem;
+    TBXItemMnuProjSave: TTBXItem;
+    TBXItemMnuProjOpen: TTBXItem;
+    TBXItemMnuProjClose: TTBXItem;
+    TBXItemMnuProjProp: TTBXItem;
+    TBXSeparatorItem2: TTBXSeparatorItem;
+    TBXItemMnuOpenFiles: TTBXItem;
     ODProj: TOpenDialog;
     SDProj: TSaveDialog;
-    TBXItemProjAddFilesDir: TSpTBXItem;
-    TBXSeparatorItem3: TSpTBXSeparatorItem;
-    TBXItemMnuAddOpenedFiles: TSpTBXItem;
-    TBXItemMnuAddCurrFile: TSpTBXItem;
-    TBXItemMnuSetMain: TSpTBXItem;
-    TBXSeparatorItem4: TSpTBXSeparatorItem;
-    TBXItemMnuCollapse: TSpTBXItem;
-    TBXItemMnuExpand: TSpTBXItem;
-    TBXSubmenuItemSort: TSpTBXSubmenuItem;
-    TBXItemMnuSortByName: TSpTBXItem;
-    TBXItemMnuSortByExt: TSpTBXItem;
+    TBXItemProjAddFilesDir: TTBXItem;
+    TBXSeparatorItem3: TTBXSeparatorItem;
+    TBXItemMnuAddOpenedFiles: TTBXItem;
+    TBXItemMnuAddCurrFile: TTBXItem;
+    TBXItemMnuSetMain: TTBXItem;
+    TBXSeparatorItem4: TTBXSeparatorItem;
+    TBXItemMnuCollapse: TTBXItem;
+    TBXItemMnuExpand: TTBXItem;
+    TBXSubmenuItemSort: TTBXSubmenuItem;
+    TBXItemMnuSortByName: TTBXItem;
+    TBXItemMnuSortByExt: TTBXItem;
     DKLanguageController1: TDKLanguageController;
-    TBXItemMnuSortBySizeDesc: TSpTBXItem;
-    TBXItemMnuSortByDateDesc: TSpTBXItem;
-    TBXItemMnuSortBySize: TSpTBXItem;
-    TBXItemMnuSortByDate: TSpTBXItem;
-    TBXItemMnuProps: TSpTBXItem;
-    TBXSeparatorItem5: TSpTBXSeparatorItem;
-    TBXItemProjClearRecent: TSpTBXItem;
-    TBXItemProjMRU: TSpTBXMRUListItem;
-    ProjMRUList: TSpTBXMRUList;
+    TBXItemMnuSortBySizeDesc: TTBXItem;
+    TBXItemMnuSortByDateDesc: TTBXItem;
+    TBXItemMnuSortBySize: TTBXItem;
+    TBXItemMnuSortByDate: TTBXItem;
+    TBXItemMnuProps: TTBXItem;
+    TBXSeparatorItem5: TTBXSeparatorItem;
+    TBXItemProjClearRecent: TTBXItem;
+    TBXItemProjMRU: TTBXMRUListItem;
+    ProjMRUList: TTBXMRUList;
     procedure TBXItemProjAddVirtDirClick(Sender: TObject);
     procedure TBXItemProjDelFilesClick(Sender: TObject);
     procedure TBXItemProjAddFilesClick(Sender: TObject);
@@ -132,8 +135,8 @@ type
     procedure TBXItemMnuExpandClick(Sender: TObject);
     procedure TBXItemMnuCollapseClick(Sender: TObject);
     procedure TBXItemMnuSortByExtClick(Sender: TObject);
-    procedure TreeProjEdited(Sender: TObject; Node: TTntTreeNode;
-      var S: WideString);
+    procedure TreeProjEdited(Sender: TObject; Node: TTreeNode;
+      var S: String);
     procedure TBXItemMnuSortByDateClick(Sender: TObject);
     procedure TBXItemMnuSortBySizeClick(Sender: TObject);
     procedure TBXItemMnuSortByDateDescClick(Sender: TObject);
@@ -167,38 +170,38 @@ type
     procedure HideProgress;
     function IsProgressStopped(Cnt, CntAll: integer): boolean;
     procedure Modify;
-    function RootNode: TTntTreeNode;
+    function RootNode: TTreeNode;
     function GetWorkDir: Widestring;
     function GetProjDir: Widestring;
     procedure DoUpdateMRU;
     procedure DoLoadMRU;
     procedure SetProjDir(const Dir: string);
-    procedure DoUpdateSort(Node: TTntTreeNode);
+    procedure DoUpdateSort(Node: TTreeNode);
     procedure DoAddDirDlg(const SDir: Widestring);
     procedure DoSortBy(Mode: TProjSort);
-    procedure DoSortDir(Node: TTntTreeNode; Subdirs: boolean; SortType: TProjSort);
+    procedure DoSortDir(Node: TTreeNode; Subdirs: boolean; SortType: TProjSort);
     procedure DoAddEditorFiles(All: boolean);
-    function CanRename(Node: TTntTreeNode): boolean;
+    function CanRename(Node: TTreeNode): boolean;
     procedure DoOpenProject;
     procedure DoSaveProject;
     procedure DoSaveProjectAs;
     procedure DoConfigProject;
     procedure DoLoadProjectFromFile(const fn: Widestring);
     procedure DoSaveProjectToFile(const fn: string);
-    procedure DoWriteNodesToList(L: TStringList; Node: TTntTreeNode; Level: integer);
-    function DirForNode(Node: TTntTreeNode): TTntTreeNode;
-    function DoAddDirWithSubdirs(Node: TTntTreeNode; const SDir: Widestring;
-      SubDirs, NoBinary: boolean; const ExtInc, ExtExc: string): TTntTreeNode;
-    procedure AddFilesToList(L: TStringList; Node: TTntTreeNode);
-    function IsRoot(Node: TTntTreeNode): boolean;
-    function IsFilenameListed(Node: TTntTreeNode; const fn: Widestring): boolean;
+    procedure DoWriteNodesToList(L: TStringList; Node: TTreeNode; Level: integer);
+    function DirForNode(Node: TTreeNode): TTreeNode;
+    function DoAddDirWithSubdirs(Node: TTreeNode; const SDir: Widestring;
+      SubDirs, NoBinary: boolean; const ExtInc, ExtExc: string): TTreeNode;
+    procedure AddFilesToList(L: TStringList; Node: TTreeNode);
+    function IsRoot(Node: TTreeNode): boolean;
+    function IsFilenameListed(Node: TTreeNode; const fn: Widestring): boolean;
     procedure DoRefresh;
     procedure DoAddFiles;
     procedure DoAddFilesDir;
     procedure DoAddVirtualDir;
-    function DoAddFile(Sel: TTntTreeNode; const fn: Widestring): TTntTreeNode;
-    function DoAddDir(Sel: TTntTreeNode; S: Widestring;
-      DoExpand: boolean = true): TTntTreeNode;
+    function DoAddFile(Sel: TTreeNode; const fn: Widestring): TTreeNode;
+    function DoAddDir(Sel: TTreeNode; S: Widestring;
+      DoExpand: boolean = true): TTreeNode;
     procedure DoRename;
     procedure DoRemove;
     procedure DoOpenFiles;
@@ -206,7 +209,7 @@ type
   public
     { Public declarations }
     FOpts: TProjectOpts;
-    function GetFN(Node: TTntTreeNode): Widestring;
+    function GetFN(Node: TTreeNode): Widestring;
     function GetImageIndex(const fn: Widestring): integer;
     property ProjectFN: Widestring read FProjectFN write DoLoadProjectFromFile;
     property Modified: boolean read FModified;
@@ -226,8 +229,8 @@ type
     procedure DoSaveProjectIfNeeded;
   end;
 
-procedure SStringToList(s: Widestring; L: TTntStrings);
-procedure SListToString(L: TTntStrings; var S: Widestring);
+procedure SStringToList(s: Widestring; L: TStrings);
+procedure SListToString(L: TStrings; var S: Widestring);
 
 implementation
 
@@ -237,9 +240,7 @@ uses
   ATxFProc,
   AtxSProc,
   ATxIconProc,
-  TntWideStrUtils,
-  TntFileCtrl,
-  TntSysUtils, unProjAddDir, unProjProps;
+  unProjAddDir, unProjProps;
 
 {$R *.dfm}
 
@@ -266,14 +267,14 @@ begin
     mb_okcancel or mb_iconwarning) = id_ok;
 end;
 
-function IsDir(Node: TTntTreeNode): boolean;
+function IsDir(Node: TTreeNode): boolean;
 begin
   if Node=nil then
     raise Exception.Create('node nil');
   Result:= Node.ImageIndex<=1;
 end;
 
-procedure SListToString(L: TTntStrings; var S: Widestring);
+procedure SListToString(L: TStrings; var S: Widestring);
 var
   i: Integer;
 begin
@@ -283,7 +284,7 @@ begin
       S:= S+L[i]+';';
 end;
 
-procedure SStringToList(s: Widestring; L: TTntStrings);
+procedure SStringToList(s: Widestring; L: TStrings);
 var
   ss: Widestring;
 begin
@@ -295,7 +296,7 @@ begin
   until false;
 end;
 
-function TfmProj.DirForNode(Node: TTntTreeNode): TTntTreeNode;
+function TfmProj.DirForNode(Node: TTreeNode): TTreeNode;
 begin
   if IsDir(Node) then
     Result:= Node
@@ -358,7 +359,7 @@ begin
 
   S:= SMsgProjNewFolder;
   {$ifndef DD}
-  if not WideInputQuery(SMsgProjCaption, SMsgProjFolderName, S) then Exit;
+  if not InputQuery(SMsgProjCaption, SMsgProjFolderName, S) then Exit;
   {$endif}
 
   with TreeProj do
@@ -370,7 +371,7 @@ begin
   Modify;
 end;
 
-function TfmProj.DoAddDir(Sel: TTntTreeNode; S: Widestring; DoExpand: boolean = true): TTntTreeNode;
+function TfmProj.DoAddDir(Sel: TTreeNode; S: Widestring; DoExpand: boolean = true): TTreeNode;
 begin
   Result:= nil;
   if sel=nil then Exit;
@@ -425,7 +426,7 @@ end;
 procedure TfmProj.DoAddFiles;
 var
   i: Integer;
-  Node: TTntTreeNode;
+  Node: TTreeNode;
 begin
   ODFile.InitialDir:= GetWorkDir;
   if not ODFile.Execute then Exit;
@@ -453,7 +454,7 @@ begin
       MsgBeep;
 end;
 
-function TfmProj.IsRoot(Node: TTntTreeNode): boolean;
+function TfmProj.IsRoot(Node: TTreeNode): boolean;
 begin
   if Node=nil then
     raise Exception.Create('node nil');
@@ -496,7 +497,7 @@ begin
   end;
 end;
 
-function TfmProj.DoAddFile(Sel: TTntTreeNode; const fn: Widestring): TTntTreeNode;
+function TfmProj.DoAddFile(Sel: TTreeNode; const fn: Widestring): TTreeNode;
 begin
   Result:= nil;
   if Sel=nil then Exit;
@@ -505,9 +506,9 @@ begin
   with TreeProj do
     begin
       if IsDir(Sel) then
-        Result:= Items.AddChild(Sel, WideExtractFileName(fn))
+        Result:= Items.AddChild(Sel, ExtractFileName(fn))
       else
-        Result:= Items.Add(Sel, WideExtractFileName(fn));
+        Result:= Items.Add(Sel, ExtractFileName(fn));
 
       with Result do
       begin
@@ -537,7 +538,7 @@ begin
     Exit
   end;
 
-  ext:= LowerCase(WideExtractFileExt(fn));
+  ext:= LowerCase(ExtractFileExt(fn));
   useCache:= (ext<>'') and not SFileExtensionMatch(fn, 'exe,lnk,dll,ocx,scr');
 
   if useCache then
@@ -576,14 +577,14 @@ end;
 procedure TfmProj.TreeProjEditing(Sender: TObject; Node: TTreeNode;
   var AllowEdit: Boolean);
 begin
-  AllowEdit:= CanRename(TTntTreeNode(Node));
+  AllowEdit:= CanRename(TTreeNode(Node));
 end;
 
 
 (*
-procedure TfmProj.MoveNode(TargetNode, SourceNode: TTntTreeNode);
+procedure TfmProj.MoveNode(TargetNode, SourceNode: TTreeNode);
 var
-  nodeTmp: TTntTreeNode;
+  nodeTmp: TTreeNode;
   i: Integer;
 begin
   with TreeProj do
@@ -610,7 +611,7 @@ end;
 
 procedure TfmProj.TreeProjDragDrop(Sender, Source: TObject; X, Y: Integer);
 var
-  TargetNode, SourceNode: TTntTreeNode;
+  TargetNode, SourceNode: TTreeNode;
 begin
   with TreeProj do
   begin
@@ -645,7 +646,7 @@ end;
 procedure TfmProj.TreeProjDragOver(Sender, Source: TObject; X, Y: Integer;
   State: TDragState; var Accept: Boolean);
 {var
-  Node: TTntTreeNode;
+  Node: TTreeNode;
   P: TPoint;}
 begin
   Accept:= (Sender = TreeProj)
@@ -668,7 +669,7 @@ end;
 procedure TfmProj.TreeProjMouseMove(Sender: TObject; Shift: TShiftState; X,
   Y: Integer);
 var
-  Node: TTntTreeNode;
+  Node: TTreeNode;
   P: TPoint;
 begin
   P:= Point(X, Y);
@@ -693,7 +694,7 @@ begin
   Application.ActivateHint(Mouse.CursorPos);
 end;
 
-function TfmProj.GetFN(Node: TTntTreeNode): Widestring;
+function TfmProj.GetFN(Node: TTreeNode): Widestring;
 var
   N: Integer;
 begin
@@ -750,9 +751,9 @@ begin
   DoOpenFiles;
 end;
 
-procedure TfmProj.AddFilesToList(L: TStringList; Node: TTntTreeNode);
+procedure TfmProj.AddFilesToList(L: TStringList; Node: TTreeNode);
 var
-  N: TTntTreeNode;
+  N: TTreeNode;
 begin
   N:= Node.GetFirstChild;
   while N<>nil do
@@ -765,9 +766,9 @@ begin
   end;
 end;
 
-function TfmProj.IsFilenameListed(Node: TTntTreeNode; const fn: Widestring): boolean;
+function TfmProj.IsFilenameListed(Node: TTreeNode; const fn: Widestring): boolean;
 var
-  N: TTntTreeNode;
+  N: TTreeNode;
 begin
   Result:= false;
   N:= Node.GetFirstChild;
@@ -822,10 +823,10 @@ end;
 procedure TfmProj.DoAddFilesDir;
 var
   S: Widestring;
-  Node: TTntTreeNode;
+  Node: TTreeNode;
 begin
   S:= GetWorkDir;
-  if WideSelectDirectory('', '', S) then
+  if SelectDirectory('', '', S) then
   begin
     Node:= TreeProj.Selected;
     DoAddDirDlg(S);
@@ -888,7 +889,7 @@ procedure TfmProj.DoAddDirDlg(const SDir: Widestring);
 var
   ExtInc, ExtExc: string;
   SubDirs, NoBin: boolean;
-  Node: TTntTreeNode;
+  Node: TTreeNode;
 begin
   with TfmProjAddDir.Create(nil) do
   try
@@ -936,20 +937,20 @@ begin
 end;
 
 
-function TfmProj.DoAddDirWithSubdirs(Node: TTntTreeNode; const SDir: Widestring;
-  SubDirs, NoBinary: boolean; const ExtInc, ExtExc: string): TTntTreeNode;
+function TfmProj.DoAddDirWithSubdirs(Node: TTreeNode; const SDir: Widestring;
+  SubDirs, NoBinary: boolean; const ExtInc, ExtExc: string): TTreeNode;
 var
-  NodeDir: TTntTreeNode;
-  Rec: TSearchRecW;
+  NodeDir: TTreeNode;
+  Rec: TSearchRec;
   fn: Widestring;
 begin
   if IsProgressStopped(1, 1) then
     begin Result:= nil; Exit; end;
     
-  NodeDir:= DoAddDir(Node, WideExtractFileName(SDir));
+  NodeDir:= DoAddDir(Node, ExtractFileName(SDir));
 
   FillChar(Rec, SizeOf(Rec), 0);
-  if WideFindFirst(SDir+'\*.*', faAnyFile, Rec)=0 then
+  if FindFirst(SDir+'\*.*', faAnyFile, Rec)=0 then
   repeat
     if (Rec.Name='.') or (Rec.Name='..') then Continue;
     fn:= SDir+'\'+Rec.Name;
@@ -965,8 +966,8 @@ begin
       if NoBinary and not IsFileText(fn) then Continue;
       DoAddFile(NodeDir, fn);
     end;  
-  until WideFindNext(Rec)<>0;
-  WideFindClose(Rec);
+  until FindNext(Rec)<>0;
+  FindClose(Rec);
 
   if NodeDir.GetFirstChild=nil then
     FreeAndNil(NodeDir);
@@ -992,7 +993,7 @@ begin
   if not ODProj.Execute then Exit;
 
   if not FileExists(ODProj.FileName) then
-    if not MsgCfm(WideFormat(DKLangConstW('MCre'), [WideExtractFileName(ODProj.FileName)]), Handle) then Exit;
+    if not MsgCfm(WideFormat(DKLangConstW('MCre'), [ExtractFileName(ODProj.FileName)]), Handle) then Exit;
 
   SetProjDir(ExtractFileDir(ODProj.FileName));
   fn:= ODProj.FileName;
@@ -1007,7 +1008,7 @@ procedure TfmProj.DoLoadProjectFromFile(const fn: Widestring);
     Result:= fn;
     if SBegin(Result, cProjVar) then
     begin
-      dir:= WideExcludeTrailingBackslash(WideExtractFileDir(FProjectFN));
+      dir:= ExcludeTrailingBackslash(ExtractFileDir(FProjectFN));
       SReplaceW(Result, cProjVar, dir);
     end;
   end;
@@ -1018,7 +1019,7 @@ var
   S: string;
   SName: Widestring;
   dir: boolean;
-  Node, NodeDir: TTntTreeNode;
+  Node, NodeDir: TTreeNode;
 begin
   DoNewProject;
   FProjectFN:= fn;
@@ -1174,13 +1175,13 @@ begin
   end;
 end;
 
-procedure TfmProj.DoWriteNodesToList(L: TStringList; Node: TTntTreeNode; Level: integer);
+procedure TfmProj.DoWriteNodesToList(L: TStringList; Node: TTreeNode; Level: integer);
   function FCollapse(const fn: Widestring): Widestring;
   var
     dir, dirVar: Widestring;
   begin
     Result:= fn;
-    dir:= WideExtractFilePath(FProjectFN);
+    dir:= ExtractFilePath(FProjectFN);
     dirVar:= cProjVar;
     if SBegin(WideLowerCase(fn), WideLowerCase(dir)) then
     begin
@@ -1190,7 +1191,7 @@ procedure TfmProj.DoWriteNodesToList(L: TStringList; Node: TTntTreeNode; Level: 
     end;
   end;
 var
-  N: TTntTreeNode;
+  N: TTreeNode;
   pre: string;
 begin
   pre:= StringOfChar('.', Level)+'\';
@@ -1243,7 +1244,7 @@ end;
 procedure TfmProj.TreeProjContextPopup(Sender: TObject; MousePos: TPoint;
   var Handled: Boolean);
 var
-  Node: TTntTreeNode;
+  Node: TTreeNode;
 begin
   Node:= TreeProj.GetNodeAt(MousePos.X, MousePos.Y);
   if Node<>nil then
@@ -1335,7 +1336,7 @@ begin
   DoNewProject;
 end;
 
-function TfmProj.RootNode: TTntTreeNode;
+function TfmProj.RootNode: TTreeNode;
 begin
   Result:= TreeProj.Items.GetFirstNode;
 end;
@@ -1354,7 +1355,7 @@ begin
   RootNode.Text:= S;
 end;
 
-function TfmProj.CanRename(Node: TTntTreeNode): boolean;
+function TfmProj.CanRename(Node: TTreeNode): boolean;
 begin
   Result:= (Node<>nil) and IsDir(Node) and not IsRoot(Node);
 end;
@@ -1422,21 +1423,21 @@ var
 
 function _NodeCompare(Item1, Item2: Pointer): Integer;
 var
-  N1, N2: TTntTreeNode;
+  N1, N2: TTreeNode;
   s1, s2, ext1, ext2: Widestring;
   Dir1, Dir2: boolean;
   fn1, fn2: Widestring;
   size1, size2: Int64;
   date1, date2: TDateTime;
 begin
-  N1:= TTntTreeNode(Item1);
-  N2:= TTntTreeNode(Item2);
+  N1:= TTreeNode(Item1);
+  N2:= TTreeNode(Item2);
   s1:= N1.Text;
   s2:= N2.Text;
   Dir1:= IsDir(N1);
   Dir2:= IsDir(N2);
-  if Dir1 then ext1:= '' else ext1:= WideExtractFileExt(s1);
-  if Dir2 then ext2:= '' else ext2:= WideExtractFileExt(s2);
+  if Dir1 then ext1:= '' else ext1:= ExtractFileExt(s1);
+  if Dir2 then ext2:= '' else ext2:= ExtractFileExt(s2);
 
   if Dir1 and not Dir2 then Result:= -1 else
    if not Dir1 and Dir2 then Result:= 1 else
@@ -1445,12 +1446,12 @@ begin
       //compare files
       case _SortMode of
       srName:
-        Result:= WStrIComp(PWChar(s1), PWChar(s2));
+        Result:= StrIComp(PWChar(s1), PWChar(s2));
       srExt:
         begin
-          Result:= WStrIComp(PWChar(ext1), PWChar(ext2));
+          Result:= StrIComp(PWChar(ext1), PWChar(ext2));
           if Result=0 then
-            Result:= WStrIComp(PWChar(s1), PWChar(s2));
+            Result:= StrIComp(PWChar(s1), PWChar(s2));
         end;
       srSize,
       srSizeDesc:
@@ -1468,8 +1469,8 @@ begin
         begin
           fn1:= _SortForm.GetFN(N1);
           fn2:= _SortForm.GetFN(N2);
-          date1:= FileDateToDateTime(WideFileAge(fn1));
-          date2:= FileDateToDateTime(WideFileAge(fn2));
+          date1:= FileDateToDateTime(FileAge(fn1));
+          date2:= FileDateToDateTime(FileAge(fn2));
           if date1<date2 then Result:= -1 else
            if date1>date2 then Result:= 1 else
             Result:= 0;
@@ -1487,14 +1488,14 @@ begin
       srNone:
         Result:= 0;
       else
-        Result:= WStrIComp(PWChar(s1), PWChar(s2));
+        Result:= StrIComp(PWChar(s1), PWChar(s2));
       end;
     end;
 end;
 
-procedure TfmProj.DoSortDir(Node: TTntTreeNode; Subdirs: boolean; SortType: TProjSort);
+procedure TfmProj.DoSortDir(Node: TTreeNode; Subdirs: boolean; SortType: TProjSort);
 var
-  N: TTntTreeNode;
+  N: TTreeNode;
   L: TList;
   i: Integer;
 begin
@@ -1524,7 +1525,7 @@ begin
 
     for i:= 0 to L.Count-1 do
       if i<Node.Count then
-        TTntTreeNode(L[i]).MoveTo(Node.Item[i], naInsert);
+        TTreeNode(L[i]).MoveTo(Node.Item[i], naInsert);
   finally
     FreeAndNil(L);
   end;
@@ -1577,7 +1578,7 @@ end;
 
 procedure TfmProj.DoDropItem(const fn: Widestring);
 var
-  Node: TTntTreeNode;
+  Node: TTreeNode;
 begin
   with TreeProj do
     if Selected<>nil then
@@ -1593,8 +1594,8 @@ begin
 end;
 
 
-procedure TfmProj.TreeProjEdited(Sender: TObject; Node: TTntTreeNode;
-  var S: WideString);
+procedure TfmProj.TreeProjEdited(Sender: TObject; Node: TTreeNode;
+  var S: String);
 begin
   Modify;
 end;
@@ -1614,7 +1615,7 @@ begin
   if FProjectFN='' then
     fn:= SMsgProjNew
   else
-    fn:= WideExtractFileName(FProjectFN);
+    fn:= ExtractFileName(FProjectFN);
 
   SMsgProjSaveCfm:= DKLangConstW('zMSaveProj');
   if MessageBoxW(Handle,
@@ -1680,7 +1681,7 @@ begin
   end;
 end;
 
-procedure TfmProj.DoUpdateSort(Node: TTntTreeNode);
+procedure TfmProj.DoUpdateSort(Node: TTreeNode);
 begin
   if (Node<>nil) and (FOpts.SortType<>srNone) then
   begin

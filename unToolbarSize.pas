@@ -4,19 +4,20 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Spin;
+  Dialogs, StdCtrls,
+  TntForms, TntStdCtrls, Spin;
 
 type
   TfmToolbarSize = class(TForm)
-    GroupBoxIco: TSpTBXGroupBox;
-    Label1: TSpTBXLabel;
-    btn16: TSpTBXRadioButton;
-    btn32: TSpTBXRadioButton;
-    btnSize: TSpTBXRadioButton;
+    GroupBoxIco: TGroupBox;
+    Label1: TLabel;
+    btn16: TRadioButton;
+    btn32: TRadioButton;
+    btnSize: TRadioButton;
     edSizeX: TSpinEdit;
     edSizeY: TSpinEdit;
-    bOk: TSpTBXButton;
-    bCan: TSpTBXButton;
+    bOk: TButton;
+    bCan: TButton;
   private
     { Private declarations }
   public

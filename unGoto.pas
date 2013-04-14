@@ -8,22 +8,22 @@ uses
 
 type
   TfmGoto = class(TForm)
-    Label1: TSpTBXLabel;
+    Label1: TLabel;
     edLine: TComboBox;
-    ButtonOk: TSpTBXButton;
-    ButtonCan: TSpTBXButton;
+    ButtonOk: TButton;
+    ButtonCan: TButton;
     DKLanguageController1: TDKLanguageController;
     edCol: TComboBox;
-    Label2: TSpTBXLabel;
-    cbExtSel: TSpTBXCheckBox;
+    Label2: TLabel;
+    cbExtSel: TCheckBox;
     Bevel1: TBevel;
-    cbPos: TSpTBXRadioButton;
-    cbPrev: TSpTBXRadioButton;
-    cbNext: TSpTBXRadioButton;
-    cbNum: TSpTBXRadioButton;
-    edNum: TSpTBXComboBox;
+    cbPos: TRadioButton;
+    cbPrev: TRadioButton;
+    cbNext: TRadioButton;
+    cbNum: TRadioButton;
+    edNum: TComboBox;
     Bevel2: TBevel;
-    TntLabel1: TSpTBXLabel;
+    TntLabel1: TLabel;
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
     procedure FormShow(Sender: TObject);
     procedure cbPosClick(Sender: TObject);

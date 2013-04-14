@@ -1,11 +1,11 @@
 object fmFav: TfmFav
   Left = 248
   Top = 490
-  Width = 570
-  Height = 380
   ActiveControl = List
   BorderIcons = [biSystemMenu]
   Caption = 'Favorites'
+  ClientHeight = 342
+  ClientWidth = 554
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,11 +20,11 @@ object fmFav: TfmFav
   OnKeyDown = TntFormKeyDown
   OnShow = TntFormShow
   DesignSize = (
-    562
-    346)
+    554
+    342)
   PixelsPerInch = 96
   TextHeight = 13
-  object btnOk: TSpTBXButton
+  object btnOk: TButton
     Left = 456
     Top = 8
     Width = 97
@@ -36,7 +36,7 @@ object fmFav: TfmFav
     TabOrder = 2
     OnClick = btnOkClick
   end
-  object btnCan: TSpTBXButton
+  object btnCan: TButton
     Left = 456
     Top = 148
     Width = 97
@@ -47,7 +47,7 @@ object fmFav: TfmFav
     ModalResult = 2
     TabOrder = 6
   end
-  object cbPaths: TSpTBXCheckBox
+  object cbPaths: TCheckBox
     Left = 8
     Top = 324
     Width = 249
@@ -59,7 +59,7 @@ object fmFav: TfmFav
     TabOrder = 1
     OnClick = cbPathsClick
   end
-  object List: TSpTBXListBox
+  object List: TListBox
     Left = 8
     Top = 8
     Width = 441
@@ -70,7 +70,7 @@ object fmFav: TfmFav
     OnClick = ListClick
     OnDblClick = ListDblClick
   end
-  object btnUp: TSpTBXButton
+  object btnUp: TButton
     Left = 456
     Top = 80
     Width = 97
@@ -80,7 +80,7 @@ object fmFav: TfmFav
     TabOrder = 4
     OnClick = btnUpClick
   end
-  object btnDown: TSpTBXButton
+  object btnDown: TButton
     Left = 456
     Top = 108
     Width = 97
@@ -90,7 +90,7 @@ object fmFav: TfmFav
     TabOrder = 5
     OnClick = btnDownClick
   end
-  object btnDel: TSpTBXButton
+  object btnDel: TButton
     Left = 456
     Top = 36
     Width = 97
