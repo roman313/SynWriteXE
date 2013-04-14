@@ -1,7 +1,8 @@
 synwrite
 ========
 
-First of all, i'm sorry for my primitive English ;)###
+First of all, i'm sorry for my primitive English ;)
+
 SynWrite [http://www.uvviewsoft.com/synwrite/] fork with one aim: to be modern (XE3, SpTBX, etc.)
 
 TB2K 2.2.2 - http://www.jrsoftware.org/tb2kdl.php 
