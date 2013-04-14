@@ -10,13 +10,13 @@ uses
 
 type
   TfmCmdList = class(TTntForm)
-    List: TTntListBox;
+    List: TSpTBXListBox;
     Keys: TSyntKeyMapping;
-    Edit: TTntEdit;
+    Edit: TSpTBXEdit;
     TimerType: TTimer;
-    Panel1: TPanel;
-    cbFuzzy: TTntCheckBox;
-    labHelp: TLabel;
+    Panel1: TSpTBXPanel;
+    cbFuzzy: TSpTBXCheckBox;
+    labHelp: TSpTBXLabel;
     procedure FormKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
     procedure FormShow(Sender: TObject);

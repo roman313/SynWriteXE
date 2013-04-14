@@ -18,7 +18,7 @@ type
    TTntCombobox = class(TntStdCtrls.TTntComboBox)
    public
      refSpec,
-     refRE: TTntCheckbox;
+     refRE: TSpTBXCheckBox;
    protected
      procedure ComboWndProc(var Message: TMessage; ComboWnd: HWnd;
        ComboProc: Pointer); override;
@@ -51,55 +51,55 @@ procedure ReadFindOptions(
 
 type
   TfmSR = class(TTntForm)
-    bFindNext: TTntButton;
-    bFindAll: TTntButton;
-    bRepNext: TTntButton;
-    bRepAll: TTntButton;
-    bCancel: TTntButton;
-    ed1: TTntComboBox;
-    labEd1: TTntLabel;
-    ed2: TTntComboBox;
-    labEd2: TTntLabel;
-    gOp: TTntGroupBox;
-    cbRE: TTntCheckBox;
-    cbCase: TTntCheckBox;
-    cbWords: TTntCheckBox;
-    gScop: TTntGroupBox;
-    gDir: TTntGroupBox;
-    bFor: TTntRadioButton;
-    bBack: TTntRadioButton;
-    bHelp: TTntButton;
-    cbSpec: TTntCheckBox;
+    bFindNext: TSpTBXButton;
+    bFindAll: TSpTBXButton;
+    bRepNext: TSpTBXButton;
+    bRepAll: TSpTBXButton;
+    bCancel: TSpTBXButton;
+    ed1: TSpTBXComboBox;
+    labEd1: TSpTBXLabel;
+    ed2: TSpTBXComboBox;
+    labEd2: TSpTBXLabel;
+    gOp: TSpTBXGroupBox;
+    cbRE: TSpTBXCheckBox;
+    cbCase: TSpTBXCheckBox;
+    cbWords: TSpTBXCheckBox;
+    gScop: TSpTBXGroupBox;
+    gDir: TSpTBXGroupBox;
+    bFor: TSpTBXRadioButton;
+    bBack: TSpTBXRadioButton;
+    bHelp: TSpTBXButton;
+    cbSpec: TSpTBXCheckBox;
     DKLanguageController1: TDKLanguageController;
-    cbCfm: TTntCheckBox;
-    bCount: TTntButton;
-    bRepInTabs: TTntButton;
-    labRes: TTntLabel;
+    cbCfm: TSpTBXCheckBox;
+    bCount: TSpTBXButton;
+    bRepInTabs: TSpTBXButton;
+    labRes: TSpTBXLabel;
     Timer1: TTimer;
-    bSkip: TTntButton;
-    PanelTr: TPanel;
-    labTr: TTntLabel;
+    bSkip: TSpTBXButton;
+    PanelTr: TSpTBXPanel;
+    labTr: TSpTBXLabel;
     TrackBar1: TTrackBar;
-    cbLoose: TTntCheckBox;
-    labStyle: TTntLabel;
-    labCnt: TTntLabel;
+    cbLoose: TSpTBXCheckBox;
+    labStyle: TSpTBXLabel;
+    labCnt: TSpTBXLabel;
     TimerCnt: TTimer;
-    mnuRe: TTntPopupMenu;
-    labRe: TTntLabel;
-    cbBk: TTntCheckBox;
-    cbSel: TTntCheckBox;
-    cbFromCur: TTntCheckBox;
-    cbWrap: TTntCheckBox;
-    cbExtSel: TTntCheckBox;
-    bFindInTabs: TTntButton;
-    cbSkipCol: TTntCheckBox;
-    cbTokens: TTntComboBox;
-    labMultiline: TTntLabel;
+    mnuRe: TSpTBXPopupMenu;
+    labRe: TSpTBXLabel;
+    cbBk: TSpTBXCheckBox;
+    cbSel: TSpTBXCheckBox;
+    cbFromCur: TSpTBXCheckBox;
+    cbWrap: TSpTBXCheckBox;
+    cbExtSel: TSpTBXCheckBox;
+    bFindInTabs: TSpTBXButton;
+    cbSkipCol: TSpTBXCheckBox;
+    cbTokens: TSpTBXComboBox;
+    labMultiline: TSpTBXLabel;
     ed1Memo: TTntMemo;
     ed2Memo: TTntMemo;
     bCombo1: TSpeedButton;
     bCombo2: TSpeedButton;
-    mnuCombo: TTntPopupMenu;
+    mnuCombo: TSpTBXPopupMenu;
     procedure FormShow(Sender: TObject);
     procedure ed1Change(Sender: TObject);
     procedure bHelpClick(Sender: TObject);
@@ -151,7 +151,7 @@ type
     FTopGScope,
     FHeight0: Integer;
     procedure mnuComboClick(Sender: TObject);
-    procedure DoCombo(ed: TTntCombobox; edMemo: TTntMemo; edNum: integer);
+    procedure DoCombo(ed: TSpTBXComboBox; edMemo: TTntMemo; edNum: integer);
     procedure ReClick(Sender: TObject);
     procedure DoAct(act: TSRAction);
     procedure SetOrig;
@@ -618,7 +618,7 @@ begin
     Result:= (ch=ch1) or (ch=ch2);
 end;
 
-  function H(C: TTntCheckbox; ch1, ch2: char): boolean; overload;
+  function H(C: TSpTBXCheckBox; ch1, ch2: char): boolean; overload;
   begin
     Result:= IsShortcutOk(C, ch1, ch2);
     if Result then
@@ -629,7 +629,7 @@ end;
       end;
   end;
 
-  function H(C: TTntRadioButton; ch1, ch2: char): boolean; overload;
+  function H(C: TSpTBXRadioButton; ch1, ch2: char): boolean; overload;
   begin
     Result:= IsShortcutOk(C, ch1, ch2);
     if Result then
@@ -642,7 +642,7 @@ end;
     end;
   end;
 
-  function H(C: TTntLabel; ch1, ch2: char): boolean; overload;
+  function H(C: TSpTBXLabel; ch1, ch2: char): boolean; overload;
   begin
     Result:= IsShortcutOk(C, ch1, ch2);
     if Result then
@@ -654,7 +654,7 @@ end;
     end;
   end;
 
-  function H(C: TTntButton; ch1, ch2: char): boolean; overload;
+  function H(C: TSpTBXButton; ch1, ch2: char): boolean; overload;
   begin
     Result:= IsShortcutOk(C, ch1, ch2);
     if Result then
@@ -693,12 +693,12 @@ begin
     end;
 end;
 
-procedure DoUndo(ed: TTntCombobox);
+procedure DoUndo(ed: TSpTBXComboBox);
 begin
   SendMessage(GetEditHandle(ed), wm_undo, 0, 0);
 end;
 
-procedure DoCopy(ed: TTntCombobox);
+procedure DoCopy(ed: TSpTBXComboBox);
 begin
   SendMessage(GetEditHandle(ed), wm_copy, 0, 0);
 end;
@@ -976,7 +976,7 @@ end;
 
 procedure TfmSR.ReClick(Sender: TObject);
 var
-  ed: TTntCombobox;
+  ed: TSpTBXComboBox;
   edMemo: TTntMemo;
   S: Widestring;
   N: Integer;
@@ -1214,7 +1214,7 @@ end;
 
 procedure TfmSR.mnuComboClick(Sender: TObject);
 var
-  ed: TTntCombobox;
+  ed: TSpTBXComboBox;
   edMemo: TTntMemo;
   n: Integer;
 begin
@@ -1234,7 +1234,7 @@ begin
     edMemo.SetFocus;
 end;
 
-procedure TfmSR.DoCombo(ed: TTntCombobox; edMemo: TTntMemo; edNum: integer);
+procedure TfmSR.DoCombo(ed: TSpTBXComboBox; edMemo: TTntMemo; edNum: integer);
 var
   i: Integer;
   mi: TTntMenuItem;

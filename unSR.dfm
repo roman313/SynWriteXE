@@ -455,7 +455,7 @@ object fmSR: TfmSR
     TabOrder = 7
     OnClick = bSkipClick
   end
-  object PanelTr: TPanel
+  object PanelTr: TSpTBXPanel
     Left = 360
     Top = 208
     Width = 121

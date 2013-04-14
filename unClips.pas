@@ -12,8 +12,8 @@ type
 
 type
   TfmClips = class(TForm)
-    Combo: TTntComboBox;
-    List: TTntListBox;
+    Combo: TSpTBXComboBox;
+    List: TSpTBXListBox;
     procedure ComboChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);

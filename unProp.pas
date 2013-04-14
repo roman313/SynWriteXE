@@ -8,23 +8,23 @@ uses
 
 type
   TfmProps = class(TForm)
-    bOk: TTntButton;
+    bOk: TSpTBXButton;
     DKLanguageController1: TDKLanguageController;
     Pages: TTntPageControl;
     tabFile: TTntTabSheet;
-    TntLabel1: TTntLabel;
-    edPath: TTntEdit;
-    TntLabel2: TTntLabel;
-    edTime: TTntEdit;
-    TntLabel3: TTntLabel;
-    edSize: TTntEdit;
+    TntLabel1: TSpTBXLabel;
+    edPath: TSpTBXEdit;
+    TntLabel2: TSpTBXLabel;
+    edTime: TSpTBXEdit;
+    TntLabel3: TSpTBXLabel;
+    edSize: TSpTBXEdit;
     tabDoc: TTntTabSheet;
-    TntLabel4: TTntLabel;
-    edChars: TTntEdit;
-    TntLabel5: TTntLabel;
-    edWords: TTntEdit;
-    TntLabel6: TTntLabel;
-    edLines: TTntEdit;
+    TntLabel4: TSpTBXLabel;
+    edChars: TSpTBXEdit;
+    TntLabel5: TSpTBXLabel;
+    edWords: TSpTBXEdit;
+    TntLabel6: TSpTBXLabel;
+    edLines: TSpTBXEdit;
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private

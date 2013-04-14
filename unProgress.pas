@@ -20,16 +20,16 @@ type
 
 type
   TfmProgress = class(TTntForm)
-    laFile: TTntLabel;
+    laFile: TSpTBXLabel;
     DKLanguageController1: TDKLanguageController;
-    bCan: TTntButton;
-    laBin: TTntLabel;
+    bCan: TSpTBXButton;
+    laBin: TSpTBXLabel;
     Pro: TGauge;
-    LaBk: TTntLabel;
+    LaBk: TSpTBXLabel;
     TimerOnTop: TTimer;
-    laText: TTntLabel;
-    labCount: TTntLabel;
-    laSort: TTntLabel;
+    laText: TSpTBXLabel;
+    labCount: TSpTBXLabel;
+    laSort: TSpTBXLabel;
     procedure bCanClick(Sender: TObject);
     procedure TimerOnTopTimer(Sender: TObject);
   private
@@ -48,7 +48,7 @@ uses
 
 procedure TfmProgress.SetMode(m: TProgressType);
  //Align center
- procedure A(L: TTntLabel);
+ procedure A(L: TSpTBXLabel);
  begin
    L.Left:= (Width-L.Width) div 2;
  end;

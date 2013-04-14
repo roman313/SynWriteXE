@@ -10,17 +10,17 @@ uses
 
 type
   TfmLoremIpsum = class(TTntForm)
-    bOk: TTntButton;
-    bCopy: TTntButton;
-    bCan: TTntButton;
-    GroupBox1: TTntGroupBox;
-    cbSent: TTntRadioButton;
-    cbPara: TTntRadioButton;
+    bOk: TSpTBXButton;
+    bCopy: TSpTBXButton;
+    bCan: TSpTBXButton;
+    GroupBox1: TSpTBXGroupBox;
+    cbSent: TSpTBXRadioButton;
+    cbPara: TSpTBXRadioButton;
     edCount: TSpinEdit;
-    Label1: TTntLabel;
-    cbTags: TTntCheckBox;
+    Label1: TSpTBXLabel;
+    cbTags: TSpTBXCheckBox;
     DKLanguageController1: TDKLanguageController;
-    Label2: TTntLabel;
+    Label2: TSpTBXLabel;
     procedure edCountKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
     procedure cbWordsClick(Sender: TObject);

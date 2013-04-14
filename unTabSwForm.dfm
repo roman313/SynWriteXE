@@ -20,7 +20,7 @@ object fmTabSw: TfmTabSw
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 14
-  object Panel1: TPanel
+  object Panel1: TSpTBXPanel
     Left = 0
     Top = 0
     Width = 520
@@ -48,7 +48,7 @@ object fmTabSw: TfmTabSw
       TabOrder = 0
       OnClick = ListClick
     end
-    object Panel2: TPanel
+    object Panel2: TSpTBXPanel
       Left = 2
       Top = 124
       Width = 516

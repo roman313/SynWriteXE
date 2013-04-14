@@ -2939,7 +2939,7 @@ object fmMain: TfmMain
       end
     end
   end
-  object Panel1: TPanel
+  object Panel1: TSpTBXPanel
     Left = 201
     Top = 50
     Width = 435

@@ -10,12 +10,12 @@ uses
 
 type
   TfmProjList = class(TTntForm)
-    List: TTntListBox;
-    Edit: TTntEdit;
+    List: TSpTBXListBox;
+    Edit: TSpTBXEdit;
     TimerType: TTimer;
-    Panel1: TPanel;
-    labHelp: TLabel;
-    cbFuzzy: TTntCheckBox;
+    Panel1: TSpTBXPanel;
+    labHelp: TSpTBXLabel;
+    cbFuzzy: TSpTBXCheckBox;
     procedure FormKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
     procedure FormShow(Sender: TObject);

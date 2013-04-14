@@ -16,11 +16,11 @@ procedure GetIcon(const FileName: Widestring;
 //load from BMP 32bpp
 procedure LoadImageListFromFile(IL: TImageList; SizeX, SizeY: integer; const fn: string);
 //load from PNG
-procedure LoadTbxImageListFromFile(IL: TTbxImageList; SizeX, SizeY: integer; const fn: string);
+procedure LoadTbxImageListFromFile(IL: TSpTBXImageList; SizeX, SizeY: integer; const fn: string);
 //load from DLL
 procedure LoadImageListFromDLL(ImageList16, ImageList32: TImageList; const FN: Widestring);
 //load/add 1 icon from PNG
-procedure AddPngToTbxImageList(IL: TTbxImageList; const fn: string);
+procedure AddPngToTbxImageList(IL: TSpTBXImageList; const fn: string);
 //save to PNG
 procedure SaveImageListToFile(Img: TImageList; const fn: string);
 
@@ -47,10 +47,10 @@ uses
   TbxImgListEdit;
 
 
-procedure LoadTbxImageListFromFile(IL: TTbxImageList; SizeX, SizeY: integer; const fn: string);
+procedure LoadTbxImageListFromFile(IL: TSpTBXImageList; SizeX, SizeY: integer; const fn: string);
 var
   i: integer;
-  dlg: TTBXImageListDlg;
+  dlg: TSpTBXImageListDlg;
   DibList: TDibList32;
 begin
   IL.Width:= SizeX;
@@ -231,7 +231,7 @@ begin
 end;
 
 //------------
-procedure AddPngToTbxImageList(IL: TTbxImageList; const fn: string);
+procedure AddPngToTbxImageList(IL: TSpTBXImageList; const fn: string);
   procedure AddNone;
   var
     S: string;

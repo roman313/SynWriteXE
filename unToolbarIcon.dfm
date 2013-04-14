@@ -17,7 +17,7 @@ object fmToolbarIcon: TfmToolbarIcon
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object GroupBox1: TGroupBox
+  object GroupBox1: TSpTBXGroupBox
     Left = 8
     Top = 4
     Width = 385
@@ -78,7 +78,7 @@ object fmToolbarIcon: TfmToolbarIcon
       TabOrder = 2
       OnClick = btnBrowseClick
     end
-    object ListBox1: TListBox
+    object ListBox1: TSpTBXListBox
       Left = 9
       Top = 112
       Width = 368

@@ -42,7 +42,7 @@ object fmCmdList: TfmCmdList
     OnChange = EditChange
     OnKeyDown = EditKeyDown
   end
-  object Panel1: TPanel
+  object Panel1: TSpTBXPanel
     Left = 0
     Top = 272
     Width = 502
@@ -56,7 +56,7 @@ object fmCmdList: TfmCmdList
     Font.Style = []
     ParentFont = False
     TabOrder = 2
-    object labHelp: TLabel
+    object labHelp: TSpTBXLabel
       Left = 488
       Top = 0
       Width = 14

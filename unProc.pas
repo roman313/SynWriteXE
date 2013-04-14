@@ -21,7 +21,7 @@ function DoInputString(const dkmsg: string; var S: Widestring): boolean;
 
 function EditorGetCollapsedRanges(Ed: TSyntaxMemo): string;
 procedure EditorSetCollapsedRanges(Ed: TSyntaxMemo; S: Widestring);
-procedure DoDeleteComboItem(ed: TTntCombobox);
+procedure DoDeleteComboItem(ed: TSpTBXComboBox);
 procedure DoCheckDialogOverlapsCaret(Ed: TCustomSyntaxMemo; Form: TForm);
 function ScaleFontSize(Size: Integer; Form: TForm): Integer;
 function EditorTokenName(Ed: TSyntaxMemo; StartPos, EndPos: integer): string;
@@ -102,9 +102,9 @@ procedure DoAddColorToImageList(ImageList: TImageList;
 
 procedure DoListKeys(SyntKeymapping: TSyntKeyMapping;
   const fn: string);
-procedure DoCopyToEdit(ed: TTntCombobox;
+procedure DoCopyToEdit(ed: TSpTBXComboBox;
   IsSpec, IsRegex: boolean; const Str: Widestring);
-procedure DoPasteToEdit(ed: TTntCombobox;
+procedure DoPasteToEdit(ed: TSpTBXComboBox;
   IsSpec, IsRegex: boolean);
 
 function Min2(N, M: integer): integer;
@@ -115,9 +115,9 @@ function WideMinimizeName(const Filename: WideString; Canvas: TCanvas;
   MaxLen: Integer): WideString;
 procedure ShowHelp(const SynDir: string; ID: TSynHelpId; Handle: THandle);
 procedure CenterMemoPos(Ed: TCustomSyntaxMemo; AGotoMode: boolean);
-procedure SSave(ed: TTntCombobox; SRCount: integer);
-procedure SSaveCombo(ed: TTntCombobox; const fn, section: string);
-procedure SLoadCombo(ed: TTntCombobox; const fn, section: string; UseLast: boolean = true);
+procedure SSave(ed: TSpTBXComboBox; SRCount: integer);
+procedure SSaveCombo(ed: TSpTBXComboBox; const fn, section: string);
+procedure SLoadCombo(ed: TSpTBXComboBox; const fn, section: string; UseLast: boolean = true);
 
 type
   TFinderInTree = class(TecFindInTreeDialog)
@@ -485,7 +485,7 @@ const
   SRCount = 50;
   SR_EOL = '<<SW_EOL>>';
 
-procedure SSaveCombo(ed: TTntCombobox; const fn, section: string);
+procedure SSaveCombo(ed: TSpTBXComboBox; const fn, section: string);
 var
   i: Integer;
   S: Ansistring;
@@ -508,7 +508,7 @@ begin
   end;
 end;
 
-procedure SLoadCombo(ed: TTntCombobox; const fn, section: string;
+procedure SLoadCombo(ed: TSpTBXComboBox; const fn, section: string;
   UseLast: boolean = true);
 var
   i: Integer;
@@ -534,7 +534,7 @@ begin
   end;
 end;
 
-procedure SSave(ed: TTntCombobox; SRCount: integer);
+procedure SSave(ed: TSpTBXComboBox; SRCount: integer);
 var
   idx: integer;
   S: Widestring;
@@ -659,7 +659,7 @@ begin
   if N>M then Result:= N else Result:= M;
 end;
 
-procedure DoPasteToEdit(ed: TTntCombobox;
+procedure DoPasteToEdit(ed: TSpTBXComboBox;
   IsSpec, IsRegex: boolean);
 var
   S: Widestring;
@@ -674,7 +674,7 @@ begin
     ed.SelText:= S;
 end;
 
-procedure DoCopyToEdit(ed: TTntCombobox;
+procedure DoCopyToEdit(ed: TSpTBXComboBox;
   IsSpec, IsRegex: boolean; const Str: Widestring);
 begin
   if IsSpec then
@@ -1427,7 +1427,7 @@ begin
   end;
 end;
 
-procedure DoDeleteComboItem(ed: TTntCombobox);
+procedure DoDeleteComboItem(ed: TSpTBXComboBox);
 begin
   if ed.DroppedDown then
     ed.Items.Delete(ed.ItemIndex);

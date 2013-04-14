@@ -10,21 +10,21 @@ uses
 
 type
   TfmExtract = class(TTntForm)
-    b1: TTntGroupBox;
-    bFind: TTntButton;
-    bCopy: TTntButton;
-    b2: TTntGroupBox;
-    List: TTntListBox;
-    ed: TTntComboBox;
-    TntLabel1: TTntLabel;
-    bCan: TTntButton;
-    bHelp: TTntButton;
-    bCase: TTntCheckBox;
+    b1: TSpTBXGroupBox;
+    bFind: TSpTBXButton;
+    bCopy: TSpTBXButton;
+    b2: TSpTBXGroupBox;
+    List: TSpTBXListBox;
+    ed: TSpTBXComboBox;
+    TntLabel1: TSpTBXLabel;
+    bCan: TSpTBXButton;
+    bHelp: TSpTBXButton;
+    bCase: TSpTBXCheckBox;
     DKLanguageController1: TDKLanguageController;
-    bSel: TTntCheckBox;
-    bTab: TTntButton;
-    bCur: TTntCheckBox;
-    labNot: TTntLabel;
+    bSel: TSpTBXCheckBox;
+    bTab: TSpTBXButton;
+    bCur: TSpTBXCheckBox;
+    labNot: TSpTBXLabel;
     procedure bCopyClick(Sender: TObject);
     procedure bFindClick(Sender: TObject);
     procedure bHelpClick(Sender: TObject);

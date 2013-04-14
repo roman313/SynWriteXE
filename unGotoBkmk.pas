@@ -8,10 +8,10 @@ uses
 
 type
   TfmGotoBkmk = class(TTntForm)
-    List: TTntListBox;
-    bOk: TTntButton;
-    bCan: TTntButton;
-    TntLabel1: TTntLabel;
+    List: TSpTBXListBox;
+    bOk: TSpTBXButton;
+    bCan: TSpTBXButton;
+    TntLabel1: TSpTBXLabel;
     DKLanguageController1: TDKLanguageController;
     procedure ListDblClick(Sender: TObject);
   private

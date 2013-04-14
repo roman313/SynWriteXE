@@ -13,21 +13,21 @@ const
 
 type
   TfmToolbarIcon = class(TTntForm)
-    GroupBox1: TGroupBox;
-    btnDLL: TTntRadioButton;
-    btnPNG: TTntRadioButton;
-    btnBrowse: TTntButton;
-    bOk: TTntButton;
-    bCan: TTntButton;
-    ListBox1: TListBox;
-    Label2: TTntLabel;
+    GroupBox1: TSpTBXGroupBox;
+    btnDLL: TSpTBXRadioButton;
+    btnPNG: TSpTBXRadioButton;
+    btnBrowse: TSpTBXButton;
+    bOk: TSpTBXButton;
+    bCan: TSpTBXButton;
+    ListBox1: TSpTBXListBox;
+    Label2: TSpTBXLabel;
     ImageList32: TImageList;
     ImageList16: TImageList;
     OpenDialogDLL: TOpenDialog;
     OpenDialogPNG: TOpenDialog;
     Image1: TImage;
-    LabelErr: TTntLabel;
-    btnShell32: TTntButton;
+    LabelErr: TSpTBXLabel;
+    btnShell32: TSpTBXButton;
     procedure ListBox1MeasureItem(Control: TWinControl; Index: Integer;
       var Height: Integer);
     procedure ListBox1DrawItem(Control: TWinControl; Index: Integer;

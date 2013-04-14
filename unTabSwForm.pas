@@ -9,11 +9,11 @@ uses
 
 type
   TfmTabSw = class(TForm)
-    Panel1: TPanel;
-    List: TTntListBox;
-    Panel2: TPanel;
-    Label1: TTntLabel;
-    Label2: TTntLabel;
+    Panel1: TSpTBXPanel;
+    List: TSpTBXListBox;
+    Panel2: TSpTBXPanel;
+    Label1: TSpTBXLabel;
+    Label2: TSpTBXLabel;
     procedure FormKeyUp(Sender: TObject; var Key: Word;
       Shift: TShiftState);
     procedure FormKeyDown(Sender: TObject; var Key: Word;

@@ -21,27 +21,27 @@ const
 
 type
   TfmToolbarProp = class(TTntForm)
-    bOk: TTntButton;
-    bCan: TTntButton;
-    GroupBoxCmd: TTntGroupBox;
-    ListBox1: TListBox;
-    Label2: TTntLabel;
-    LabelHint: TTntLabel;
-    edHint: TTntEdit;
-    LabelCmd: TTntLabel;
-    edCmd: TTntEdit;
-    LabelIcon: TTntLabel;
-    btnBrowseIcon: TTntButton;
-    btnBrowseCmd: TTntButton;
-    GroupBoxProp: TTntGroupBox;
-    Label6: TTntLabel;
-    edCaption: TTntEdit;
-    Label1: TTntLabel;
-    LabelSize: TTntLabel;
-    btnIconSize: TTntButton;
-    btnAdd: TTntButton;
-    btnDel: TTntButton;
-    btnSep: TTntButton;
+    bOk: TSpTBXButton;
+    bCan: TSpTBXButton;
+    GroupBoxCmd: TSpTBXGroupBox;
+    ListBox1: TSpTBXListBox;
+    Label2: TSpTBXLabel;
+    LabelHint: TSpTBXLabel;
+    edHint: TSpTBXEdit;
+    LabelCmd: TSpTBXLabel;
+    edCmd: TSpTBXEdit;
+    LabelIcon: TSpTBXLabel;
+    btnBrowseIcon: TSpTBXButton;
+    btnBrowseCmd: TSpTBXButton;
+    GroupBoxProp: TSpTBXGroupBox;
+    Label6: TSpTBXLabel;
+    edCaption: TSpTBXEdit;
+    Label1: TSpTBXLabel;
+    LabelSize: TSpTBXLabel;
+    btnIconSize: TSpTBXButton;
+    btnAdd: TSpTBXButton;
+    btnDel: TSpTBXButton;
+    btnSep: TSpTBXButton;
     procedure FormShow(Sender: TObject);
     procedure btnIconSizeClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -345,7 +345,7 @@ procedure TfmToolbarProp.ListBox1DragOver(Sender, Source: TObject; X,
   Y: Integer; State: TDragState; var Accept: Boolean);
 var
   Idx: integer;
-  List: TListbox;
+  List: TSpTBXListBox;
 begin
   List:= Listbox1;
   if Source = List then
@@ -361,7 +361,7 @@ procedure TfmToolbarProp.ListBox1DragDrop(Sender, Source: TObject; X,
   Y: Integer);
 var
   Idx, CurIdx: integer;
-  List: TListbox;
+  List: TSpTBXListBox;
 begin
   List:= Listbox1;
   if Source = List then

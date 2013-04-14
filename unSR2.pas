@@ -15,7 +15,7 @@ type
    TTntCombobox = class(TntStdCtrls.TTntComboBox)
    public
      refSpec,
-     refRE: TTntCheckbox;
+     refRE: TSpTBXCheckBox;
    protected
      procedure ComboWndProc(var Message: TMessage; ComboWnd: HWnd;
        ComboProc: Pointer); override;
@@ -23,49 +23,49 @@ type
   
 type
   TfmSRFiles = class(TTntForm)
-    Label2: TTntLabel;
-    ed1: TTntComboBox;
-    Label4: TTntLabel;
-    ed2: TTntComboBox;
-    bHelp: TTntButton;
-    bCan: TTntButton;
-    gOp: TTntGroupBox;
-    cbRE: TTntCheckBox;
-    cbCase: TTntCheckBox;
-    cbWords: TTntCheckBox;
-    cbSpec: TTntCheckBox;
-    TntLabel1: TTntLabel;
-    edDir: TTntComboBox;
-    bBrowseDir: TTntButton;
-    bRAll: TTntButton;
-    cbSubDir: TTntCheckBox;
-    TntLabel2: TTntLabel;
-    edFile: TTntComboBox;
-    bFAll: TTntButton;
-    bCurrDir: TTntButton;
+    Label2: TSpTBXLabel;
+    ed1: TSpTBXComboBox;
+    Label4: TSpTBXLabel;
+    ed2: TSpTBXComboBox;
+    bHelp: TSpTBXButton;
+    bCan: TSpTBXButton;
+    gOp: TSpTBXGroupBox;
+    cbRE: TSpTBXCheckBox;
+    cbCase: TSpTBXCheckBox;
+    cbWords: TSpTBXCheckBox;
+    cbSpec: TSpTBXCheckBox;
+    TntLabel1: TSpTBXLabel;
+    edDir: TSpTBXComboBox;
+    bBrowseDir: TSpTBXButton;
+    bRAll: TSpTBXButton;
+    cbSubDir: TSpTBXCheckBox;
+    TntLabel2: TSpTBXLabel;
+    edFile: TSpTBXComboBox;
+    bFAll: TSpTBXButton;
+    bCurrDir: TSpTBXButton;
     DKLanguageController1: TDKLanguageController;
-    gFile: TTntGroupBox;
-    cbNoBin: TTntCheckBox;
-    cbNoRO: TTntCheckBox;
-    cbNoHid: TTntCheckBox;
-    cbNoHid2: TTntCheckBox;
-    gRes: TTntGroupBox;
-    cbFnOnly: TTntCheckBox;
-    cbOutTab: TTntCheckBox;
-    LabelErr: TTntLabel;
+    gFile: TSpTBXGroupBox;
+    cbNoBin: TSpTBXCheckBox;
+    cbNoRO: TSpTBXCheckBox;
+    cbNoHid: TSpTBXCheckBox;
+    cbNoHid2: TSpTBXCheckBox;
+    gRes: TSpTBXGroupBox;
+    cbFnOnly: TSpTBXCheckBox;
+    cbOutTab: TSpTBXCheckBox;
+    LabelErr: TSpTBXLabel;
     Timer1: TTimer;
-    bCurFile: TTntButton;
-    cbInOEM: TTntCheckBox;
+    bCurFile: TSpTBXButton;
+    cbInOEM: TSpTBXCheckBox;
     Bevel1: TBevel;
-    cbInUTF8: TTntCheckBox;
-    cbInUTF16: TTntCheckBox;
-    bBrowseFile: TTntButton;
-    TntOpenDialog1: TTntOpenDialog;
-    labFind: TTntLabel;
-    labFindRep: TTntLabel;
-    cbOutAppend: TTntCheckBox;
-    TntLabel3: TTntLabel;
-    edSort: TTntComboBox;
+    cbInUTF8: TSpTBXCheckBox;
+    cbInUTF16: TSpTBXCheckBox;
+    bBrowseFile: TSpTBXButton;
+    TntOpenDialog1: TOpenDialog;
+    labFind: TSpTBXLabel;
+    labFindRep: TSpTBXLabel;
+    cbOutAppend: TSpTBXCheckBox;
+    TntLabel3: TSpTBXLabel;
+    edSort: TSpTBXComboBox;
     procedure FormCreate(Sender: TObject);
     procedure bHelpClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -95,7 +95,7 @@ type
       Shift: TShiftState);
   private
     { Private declarations }
-    procedure DoCopyToEdit(ed: TTntCombobox;
+    procedure DoCopyToEdit(ed: TSpTBXComboBox;
       IsSpec, IsRegex: boolean; const Str: Widestring);
   public
     { Public declarations }
@@ -162,7 +162,7 @@ begin
   //
 end;
 
-procedure TfmSRFiles.DoCopyToEdit(ed: TTntCombobox;
+procedure TfmSRFiles.DoCopyToEdit(ed: TSpTBXComboBox;
   IsSpec, IsRegex: boolean; const Str: Widestring);
 begin
   if IsSpec then

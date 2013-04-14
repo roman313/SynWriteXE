@@ -8,12 +8,12 @@ uses
 
 type
   TfmRename = class(TTntForm)
-    btnOK: TTntButton;
-    btnCancel: TTntButton;
-    edName: TTntEdit;
-    labRename: TTntLabel;
-    edExt: TTntEdit;
-    Label1: TTntLabel;
+    btnOK: TSpTBXButton;
+    btnCancel: TSpTBXButton;
+    edName: TSpTBXEdit;
+    labRename: TSpTBXLabel;
+    edExt: TSpTBXEdit;
+    Label1: TSpTBXLabel;
     procedure edNameChange(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure TntFormCreate(Sender: TObject);

@@ -29,7 +29,7 @@ object fmAb: TfmAb
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object LabelWV: TLabel
+  object LabelWV: TSpTBXLabel
     Left = 96
     Top = 32
     Width = 16

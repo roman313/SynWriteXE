@@ -60,7 +60,7 @@ object fmSetupOvr: TfmSetupOvr
     Height = 13
     Caption = 'Line spacing:'
   end
-  object ListLex: TListBox
+  object ListLex: TSpTBXListBox
     Left = 8
     Top = 20
     Width = 161

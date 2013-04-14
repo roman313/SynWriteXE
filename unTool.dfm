@@ -420,7 +420,7 @@ object fmTools: TfmTools
       7369000009007046696C6545787432000009007046696C654469723200000A00
       7046696C654E616D6532000002004E350000}
   end
-  object mnuPar: TPopupMenu
+  object mnuPar: TSpTBXPopupMenu
     Left = 248
     Top = 116
     object pFileName: TMenuItem

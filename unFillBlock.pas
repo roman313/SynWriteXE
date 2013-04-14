@@ -8,12 +8,12 @@ uses
 
 type
   TfmFillBlock = class(TForm)
-    TntGroupBox1: TTntGroupBox;
-    bOk: TTntButton;
-    bCan: TTntButton;
-    TntLabel1: TTntLabel;
-    edLine: TTntEdit;
-    cbKeepWidth: TTntCheckBox;
+    TntGroupBox1: TSpTBXGroupBox;
+    bOk: TSpTBXButton;
+    bCan: TSpTBXButton;
+    TntLabel1: TSpTBXLabel;
+    edLine: TSpTBXEdit;
+    cbKeepWidth: TSpTBXCheckBox;
     DKLanguageController1: TDKLanguageController;
     procedure edLineChange(Sender: TObject);
     procedure FormShow(Sender: TObject);

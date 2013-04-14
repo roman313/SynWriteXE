@@ -13,17 +13,17 @@ uses
 
 type
   TfmMacroEdit = class(TTntForm)
-    boxList: TTntGroupBox;
-    MacrosList: TTntListBox;
-    boxCmd: TTntGroupBox;
-    ButtonOk: TTntButton;
-    ButtonCan: TTntButton;
-    ButtonMRen: TTntButton;
-    ButtonMDel: TTntButton;
-    ButtonCCh: TTntButton;
-    ButtonCDel: TTntButton;
-    ButtonCAdd: TTntButton;
-    ButtonCClr: TTntButton;
+    boxList: TSpTBXGroupBox;
+    MacrosList: TSpTBXListBox;
+    boxCmd: TSpTBXGroupBox;
+    ButtonOk: TSpTBXButton;
+    ButtonCan: TSpTBXButton;
+    ButtonMRen: TSpTBXButton;
+    ButtonMDel: TSpTBXButton;
+    ButtonCCh: TSpTBXButton;
+    ButtonCDel: TSpTBXButton;
+    ButtonCAdd: TSpTBXButton;
+    ButtonCClr: TSpTBXButton;
     ActionList1: TActionList;
     MacrosPlay: TAction;
     MacrosRename: TAction;
@@ -33,19 +33,19 @@ type
     CommandInsert: TAction;
     CommandDelete: TAction;
     CommandClear: TAction;
-    CmdList: TTntListView;
-    ButtonMAdd: TTntButton;
+    CmdList: TListView;
+    ButtonMAdd: TSpTBXButton;
     MacrosAdd: TAction;
     DKLanguageController1: TDKLanguageController;
-    boxKey: TTntGroupBox;
+    boxKey: TSpTBXGroupBox;
     ecHotKey1: TecHotKey;
-    ButtonShClr: TTntButton;
-    ButtonShSet: TTntButton;
-    boxPlay: TTntGroupBox;
-    ButtonMPlay: TTntButton;
+    ButtonShClr: TSpTBXButton;
+    ButtonShSet: TSpTBXButton;
+    boxPlay: TSpTBXGroupBox;
+    ButtonMPlay: TSpTBXButton;
     edTimes: TSpinEdit;
-    bPlayTimes: TTntRadioButton;
-    bPlayEof: TTntRadioButton;
+    bPlayTimes: TSpTBXRadioButton;
+    bPlayEof: TSpTBXRadioButton;
     procedure FormCreate(Sender: TObject);
     procedure MacrosUpdate(Sender: TObject);
     procedure MacrosPlayUpdate(Sender: TObject);

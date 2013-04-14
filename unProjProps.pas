@@ -9,29 +9,29 @@ uses
 
 type
   TfmProjProps = class(TTntForm)
-    btnOk: TTntButton;
-    btnCan: TTntButton;
+    btnOk: TSpTBXButton;
+    btnCan: TSpTBXButton;
     Pages: TTntPageControl;
     TntTabSheet1: TTntTabSheet;
     TntTabSheet2: TTntTabSheet;
     edDirs: TTntMemo;
-    Label4: TTntLabel;
-    edWorkDir: TTntEdit;
-    TntLabel1: TTntLabel;
-    edMainFN: TTntEdit;
-    btnWorkDir: TTntButton;
-    TntLabel3: TTntLabel;
-    Label1: TTntLabel;
-    cbEnc: TTntComboBox;
-    Label2: TTntLabel;
-    cbEnds: TTntComboBox;
-    Label3: TTntLabel;
-    cbLexer: TTntComboBox;
-    btnDirAdd: TTntButton;
-    TntLabel2: TTntLabel;
+    Label4: TSpTBXLabel;
+    edWorkDir: TSpTBXEdit;
+    TntLabel1: TSpTBXLabel;
+    edMainFN: TSpTBXEdit;
+    btnWorkDir: TSpTBXButton;
+    TntLabel3: TSpTBXLabel;
+    Label1: TSpTBXLabel;
+    cbEnc: TSpTBXComboBox;
+    Label2: TSpTBXLabel;
+    cbEnds: TSpTBXComboBox;
+    Label3: TSpTBXLabel;
+    cbLexer: TSpTBXComboBox;
+    btnDirAdd: TSpTBXButton;
+    TntLabel2: TSpTBXLabel;
     DKLanguageController1: TDKLanguageController;
-    TntLabel4: TTntLabel;
-    cbSort: TTntComboBox;
+    TntLabel4: TSpTBXLabel;
+    cbSort: TSpTBXComboBox;
     procedure btnWorkDirClick(Sender: TObject);
     procedure btnDirAddClick(Sender: TObject);
     procedure TntFormShow(Sender: TObject);

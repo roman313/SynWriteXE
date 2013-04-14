@@ -9,20 +9,20 @@ uses
 
 type
   TfmSetupOvr = class(TTntForm)
-    ListLex: TListBox;
-    Label1: TTntLabel;
-    edTab: TTntEdit;
-    LabelTabStop: TTntLabel;
-    edTabMode: TTntComboBox;
-    LabelTabMode: TTntLabel;
+    ListLex: TSpTBXListBox;
+    Label1: TSpTBXLabel;
+    edTab: TSpTBXEdit;
+    LabelTabStop: TSpTBXLabel;
+    edTabMode: TSpTBXComboBox;
+    LabelTabMode: TSpTBXLabel;
     edText: TEdit;
-    cbOvr: TTntCheckBox;
+    cbOvr: TSpTBXCheckBox;
     DKLanguageController1: TDKLanguageController;
-    LabelWrap: TTntLabel;
-    edWrap: TTntComboBox;
-    LabelMargin: TTntLabel;
+    LabelWrap: TSpTBXLabel;
+    edWrap: TSpTBXComboBox;
+    LabelMargin: TSpTBXLabel;
     edMargin: TSpinEdit;
-    LabelSp: TTntLabel;
+    LabelSp: TSpTBXLabel;
     edSpacing: TSpinEdit;
     procedure cbOvrClick(Sender: TObject);
     procedure ListLexClick(Sender: TObject);

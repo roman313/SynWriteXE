@@ -9,15 +9,15 @@ uses
 
 type
   TfmToolbarSize = class(TTntForm)
-    GroupBoxIco: TGroupBox;
-    Label1: TTntLabel;
-    btn16: TTntRadioButton;
-    btn32: TTntRadioButton;
-    btnSize: TTntRadioButton;
+    GroupBoxIco: TSpTBXGroupBox;
+    Label1: TSpTBXLabel;
+    btn16: TSpTBXRadioButton;
+    btn32: TSpTBXRadioButton;
+    btnSize: TSpTBXRadioButton;
     edSizeX: TSpinEdit;
     edSizeY: TSpinEdit;
-    bOk: TTntButton;
-    bCan: TTntButton;
+    bOk: TSpTBXButton;
+    bCan: TSpTBXButton;
   private
     { Private declarations }
   public

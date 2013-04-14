@@ -11,14 +11,14 @@ uses
 
 type
   TfmLoadLex = class(TTntForm)
-    Label1: TTntLabel;
-    TntGroupBox1: TTntGroupBox;
+    Label1: TSpTBXLabel;
+    TntGroupBox1: TSpTBXGroupBox;
     List: TCheckListBox;
-    bSAll: TTntButton;
-    bSNone: TTntButton;
-    bRem: TTntButton;
-    bOk: TTntButton;
-    bCan: TTntButton;
+    bSAll: TSpTBXButton;
+    bSNone: TSpTBXButton;
+    bRem: TSpTBXButton;
+    bOk: TSpTBXButton;
+    bCan: TSpTBXButton;
     DKLanguageController1: TDKLanguageController;
     procedure FormShow(Sender: TObject);
     procedure bSAllClick(Sender: TObject);

@@ -10,17 +10,17 @@ uses
 
 type
   TfmShell = class(TTntForm)
-    GroupBoxEx: TTntGroupBox;
-    cbShell: TTntCheckBox;
-    bOk: TTntButton;
+    GroupBoxEx: TSpTBXGroupBox;
+    cbShell: TSpTBXCheckBox;
+    bOk: TSpTBXButton;
     DKLanguageController1: TDKLanguageController;
-    cbTxt: TTntCheckBox;
-    cbIni: TTntCheckBox;
-    ed: TTntComboBox;
+    cbTxt: TSpTBXCheckBox;
+    cbIni: TSpTBXCheckBox;
+    ed: TSpTBXComboBox;
     List: TCheckListBox;
-    TntLabel1: TTntLabel;
-    bUn: TTntButton;
-    cbProj: TTntCheckBox;
+    TntLabel1: TSpTBXLabel;
+    bUn: TSpTBXButton;
+    cbProj: TSpTBXCheckBox;
     procedure FormShow(Sender: TObject);
     procedure cbShellClick(Sender: TObject);
     procedure cbTxtClick(Sender: TObject);

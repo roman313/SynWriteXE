@@ -259,14 +259,14 @@ object fmInsTxt: TfmInsTxt
     ModalResult = 2
     TabOrder = 4
   end
-  object TntGroupBox3: TTntGroupBox
+  object TntGroupBox3: TSpTBXGroupBox
     Left = 8
     Top = 320
     Width = 401
     Height = 61
     Caption = 'Counter'
     TabOrder = 2
-    object labNoteNoSel: TTntLabel
+    object labNoteNoSel: TSpTBXLabel
       Left = 8
       Top = 16
       Width = 320
@@ -275,14 +275,14 @@ object fmInsTxt: TfmInsTxt
         'Note: insert operation will be performed specified number of tim' +
         'es.'
     end
-    object labNoteSel: TTntLabel
+    object labNoteSel: TSpTBXLabel
       Left = 8
       Top = 16
       Width = 205
       Height = 13
       Caption = 'Note: only selected lines will be processed.'
     end
-    object labCounter: TTntLabel
+    object labCounter: TSpTBXLabel
       Left = 8
       Top = 36
       Width = 79

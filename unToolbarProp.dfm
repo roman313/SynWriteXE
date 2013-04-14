@@ -73,7 +73,7 @@ object fmToolbarProp: TfmToolbarProp
       Height = 13
       Caption = 'Icon:'
     end
-    object ListBox1: TListBox
+    object ListBox1: TSpTBXListBox
       Left = 9
       Top = 32
       Width = 368

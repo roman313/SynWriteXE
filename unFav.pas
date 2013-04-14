@@ -9,13 +9,13 @@ uses
 
 type
   TfmFav = class(TTntForm)
-    btnOk: TTntButton;
-    btnCan: TTntButton;
-    cbPaths: TTntCheckBox;
-    List: TTntListBox;
-    btnUp: TTntButton;
-    btnDown: TTntButton;
-    btnDel: TTntButton;
+    btnOk: TSpTBXButton;
+    btnCan: TSpTBXButton;
+    cbPaths: TSpTBXCheckBox;
+    List: TSpTBXListBox;
+    btnUp: TSpTBXButton;
+    btnDown: TSpTBXButton;
+    btnDel: TSpTBXButton;
     DKLanguageController1: TDKLanguageController;
     procedure TntFormShow(Sender: TObject);
     procedure TntFormCreate(Sender: TObject);

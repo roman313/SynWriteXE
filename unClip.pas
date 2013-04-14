@@ -8,7 +8,7 @@ uses
 
 type 
   TfmClip = class(TForm)
-    ListClip: TTntListBox;
+    ListClip: TSpTBXListBox;
     procedure FormCreate(Sender : TObject);
     procedure FormDestroy(Sender : TObject);
     procedure FormShow(Sender: TObject);

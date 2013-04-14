@@ -9,17 +9,17 @@ uses
 
 type
   TfmProjAddDir = class(TTntForm)
-    btnOk: TTntButton;
-    btnCan: TTntButton;
-    GroupBox1: TTntGroupBox;
-    Label1: TTntLabel;
-    Label2: TTntLabel;
-    edInc: TTntEdit;
-    edExc: TTntEdit;
-    cbNoBin: TTntCheckBox;
-    Label3: TTntLabel;
-    edDir: TTntEdit;
-    cbSubdir: TTntCheckBox;
+    btnOk: TSpTBXButton;
+    btnCan: TSpTBXButton;
+    GroupBox1: TSpTBXGroupBox;
+    Label1: TSpTBXLabel;
+    Label2: TSpTBXLabel;
+    edInc: TSpTBXEdit;
+    edExc: TSpTBXEdit;
+    cbNoBin: TSpTBXCheckBox;
+    Label3: TSpTBXLabel;
+    edDir: TSpTBXEdit;
+    cbSubdir: TSpTBXCheckBox;
     DKLanguageController1: TDKLanguageController;
     procedure FormShow(Sender: TObject);
   private

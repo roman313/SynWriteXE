@@ -8,8 +8,8 @@ uses
 
 type
   TfmEnc = class(TTntForm)
-    Button1: TTntButton;
-    Button2: TTntButton;
+    Button1: TSpTBXButton;
+    Button2: TSpTBXButton;
     StaticText1: TTntStaticText;
     DKLanguageController1: TDKLanguageController;
   private

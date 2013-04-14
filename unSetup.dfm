@@ -2048,7 +2048,7 @@ object fmSetup: TfmSetup
       ImageIndex = -1
       TabVisible = False
       OnShow = tabACPShow
-      object gAcpAll: TTntGroupBox
+      object gAcpAll: TSpTBXGroupBox
         Left = 8
         Top = 148
         Width = 529

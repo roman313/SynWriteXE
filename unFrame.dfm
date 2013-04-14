@@ -21,7 +21,7 @@ object EditorFrame: TEditorFrame
     OnMouseMove = PanelMapMouseMove
     OnPaint = PanelMapPaint
   end
-  object Panel1: TPanel
+  object Panel1: TSpTBXPanel
     Left = 0
     Top = 0
     Width = 433

@@ -9,7 +9,7 @@ uses
 type
   TfmMap = class(TForm)
     edMap: TSyntaxMemo;
-    PopupMenu1: TPopupMenu;
+    PopupMenu1: TSpTBXPopupMenu;
     procedure FormCreate(Sender: TObject);
     procedure edMapMouseMove(Sender: TObject; Shift: TShiftState; X,
       Y: Integer);

@@ -15,7 +15,7 @@ object fmToolbarSize: TfmToolbarSize
   Position = poScreenCenter
   PixelsPerInch = 96
   TextHeight = 13
-  object GroupBoxIco: TGroupBox
+  object GroupBoxIco: TSpTBXGroupBox
     Left = 8
     Top = 4
     Width = 217
