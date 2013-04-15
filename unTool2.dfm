@@ -3,7 +3,7 @@ object fmToolOutput: TfmToolOutput
   Top = 322
   BorderStyle = bsDialog
   Caption = 'Output pattern'
-  ClientHeight = 251
+  ClientHeight = 272
   ClientWidth = 321
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -20,7 +20,7 @@ object fmToolOutput: TfmToolOutput
   TextHeight = 13
   object bOk: TButton
     Left = 128
-    Top = 222
+    Top = 242
     Width = 90
     Height = 23
     Caption = 'OK'
@@ -30,7 +30,7 @@ object fmToolOutput: TfmToolOutput
   end
   object bCancel: TButton
     Left = 224
-    Top = 222
+    Top = 242
     Width = 90
     Height = 23
     Cancel = True
@@ -42,11 +42,11 @@ object fmToolOutput: TfmToolOutput
     Left = 8
     Top = 0
     Width = 305
-    Height = 217
+    Height = 237
     TabOrder = 0
     object TntLabel1: TLabel
       Left = 8
-      Top = 44
+      Top = 64
       Width = 96
       Height = 13
       Caption = '&Regular expression:'
@@ -54,7 +54,7 @@ object fmToolOutput: TfmToolOutput
     end
     object TntLabel2: TLabel
       Left = 8
-      Top = 100
+      Top = 120
       Width = 46
       Height = 13
       Caption = '&Filename:'
@@ -62,14 +62,14 @@ object fmToolOutput: TfmToolOutput
     end
     object TntLabel3: TLabel
       Left = 8
-      Top = 84
+      Top = 104
       Width = 123
       Height = 13
       Caption = 'Subexpressions numbers:'
     end
     object TntLabel4: TLabel
       Left = 104
-      Top = 100
+      Top = 120
       Width = 23
       Height = 13
       Caption = '&Line:'
@@ -77,7 +77,7 @@ object fmToolOutput: TfmToolOutput
     end
     object TntLabel5: TLabel
       Left = 200
-      Top = 100
+      Top = 120
       Width = 39
       Height = 13
       Caption = '&Column:'
@@ -85,7 +85,7 @@ object fmToolOutput: TfmToolOutput
     end
     object TntLabel6: TLabel
       Left = 8
-      Top = 172
+      Top = 192
       Width = 79
       Height = 13
       Caption = '&Test output line:'
@@ -93,88 +93,94 @@ object fmToolOutput: TfmToolOutput
     end
     object Bevel1: TBevel
       Left = 8
-      Top = 160
+      Top = 180
       Width = 289
       Height = 9
       Shape = bsBottomLine
     end
     object Bevel2: TBevel
       Left = 8
-      Top = 32
+      Top = 52
       Width = 289
       Height = 9
       Shape = bsBottomLine
     end
     object edRE: TEdit
       Left = 8
-      Top = 60
+      Top = 80
       Width = 289
       Height = 21
-      TabOrder = 1
+      TabOrder = 2
     end
     object edFN: TComboBox
       Left = 8
-      Top = 116
+      Top = 136
       Width = 73
       Height = 21
       Style = csDropDownList
       DropDownCount = 10
-      ItemHeight = 13
-      TabOrder = 2
+      TabOrder = 3
     end
     object edLn: TComboBox
       Left = 104
-      Top = 116
+      Top = 136
       Width = 73
       Height = 21
       Style = csDropDownList
       DropDownCount = 10
-      ItemHeight = 13
-      TabOrder = 3
+      TabOrder = 4
     end
     object edCol: TComboBox
       Left = 200
-      Top = 116
+      Top = 136
       Width = 73
       Height = 21
       Style = csDropDownList
       DropDownCount = 10
-      ItemHeight = 13
-      TabOrder = 4
+      TabOrder = 5
     end
     object edTest: TEdit
       Left = 8
-      Top = 188
+      Top = 208
       Width = 193
       Height = 21
-      TabOrder = 6
+      TabOrder = 7
       OnChange = edTestChange
     end
     object bTest: TButton
       Left = 208
-      Top = 188
+      Top = 208
       Width = 89
       Height = 21
       Caption = 'T&est'
-      TabOrder = 7
+      TabOrder = 8
       OnClick = bTestClick
-    end
-    object bPre: TButton
-      Left = 8
-      Top = 12
-      Width = 97
-      Height = 21
-      Caption = '&Preset...'
-      TabOrder = 0
-      OnClick = bPreClick
     end
     object cbNoTag: TCheckBox
       Left = 8
-      Top = 144
+      Top = 164
       Width = 289
       Height = 17
       Caption = 'Strip HTML tags from output'
-      TabOrder = 5
+      TabOrder = 6
+    end
+    object bPreLoad: TButton
+      Left = 8
+      Top = 12
+      Width = 170
+      Height = 21
+      Caption = 'Load preset...'
+      TabOrder = 0
+      OnClick = bPreLoadClick
+    end
+    object bPreSave: TButton
+      Left = 8
+      Top = 32
+      Width = 170
+      Height = 21
+      Caption = 'Save preset...'
+      TabOrder = 1
+      OnClick = bPreSaveClick
     end
   end
   object DKLanguageController1: TDKLanguageController
@@ -182,7 +188,7 @@ object fmToolOutput: TfmToolOutput
     Top = 92
     LangData = {
       0C00666D546F6F6C4F7574707574010100000001000000070043617074696F6E
-      01140000000300624F6B010100000002000000070043617074696F6E00070062
+      01150000000300624F6B010100000002000000070043617074696F6E00070062
       43616E63656C010100000003000000070043617074696F6E000C00546E744772
       6F7570426F783100000900546E744C6162656C31010100000004000000070043
       617074696F6E000900546E744C6162656C320101000000050000000700436170
@@ -192,9 +198,10 @@ object fmToolOutput: TfmToolOutput
       0065645245000004006564464E0000040065644C6E000005006564436F6C0000
       0900546E744C6162656C36010100000009000000070043617074696F6E000600
       65645465737400000500625465737401010000000A000000070043617074696F
-      6E000600426576656C31000004006250726501010000000C0000000700436170
-      74696F6E000600426576656C32000009006D6E75507265736574000007006362
-      4E6F54616701010000000D000000070043617074696F6E00}
+      6E000600426576656C3100000600426576656C32000009006D6E755072657365
+      740000070063624E6F54616701010000000D000000070043617074696F6E0008
+      00625072655361766501010000000E000000070043617074696F6E0008006250
+      72654C6F616401010000000F000000070043617074696F6E00}
   end
   object mnuPreset: TPopupMenu
     OnPopup = mnuPresetPopup

@@ -39,7 +39,7 @@ uses
 
 procedure TfmRename.edNameChange(Sender: TObject);
 begin
-  btnOK.Enabled:= (edName.Text<>'') and (FEnablePrevValue or (GetFN<>FOldName));
+  btnOK.Enabled:= FEnablePrevValue or ((edName.Text<>'') and (GetFN<>FOldName));
 end;
 
 procedure TfmRename.FormShow(Sender: TObject);

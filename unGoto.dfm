@@ -64,6 +64,7 @@ object fmGoto: TfmGoto
     Top = 24
     Width = 105
     Height = 21
+    ItemHeight = 13
     TabOrder = 1
   end
   object ButtonOk: TButton
@@ -92,6 +93,7 @@ object fmGoto: TfmGoto
     Top = 48
     Width = 105
     Height = 21
+    ItemHeight = 13
     TabOrder = 2
   end
   object cbExtSel: TCheckBox
@@ -147,6 +149,7 @@ object fmGoto: TfmGoto
     Height = 21
     Style = csDropDownList
     DropDownCount = 20
+    ItemHeight = 13
     TabOrder = 6
     OnChange = edNumChange
   end

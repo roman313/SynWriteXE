@@ -7,6 +7,9 @@ uses
   Dialogs, StdCtrls, DKLang, ExtCtrls, Menus;
 
 type
+  WideString = String;
+
+type
   TfmToolOutput = class(TForm)
     bOk: TButton;
     bCancel: TButton;
@@ -25,19 +28,22 @@ type
     edTest: TEdit;
     bTest: TButton;
     Bevel1: TBevel;
-    bPre: TButton;
     Bevel2: TBevel;
     mnuPreset: TPopupMenu;
     cbNoTag: TCheckBox;
+    bPreSave: TButton;
+    bPreLoad: TButton;
     procedure TntFormCreate(Sender: TObject);
     procedure bTestClick(Sender: TObject);
-    procedure bPreClick(Sender: TObject);
+    procedure bPreLoadClick(Sender: TObject);
     procedure mnuPresetPopup(Sender: TObject);
     procedure TntFormDestroy(Sender: TObject);
     procedure edTestChange(Sender: TObject);
     procedure TntFormShow(Sender: TObject);
+    procedure bPreSaveClick(Sender: TObject);
   private
     { Private declarations }
+    FDir: Widestring;
     FList: TStringList;
     procedure MnuClick(Sender: TObject);
   public
@@ -53,18 +59,19 @@ uses unProc, ATxFProc, inifiles;
 
 {$R *.dfm}
 
+const
+  cExt = 'synw-outpreset';
+
 procedure TfmToolOutput.TntFormCreate(Sender: TObject);
-var i:Integer;
-  sd:Widestring;
+var
+  i: Integer;
 begin
   with edFN.Items do begin Add('--'); for i:= 1 to 8 do Add(Inttostr(i)); end;
   with edLn.Items do begin Add('--'); for i:= 1 to 8 do Add(Inttostr(i)); end;
   with edCol.Items do begin Add('--'); for i:= 1 to 8 do Add(Inttostr(i)); end;
 
-  FList:= TStringList.Create;
-  sd:= ExtractFileDir(GetModuleName(HInstance))+'\Template\tools';
-  FFindToList(FList, sd, '*.tool', false, false, false, false);
-  FList.Sort;
+  FList:= TStringlist.Create;
+  FDir:= ExtractFileDir(GetModuleName(HInstance))+'\Template\tools';
 end;
 
 procedure TfmToolOutput.bTestClick(Sender: TObject);
@@ -82,11 +89,15 @@ begin
   MsgInfo(WideFormat(DKLangConstW('O_ok'), [fn, n_line, n_col]));
 end;
 
-procedure TfmToolOutput.bPreClick(Sender: TObject);
-var p:TPoint;
+procedure TfmToolOutput.bPreLoadClick(Sender: TObject);
+var
+  p: TPoint;
 begin
-  p:= Point(0, bPre.Height);
-  p:= bPre.ClientToScreen(p);
+  FFindToList(FList, FDir, '*.'+cExt, false, false, false, false);
+  FList.Sort;
+
+  p:= Point(0, bPreLoad.Height);
+  p:= bPreLoad.ClientToScreen(p);
   MnuPreset.Popup(p.x, p.y);
 end;
 
@@ -147,6 +158,33 @@ end;
 procedure TfmToolOutput.TntFormShow(Sender: TObject);
 begin
   edTestChange(Self);
+end;
+
+procedure TfmToolOutput.bPreSaveClick(Sender: TObject);
+var
+  fn: string;
+  cap, exe: Widestring;
+begin
+  if not DoInputString('zMPresetName', cap) then Exit;
+  if not DoInputString('zMPresetExe', exe) then Exit;
+  if cap='' then Exit;
+  if exe='' then Exit;
+  fn:= FDir+'\'+cap+'.'+cExt;
+
+  with TIniFile.Create(fn) do
+  try
+    WriteString('Tool', 'name', cap);
+    WriteString('Tool', 'exe', exe);
+    WriteString('Regex', 's', edRE.Text);
+    WriteInteger('Regex', 'fn', edFN.ItemIndex);
+    WriteInteger('Regex', 'line', edLn.ItemIndex);
+    WriteInteger('Regex', 'col', edCol.ItemIndex);
+  finally
+    Free
+  end;
+
+  if FileExists(fn) then
+    Application.MessageBox(PChar('File saved:'#13+fn), 'SynWrite', mb_iconinformation);
 end;
 
 end.

@@ -48,11 +48,19 @@ const
   opMruForPlugin = false;
   cTabColors = 10; //count of misc tab colors
   cFixedLeftTabs = 3; //fixed tabs on left panel
-
+  
 type
   WideString = String;
 
 type
+  TSynSortCmd = (
+    scmdSortAsc,
+    scmdSortDesc,
+    scmdSortDialog,
+    scmdDedupAll,
+    scmdDedupAdjacent
+    );
+
   TSynCopyNameCmd = (
     scmdCopyFileName,
     scmdCopyFullName,
@@ -116,7 +124,7 @@ type
   end;
 
   TFileSort = (sortNone, sortDate, sortDateDesc);
-  TSelState = (selNone, selSmall, selStream, selColumn);
+  TSelState = (selNone, selSmall, selStream, selColumn, selCarets);
   TGotoTree = (tgoNext, tgoPrev, tgoParent, tgoNextBro, tgoPrevBro);
   TGotoMode = (goLine, goPrevBk, goNextBk, goNumBk);
   TOutTab = (tbOut, tbFind, tbVal, tbPluginsLog);
@@ -146,7 +154,7 @@ type
     PropsManager: TPropsManager;
     ecSyntPrinter: TecSyntPrinter;
     PopupEditor: TTBXPopupMenu;
-    ImgListGutter: TImageList;
+    ImgListGutter: TTBImageList;
     TBXItemCtxCopy: TTBXItem;
     TBXSubmenuItemToolOpen: TTBXSubmenuItem;
     MRUtbx: TTBXMRUListItem;
@@ -704,8 +712,8 @@ type
     TBXItemValClr: TTBXItem;
     ecToggleFocusValidate: TAction;
     ecRemoveDups: TAction;
-    TBXItemERemoveDups: TTBXItem;
-    TBXItemTbRemoveDups: TTBXItem;
+    TBXItemEDedupAdjacent: TTBXItem;
+    TBXItemTbDedupAdjacent: TTBXItem;
     TBXSeparatorItem58: TTBXSeparatorItem;
     TBXItemWin9: TTBXItem;
     TBXItemWin8: TTBXItem;
@@ -995,7 +1003,6 @@ type
     TBXItemRunEncodeHtml: TTBXItem;
     ecEncodeHtmlChars: TAction;
     ecSortDialog: TAction;
-    TBXSeparatorItem85: TTBXSeparatorItem;
     TBXItemESortDialog: TTBXItem;
     TBXSeparatorItem86: TTBXSeparatorItem;
     TBXItemTbSortDialog: TTBXItem;
@@ -1030,6 +1037,33 @@ type
     ecProjectList: TAction;
     TBXItemSGotoFile: TTBXItem;
     TBXSeparatorItem90: TTBXSeparatorItem;
+    TbxSubmenuCarets: TTBXSubmenuItem;
+    TBXItemCaretsRemove2: TTBXItem;
+    TBXItemCaretsRemove1: TTBXItem;
+    TBXSeparatorItem91: TTBXSeparatorItem;
+    TBXItemCaretsFromSelClear: TTBXItem;
+    TBXItemCaretsFromSelRight: TTBXItem;
+    TBXItemCaretsFromSelLeft: TTBXItem;
+    TBXSeparatorItem92: TTBXSeparatorItem;
+    TBXItemCaretsExtDownEnd: TTBXItem;
+    TBXItemCaretsExtUpEnd: TTBXItem;
+    TBXItemCaretsExtDownPage: TTBXItem;
+    TBXItemCaretsExtUpPage: TTBXItem;
+    TBXItemCaretsExtDownLine: TTBXItem;
+    TBXItemCaretsExtUpLine: TTBXItem;
+    TBXSeparatorItem93: TTBXSeparatorItem;
+    TBXItemCaretsFromMarksClear: TTBXItem;
+    TBXItemCaretsFromMarksRight: TTBXItem;
+    TBXItemCaretsFromMarksLeft: TTBXItem;
+    TBXItemEColumn: TTBXItem;
+    ecEditColumn: TAction;
+    ecDedupAll: TAction;
+    ecDedupAdjacent: TAction;
+    TBXSeparatorItem94: TTBXSeparatorItem;
+    TBXItemEDedupAll: TTBXItem;
+    TBXSeparatorItem85: TTBXSeparatorItem;
+    TBXItemTbDedupAll: TTBXItem;
+    TBXSeparatorItem95: TTBXSeparatorItem;
     procedure fOpenExecute(Sender: TObject);
     procedure ecTitleCaseExecute(Sender: TObject);
     procedure TabClick(Sender: TObject);
@@ -1649,6 +1683,44 @@ type
     procedure ecCommandsListExecute(Sender: TObject);
     procedure ecScrollToSelExecute(Sender: TObject);
     procedure ecProjectListExecute(Sender: TObject);
+    procedure TBXItemCaretsRemove1Click(Sender: TObject);
+    procedure TBXItemCaretsRemove2Click(Sender: TObject);
+    procedure TBXItemCaretsFromSelLeftClick(Sender: TObject);
+    procedure TBXItemCaretsFromSelRightClick(Sender: TObject);
+    procedure TBXItemCaretsFromSelClearClick(Sender: TObject);
+    procedure TBXItemCaretsExtUpLineClick(Sender: TObject);
+    procedure TBXItemCaretsExtDownLineClick(Sender: TObject);
+    procedure TBXItemCaretsExtUpPageClick(Sender: TObject);
+    procedure TBXItemCaretsExtDownPageClick(Sender: TObject);
+    procedure TBXItemCaretsExtUpEndClick(Sender: TObject);
+    procedure TBXItemCaretsExtDownEndClick(Sender: TObject);
+    procedure TBXItemCaretsFromMarksLeftClick(Sender: TObject);
+    procedure TBXItemCaretsFromMarksRightClick(Sender: TObject);
+    procedure TBXItemCaretsFromMarksClearClick(Sender: TObject);
+    procedure TBXItemEColumnClick(Sender: TObject);
+    procedure ecEditColumnExecute(Sender: TObject);
+    procedure ecDedupAllExecute(Sender: TObject);
+    procedure ecDedupAdjacentExecute(Sender: TObject);
+    procedure TBXItemEDedupAllClick(Sender: TObject);
+    procedure TBXItemEDedupAdjacentClick(Sender: TObject);
+    procedure TBXItemTbDedupAdjacentClick(Sender: TObject);
+    procedure TBXItemTbDedupAllClick(Sender: TObject);
+    procedure TBXItemESortDialogClick(Sender: TObject);
+    procedure TBXItemESortAscClick(Sender: TObject);
+    procedure TBXItemESortDescClick(Sender: TObject);
+    procedure TBXItemTbSortDialogClick(Sender: TObject);
+    procedure TBXItemTbSortAscClick(Sender: TObject);
+    procedure TBXItemTbSortDescClick(Sender: TObject);
+    procedure TBXItemCCUpperClick(Sender: TObject);
+    procedure TBXItemCCLowerClick(Sender: TObject);
+    procedure TBXItemCCTitleClick(Sender: TObject);
+    procedure TBXItemCCSentClick(Sender: TObject);
+    procedure TBXItemCCInvClick(Sender: TObject);
+    procedure TBXItemECaseUpperClick(Sender: TObject);
+    procedure TBXItemECaseLowerClick(Sender: TObject);
+    procedure TBXItemECaseTitleClick(Sender: TObject);
+    procedure TBXItemECaseSentClick(Sender: TObject);
+    procedure TBXItemECaseInvertClick(Sender: TObject);
 
   private
     cStatLine,
@@ -2166,11 +2238,11 @@ type
     procedure SetCP(Frame: TEditorFrame; enc: Integer);
     procedure ChangeEncoding(Frame: TEditorFrame; ATag: Integer;
       ACanReload: boolean = true);
-    function IsUrlAtPos(Frame: TEditorFrame; APos: Integer): boolean;
     procedure DoCheckAutoShowACP(Ed: TSyntaxMemo);
-    procedure DoSortLines(AAscend: boolean; AShowDlg: boolean = false);
+    procedure DoSortLines(Cmd: TSynSortCmd);
     procedure DoToggleLineComment(Alt: boolean);
     procedure DoCopyFilenameToClipboard(F: TEditorFrame; Cmd: TSynCopyNameCmd);
+    function IsCommandAllowedInMacro(Cmd: Integer): boolean;
     //end of private
 
   protected
@@ -2187,6 +2259,9 @@ type
     hLister: HWND;
 
     //opt
+    opCaretsEnabled: boolean;
+    opCaretsIndicator: integer;
+    opCaretsGutterBand: integer;
     opSingleClickURL: boolean;
     opSortMode: TSynSortMode;
     opCopyLineIfNoSel: boolean;
@@ -2199,6 +2274,7 @@ type
     opUnicodeNeeded: integer;
     opTabColors: array[0..Pred(cTabColors)] of integer;
     opStripBkmk: boolean;
+    opColorCaretsGutter: integer;
     opColorMapMarks: integer;
     opColorBkmk: integer;
     opShowWrapMark: boolean;
@@ -2362,6 +2438,7 @@ type
     property FullScr: boolean read FFullScr write SetFS;
     property OnTop: boolean read FOnTop write SetOnTop;
 
+    procedure ApplyCarets;
     procedure ApplyUrlClick;
     procedure ApplyShowRecentColors;
     procedure ApplySpell;
@@ -2470,7 +2547,7 @@ var
   _SynActionProc: TSynAction = nil;
 
 const
-  cSynVer = '5.1.050';
+  cSynVer = '5.2.150';
 
 implementation
 
@@ -3133,6 +3210,10 @@ begin
   //Result.HyperlinkHighlighter.SingleClick:= opSingleClickURL;
   Result.ShowMap:= opMicroMap;
   Result.MapColor:= opColorMap;
+  Result.CaretsEnabled:= opCaretsEnabled;
+  Result.CaretsGutterBand:= opCaretsGutterBand;
+  Result.CaretsGutterColor:= opColorCaretsGutter;
+  Result.CaretsIndicator:= opCaretsIndicator;
 
   PropsManager.Add(Result.EditorMaster);
   PropsManager.Add(Result.EditorSlave);
@@ -3553,6 +3634,8 @@ begin
   ecSortDialog.Enabled:= (ed.Lines.Count>0) and not ro;
   ecSortAscending.Enabled:= ecSortDialog.Enabled;
   ecSortDescending.Enabled:= ecSortDialog.Enabled;
+  ecDedupAll.Enabled:= ecSortDialog.Enabled;
+  ecDedupAdjacent.Enabled:= ecSortDialog.Enabled;
 
   ecSpellLive.Checked:= frame.SpellLive;
   ecSyncV.Enabled:= PageControl2.Visible;
@@ -3573,11 +3656,7 @@ begin
   ecBkPaste.Enabled:= bk and not ro;
   TBXItemBkGoto.Enabled:= bk;
 
-  {
-  //flicker!!
-  plTreeVisibleChanged(Self);
-  plOutVisibleChanged(Self);
-  }
+  TbxSubmenuCase.Enabled:= sel and not ro;
 
   with ed do
   begin
@@ -3758,6 +3837,7 @@ begin
     opStatusText[selSmall]:= ReadString('View', 'StatusSmallSel', '{LineNum} : {ColNum} ({SelLines}x{SelCols}/{TotalLines})');
     opStatusText[selStream]:= ReadString('View', 'StatusStreamSel', '{LineNum} : {ColNum} ({SelLines}/{TotalLines})');
     opStatusText[selColumn]:= ReadString('View', 'StatusColumnSel', '{LineNum} : {ColNum} ({SelLines}x{SelCols}/{TotalLines})');
+    opStatusText[selCarets]:= ReadString('View', 'StatusCarets', '#={Carets} ({TotalLines})');
     with SB2.Panels[cc0] do
     begin
       Size:= ReadInteger('View', 'StatusWidth', Size);
@@ -3870,6 +3950,14 @@ begin
     opColorOutRedSelText:= ReadInteger('Setup', 'OutCRedSelT', clYellow);
     opColorOutHi:= ReadInteger('Setup', 'OutCHi', clSkyBlue);
 
+    //Integer holds 3 options: enabled (1 bit), indicator (2 bits), gutter column (2 bits)
+    i:= ReadInteger('Setup', 'CaretsOpt', 1{Enabled} + 2 shl 1{Indicator=2});
+    opCaretsEnabled:= (i and 1)<>0;
+    opCaretsIndicator:= (i shr 1) and 3;
+    opCaretsGutterBand:= (i shr 3) and 3;
+    ApplyCarets;
+
+    opColorCaretsGutter:= ReadInteger('View', 'CaretsGut', clLtGray);
     opColorMapMarks:= ReadInteger('View', 'MapMkC', clGreen);
     opColorBkmk:= ReadInteger('View', 'BkC', RGB(200, 240, 200));
     // #WARNING PROP NOT EXISTS
@@ -4313,6 +4401,9 @@ begin
     WriteInteger('Setup', 'SortM', Ord(opSortMode));
     WriteBool('Setup', 'UrlClick', opSingleClickURL);
 
+    WriteInteger('Setup', 'CaretsOpt',
+      Ord(opCaretsEnabled) + (opCaretsIndicator shl 1) + (opCaretsGutterBand shl 3));
+
     WriteInteger('Tree', 'Click', Ord(Tree.ClickAction));
     WriteInteger('Tree', 'Color', Tree.Color);
     WriteString('Tree', 'FontName', Tree.Font.Name);
@@ -4356,6 +4447,7 @@ begin
     WriteBool('View', 'TabMul', PageControl1.MultiLine);
     WriteBool('View', 'TabDown', PageControl1.TabPosition=tpBottom);
 
+    WriteInteger('View', 'CaretsGut', opColorCaretsGutter);
     WriteInteger('View', 'MapMkC', opColorMapMarks);
     WriteInteger('View', 'BkC', opColorBkmk);
     // #WARNING PROP NOT EXISTS
@@ -5199,6 +5291,11 @@ begin
     smFindAll:
     begin
       FindInit(true{KeepFlags});
+      if opSrSuggestSel and (Ed.SelLength>0) then
+        Finder.FindText:= Ed.SelText
+      else
+      if opSrSuggestWord then
+        Finder.FindText:= Ed.WordAtPos(Ed.CaretPos);
       if Finder.FindText='' then
         ecFind.Execute
       else
@@ -5352,7 +5449,8 @@ begin
     end;
 
     //blank operations
-    sm_RemoveDups: ecRemoveDups.Execute;
+    sm_RemoveDupsAll: ecDedupAll.Execute;
+    sm_RemoveDupsAdjacent: ecDedupAdjacent.Execute;
     sm_RemoveBlanks: ecRemoveBlanks.Execute;
     sm_ReduceBlanks: ecReduceBlanks.Execute;
     sm_TrimLead: ecTrimLead.Execute;
@@ -5672,9 +5770,20 @@ begin
 
   //Workaround for non-recorded commands
   //(EC issue)
-  if Handled or
-    (Command=TemplatePopup.CommandID) then
+  if Handled or IsCommandAllowedInMacro(Command) then
     DoRecordToMacro(Command, nil);
+end;
+
+function TfmMain.IsCommandAllowedInMacro(Cmd: Integer): boolean;
+begin
+  if Cmd=TemplatePopup.CommandID then
+    Result:= true
+  else
+  if (Cmd>=sm_CaretsRemoveLeaveFirst) and
+     (Cmd<=sm_CaretsRemoveLeaveFirst+50) then
+    Result:= true
+  else
+    Result:= false;
 end;
 
 procedure TfmMain.UpdateLexList;
@@ -6391,6 +6500,7 @@ begin
     Visible:= not Visible;
   if not plTree.Visible then
     FocusEditor;
+  tbMenu.Invalidate;
   tbFile.Invalidate;
   tbEdit.Invalidate;
   tbView.Invalidate;
@@ -7128,7 +7238,6 @@ const
   cMaxNameLen = 20; //max len of filename in popup menu
 var
   Ed: TSyntaxMemo;
-  p: TPoint;
   s: Widestring;
   nStart, nEnd, nColor: integer;
 begin
@@ -7161,12 +7270,8 @@ begin
   p:= Ed.MouseToCaret(p.x, p.y);
   p:= CurrentFrame.HyperlinkHighlighter.HltRangeBndAt(Ed.CaretPosToStrPos(p));
   }
-  p:= CurrentFrame.HyperlinkHighlighter.HltRangeBndAt(Ed.CaretStrPos);
-  TBXItemCtxCopyUrl.Enabled:= p.y > p.x;
-  if TBXItemCtxCopyUrl.Enabled then
-    FPopupUrl:= Copy(Ed.Lines.FText, p.x + 1, p.y - p.x)
-  else
-    FPopupUrl:= '';
+  FPopupUrl:= CurrentFrame.SUrlAt(Ed.CaretPos);
+  TBXItemCtxCopyUrl.Enabled:= FPopupUrl<>'';
 
   //update "Add to recent colors"
   s:= Ed.SelText;
@@ -7376,6 +7481,7 @@ end;
 
 procedure TfmMain.DoRepaintTBs;
 begin
+  tbMenu.Invalidate;
   tbFile.Invalidate;
   tbEdit.Invalidate;
   tbView.Invalidate;
@@ -7385,10 +7491,11 @@ begin
   plOut.Invalidate;
   plClip.Invalidate;
   Tree.Invalidate;
-  ListOut.Invalidate;
   TreeFind.Invalidate;
+  ListOut.Invalidate;
   ListVal.Invalidate;
   ListPLog.Invalidate;
+  ListTabs.Invalidate;
 
   if Assigned(fmProj) then
     fmProj.TreeProj.Invalidate;
@@ -8090,6 +8197,12 @@ begin
           else FocusEditor;
         end
       else
+      {
+      //Esc in File/Replace
+      if Assigned(fmSR) and fmSR.Focused then
+        fmSR.Close
+      else
+      }
       //Esc in panels
       if (CurrentEditor<>nil) and (not CurrentEditor.Focused) then
         FocusEditor
@@ -8944,6 +9057,22 @@ procedure TfmMain.UpdateShortcuts;
     K2str(item, ShortcutToText(ShFor(id)));
   end;
 begin
+  //multi-carets
+  K(TbxItemCaretsRemove1, sm_CaretsRemoveLeaveFirst);
+  K(TbxItemCaretsRemove2, sm_CaretsRemoveLeaveLast);
+  K(TbxItemCaretsFromSelLeft, sm_CaretsFromSelLeft);
+  K(TbxItemCaretsFromSelRight, sm_CaretsFromSelRight);
+  K(TbxItemCaretsFromSelClear, sm_CaretsFromSelClear);
+  K(TbxItemCaretsFromMarksLeft, sm_CaretsFromMarksLeft);
+  K(TbxItemCaretsFromMarksRight, sm_CaretsFromMarksRight);
+  K(TbxItemCaretsFromMarksClear, sm_CaretsFromMarksClear);
+  K(TbxItemCaretsExtUpLine, sm_CaretsExtendUpLine);
+  K(TbxItemCaretsExtDownLine, sm_CaretsExtendDownLine);
+  K(TbxItemCaretsExtUpPage, sm_CaretsExtendUpPage);
+  K(TbxItemCaretsExtDownPage, sm_CaretsExtendDownPage);
+  K(TbxItemCaretsExtUpEnd, sm_CaretsExtendUpEnd);
+  K(TbxItemCaretsExtDownEnd, sm_CaretsExtendDownEnd);
+
   //folding
   K(TbxItemFoldAll, smFullCollapse);
   K(TbxItemUnFoldAll, smFullExpand);
@@ -8964,8 +9093,14 @@ begin
   K(TbxItemWinProj, sm_ToggleFocusProj);
   K(TbxItemWinTabs, sm_ToggleFocusTabs);
 
-  //blank ops
+  //sort
+  K(TBXItemEDedupAll, sm_RemoveDupsAll);
+  K(TBXItemEDedupAdjacent, sm_RemoveDupsAdjacent);
   K(TbxItemESortDialog, sm_SortDialog);
+  K(tbxItemESortAsc, smSortAscending);
+  K(tbxItemESortDesc, smSortDescending);
+
+  //blank ops
   K(TbxItemECenterLines, sm_CenterLines);
   K(TbxItemETabToSp, sm_TabToSp);
   K(TbxItemESpToTab, sm_SpToTab);
@@ -9161,8 +9296,6 @@ begin
   K(tbxItemEUncomm, smUncommentLines);
   K(tbxItemEInd, smBlockIndent);
   K(tbxItemEUnind, smBlockUnindent);
-  K(tbxItemESortAsc, smSortAscending);
-  K(tbxItemESortDesc, smSortDescending);
   K(tbxItemECaseUpper, smUpperCaseBlock);
   K(tbxItemECaseLower, smLowerCaseBlock);
   K(tbxItemECaseTitle, smTitleCaseBlock);
@@ -9775,6 +9908,9 @@ procedure TfmMain.RunTool(NTool: Integer);
       SReplaceW(Result, '{FileDir2}', ExtractFileDir(OppositeFileName));
     if Pos('{FileExt2}', Result)>0 then
       SReplaceW(Result, '{FileExt2}', ExtractFileExt(OppositeFileName));
+    //
+    SReplaceW(Result, '{SynDir}', ExtractFileDir(SynDir));
+    SReplaceW(Result, '{SynIniDir}', ExtractFileDir(SynIni));
     //
 	  while Pos('{Interactive}', Result)>0 do
     begin
@@ -13208,6 +13344,7 @@ begin
     begin Width:= Width+2; Width:= Width-2; end;
   if not plClip.Visible then
     FocusEditor;
+  tbMenu.Invalidate;
   tbFile.Invalidate;
   tbEdit.Invalidate;
   tbView.Invalidate;
@@ -19522,12 +19659,19 @@ var
   p1, p2: TPoint;
   NLine, NCol,
   NSelLines, NSelCols, NSelChars: integer;
+  NCarets, NTopLine, NBottomLine: integer;
   NTime: TFileTime;
   NSize: Int64;
   SH: Widestring;
 begin
   Result:= '';
   if CurrentEditor=nil then Exit;
+
+  with CurrentFrame do
+  begin
+    NCarets:= CaretsCount;
+    CaretsProps(NTopLine, NBottomLine);
+  end;
 
   with CurrentEditor do
   begin
@@ -19538,6 +19682,9 @@ begin
     NSelCols:= 0;
     NSelChars:= 0;
 
+    if NCarets>1 then
+      state:= selCarets
+    else
     if HaveSelection then
     begin
       if SelectMode<>msColumn then
@@ -19579,6 +19726,10 @@ begin
   SReplaceAllW(Result, '{TotalLines}', IntToStr(CurrentEditor.Lines.Count));
   if Pos('{TotalChars}', Result)>0 then
     SReplaceAllW(Result, '{TotalChars}', IntToStr(CurrentEditor.Lines.TextLength));
+
+  SReplaceAllW(Result, '{Carets}', IntToStr(NCarets));
+  SReplaceAllW(Result, '{CaretsTopLine}', IntToStr(NTopLine+1));
+  SReplaceAllW(Result, '{CaretsBottomLine}', IntToStr(NBottomLine+1));
 
   if CurrentFrame.FileName<>'' then
   begin
@@ -23185,10 +23336,10 @@ end;
 
 procedure TfmMain.ecSortDialogExecute(Sender: TObject);
 begin
-  DoSortLines(true{AAscend}, true{AShowDlg});
+  DoSortLines(scmdSortDialog);
 end;
 
-procedure TfmMain.DoSortLines(AAscend: boolean; AShowDlg: boolean = false);
+procedure TfmMain.DoSortLines(Cmd: TSynSortCmd);
 var
   Ed: TSyntaxMemo;
   Ln1, Ln2: Integer;
@@ -23196,6 +23347,7 @@ var
   Col1, Col2: Integer;
   L: TStringList;
   S: Widestring;
+  b: boolean;
 begin
   Ed:= CurrentEditor;
   if not Ed.HaveSelection then
@@ -23223,8 +23375,21 @@ begin
   try
     for i:= Ln1 to Ln2 do
       L.Add(Ed.Lines[i]);
-    if not DoSortStringList(L, opSortMode, AAscend, AShowDlg, Col1, Col2) then
-      Exit;
+
+    case Cmd of
+      scmdSortAsc,
+      scmdSortDesc:
+        b:= DoSortStringList(L, opSortMode, Cmd=scmdSortAsc, false{AShowDlg}, Col1, Col2);
+      scmdSortDialog:
+        b:= DoSortStringList(L, opSortMode, true, true{AShowDlg}, Col1, Col2);
+      scmdDedupAll:
+        b:= DoDedupStringList(L, dedupAll);
+      scmdDedupAdjacent:
+        b:= DoDedupStringList(L, dedupAdjacent);
+      else
+        b:= false;
+    end;
+    if not b then Exit;
 
     S:= L.Text;
     FixLineEnds(S, Ed.Lines.TextFormat);
@@ -23560,16 +23725,17 @@ begin
   end;
 end;
 
-function TfmMain.IsUrlAtPos(Frame: TEditorFrame; APos: Integer): boolean;
-var
-  p: TPoint;
-begin
-  p:= Frame.HyperlinkHighlighter.HltRangeBndAt(APos);
-  Result:= p.y > p.x;
-end;
-
 procedure TfmMain.SynSpellCheckerCheckWord(Sender: TObject;
   const AWord: WideString; APos: Integer; var Valid: Boolean);
+  //
+  function IsUrlAt(F: TEditorFrame; APos: Integer): boolean;
+  var
+    P: TPoint;
+  begin
+    p:= F.HyperlinkHighlighter.HltRangeBndAt(APos);
+    Result:= p.y > p.x;
+  end;
+  //
 var
   F: TEditorFrame;
   Ed: TSyntaxMemo;
@@ -23832,12 +23998,12 @@ end;
 
 procedure TfmMain.ecSortAscendingExecute(Sender: TObject);
 begin
-  DoSortLines(true);
+  DoSortLines(scmdSortAsc);
 end;
 
 procedure TfmMain.ecSortDescendingExecute(Sender: TObject);
 begin
-  DoSortLines(false);
+  DoSortLines(scmdSortDesc);
 end;
 
 procedure TfmMain.ecSpToTabLeadingExecute(Sender: TObject);
@@ -24030,6 +24196,215 @@ begin
   for i:= 0 to FrameAllCount-1 do
     FramesAll[i].HyperlinkHighlighter.SingleClick:= opSingleClickURL;
   *)
+end;
+
+procedure TfmMain.ApplyCarets;
+var i: Integer;
+begin
+  for i:= 0 to FrameAllCount-1 do
+    with FramesAll[i] do
+    begin
+      CaretsEnabled:= opCaretsEnabled;
+      CaretsGutterBand:= opCaretsGutterBand;
+      CaretsGutterColor:= opColorCaretsGutter;
+      CaretsIndicator:= opCaretsIndicator;
+    end;
+end;
+
+procedure TfmMain.TBXItemCaretsRemove1Click(Sender: TObject);
+begin
+  CurrentEditor.ExecCommand(sm_CaretsRemoveLeaveFirst);
+end;
+
+procedure TfmMain.TBXItemCaretsRemove2Click(Sender: TObject);
+begin
+  CurrentEditor.ExecCommand(sm_CaretsRemoveLeaveLast);
+end;
+
+procedure TfmMain.TBXItemCaretsFromSelLeftClick(Sender: TObject);
+begin
+  CurrentEditor.ExecCommand(sm_CaretsFromSelLeft);
+end;
+
+procedure TfmMain.TBXItemCaretsFromSelRightClick(Sender: TObject);
+begin
+  CurrentEditor.ExecCommand(sm_CaretsFromSelRight);
+end;
+
+procedure TfmMain.TBXItemCaretsFromSelClearClick(Sender: TObject);
+begin
+  CurrentEditor.ExecCommand(sm_CaretsFromSelClear);
+end;
+
+procedure TfmMain.TBXItemCaretsExtUpLineClick(Sender: TObject);
+begin
+  CurrentEditor.ExecCommand(sm_CaretsExtendUpLine);
+end;
+
+procedure TfmMain.TBXItemCaretsExtDownLineClick(Sender: TObject);
+begin
+  CurrentEditor.ExecCommand(sm_CaretsExtendDownLine);
+end;
+
+procedure TfmMain.TBXItemCaretsExtUpPageClick(Sender: TObject);
+begin
+  CurrentEditor.ExecCommand(sm_CaretsExtendUpPage);
+end;
+
+procedure TfmMain.TBXItemCaretsExtDownPageClick(Sender: TObject);
+begin
+  CurrentEditor.ExecCommand(sm_CaretsExtendDownPage);
+end;
+
+procedure TfmMain.TBXItemCaretsExtUpEndClick(Sender: TObject);
+begin
+  CurrentEditor.ExecCommand(sm_CaretsExtendUpEnd);
+end;
+
+procedure TfmMain.TBXItemCaretsExtDownEndClick(Sender: TObject);
+begin
+  CurrentEditor.ExecCommand(sm_CaretsExtendDownEnd);
+end;
+
+procedure TfmMain.TBXItemCaretsFromMarksLeftClick(Sender: TObject);
+begin
+  CurrentEditor.ExecCommand(sm_CaretsFromMarksLeft);
+end;
+
+procedure TfmMain.TBXItemCaretsFromMarksRightClick(Sender: TObject);
+begin
+  CurrentEditor.ExecCommand(sm_CaretsFromMarksRight);
+end;
+
+procedure TfmMain.TBXItemCaretsFromMarksClearClick(Sender: TObject);
+begin
+  CurrentEditor.ExecCommand(sm_CaretsFromMarksClear);
+end;
+
+procedure TfmMain.TBXItemEColumnClick(Sender: TObject);
+begin
+  ecEditColumn.Execute;
+end;
+
+procedure TfmMain.ecEditColumnExecute(Sender: TObject);
+begin
+  with CurrentEditor do
+    if HaveSelection and (SelectMode=msColumn) then
+      ExecCommand(sm_CaretsFromSelClear)
+    else
+      MsgBeep;
+end;
+
+procedure TfmMain.ecDedupAllExecute(Sender: TObject);
+begin
+  DoSortLines(scmdDedupAll);
+end;
+
+procedure TfmMain.ecDedupAdjacentExecute(Sender: TObject);
+begin
+  DoSortLines(scmdDedupAdjacent);
+end;
+
+procedure TfmMain.TBXItemEDedupAllClick(Sender: TObject);
+begin
+  CurrentEditor.ExecCommand(sm_RemoveDupsAll);
+end;
+
+procedure TfmMain.TBXItemEDedupAdjacentClick(Sender: TObject);
+begin
+  CurrentEditor.ExecCommand(sm_RemoveDupsAdjacent);
+end;
+
+procedure TfmMain.TBXItemTbDedupAdjacentClick(Sender: TObject);
+begin
+  CurrentEditor.ExecCommand(sm_RemoveDupsAdjacent);
+end;
+
+procedure TfmMain.TBXItemTbDedupAllClick(Sender: TObject);
+begin
+  CurrentEditor.ExecCommand(sm_RemoveDupsAll);
+end;
+
+procedure TfmMain.TBXItemESortDialogClick(Sender: TObject);
+begin
+  CurrentEditor.ExecCommand(sm_SortDialog);
+end;
+
+procedure TfmMain.TBXItemESortAscClick(Sender: TObject);
+begin
+  CurrentEditor.ExecCommand(smSortAscending);
+end;
+
+procedure TfmMain.TBXItemESortDescClick(Sender: TObject);
+begin
+  CurrentEditor.ExecCommand(smSortDescending);
+end;
+
+procedure TfmMain.TBXItemTbSortDialogClick(Sender: TObject);
+begin
+  CurrentEditor.ExecCommand(sm_SortDialog);
+end;
+
+procedure TfmMain.TBXItemTbSortAscClick(Sender: TObject);
+begin
+  CurrentEditor.ExecCommand(smSortAscending);
+end;
+
+procedure TfmMain.TBXItemTbSortDescClick(Sender: TObject);
+begin
+  CurrentEditor.ExecCommand(smSortDescending);
+end;
+
+procedure TfmMain.TBXItemCCUpperClick(Sender: TObject);
+begin
+  CurrentEditor.ExecCommand(smUpperCaseBlock);
+end;
+
+procedure TfmMain.TBXItemCCLowerClick(Sender: TObject);
+begin
+  CurrentEditor.ExecCommand(smLowerCaseBlock);
+end;
+
+procedure TfmMain.TBXItemCCTitleClick(Sender: TObject);
+begin
+  CurrentEditor.ExecCommand(smTitleCaseBlock);
+end;
+
+procedure TfmMain.TBXItemCCSentClick(Sender: TObject);
+begin
+  // #WARNING NOT EXISTS
+  //CurrentEditor.ExecCommand(smSentCaseBlock);
+end;
+
+procedure TfmMain.TBXItemCCInvClick(Sender: TObject);
+begin
+  CurrentEditor.ExecCommand(smToggleCaseBlock);
+end;
+
+procedure TfmMain.TBXItemECaseUpperClick(Sender: TObject);
+begin
+  CurrentEditor.ExecCommand(smUpperCaseBlock);
+end;
+
+procedure TfmMain.TBXItemECaseLowerClick(Sender: TObject);
+begin
+  CurrentEditor.ExecCommand(smLowerCaseBlock);
+end;
+
+procedure TfmMain.TBXItemECaseTitleClick(Sender: TObject);
+begin
+  CurrentEditor.ExecCommand(smTitleCaseBlock);
+end;
+
+procedure TfmMain.TBXItemECaseSentClick(Sender: TObject);
+begin
+  // #WARNING NOT EXISTS
+  //CurrentEditor.ExecCommand(smSentCaseBlock);
+end;
+
+procedure TfmMain.TBXItemECaseInvertClick(Sender: TObject);
+begin
+  CurrentEditor.ExecCommand(smToggleCaseBlock);
 end;
 
 end.

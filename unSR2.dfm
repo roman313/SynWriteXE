@@ -105,6 +105,7 @@ object fmSRFiles: TfmSRFiles
     Height = 21
     AutoComplete = False
     DropDownCount = 15
+    ItemHeight = 13
     TabOrder = 0
     OnChange = ed1Change
     OnKeyDown = ed1KeyDown
@@ -116,6 +117,7 @@ object fmSRFiles: TfmSRFiles
     Height = 21
     AutoComplete = False
     DropDownCount = 15
+    ItemHeight = 13
     TabOrder = 1
     OnKeyDown = ed2KeyDown
   end
@@ -219,6 +221,7 @@ object fmSRFiles: TfmSRFiles
     Height = 21
     AutoComplete = False
     DropDownCount = 15
+    ItemHeight = 13
     TabOrder = 5
     OnChange = edDirChange
     OnKeyDown = edDirKeyDown
@@ -255,6 +258,7 @@ object fmSRFiles: TfmSRFiles
     Height = 21
     AutoComplete = False
     DropDownCount = 15
+    ItemHeight = 13
     TabOrder = 2
     OnChange = edFileChange
     OnKeyDown = edFileKeyDown
@@ -332,6 +336,7 @@ object fmSRFiles: TfmSRFiles
       Height = 21
       Style = csDropDownList
       DropDownCount = 15
+      ItemHeight = 13
       TabOrder = 4
       OnChange = edDirChange
     end

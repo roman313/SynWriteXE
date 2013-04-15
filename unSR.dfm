@@ -236,6 +236,7 @@ object fmSR: TfmSR
     Height = 21
     AutoComplete = False
     DropDownCount = 15
+    ItemHeight = 13
     TabOrder = 0
     OnChange = ed1Change
     OnKeyDown = ed1KeyDown
@@ -248,6 +249,7 @@ object fmSR: TfmSR
     Height = 21
     AutoComplete = False
     DropDownCount = 15
+    ItemHeight = 13
     TabOrder = 1
     OnKeyDown = ed2KeyDown
   end
@@ -373,6 +375,7 @@ object fmSR: TfmSR
       Width = 153
       Height = 21
       Style = csDropDownList
+      ItemHeight = 13
       TabOrder = 4
       Items.Strings = (
         'Entire text'

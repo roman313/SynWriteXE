@@ -73,6 +73,9 @@ type
     pFileName2: TMenuItem;
     pFileDir2: TMenuItem;
     pFileExt2: TMenuItem;
+    N6: TMenuItem;
+    pSynDir: TMenuItem;
+    pSynIniDir: TMenuItem;
     procedure bBrClick(Sender: TObject);
     procedure bBr2Click(Sender: TObject);
     procedure ListClick(Sender: TObject);
@@ -123,7 +126,7 @@ uses unTool2,
 {$R *.dfm}
 
 const
-  ccStr: array[0..20] of string = (
+  ccStr: array[0..22] of string = (
     '"{FileName}"',
     '"{FileDir}"',
     '"{FileNameOnly}"',
@@ -149,7 +152,10 @@ const
     //
     '"{Interactive}"',
     '"{InteractiveFile}"',
-    '"{InteractiveDir}"'
+    '"{InteractiveDir}"',
+    //
+    '"{SynDir}"',
+    '"{SynIniDir}"'
     );
 
 procedure TfmTools.bBrClick(Sender: TObject);
@@ -313,6 +319,7 @@ end;
 procedure TfmTools.p0Click(Sender: TObject);
 begin
   edPar.Text:= edPar.Text + ccStr[TMenuItem(Sender).Tag];
+  edPar.SelStart:= Length(edPar.Text);
   edParChange(Self);
 end;
 
@@ -357,6 +364,9 @@ begin
   s(pInter, 18);
   s(pInterFile, 19);
   s(pInterDir, 20);
+  //
+  s(pSynDir, 21);
+  s(pSynIniDir, 22);
 
   with TntOpenDialog1 do
     Filter:= WideFormat(

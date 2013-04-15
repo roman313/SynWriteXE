@@ -45,10 +45,6 @@ object fmProjProps: TfmProjProps
     TabOrder = 0
     object TntTabSheet1: TTabSheet
       Caption = 'General'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label4: TLabel
         Left = 8
         Top = 76
@@ -129,6 +125,7 @@ object fmProjProps: TfmProjProps
         Width = 129
         Height = 21
         Style = csDropDownList
+        ItemHeight = 13
         TabOrder = 0
         Items.Strings = (
           'ANSI (Windows)'
@@ -144,6 +141,7 @@ object fmProjProps: TfmProjProps
         Width = 129
         Height = 21
         Style = csDropDownList
+        ItemHeight = 13
         TabOrder = 1
         Items.Strings = (
           'Windows (CR LF)'
@@ -157,6 +155,7 @@ object fmProjProps: TfmProjProps
         Height = 21
         Style = csDropDownList
         DropDownCount = 24
+        ItemHeight = 13
         Sorted = True
         TabOrder = 2
       end
@@ -166,6 +165,7 @@ object fmProjProps: TfmProjProps
         Width = 169
         Height = 21
         Style = csDropDownList
+        ItemHeight = 13
         TabOrder = 6
         Items.Strings = (
           'Don'#39't sort'
@@ -179,10 +179,6 @@ object fmProjProps: TfmProjProps
     end
     object TntTabSheet2: TTabSheet
       Caption = 'Search folders'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object TntLabel2: TLabel
         Left = 8
         Top = 168

@@ -1,6 +1,7 @@
 object fmSynEx: TfmSynEx
   Left = 268
   Top = 114
+  AutoScroll = False
   ClientHeight = 342
   ClientWidth = 680
   Color = clBtnFace

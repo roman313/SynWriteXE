@@ -1,6 +1,7 @@
 object fmClips: TfmClips
   Left = 326
   Top = 442
+  AutoScroll = False
   ClientHeight = 304
   ClientWidth = 174
   Color = clBtnFace
@@ -23,6 +24,7 @@ object fmClips: TfmClips
     Align = alTop
     Style = csDropDownList
     DropDownCount = 20
+    ItemHeight = 13
     Sorted = True
     TabOrder = 0
     OnChange = ComboChange

@@ -1,11 +1,11 @@
 object fmProjList: TfmProjList
   Left = 247
   Top = 474
+  Width = 510
+  Height = 322
   ActiveControl = Edit
   BorderIcons = [biSystemMenu, biMaximize]
   Caption = 'Project list'
-  ClientHeight = 284
-  ClientWidth = 494
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -23,8 +23,8 @@ object fmProjList: TfmProjList
   object List: TListBox
     Left = 0
     Top = 24
-    Width = 494
-    Height = 244
+    Width = 502
+    Height = 248
     Style = lbOwnerDrawFixed
     Align = alClient
     ItemHeight = 33
@@ -35,7 +35,7 @@ object fmProjList: TfmProjList
   object Edit: TEdit
     Left = 0
     Top = 0
-    Width = 494
+    Width = 502
     Height = 24
     Align = alTop
     TabOrder = 0
@@ -45,8 +45,8 @@ object fmProjList: TfmProjList
   end
   object Panel1: TPanel
     Left = 0
-    Top = 268
-    Width = 494
+    Top = 272
+    Width = 502
     Height = 16
     Align = alBottom
     BevelOuter = bvNone
@@ -57,13 +57,11 @@ object fmProjList: TfmProjList
     Font.Style = []
     ParentFont = False
     TabOrder = 2
-    ExplicitTop = 272
-    ExplicitWidth = 502
     object labHelp: TLabel
       Left = 488
       Top = 0
       Width = 14
-      Height = 13
+      Height = 16
       Cursor = crHandPoint
       Align = alRight
       Caption = #187'? '

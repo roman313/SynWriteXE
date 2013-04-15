@@ -738,6 +738,14 @@ begin
     Exit;
   end;
 
+  //Esc
+  if (Key=vk_escape) and (Shift=[]) then
+  begin
+    bCancel.Click;
+    Handled:= true;
+    Exit
+  end;
+
   //F1
   if (Key=vk_f1) and (Shift=[]) then
   begin

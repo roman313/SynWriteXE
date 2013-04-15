@@ -7,6 +7,11 @@ uses
 
 type
   TSynSortMode = (sortUnicodeRaw, sortUnicode, sortAscii, sortNumeric);
+  TSynDedupMode = (dedupAll, dedupAdjacent);
+
+function DoDedupStringList(
+  List: TStringList;
+  AMode: TSynDedupMode): boolean;
 
 function DoSortStringList(
   List: TStringList;
@@ -228,6 +233,53 @@ begin
   end;
 end;
 
+
+function DoDedupStringList(
+  List: TStringList;
+  AMode: TSynDedupMode): boolean;
+var
+  i, N: Integer;
+  L: TStringList;
+begin
+  Result:= true;
+  Screen.Cursor:= crHourGlass;
+  try
+    //delete last empty line
+    N:= List.Count;
+    if (N>0) and (List[N-1]='') then
+      List.Delete(N-1);
+
+    case AMode of
+      dedupAdjacent:
+        begin
+          for i:= List.Count-1 downto 1{not 0} do
+            if (List[i]=List[i-1]) then
+              List.Delete(i);
+        end;
+      dedupAll:
+        begin
+          L:= TStringList.Create;
+          try
+            for i:= 0 to List.Count-1 do
+              L.AddObject(List[i], Pointer(i));
+            L.Sort;
+
+            for i:= L.Count-1 downto 1{not 0} do
+              if (L[i]=L[i-1]) then
+                List.Objects[Integer(L.Objects[i])]:= Pointer(1);
+
+            for i:= List.Count-1 downto 0 do
+              if List.Objects[i]<>nil then
+                List.Delete(i);
+          finally
+            FreeAndNil(L);
+          end;
+        end;
+    end;
+  finally
+    Screen.Cursor:= crDefault;
+  end;
+end;
 
 end.
  

@@ -85,6 +85,7 @@ object fmSetupOvr: TfmSetupOvr
     Height = 21
     AutoDropDown = True
     Style = csDropDownList
+    ItemHeight = 13
     TabOrder = 3
     OnChange = edTabChange
     Items.Strings = (
@@ -118,6 +119,7 @@ object fmSetupOvr: TfmSetupOvr
     Height = 21
     AutoDropDown = True
     Style = csDropDownList
+    ItemHeight = 13
     TabOrder = 4
     OnChange = edTabChange
     Items.Strings = (

@@ -2,6 +2,7 @@ object fmGotoBkmk: TfmGotoBkmk
   Left = 315
   Top = 446
   ActiveControl = List
+  AutoScroll = False
   BorderIcons = [biSystemMenu, biMaximize]
   Caption = 'Go to bookmark'
   ClientHeight = 305

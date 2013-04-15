@@ -2,6 +2,7 @@ object fmProps: TfmProps
   Left = 272
   Top = 555
   ActiveControl = Pages
+  AutoScroll = False
   BorderIcons = [biSystemMenu]
   Caption = 'File/document properties'
   ClientHeight = 243
@@ -45,10 +46,6 @@ object fmProps: TfmProps
     TabOrder = 0
     object tabFile: TTabSheet
       Caption = 'File'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         354
         173)
@@ -106,10 +103,6 @@ object fmProps: TfmProps
     end
     object tabDoc: TTabSheet
       Caption = 'Text'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         354
         173)

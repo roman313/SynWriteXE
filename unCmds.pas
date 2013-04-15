@@ -2,7 +2,26 @@ unit unCmds;
 
 interface
 
+uses
+  ATSyntMemo;
+
 function IsCmdEditing(Cmd: integer): boolean;
+
+const
+  sm_CaretsRemoveLeaveFirst  = ATSyntMemo.smCaretsRemoveLeaveFirst;
+  sm_CaretsRemoveLeaveLast   = ATSyntMemo.smCaretsRemoveLeaveLast;
+  sm_CaretsFromSelLeft       = ATSyntMemo.smCaretsFromSelLeft;
+  sm_CaretsFromSelRight      = ATSyntMemo.smCaretsFromSelRight;
+  sm_CaretsFromSelClear      = ATSyntMemo.smCaretsFromSelClear;
+  sm_CaretsFromMarksLeft     = ATSyntMemo.smCaretsFromMarksLeft;
+  sm_CaretsFromMarksRight    = ATSyntMemo.smCaretsFromMarksRight;
+  sm_CaretsFromMarksClear    = ATSyntMemo.smCaretsFromMarksClear;
+  sm_CaretsExtendUpLine      = ATSyntMemo.smCaretsUpLine;
+  sm_CaretsExtendDownLine    = ATSyntMemo.smCaretsDownLine;
+  sm_CaretsExtendUpPage      = ATSyntMemo.smCaretsUpPage;
+  sm_CaretsExtendDownPage    = ATSyntMemo.smCaretsDownPage;
+  sm_CaretsExtendUpEnd       = ATSyntMemo.smCaretsUpToEnd;
+  sm_CaretsExtendDownEnd     = ATSyntMemo.smCaretsDownToEnd;
 
 const
   sm_CopyAsHTML = 309;
@@ -169,12 +188,12 @@ const
   sm_BkDeleteUnmk = 848;
   sm_BkPaste = 849;
   sm_BkInverse = 850;
-  //free
 
+  sm_RemoveDupsAll = 851;
   sm_SpToTabLead = 852;
   sm_TidyValidate = 853;
   sm_TidyConfig = 854;
-  sm_RemoveDups = 855;
+  sm_RemoveDupsAdjacent = 855;
   sm_RemoveBlanks = 856;
   sm_TrimLead = 857;
   sm_TrimTrail = 858;

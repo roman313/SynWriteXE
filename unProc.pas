@@ -66,6 +66,7 @@ type
   TSynHelpId = (
     helpDonate,
     helpRegex,
+    helpCarets,
     helpDateFmt,
     helpSmartTabbing,
     helpCodeTpl,
@@ -79,6 +80,7 @@ const
   cSynHelpId: array[TSynHelpId] of string = (
     'Donate.html',
     'RegEx.html',
+    'MultiCarets.html',
     'MiscDateFormat.html',
     'HelperSmartTagTabbing.html',
     'HelperCodeTpl.html',
@@ -719,7 +721,7 @@ procedure DoListKeys(SyntKeymapping: TSyntKeyMapping;
   const fn: string);
 var
   i, j, k: integer;
-  old, sname: string;
+  old, sname: AnsiString;
   f: TextFile;
   LCat: TStringList;
 begin
@@ -769,8 +771,8 @@ begin
       end;
 
       sname:= SyntKeyMapping.Items[i].DisplayName;
-      SReplaceAllW(sname, '<', '&lt;');
-      SReplaceAllW(sname, '>', '&gt;');
+      SReplaceAll(sname, '<', '&lt;');
+      SReplaceAll(sname, '>', '&gt;');
 
       Writeln(f, '<tr><td>');
       Write(f, '  '+sname);

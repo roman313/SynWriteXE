@@ -67,6 +67,7 @@ object fmShell: TfmShell
       Height = 21
       Style = csDropDownList
       DropDownCount = 16
+      ItemHeight = 13
       TabOrder = 4
       OnChange = edChange
     end

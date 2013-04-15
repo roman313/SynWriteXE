@@ -1,11 +1,11 @@
 object fmFav: TfmFav
   Left = 248
   Top = 490
+  Width = 570
+  Height = 380
   ActiveControl = List
   BorderIcons = [biSystemMenu]
   Caption = 'Favorites'
-  ClientHeight = 342
-  ClientWidth = 554
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,8 +20,8 @@ object fmFav: TfmFav
   OnKeyDown = TntFormKeyDown
   OnShow = TntFormShow
   DesignSize = (
-    554
-    342)
+    562
+    346)
   PixelsPerInch = 96
   TextHeight = 13
   object btnOk: TButton

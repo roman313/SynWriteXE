@@ -29,6 +29,7 @@ object fmSRTree: TfmSRTree
     Top = 20
     Width = 313
     Height = 21
+    ItemHeight = 13
     TabOrder = 0
     OnChange = edTextChange
   end

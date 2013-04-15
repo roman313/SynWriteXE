@@ -1,43 +1,38 @@
 object EditorFrame: TEditorFrame
   Left = 0
   Top = 0
-  Width = 451
-  Height = 304
+  Width = 443
+  Height = 270
   Align = alClient
+  AutoScroll = False
   Color = clWindow
   ParentColor = False
   TabOrder = 0
   OnResize = FrameResize
-  ExplicitWidth = 443
-  ExplicitHeight = 270
   object PanelMap: TPaintBox
-    Left = 441
+    Left = 433
     Top = 0
     Width = 10
-    Height = 304
+    Height = 270
     Align = alRight
     ParentShowHint = False
     ShowHint = True
     OnMouseDown = PanelMapMouseDown
     OnMouseMove = PanelMapMouseMove
     OnPaint = PanelMapPaint
-    ExplicitLeft = 433
-    ExplicitHeight = 270
   end
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 441
-    Height = 304
+    Width = 433
+    Height = 270
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitWidth = 433
-    ExplicitHeight = 270
     object Splitter2: TSplitter
       Left = 0
       Top = 57
-      Width = 441
+      Width = 433
       Height = 5
       Cursor = crVSplit
       Align = alTop
@@ -46,13 +41,12 @@ object EditorFrame: TEditorFrame
       ResizeStyle = rsUpdate
       OnMoved = Splitter2Moved
       OnPaint = Splitter2Paint
-      ExplicitWidth = 433
     end
     object EditorMaster: TSyntaxMemo
       Left = 0
       Top = 62
-      Width = 441
-      Height = 242
+      Width = 433
+      Height = 208
       TextSource = TextSource
       TabList.AsString = '4'
       NonPrinted.Font.Charset = DEFAULT_CHARSET
@@ -126,7 +120,6 @@ object EditorFrame: TEditorFrame
       KeyMapping = fmMain.SyntKeyMapping
       UserRanges = <>
       Animation.BookmarkAnim = atNone
-      UndoLimit = 0
       TabMode = tmSmartTab
       StaplePen.Color = clSilver
       StaplePen.Style = psDot
@@ -251,13 +244,11 @@ object EditorFrame: TEditorFrame
       OnContextPopup = EditorMasterContextPopup
       OnEnter = EditorMasterEnter
       OnKeyDown = EditorMasterKeyDown
-      ExplicitWidth = 433
-      ExplicitHeight = 208
     end
     object EditorSlave: TSyntaxMemo
       Left = 0
       Top = 0
-      Width = 441
+      Width = 433
       Height = 57
       TextSource = TextSource
       TabList.AsString = '4'
@@ -332,7 +323,6 @@ object EditorFrame: TEditorFrame
       KeyMapping = fmMain.SyntKeyMapping
       UserRanges = <>
       Animation.BookmarkAnim = atNone
-      UndoLimit = 0
       TabMode = tmSmartTab
       StaplePen.Color = clSilver
       StaplePen.Style = psDot
@@ -454,7 +444,6 @@ object EditorFrame: TEditorFrame
       OnClick = EditorMasterEnter
       OnEnter = EditorMasterEnter
       OnKeyDown = EditorMasterKeyDown
-      ExplicitWidth = 433
     end
   end
   object ecSpellChecker: TecSpellChecker
@@ -508,7 +497,6 @@ object EditorFrame: TEditorFrame
     Top = 156
   end
   object TextSource: TecEmbeddedObjects
-    ControlSite = EditorMaster
     Left = 276
     Top = 156
   end
@@ -517,42 +505,53 @@ object EditorFrame: TEditorFrame
     Left = 208
     Top = 188
     object TBXItemSplitCaption: TTBXItem
-      Caption = '--- Editor splitter ---'
       Enabled = False
+      Caption = '--- Editor splitter ---'
+      Hint = ''
     end
     object TBXItemSplit20_80: TTBXItem
-      Caption = '20/80'
       OnClick = TBXItemSplit20_80Click
+      Caption = '20/80'
+      Hint = ''
     end
     object TBXItemSplit30_70: TTBXItem
-      Caption = '30/70'
       OnClick = TBXItemSplit30_70Click
+      Caption = '30/70'
+      Hint = ''
     end
     object TBXItemSplit40_60: TTBXItem
-      Caption = '40/60'
       OnClick = TBXItemSplit40_60Click
+      Caption = '40/60'
+      Hint = ''
     end
     object TBXItemSplit50_50: TTBXItem
-      Caption = '50/50'
       OnClick = TBXItemSplit50_50Click
+      Caption = '50/50'
+      Hint = ''
     end
     object TBXItemSplit60_40: TTBXItem
-      Caption = '60/40'
       OnClick = TBXItemSplit60_40Click
+      Caption = '60/40'
+      Hint = ''
     end
     object TBXItemSplit70_30: TTBXItem
-      Caption = '70/30'
       OnClick = TBXItemSplit70_30Click
+      Caption = '70/30'
+      Hint = ''
     end
     object TBXItemSplit80_20: TTBXItem
-      Caption = '80/20'
       OnClick = TBXItemSplit80_20Click
+      Caption = '80/20'
+      Hint = ''
     end
     object TBXSeparatorItem1: TTBXSeparatorItem
+      Caption = ''
+      Hint = ''
     end
     object TBXItemSplitHorz: TTBXItem
-      Caption = 'Split horozintally'
       OnClick = TBXItemSplitHorzClick
+      Caption = 'Split horozintally'
+      Hint = ''
     end
   end
   object TimerMap: TTimer

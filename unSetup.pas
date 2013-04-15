@@ -340,6 +340,16 @@ type
     TntLabel39: TLabel;
     TntLabel29: TLabel;
     cbUrlClick: TCheckBox;
+    tabCarets: TTabSheet;
+    boxCarets: TGroupBox;
+    cbCaretMulti: TCheckBox;
+    TntLabel30: TLabel;
+    cbCaretIndNone: TRadioButton;
+    cbCaretIndLine: TRadioButton;
+    cbCaretIndGutter: TRadioButton;
+    TntLabel31: TLabel;
+    edCaretGutterCol: TSpinEdit;
+    labCaretHelp: TLabel;
     procedure bApplyClick(Sender: TObject);
     procedure bCanClick(Sender: TObject);
     procedure tabEdShow(Sender: TObject);
@@ -433,6 +443,8 @@ type
     procedure TntFormCreate(Sender: TObject);
     procedure TntFormDestroy(Sender: TObject);
     procedure labEmmetClick(Sender: TObject);
+    procedure tabCaretsShow(Sender: TObject);
+    procedure labCaretHelpClick(Sender: TObject);
   private
     { Private declarations }
     fmOvr: TfmSetupOvr;
@@ -503,7 +515,7 @@ const
   'Collapse-mark-BG', //50
   'SyncEdit-BG', //51
   'Map-marks-BG', //52
-  'Caret-BG' //53
+  'Carets-gutter-BG' //53
   );
 
 const
@@ -577,6 +589,10 @@ uses
   FileCtrl;
 
 {$R *.dfm}
+
+const
+  cColorExt = 'synw-colors';
+  cColorFilter = '*.'+cColorExt+'|*.'+cColorExt;
 
 procedure TfmSetup.bOkClick(Sender: TObject);
 begin
@@ -859,11 +875,11 @@ begin
     TemplateEditor.DefaultStyles.CollapseMark.BgColor:= Colors[50];
     TemplateEditor.SyncEditing.SyncRangeStyle.BgColor:= Colors[51];
     opColorMapMarks:= Colors[52];
-    TemplateEditor.Caret.Insert.Color:= Colors[53];
-    TemplateEditor.Caret.Overwrite.Color:= Colors[53];
+    opColorCaretsGutter:= Colors[53];
     ApplyColors;
     ApplyOut;
     ApplyMap;
+    ApplyCarets;
   end;
 
   if tabEd2.Tag<>0 then
@@ -1047,6 +1063,17 @@ begin
     PageControl1.TabPosition:= cTp[cbTabDown.Checked];
     PageControl2.TabPosition:= PageControl1.TabPosition;
     ApplyFrames;
+  end;
+
+  //Carets
+  if tabCarets.Tag<>0 then
+  begin
+    opCaretsEnabled:= cbCaretMulti.Checked;
+    if cbCaretIndNone.Checked then opCaretsIndicator:= 0 else
+     if cbCaretIndLine.Checked then opCaretsIndicator:= 1 else
+      if cbCaretIndGutter.Checked then opCaretsIndicator:= 2;
+    opCaretsGutterBand:= edCaretGutterCol.Value;
+    ApplyCarets;
   end;
 
   //Misc2
@@ -1241,7 +1268,7 @@ begin
     Colors[50]:= TemplateEditor.DefaultStyles.CollapseMark.BgColor;
     Colors[51]:= TemplateEditor.SyncEditing.SyncRangeStyle.BgColor;
     Colors[52]:= opColorMapMarks;
-    Colors[53]:= TemplateEditor.Caret.Insert.Color;
+    Colors[53]:= opColorCaretsGutter;
   end;
   
   tabColors.Tag:= 1;
@@ -1847,8 +1874,8 @@ begin
     ok:= Execute;
     FixWnd;
     if not ok then Exit;
-    if ExtractFileExt(FileName) <> '.colors' then
-      FileName:= FileName+'.colors';
+    if ExtractFileExt(FileName) <> '.'+cColorExt then
+      FileName:= FileName+'.'+cColorExt;
     with TIniFile.Create(FileName) do
     try
       EraseSection('Colors');
@@ -1862,7 +1889,7 @@ end;
 
 function TfmSetup.ColorPreFN(const Name: string): string;
 begin
-  Result:= ExtractFilePath(GetModuleName(HInstance)) + 'Template\colors\' + Name + '.colors';
+  Result:= ExtractFilePath(GetModuleName(HInstance)) + 'Template\colors\' + Name + '.'+cColorExt;
 end;
 
 procedure TfmSetup.FixWnd;
@@ -2469,6 +2496,9 @@ begin
     ItemHeight:= ScaleFontSize(ItemHeight, Self);
   with ListColors do
     ItemHeight:= ScaleFontSize(ItemHeight, Self);
+
+  OpenDialogPre.Filter:= cColorFilter;
+  SaveDialogPre.Filter:= cColorFilter;
 end;
 
 procedure TfmSetup.TntFormDestroy(Sender: TObject);
@@ -2479,6 +2509,26 @@ end;
 procedure TfmSetup.labEmmetClick(Sender: TObject);
 begin
   ShowHelp(fmMain.SynDir, helpEmmet, Handle);
+end;
+
+procedure TfmSetup.tabCaretsShow(Sender: TObject);
+begin
+  if tabCarets.Tag<>0 then Exit;
+
+  with fmMain do
+  begin
+    cbCaretMulti.Checked:= opCaretsEnabled;
+    cbCaretIndNone.Checked:= opCaretsIndicator=0;
+    cbCaretIndLine.Checked:= opCaretsIndicator=1;
+    cbCaretIndGutter.Checked:= opCaretsIndicator=2;
+    edCaretGutterCol.Value:= opCaretsGutterBand;
+  end;
+  tabCarets.Tag:= 1;
+end;
+
+procedure TfmSetup.labCaretHelpClick(Sender: TObject);
+begin
+  ShowHelp(fmMain.SynDir, helpCarets, Handle);
 end;
 
 end.

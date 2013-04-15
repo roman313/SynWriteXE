@@ -117,6 +117,7 @@ object fmInsTxt: TfmInsTxt
       Top = 32
       Width = 161
       Height = 21
+      ItemHeight = 13
       TabOrder = 3
     end
     object ed2: TComboBox
@@ -124,6 +125,7 @@ object fmInsTxt: TfmInsTxt
       Top = 56
       Width = 161
       Height = 21
+      ItemHeight = 13
       TabOrder = 4
     end
     object edStart: TSpinEdit
@@ -155,6 +157,7 @@ object fmInsTxt: TfmInsTxt
       Top = 112
       Width = 73
       Height = 21
+      ItemHeight = 13
       TabOrder = 8
       OnChange = edStartChange
     end
@@ -163,6 +166,7 @@ object fmInsTxt: TfmInsTxt
       Top = 112
       Width = 73
       Height = 21
+      ItemHeight = 13
       TabOrder = 5
       OnChange = edStartChange
     end
@@ -231,6 +235,7 @@ object fmInsTxt: TfmInsTxt
       Top = 72
       Width = 161
       Height = 21
+      ItemHeight = 13
       TabOrder = 4
     end
   end

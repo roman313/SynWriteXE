@@ -209,12 +209,14 @@ begin
     //filter chars
     if cbFuzzy.Checked then
     begin
+      Canvas.Font.Size:= Self.Font.Size;
       Canvas.Font.Color:= IfThen(odSelected in State, clYellow, clBlue);
       SGetCharArray(S1, Edit.Text, Arr);
       for i:= Low(Arr) to High(Arr) do
         if Arr[i]>0 then
         begin
           n:= ecTextExtent(Canvas, Copy(S1, 1, Arr[i]-1)).cx;
+          Inc(n, dx); //icon width
           ecTextOut(Canvas, rect.left+n, rect.top, Copy(S1, Arr[i], 1));
         end
         else

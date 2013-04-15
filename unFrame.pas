@@ -14,7 +14,8 @@ uses
   ComCtrls, ImgList, ActiveX,
   ATFileNotificationSimple,
   TB2Item, TBX,
-  Menus, Math;
+  Menus, Math,
+  ATSyntMemo; //this will replace TSyntaxMemo;
 
 const
   cMaxBk = 1*1000*1000; //max bookmarks count
@@ -140,6 +141,15 @@ type
     function FocusedEditor: TSyntaxMemo;
     procedure UpdateMap(Ed: TSyntaxMemo);
     procedure SetSpell(Value: boolean);
+    function GetCaretsEnabled: boolean;
+    function GetCaretsGutterBand: integer;
+    function GetCaretsIndicator: integer;
+    procedure SetCaretsEnabled(V: boolean);
+    procedure SetCaretsGutterBand(V: integer);
+    procedure SetCaretsIndicator(V: integer);
+    function GetCaretsGutterColor: TColor;
+    procedure SetCaretsGutterColor(V: TColor);
+    procedure EditorCtrlClick(Sender: TObject; const Pnt: TPoint; var Handled: boolean);
   protected
   public
     //ftp--------------
@@ -150,8 +160,16 @@ type
     function IsFtp: boolean;
     //---------------------
 
-    property CollapsedString: Widestring write FCollapsedString;
-    property CollapsedString2: Widestring write FCollapsedString2;
+    function CaretsCount: integer;
+    procedure CaretsProps(var NTop, NBottom: integer);
+    function SUrlAt(const Pnt: TPoint): Widestring;
+    property CaretsEnabled: boolean read GetCaretsEnabled write SetCaretsEnabled;
+    property CaretsGutterBand: integer read GetCaretsGutterBand write SetCaretsGutterBand;
+    property CaretsGutterColor: TColor read GetCaretsGutterColor write SetCaretsGutterColor;
+    property CaretsIndicator: integer read GetCaretsIndicator write SetCaretsIndicator;
+
+    property CollapsedString: Widestring read FCollapsedString write FCollapsedString;
+    property CollapsedString2: Widestring read FCollapsedString2 write FCollapsedString2;
     function IsEditorPosMisspelled(APos: Integer): boolean;
     function DoSpellContinue(AFromPos: Integer): Integer;
     procedure SyncMap;
@@ -307,11 +325,13 @@ begin
   EditorMaster.Gutter.Images:= TfmMain(Owner).ImgListGutter;
   EditorSlave.Gutter.Images:= TfmMain(Owner).ImgListGutter;
 
-  //AT2
-  // #WARNING PROP NOT EXISTS
+  //special events
+  // #WARNING! NOT EXISTS
   (*
   EditorMaster.OnShowHint:= EditorShowHint;
   EditorSlave.OnShowHint:= EditorShowHint;
+  EditorMaster.OnCtrlClick:= EditorCtrlClick;
+  EditorSlave.OnCtrlClick:= EditorCtrlClick;
   *)
 
   TControlHack(Splitter2).PopupMenu:= PopupSplitter;
@@ -1456,6 +1476,78 @@ begin
     FCollapsedString2:= '';
     FCollapsedRestored2:= true;
   end;
+end;
+
+function TEditorFrame.GetCaretsEnabled: boolean;
+begin
+  Result:= EditorMaster.CaretsEnabled;
+end;
+
+function TEditorFrame.GetCaretsGutterBand: integer;
+begin
+  Result:= EditorMaster.CaretsGutterBand;
+end;
+
+function TEditorFrame.GetCaretsIndicator: integer;
+begin
+  Result:= Ord(EditorMaster.CaretsColorIndicator);
+end;
+
+procedure TEditorFrame.SetCaretsGutterBand(V: integer);
+begin
+  EditorMaster.CaretsGutterBand:= V;
+  EditorSlave.CaretsGutterBand:= V;
+end;
+
+procedure TEditorFrame.SetCaretsEnabled(V: boolean);
+begin
+  EditorMaster.CaretsEnabled:= V;
+  EditorSlave.CaretsEnabled:= V;
+end;
+
+procedure TEditorFrame.SetCaretsIndicator(V: integer);
+begin
+  EditorMaster.CaretsColorIndicator:= TCaretsColorIndicator(V);
+  EditorSlave.CaretsColorIndicator:= TCaretsColorIndicator(V);
+end;
+
+function TEditorFrame.GetCaretsGutterColor: TColor;
+begin
+  Result:= EditorMaster.CaretsGutterColor;
+end;
+
+procedure TEditorFrame.SetCaretsGutterColor(V: TColor);
+begin
+  EditorMaster.CaretsGutterColor:= V;
+  EditorSlave.CaretsGutterColor:= V;
+end;
+
+function TEditorFrame.SUrlAt(const Pnt: TPoint): Widestring;
+var
+  Ed: TSyntaxMemo;
+  p: TPoint;
+begin
+  Result:= '';
+  Ed:= EditorMaster;
+  p:= HyperlinkHighlighter.HltRangeBndAt(Ed.CaretPosToStrPos(Pnt));
+  if p.y > p.x then
+    Result:= Copy(Ed.Lines.FText, p.x + 1, p.y - p.x);
+end;
+
+procedure TEditorFrame.EditorCtrlClick(Sender: TObject; const Pnt: TPoint; var Handled: boolean);
+begin
+  Handled:= SUrlAt(Pnt)<>'';
+end;
+
+function TEditorFrame.CaretsCount: integer;
+begin
+  Result:= FocusedEditor.CaretsCount;
+end;
+
+
+procedure TEditorFrame.CaretsProps(var NTop, NBottom: integer);
+begin
+  FocusedEditor.CaretsProps(NTop, NBottom);
 end;
 
 initialization
