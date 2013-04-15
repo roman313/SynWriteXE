@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{B39617BD-3A14-4D56-91D7-F058DC6C0F64}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="SynWriteXE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="PlgSynWriteXE.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="SynWriteXE">
+        <MSBuild Projects="SynWriteXE.dproj"/>
+    </Target>
+    <Target Name="SynWriteXE:Clean">
+        <MSBuild Projects="SynWriteXE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SynWriteXE:Make">
+        <MSBuild Projects="SynWriteXE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PlgSynWriteXE">
+        <MSBuild Projects="PlgSynWriteXE.dproj"/>
+    </Target>
+    <Target Name="PlgSynWriteXE:Clean">
+        <MSBuild Projects="PlgSynWriteXE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PlgSynWriteXE:Make">
+        <MSBuild Projects="PlgSynWriteXE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="SynWriteXE;PlgSynWriteXE"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="SynWriteXE:Clean;PlgSynWriteXE:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="SynWriteXE:Make;PlgSynWriteXE:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

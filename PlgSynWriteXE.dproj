@@ -1,12 +1,12 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{4D762E51-8BBB-4C56-AB90-4CFE25DDCC38}</ProjectGuid>
-        <MainSource>SynWriteXE.dpr</MainSource>
+        <ProjectGuid>{008E06BF-37D2-4ECC-8593-10B01EBCD6D6}</ProjectGuid>
+        <MainSource>PlgSynWriteXE.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
         <TargetedPlatforms>3</TargetedPlatforms>
-        <AppType>Application</AppType>
-        <FrameworkType>VCL</FrameworkType>
+        <AppType>Library</AppType>
+        <FrameworkType>None</FrameworkType>
         <ProjectVersion>14.4</ProjectVersion>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
     </PropertyGroup>
@@ -58,54 +58,51 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
-        <Manifest_File>None</Manifest_File>
-        <DCC_DcuOutput>..\Output\</DCC_DcuOutput>
-        <Icon_MainIcon>Syn_Icon.ico</Icon_MainIcon>
-        <DCC_ImageBase>00400000</DCC_ImageBase>
-        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;System.Win;$(DCC_Namespace)</DCC_Namespace>
-        <DCC_S>false</DCC_S>
-        <DCC_N>false</DCC_N>
-        <DCC_K>false</DCC_K>
-        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;CFBundleName=;CFBundleDisplayName=;CFBundleIdentifier=;CFBundleVersion=;CFBundlePackageType=;CFBundleSignature=;CFBundleAllowMixedLocalizations=;CFBundleExecutable=</VerInfo_Keys>
-        <VerInfo_Locale>1049</VerInfo_Locale>
-        <DCC_F>false</DCC_F>
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Winapi;Vcl.Samples;Vcl;System.Win;$(DCC_Namespace)</DCC_Namespace>
         <DCC_E>false</DCC_E>
+        <OutputExt>wlx</OutputExt>
+        <GenDll>true</GenDll>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;CFBundleName=;CFBundleDisplayName=;CFBundleIdentifier=;CFBundleVersion=;CFBundlePackageType=;CFBundleSignature=;CFBundleAllowMixedLocalizations=;CFBundleExecutable=</VerInfo_Keys>
+        <DCC_F>false</DCC_F>
+        <DCC_K>false</DCC_K>
+        <VerInfo_Locale>1049</VerInfo_Locale>
+        <DCC_N>false</DCC_N>
+        <DCC_S>false</DCC_S>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
-        <Icon_MainIcon>Syn_Icon.ico</Icon_MainIcon>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <Icon_MainIcon>PlgSynWriteXE_Icon.ico</Icon_MainIcon>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
-        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
-        <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
-        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-        <VerInfo_Locale>1033</VerInfo_Locale>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <Icon_MainIcon>Syn_Icon.ico</Icon_MainIcon>
+        <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <Icon_MainIcon>PlgSynWriteXE_Icon.ico</Icon_MainIcon>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
-        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
         <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
         <DCC_DebugInformation>false</DCC_DebugInformation>
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
-        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
-        <DCC_ExeOutput>..\Binaries\Executable\Release\</DCC_ExeOutput>
+        <Manifest_File>None</Manifest_File>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <DCC_ExeOutput>..\Binaries\Plugin\Release</DCC_ExeOutput>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
-        <DCC_ExeOutput>..\Binaries\Executable\Release64\</DCC_ExeOutput>
-        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Manifest_File>None</Manifest_File>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_ExeOutput>..\Binaries\Plugin\Release64</DCC_ExeOutput>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
@@ -113,31 +110,25 @@
         <DCC_Optimize>false</DCC_Optimize>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
-        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
-        <DCC_ExeOutput>..\Binaries\Executable\Debug\</DCC_ExeOutput>
+        <Manifest_File>None</Manifest_File>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <DCC_ExeOutput>..\Binaries\Plugin\Debug</DCC_ExeOutput>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
-        <DCC_ExeOutput>..\Binaries\Executable\Debug64\</DCC_ExeOutput>
-        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Manifest_File>None</Manifest_File>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_ExeOutput>..\Binaries\Plugin\Debug64</DCC_ExeOutput>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="unEx.pas">
-            <Form>fmSynEx</Form>
-        </DCCReference>
         <DCCReference Include="unMain.pas">
             <Form>fmMain</Form>
-        </DCCReference>
-        <DCCReference Include="unAb.pas">
-            <Form>fmAb</Form>
         </DCCReference>
         <DCCReference Include="unFrame.pas">
             <Form>EditorFrame</Form>
@@ -146,111 +137,12 @@
         <DCCReference Include="unSetup.pas">
             <Form>fmSetup</Form>
         </DCCReference>
+        <DCCReference Include="unSearch.pas"/>
         <DCCReference Include="unSR.pas">
             <Form>fmSR</Form>
         </DCCReference>
-        <DCCReference Include="unSearch.pas"/>
-        <DCCReference Include="unEnc.pas">
-            <Form>fmEnc</Form>
-        </DCCReference>
-        <DCCReference Include="unTool.pas">
-            <Form>fmTools</Form>
-        </DCCReference>
-        <DCCReference Include="unSR2.pas">
-            <Form>fmSRFiles</Form>
-        </DCCReference>
-        <DCCReference Include="unTool2.pas">
-            <Form>fmToolOutput</Form>
-        </DCCReference>
-        <DCCReference Include="unProgress.pas">
-            <Form>fmProgress</Form>
-        </DCCReference>
-        <DCCReference Include="unExtr.pas">
-            <Form>fmExtract</Form>
-        </DCCReference>
-        <DCCReference Include="unClip.pas">
-            <Form>fmClip</Form>
-        </DCCReference>
-        <DCCReference Include="unProc.pas"/>
-        <DCCReference Include="unShell.pas">
-            <Form>fmShell</Form>
-        </DCCReference>
-        <DCCReference Include="unInsTxt.pas">
-            <Form>fmInsTxt</Form>
-        </DCCReference>
-        <DCCReference Include="unLoadLexStyles.pas">
-            <Form>fmLoadLex</Form>
-        </DCCReference>
-        <DCCReference Include="unMacroEdit.pas">
-            <Form>fmMacroEdit</Form>
-        </DCCReference>
-        <DCCReference Include="unGoto.pas">
-            <Form>fmGoto</Form>
-        </DCCReference>
-        <DCCReference Include="unCmds.pas"/>
-        <DCCReference Include="unMap.pas">
-            <Form>fmMap</Form>
-        </DCCReference>
-        <DCCReference Include="unSRTree.pas">
-            <Form>fmSRTree</Form>
-        </DCCReference>
-        <DCCReference Include="unSearchInList.pas"/>
-        <DCCReference Include="unProcTabbin.pas"/>
-        <DCCReference Include="unTabSw.pas"/>
-        <DCCReference Include="unTabSwForm.pas">
-            <Form>fmTabSw</Form>
-        </DCCReference>
-        <DCCReference Include="unProp.pas">
-            <Form>fmProps</Form>
-        </DCCReference>
-        <DCCReference Include="unSetupOvr.pas">
-            <Form>fmSetupOvr</Form>
-        </DCCReference>
-        <DCCReference Include="unGotoBkmk.pas">
-            <Form>fmGotoBkmk</Form>
-        </DCCReference>
-        <DCCReference Include="unLoremIpsum.pas">
-            <Form>fmLoremIpsum</Form>
-        </DCCReference>
-        <DCCReference Include="unFav.pas">
-            <Form>fmFav</Form>
-        </DCCReference>
-        <DCCReference Include="unProj.pas">
-            <Form>fmProj</Form>
-        </DCCReference>
-        <DCCReference Include="unProjAddDir.pas">
-            <Form>fmProjAddDir</Form>
-            <DesignClass>TForm</DesignClass>
-        </DCCReference>
-        <DCCReference Include="unProjProps.pas">
-            <Form>fmProjProps</Form>
-            <DesignClass>TForm</DesignClass>
-        </DCCReference>
-        <DCCReference Include="unClips.pas">
-            <Form>fmClips</Form>
-        </DCCReference>
-        <DCCReference Include="unNumConv.pas">
-            <Form>fmNumConv</Form>
-            <DesignClass>TForm</DesignClass>
-        </DCCReference>
-        <DCCReference Include="ATSynPlugins.pas"/>
-        <DCCReference Include="unFillBlock.pas">
-            <Form>fmFillBlock</Form>
-        </DCCReference>
-        <DCCReference Include="unSort.pas">
-            <Form>fmSort</Form>
-        </DCCReference>
-        <DCCReference Include="unProcSort.pas"/>
-        <DCCReference Include="unCmdList.pas">
-            <Form>fmCmdList</Form>
-        </DCCReference>
-        <DCCReference Include="unProjList.pas">
-            <Form>fmProjList</Form>
-            <DesignClass>TForm</DesignClass>
-        </DCCReference>
-        <DCCReference Include="unRename.pas">
-            <Form>fmRename</Form>
-            <DesignClass>TForm</DesignClass>
+        <DCCReference Include="unAb.pas">
+            <Form>fmAb</Form>
         </DCCReference>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_2</Key>
@@ -270,7 +162,7 @@
         <BorlandProject>
             <Delphi.Personality>
                 <Source>
-                    <Source Name="MainSource">SynWriteXE.dpr</Source>
+                    <Source Name="MainSource">PlgSynWriteXE.dpr</Source>
                 </Source>
                 <VersionInfo>
                     <VersionInfo Name="IncludeVerInfo">False</VersionInfo>
@@ -313,6 +205,7 @@
                 </Excluded_Packages>
             </Delphi.Personality>
             <Platforms>
+                <Platform value="OSX32">False</Platform>
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">True</Platform>
             </Platforms>

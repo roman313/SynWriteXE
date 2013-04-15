@@ -2,11 +2,6 @@ program SynWriteXE;
 
 uses
   FastMM4,
-  madExcept,
-  madLinkDisAsm,
-  madListHardware,
-  madListProcesses,
-  madListModules,
   Forms,
   unEx in 'unEx.pas' {fmSynEx},
   unMain in 'unMain.pas' {fmMain},

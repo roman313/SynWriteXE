@@ -3,24 +3,13 @@
   Lister plugin
 ///////////////////////////////////////////////////////////////////////////////}
 
-
-
-
-
-
-
-
-
-
-library Syn2;
+library PlgSynWriteXE;
 {$E wlx}
 {$R *.res}
-{$R Syn.dkl_const.res}
+{$R SynWriteXE.dkl_const.res}
 
 uses
   FastMM4,
-  FastMove,
-  FastCode,
   SysUtils,
   Windows,
   Controls,
@@ -308,7 +297,6 @@ procedure ListSetDefaultParams(dps: pListDefaultParamStruct); stdcall;
 begin
   LsIni:= AnsiString(dps.DefaultIniName);
 end;
-
 
 exports
   ListSetDefaultParams,
