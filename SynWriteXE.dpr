@@ -1,7 +1,12 @@
-program Syn;
+program SynWriteXE;
 
 uses
   FastMM4,
+  madExcept,
+  madLinkDisAsm,
+  madListHardware,
+  madListProcesses,
+  madListModules,
   Forms,
   unEx in 'unEx.pas' {fmSynEx},
   unMain in 'unMain.pas' {fmMain},
@@ -55,7 +60,7 @@ uses
 begin
   if not CheckInst then Exit;
   Application.Initialize;
-  Application.Title := 'SynWrite';
+  Application.Title := 'SynWriteXE';
   Application.HintHidePause := 5000;
   Application.CreateForm(TfmSynEx, fmSynEx);
   if not CheckIni then Exit;

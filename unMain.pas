@@ -40,7 +40,6 @@ uses
   ecActns, ecPrint, ecSyntMemo, ecKeyMap, ecPropManager, ecSyntAnal,
   ecSyntTree, ecStrUtils, ecPopupCtrl, ecUnicode, DKLang,
 
-  //TBXControls,
   unProc,
   ATSynPlugins,
   ecMacroRec, TBXToolPals, ecExtHighlight, ecSpell, System.Actions;

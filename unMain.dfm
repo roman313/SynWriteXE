@@ -4011,8 +4011,8 @@ object fmMain: TfmMain
       ''
       ''
       '')
-    Left = 296
-    Top = 280
+    Left = 720
+    Top = 176
   end
   object ecSyntPrinter: TecSyntPrinter
     Units = puMM
@@ -4042,14 +4042,14 @@ object fmMain: TfmMain
     FontLineNumders.Style = []
     LineNumbersPos = lnpLeft
     PrintSelection = False
-    Left = 453
-    Top = 264
+    Left = 413
+    Top = 192
   end
   object PopupEditor: TTBXPopupMenu
     Images = ImageListIconsStd
     OnPopup = PopupEditorPopup
-    Left = 296
-    Top = 304
+    Left = 656
+    Top = 448
     object TBXItemCtxUndo: TTBXItem
       Action = ecUndo
       OnSelect = ButtonOnSelect
@@ -4200,10 +4200,10 @@ object fmMain: TfmMain
     end
   end
   object ImgListGutter: TImageList
-    Left = 232
-    Top = 244
+    Left = 16
+    Top = 124
     Bitmap = {
-      494C01010E001300080010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010E0013000C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000004000000001002000000000000040
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -4741,15 +4741,15 @@ object fmMain: TfmMain
   object TBXSwitcher: TTBXSwitcher
     Theme = 'Default'
     FlatMenuStyle = fmsEnable
-    Left = 576
-    Top = 232
+    Left = 216
+    Top = 216
   end
   object MRU: TTBXMRUList
     HidePathExtension = False
     MaxItems = 9
     Prefix = 'MRU'
-    Left = 296
-    Top = 388
+    Left = 696
+    Top = 540
   end
   object SyntKeyMapping: TSyntKeyMapping
     Items = <
@@ -8475,8 +8475,8 @@ object fmMain: TfmMain
         DisplayName = '"Project files list" dialog'
       end>
     UseFirstControlKeys = True
-    Left = 264
-    Top = 280
+    Left = 208
+    Top = 56
   end
   object Timer1: TTimer
     Interval = 500
@@ -8486,13 +8486,13 @@ object fmMain: TfmMain
   end
   object PopupCP: TTBXPopupMenu
     OnPopup = PopupCPPopup
-    Left = 232
-    Top = 304
+    Left = 720
+    Top = 448
   end
   object PopupLE: TTBXPopupMenu
     OnPopup = PopupLEPopup
-    Left = 264
-    Top = 304
+    Left = 688
+    Top = 448
     object TBXItemEndWin: TTBXItem
       Tag = 1
       Caption = 'Windows (CR LF)'
@@ -8517,10 +8517,10 @@ object fmMain: TfmMain
     end
   end
   object ImgListTree: TImageList
-    Left = 256
-    Top = 244
+    Left = 48
+    Top = 76
     Bitmap = {
-      494C010108000900080010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101080009000C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000003000000001002000000000000030
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -8924,8 +8924,8 @@ object fmMain: TfmMain
       000000000000}
   end
   object PrinterSetupDialog: TPrinterSetupDialog
-    Left = 576
-    Top = 260
+    Left = 608
+    Top = 284
   end
   object SyntStyles: TSyntStyles
     Styles = <
@@ -8991,8 +8991,8 @@ object fmMain: TfmMain
         BgColor = clWindow
         FormatType = ftColor
       end>
-    Left = 480
-    Top = 264
+    Left = 416
+    Top = 152
   end
   object ecACP: TAutoCompletePopup
     Images = ImgListTree
@@ -9029,8 +9029,8 @@ object fmMain: TfmMain
     OnChange = ecACPChange
     OnCloseUp = ecACPCloseUp
     OnShow = ecACPShow
-    Left = 480
-    Top = 232
+    Left = 456
+    Top = 112
   end
   object ParamCompletion: TParamCompletion
     DeclSeparator = ','
@@ -9051,8 +9051,8 @@ object fmMain: TfmMain
     ToolHint.Text = ''
     Controls = <>
     CommandID = 652
-    Left = 512
-    Top = 232
+    Left = 456
+    Top = 160
   end
   object TemplatePopup: TTemplatePopup
     Templates = <>
@@ -9073,19 +9073,19 @@ object fmMain: TfmMain
     ToolHint.Text = ''
     Controls = <>
     OnShow = TemplatePopupShow
-    Left = 544
-    Top = 232
+    Left = 456
+    Top = 208
   end
   object PopupLex: TTBXPopupMenu
     OnPopup = PopupLexPopup
-    Left = 320
-    Top = 304
+    Left = 624
+    Top = 448
   end
   object ImageListIconsStd: TImageList
-    Left = 256
-    Top = 168
+    Left = 16
+    Top = 80
     Bitmap = {
-      494C01012D003100080010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01012D0031000C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000040000000C0000000010020000000000000C0
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -10677,8 +10677,8 @@ object fmMain: TfmMain
       000000000000}
   end
   object ImageListIconsFogue16: TTBXImageList
-    Left = 264
-    Top = 216
+    Left = 288
+    Top = 152
     PngDIB = {
       2D00000089504E470D0A1A0A0000000D4948445200000010000002D008060000
       009984F0FC0000492C494441547801ED7D07781555B7F69A53D32B4908292410
@@ -11272,8 +11272,8 @@ object fmMain: TfmMain
   object ImageListIconsTango22: TTBXImageList
     Height = 22
     Width = 22
-    Left = 248
-    Top = 192
+    Left = 264
+    Top = 152
     PngDIB = {
       2D00000089504E470D0A1A0A0000000D4948445200000016000003DE08060000
       0008E7EA7F00007F40494441547801ECBD07801445D7367A7AF2ECCEE69C23B0
@@ -12297,8 +12297,8 @@ object fmMain: TfmMain
       96EF5FFD9FAF81FF0714FA46F8954BF4450000000049454E4400000000}
   end
   object ImageListIconsTango16: TTBXImageList
-    Left = 272
-    Top = 192
+    Left = 240
+    Top = 152
     PngDIB = {
       2D00000089504E470D0A1A0A0000000D4948445200000010000002D008060000
       009984F0FC000047F9494441547801ED7D077815C5D7F7D9DB526E7A2395345A
@@ -12882,8 +12882,8 @@ object fmMain: TfmMain
   object ImageListIconsFogue24: TTBXImageList
     Height = 24
     Width = 24
-    Left = 240
-    Top = 216
+    Left = 312
+    Top = 152
     PngDIB = {
       2D00000089504E470D0A1A0A0000000D49484452000000180000043808060000
       0013941CDD00008106494441547801EC7D077C5445D7FEB3259BDE13127A20F4
@@ -13924,8 +13924,8 @@ object fmMain: TfmMain
   object ImageListIconsGnome: TTBXImageList
     Height = 24
     Width = 24
-    Left = 280
-    Top = 168
+    Left = 216
+    Top = 152
     PngDIB = {
       2D00000089504E470D0A1A0A0000000D49484452000000180000043808060000
       0013941CDD00007568494441547801ECBD078015C5F23D5C376DCE890C4B8625
@@ -14889,8 +14889,8 @@ object fmMain: TfmMain
     Controls = <>
     OnChange = ecSelCharPopup1Change
     OnShow = ecSelCharPopup1Show
-    Left = 512
-    Top = 264
+    Left = 416
+    Top = 104
   end
   object TimerRedraw: TTimer
     OnTimer = TimerRedrawTimer
@@ -14917,8 +14917,8 @@ object fmMain: TfmMain
       '*.Caption'
       '*.Hint')
     OnLanguageChanged = DKLanguageController1LanguageChanged
-    Left = 609
-    Top = 233
+    Left = 721
+    Top = 225
     LangData = {
       0600666D4D61696E0001800300000A00544258446F636B546F70000006007462
       46696C650101000000B5020000070043617074696F6E000E005442584974656D
@@ -16613,8 +16613,8 @@ object fmMain: TfmMain
   end
   object PopupTb: TTBXPopupMenu
     OnPopup = PopupTbPopup
-    Left = 344
-    Top = 304
+    Left = 592
+    Top = 448
     object TBXItemTbCl: TTBXItem
       Caption = 'Close tab'
       OnClick = TBXItemTbClClick
@@ -16685,10 +16685,10 @@ object fmMain: TfmMain
   object ImageListCloseBtn: TImageList
     Height = 14
     Width = 14
-    Left = 305
-    Top = 245
+    Left = 81
+    Top = 85
     Bitmap = {
-      494C01010300040008000E000E00FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101030004000C000E000E00FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000380000000E0000000100200000000000400C
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -16825,8 +16825,8 @@ object fmMain: TfmMain
   end
   object PopupOut: TTBXPopupMenu
     OnPopup = PopupOutPopup
-    Left = 368
-    Top = 304
+    Left = 560
+    Top = 448
     object TBXItemONav: TTBXItem
       Caption = 'Navigate'
       OnClick = TBXItemONavClick
@@ -16863,10 +16863,10 @@ object fmMain: TfmMain
     end
   end
   object ImageListStatus: TImageList
-    Left = 280
-    Top = 244
+    Left = 48
+    Top = 116
     Bitmap = {
-      494C01010C000E00080010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C000E000C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000004000000001002000000000000040
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -17403,8 +17403,8 @@ object fmMain: TfmMain
   end
   object PopupFind: TTBXPopupMenu
     OnPopup = PopupFindPopup
-    Left = 368
-    Top = 332
+    Left = 624
+    Top = 484
     object TBXItemTreeFindNav: TTBXItem
       Caption = 'Navigate'
       OnClick = TBXItemTreeFindNavClick
@@ -17451,8 +17451,8 @@ object fmMain: TfmMain
     end
   end
   object PopupZoom: TTBXPopupMenu
-    Left = 344
-    Top = 332
+    Left = 592
+    Top = 484
     object TBXItemZSet: TTBXItem
       Tag = 25
       Caption = '25%'
@@ -17497,8 +17497,8 @@ object fmMain: TfmMain
   end
   object PopupClip: TTBXPopupMenu
     OnPopup = PopupClipPopup
-    Left = 320
-    Top = 332
+    Left = 560
+    Top = 484
     object TBXItemClipCopyToEd: TTBXItem
       Caption = 'Copy to editor'
       OnClick = TBXItemClipCopyToEdClick
@@ -17529,8 +17529,8 @@ object fmMain: TfmMain
   end
   object PopupSplitter: TTBXPopupMenu
     OnPopup = PopupSplitterPopup
-    Left = 288
-    Top = 332
+    Left = 528
+    Top = 484
     object TBXItemSplitCaption: TTBXItem
       Enabled = False
     end
@@ -17570,8 +17570,8 @@ object fmMain: TfmMain
     end
   end
   object ecMacroRecorder1: TecMacroRecorder
-    Left = 545
-    Top = 262
+    Left = 417
+    Top = 62
   end
   object PropsManagerKeys: TPropsManager
     Template = TemplateEditor
@@ -17580,13 +17580,13 @@ object fmMain: TfmMain
     Properties.Strings = (
       'SyntKeyMapping.AsString'
       '')
-    Left = 320
-    Top = 280
+    Left = 720
+    Top = 128
   end
   object PopupValidate: TTBXPopupMenu
     OnPopup = PopupValidatePopup
-    Left = 392
-    Top = 332
+    Left = 656
+    Top = 484
     object TBXItemValNav: TTBXItem
       Caption = 'Navigate'
       OnClick = TBXItemValNavClick
@@ -17619,13 +17619,13 @@ object fmMain: TfmMain
     HidePathExtension = False
     MaxItems = 20
     Prefix = 'MRU_Sess'
-    Left = 320
-    Top = 388
+    Left = 728
+    Top = 540
   end
   object PopupTree: TTBXPopupMenu
     OnPopup = PopupTreePopup
-    Left = 417
-    Top = 330
+    Left = 689
+    Top = 482
     object TBXItemTreeExpand: TTBXItem
       Caption = 'Expand'
       OnClick = TBXItemTreeExpandClick
@@ -17651,10 +17651,10 @@ object fmMain: TfmMain
   object ImageListColorRecent: TImageList
     Height = 14
     Width = 40
-    Left = 329
-    Top = 246
+    Left = 81
+    Top = 126
     Bitmap = {
-      494C010101000400080028000E00FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101010004000C0028000E00FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000A00000000E00000001002000000000000023
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -17950,8 +17950,8 @@ object fmMain: TfmMain
       000000000000000000000000000000000000000000000000000000000000}
   end
   object PopupClips: TTBXPopupMenu
-    Left = 392
-    Top = 304
+    Left = 528
+    Top = 448
     object TBXItemClipsAddText: TTBXItem
       Caption = 'Add clip...'
       OnClick = TBXItemClipsAddTextClick
@@ -17995,16 +17995,16 @@ object fmMain: TfmMain
     ColCount = 5
     RowCount = 2
     OnGetColorInfo = TBXColorsGetColorInfo
-    Left = 481
-    Top = 290
+    Left = 249
+    Top = 218
   end
   object ImageListFtp: TImageList
     Height = 10
     Width = 10
-    Left = 353
-    Top = 246
+    Left = 113
+    Top = 86
     Bitmap = {
-      494C01010200040008000A000A00FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101020004000C000A000A00FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000280000000A00000001002000000000004006
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -18065,8 +18065,8 @@ object fmMain: TfmMain
   end
   object PopupPluginsLog: TTBXPopupMenu
     OnPopup = PopupOutPopup
-    Left = 440
-    Top = 332
+    Left = 720
+    Top = 484
     object TBXItemPLogCopySel: TTBXItem
       Caption = 'Copy selected'
       OnClick = TBXItemPLogCopySelClick
@@ -18125,7 +18125,7 @@ object fmMain: TfmMain
     ToolHint.Text = ''
     Controls = <>
     Left = 456
-    Top = 232
+    Top = 64
   end
   object PropsManagerPrint: TPropsManager
     Template = TemplateEditor
@@ -18149,8 +18149,8 @@ object fmMain: TfmMain
       'ecSyntPrinter.PrintSelection'
       'ecSyntPrinter.Units'
       '')
-    Left = 344
-    Top = 280
+    Left = 720
+    Top = 80
   end
   object TimerTree: TTimer
     Enabled = False
