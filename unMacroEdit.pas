@@ -144,8 +144,6 @@ begin
           else
           if bPlayEof.Checked then
           begin
-            // #WARNING PROP NOT EXISTS
-            (*
             AMacros.AtFileEnd:= false;
             i:= 0;
             repeat
@@ -157,7 +155,6 @@ begin
                 Break
               end;
             until AMacros.AtFileEnd;
-            *)
           end;
         end;
 

@@ -105,10 +105,10 @@ var
 begin
   case Typ of
     numChar,
-    numDec: V := {DecStr}TryStringToLongWord(S, N);
-    numHex: V := TryHexToLongWord(S, N);
-    numBin: V := TryBinToLongWord(S, N);
-    numOct: V := TryOctToLongWord(S, N);
+    numDec: N := DecStrToLongWord(S, V);
+    numHex: N := HexStrToLongWord(S, V);
+    numBin: N := BinStrToLongWord(S, V);
+    numOct: N := OctStrToLongWord(S, V);
     else N:= 0;
   end;
   LabelErr.Visible:= not V;

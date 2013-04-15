@@ -2930,8 +2930,7 @@ var
   i:Integer;
   s: Widestring;
 begin
-  // #WARNING NO PARAM!
-  OD.Filter:= SyntaxManager.GetFilesFilter({DKLangConstW('AllF')});
+  OD.Filter:= SyntaxManager.GetFilesFilter(DKLangConstW('AllF'));
   if (opLastDir=1) and (opHistFilter>0) then
     OD.FilterIndex:= opHistFilter
   else
@@ -3071,8 +3070,7 @@ begin
   if PromtDialog then
   begin
     SD.InitialDir:= LastDir;
-    // #WARNING! NO PARAM!
-    SD.Filter:= SyntaxManager.GetFilesFilter({DKLangConstW('AllF')});
+    SD.Filter:= SyntaxManager.GetFilesFilter(DKLangConstW('AllF'));
 
     if Frame.TextSource.SyntaxAnalyzer<>nil then
       SD.FilterIndex:= SFilterNameToIdx(SD.Filter, Frame.TextSource.SyntaxAnalyzer.LexerName)
@@ -3206,8 +3204,7 @@ begin
   Result.EditorSlave.KeyMapping:= SyntKeyMapping;
   Result.HyperlinkHighlighter.Active:= opLink;
   Result.HyperlinkHighlighter.Style.Font.Color:= opColorLink;
-  // #WARNING PROP NOT EXISTS
-  //Result.HyperlinkHighlighter.SingleClick:= opSingleClickURL;
+  Result.HyperlinkHighlighter.SingleClick:= opSingleClickURL;
   Result.ShowMap:= opMicroMap;
   Result.MapColor:= opColorMap;
   Result.CaretsEnabled:= opCaretsEnabled;
@@ -3579,15 +3576,12 @@ begin
   else
     SB2.Panels[ccRO].ImageIndex:= 1;
 
-  // #WARNING PROP NOT EXISTS
-  (*
   if Assigned(SB2) then
     case ed.SelectModeDefault of
       msColumn: SB2.Panels[ccSelMode].ImageIndex:= 9;
       msLine: SB2.Panels[ccSelMode].ImageIndex:= 10;
       else SB2.Panels[ccSelMode].ImageIndex:= 8;
     end;
-  *)
 
   if Assigned(SB2) then
     if ed.WordWrap then
@@ -3873,8 +3867,7 @@ begin
     opAcpFileChars:= ReadInteger('ACP', 'FChars', 3);
     opAcpFileSize:= ReadInteger('ACP', 'FSize', 2);
     opAcpNum:= ReadInteger('ACP', 'Num', 0);
-    // #WARNING PROP NOT EXISTS
-    //ecACP.ShowWhenNone:= ReadBool('ACP', 'IfNone', true);
+    ecACP.ShowWhenNone:= ReadBool('ACP', 'IfNone', true);
 
     opNotif:= ReadInteger('Setup', 'Notif', 2);
     ApplyIntf;
@@ -3904,8 +3897,7 @@ begin
     Tree.AutoExpand:= ReadBool('Tree', 'AExp', false);
     Tree.SortType:= TSortType(ReadInteger('Tree', 'Sort', 0));
     Tree.HotTrack:= ReadBool('Tree', 'HTrack', false);
-    // #WARNING PROP NOT EXISTS
-    //Tree.UpdateDelay:= ReadInteger('Tree', 'Delay', 1000);
+    Tree.UpdateDelay:= ReadInteger('Tree', 'Delay', 1000);
 
     opSrOffsetY:= ReadInteger('SR', 'OffY', 6);
     opSrExpand:= ReadBool('SR', 'Expand', false);
@@ -3960,8 +3952,7 @@ begin
     opColorCaretsGutter:= ReadInteger('View', 'CaretsGut', clLtGray);
     opColorMapMarks:= ReadInteger('View', 'MapMkC', clGreen);
     opColorBkmk:= ReadInteger('View', 'BkC', RGB(200, 240, 200));
-    // #WARNING PROP NOT EXISTS
-    //opColorNonPrintedBG:= ReadInteger('View', 'NPrintBG', clSilver);
+    opColorNonPrintedBG:= ReadInteger('View', 'NPrintBG', clSilver);
     opColorSplitViews:= ReadInteger('View', 'SplitC', clBtnFace);
     opColorSplitSlave:= ReadInteger('View', 'SplitS', clBtnFace);
     opColorTab1:= ReadInteger('View', 'TabC1', clBtnFace);
@@ -4414,8 +4405,7 @@ begin
     WriteBool('Tree', 'AExp', Tree.AutoExpand);
     WriteInteger('Tree', 'Sort', Ord(Tree.SortType));
     WriteBool('Tree', 'HTrack', Tree.HotTrack);
-    // #WARNING PROP NOT EXISTS
-    //WriteInteger('Tree', 'Delay', Tree.UpdateDelay);
+    WriteInteger('Tree', 'Delay', Tree.UpdateDelay);
 
     WriteBool('ACP', 'TplTab', opTemplateTabbing);
     WriteString('ACP', 'TplTabEx', opTemplateTabbingExcept);
@@ -4427,8 +4417,7 @@ begin
     WriteInteger('ACP', 'FChars', opAcpFileChars);
     WriteInteger('ACP', 'FSize', opAcpFileSize);
     WriteInteger('ACP', 'Num', opAcpNum);
-    // #WARNING PROP NOT EXISTS
-    //WriteBool('ACP', 'IfNone', ecACP.ShowWhenNone);
+    WriteBool('ACP', 'IfNone', ecACP.ShowWhenNone);
 
     WriteInteger('SR', 'OffY', opSrOffsetY);
     WriteBool('SR', 'Expand', opSrExpand);
@@ -4450,8 +4439,7 @@ begin
     WriteInteger('View', 'CaretsGut', opColorCaretsGutter);
     WriteInteger('View', 'MapMkC', opColorMapMarks);
     WriteInteger('View', 'BkC', opColorBkmk);
-    // #WARNING PROP NOT EXISTS
-    //WriteInteger('View', 'NPrintBG', opColorNonPrintedBG);
+    WriteInteger('View', 'NPrintBG', opColorNonPrintedBG);
     WriteInteger('View', 'TabC1', opColorTab1);
     WriteInteger('View', 'TabC2', opColorTab2);
     WriteInteger('View', 'TabC3', opColorTab3);
@@ -5065,15 +5053,12 @@ begin
     smLowerCaseBlock,
     smToggleCaseBlock,
     smTitleCaseBlock,
-    // #WARNING PROP NOT EXISTS
-    (*
     smSentCaseBlock:
       begin
         DoSaveSel(Ed, Sel);
         Ed.SelChangeCase(TChangeCase(Command - smUpperCaseBlock + 1));
         DoRestoreSel(Ed, Sel);
       end;
-    *)
 
     //indent
     smTab:
@@ -6526,8 +6511,7 @@ begin
 
   LangManager.ScanForLangFiles(SynDir + 'Lang', '*.lng', False);
   TSpCrack(Splitter1).PopupMenu:= PopupSplitter;
-  // #WARNING PROP NOT EXISTS
-  //ecOnSavingLexer:= DoSaveStyles;
+  ecOnSavingLexer:= DoSaveStyles;
   TbxHiContrast:= true;
 
   TabSwitcher.OnGetTab:= GetTabName;
@@ -8620,8 +8604,6 @@ begin
     else
     if Panel = Panels[ccSelMode] then
     begin
-      // #WARNING PROP NOT EXISTS
-      (*
       with CurrentEditor do
         case SelectModeDefault of
           msNone,
@@ -8629,7 +8611,6 @@ begin
           msColumn: SelectModeDefault:= msLine;
           msLine: SelectModeDefault:= msNormal;
         end;
-      *)
     end
     else
     if Panel = Panels[ccZoom] then
@@ -9300,8 +9281,7 @@ begin
   K(tbxItemECaseLower, smLowerCaseBlock);
   K(tbxItemECaseTitle, smTitleCaseBlock);
   K(tbxItemECaseInvert, smToggleCaseBlock);
-  // #WARNING PROP NOT EXISTS
-  //K(tbxItemECaseSent, smSentCaseBlock);
+  K(tbxItemECaseSent, smSentCaseBlock);
 
   //bookmk
   K(tbxItemG0, smSetBookmark0);
@@ -10857,11 +10837,8 @@ begin
         WriteBool('Wrap2', IntToStr(i), F.EditorSlave.WordWrap);
         WriteBool('Line', IntToStr(i), F.EditorMaster.LineNumbers.Visible);
         WriteBool('Fold', IntToStr(i), F.EditorMaster.DisableFolding);
-        // #WARNING PROP NOT EXISTS
-        (*
         WriteInteger('SelMode', IntToStr(i), Ord(F.EditorMaster.SelectModeDefault));
         WriteInteger('SelMode2', IntToStr(i), Ord(F.EditorSlave.SelectModeDefault));
-        *)
         WriteString('Color', IntToStr(i), ColorToString(F.TabColor));
         WriteString('ColMarkers', IntToStr(i), F.ColMarkers);
         WriteString('Collapsed', IntToStr(i), EditorGetCollapsedRanges(F.EditorMaster));
@@ -10983,11 +10960,8 @@ begin
         F.EditorSlave.WordWrap:= ReadBool('Wrap2', IntToStr(i), false);
         F.EditorMaster.LineNumbers.Visible:= ReadBool('Line', IntToStr(i), false);
         F.EditorMaster.DisableFolding:= ReadBool('Fold', IntToStr(i), false);
-        // #WARNING PROP NOT EXISTS
-        (*
         F.EditorMaster.SelectModeDefault:= TSyntSelectionMode(ReadInteger('SelMode', IntToStr(i), 0));
         F.EditorSlave.SelectModeDefault:= TSyntSelectionMode(ReadInteger('SelMode2', IntToStr(i), 0));
-        *)
         F.TabColor:= StringToColor(ReadString('Color', IntToStr(i), ColorToString(clNone)));
         F.ColMarkers:= ReadString('ColMarkers', IntToStr(i), '');
         F.CollapsedString:= ReadString('Collapsed', IntToStr(i), '');
@@ -13179,8 +13153,7 @@ end;
 
 procedure TfmMain.ecSentCaseExecute(Sender: TObject);
 begin
-  // #WARNING PROP NOT EXISTS
-  //CurrentEditor.ExecCommand(smSentCaseBlock);
+  CurrentEditor.ExecCommand(smSentCaseBlock);
 end;
 
 procedure TfmMain.TBXItemZSetClick(Sender: TObject);
@@ -13597,8 +13570,7 @@ var
   i: Integer;
 begin
   //must add code to ecExports unit
-  // #WARNING PROP NOT EXISTS
-  //ecExports.ecCanFixBlocks:= opFixBlocks;
+  ecExports.ecCanFixBlocks:= opFixBlocks;
 
   for i:= 0 to FrameAllCount-1 do
     with FramesAll[i] do
@@ -18984,14 +18956,11 @@ end;
 
 procedure TfmMain.ecJumpToLastMarkerExecute(Sender: TObject);
 begin
-  // #WARNING PROP NOT EXISTS
-  (*
   with CurrentEditor do
     if Markers.Count>0 then
       GotoMarker(TMarker(Markers.Last))
     else
       MsgBeep;
-  *)
 end;
 
 procedure TfmMain.ecTreeParentExecute(Sender: TObject);
@@ -23746,7 +23715,7 @@ begin
   En:= F.SpellLive;
   Inc(APos);
 
-  // #WARNING PROP NOT EXISTS
+  // #WARNING! FSpell?
   (*
   if En and IsPositionMatchesTokens(Ed, APos, APos+1, tokensCmtStr) then
     Valid:= FSpell.CheckWord(AWord) or IsUrlAtPos(F, APos)
@@ -23773,7 +23742,7 @@ begin
     AWord:= Ed.WordAtPos(Ed.CaretPos);
     MousePos:= Ed.ClientToScreen(MousePos);
     S:= AWord;
-    // #WARNING PROP NOT EXISTS
+    // #WARNING! FSpell?
     (*
     if FSpell.ShowPopupMenu(Sender,
       [spAdd, spIgnoreAll, spReplace], MousePos.X, MousePos.Y, S) = spReplace then
@@ -23843,13 +23812,11 @@ begin
     if ecMacroRecorder1.Recording then
       SB2.Panels[ccMacro].ImageIndex:= 7
     else
-    // #WARNING PROP NOT EXISTS
-    (*
-    if FSpellChecking then
+    // #WARNING! FSpellChecking?
+    if False{FSpellChecking} then
       SB2.Panels[ccMacro].ImageIndex:= 11
     else
       SB2.Panels[ccMacro].ImageIndex:= 6;
-    *)
 end;
 
 procedure TfmMain.UpdateSaveIco;
@@ -23988,12 +23955,9 @@ begin
   else
   begin
     //stop macro if not found
-    // #WARNING PROP NOT EXISTS
-    (*
     ecMacroRecorder1.AtFileEnd:= true;
     ecMacroRecorder1.StopPlayback:= true;
-    *)
-  end;  
+  end;
 end;
 
 procedure TfmMain.ecSortAscendingExecute(Sender: TObject);
@@ -24191,11 +24155,8 @@ procedure TfmMain.ApplyUrlClick;
 var
   i: Integer;
 begin
-  // #WARNING PROP NOT EXISTS
-  (*
   for i:= 0 to FrameAllCount-1 do
     FramesAll[i].HyperlinkHighlighter.SingleClick:= opSingleClickURL;
-  *)
 end;
 
 procedure TfmMain.ApplyCarets;
@@ -24372,8 +24333,7 @@ end;
 
 procedure TfmMain.TBXItemCCSentClick(Sender: TObject);
 begin
-  // #WARNING NOT EXISTS
-  //CurrentEditor.ExecCommand(smSentCaseBlock);
+  CurrentEditor.ExecCommand(smSentCaseBlock);
 end;
 
 procedure TfmMain.TBXItemCCInvClick(Sender: TObject);
@@ -24398,8 +24358,7 @@ end;
 
 procedure TfmMain.TBXItemECaseSentClick(Sender: TObject);
 begin
-  // #WARNING NOT EXISTS
-  //CurrentEditor.ExecCommand(smSentCaseBlock);
+  CurrentEditor.ExecCommand(smSentCaseBlock);
 end;
 
 procedure TfmMain.TBXItemECaseInvertClick(Sender: TObject);

@@ -723,14 +723,11 @@ begin
 
     TemplateEditor.WordWrap:=cbWrap.Checked;
     TemplateEditor.DisableFolding:=not cbFold.Checked;
-    // #WARNING! Prop not exists
-    (*
     case cbSelMode.ItemIndex of
       0: TemplateEditor.SelectModeDefault:= msNormal;
       1: TemplateEditor.SelectModeDefault:= msColumn;
       2: TemplateEditor.SelectModeDefault:= msLine;
     end;
-    *)
 
     if cbKeepPaste.Checked then
       TemplateEditor.OptionsEx:=TemplateEditor.OptionsEx + [soKeepCaretPaste]
@@ -786,8 +783,7 @@ begin
       Tree.SortType:=stNone;
     Tree.HotTrack:=cbTreeTrack.Checked;
     Tree.ClickAction:= TSyntaxTreeAction(cbTreeAction.ItemIndex);
-    // #WARNING! PROP NOT EXISTS
-    //Tree.UpdateDelay:= cbTreeDelay.Value;
+    Tree.UpdateDelay:= cbTreeDelay.Value;
 
     opMapHScroll:= cbMapHScroll.Checked;
     opMapVScroll:= cbMapVScroll.Checked;
@@ -870,8 +866,7 @@ begin
     TemplateEditor.DefaultStyles.CollapseMark.Font.Color:= Colors[46];
     opColorSplitSlave:= Colors[47];
     TemplateEditor.Gutter.Bands[2].Color:= Colors[48];
-    // #WARNING PROP NOT EXISTS
-    //opColorNonPrintedBG:= Colors[49];
+    opColorNonPrintedBG:= Colors[49];
     TemplateEditor.DefaultStyles.CollapseMark.BgColor:= Colors[50];
     TemplateEditor.SyncEditing.SyncRangeStyle.BgColor:= Colors[51];
     opColorMapMarks:= Colors[52];
@@ -918,8 +913,7 @@ begin
     TemplateEditor.ShowRightMargin:=cbMar.Checked;
     TemplateEditor.RightMargin:=edMar.Value;
     TemplateEditor.LineNumbers.NumberingStyle:=TLineNumberingStyle(edNums.ItemIndex);
-    // #WARNING PROP NOT EXISTS
-    //TemplateEditor.ShowLineEnds:=cbShowEOL.Checked;
+    TemplateEditor.ShowLineEnds:=cbShowEOL.Checked;
     TemplateEditor.StapleOffset:=edStapleOffset.Value;
     TemplateEditor.StaplePen.Style:=TPenStyle(cbStaples.ItemIndex);
 
@@ -1092,8 +1086,7 @@ begin
     opAcpUseSingle:= cbAcpUseSingle.Checked;
     SyntaxManagerChange(nil);
     ecACP.DropDownCount:=edAcpDrop.Value;
-    // #WARNING PROP NOT EXISTS
-    //ecACP.ShowWhenNone:=cbAcpNone.Checked;
+    ecACP.ShowWhenNone:=cbAcpNone.Checked;
     ecACP.FilterType:=TAutoCompleteFilter(cbAcpFilter.ItemIndex);
     ApplyACP;
     opAcpFile:= cbAcpFile.Checked;
@@ -1171,15 +1164,12 @@ begin
     cbFold.Checked:=not TemplateEditor.DisableFolding;
     cbKeepPaste.Checked:= soKeepCaretPaste in TemplateEditor.OptionsEx;
 
-    // #WARNING PROP NOT EXISTS
-    (*
     case TemplateEditor.SelectModeDefault of
       msNone,
       msNormal: cbSelMode.ItemIndex:= 0;
       msColumn: cbSelMode.ItemIndex:= 1;
       msLine: cbSelMode.ItemIndex:= 2;
     end;
-    *)
 
     cbUrlClick.Checked:= opSingleClickURL;
 
@@ -1263,8 +1253,7 @@ begin
     Colors[46]:= TemplateEditor.DefaultStyles.CollapseMark.Font.Color;
     Colors[47]:= opColorSplitSlave;
     Colors[48]:= TemplateEditor.Gutter.Bands[2].Color;
-    // #WARNING PROP NOT EXISTS
-    //Colors[49]:= opColorNonPrintedBG;
+    Colors[49]:= opColorNonPrintedBG;
     Colors[50]:= TemplateEditor.DefaultStyles.CollapseMark.BgColor;
     Colors[51]:= TemplateEditor.SyncEditing.SyncRangeStyle.BgColor;
     Colors[52]:= opColorMapMarks;
@@ -1700,8 +1689,7 @@ begin
 
     cbAcpUseSingle.Checked:= opAcpUseSingle;
     edAcpNum.Value:= opAcpNum;
-    // #WARNING PROP NOT EXISTS
-    //cbAcpNone.Checked:= ecACP.ShowWhenNone;
+    cbAcpNone.Checked:= ecACP.ShowWhenNone;
     cbAcpFilter.ItemIndex:= integer(ecACP.FilterType);
     cbAcpFile.Checked:= opAcpFile;
     cbAcpFileClick(Self);
@@ -1761,8 +1749,7 @@ begin
     edMar.Value:=TemplateEditor.RightMargin;
     edLSpace.Value:=TemplateEditor.LineSpacing;
     edNums.ItemIndex:=Ord(TemplateEditor.LineNumbers.NumberingStyle);
-    // #WARNING PROP NOT EXISTS
-    //cbShowEOL.Checked:=TemplateEditor.ShowLineEnds;
+    cbShowEOL.Checked:=TemplateEditor.ShowLineEnds;
     cbColorOnEmpty.Checked:= not (soNormalSelToLineEnd in TemplateEditor.OptionsEx);
     edStapleOffset.Value:=TemplateEditor.StapleOffset;
     cbStaples.ItemIndex:= Ord(TemplateEditor.StaplePen.Style);
@@ -2292,8 +2279,7 @@ begin
     cbTreeSort.Checked:=Tree.SortType<>stNone;
     cbTreeTrack.Checked:=Tree.HotTrack;
     cbTreeAction.ItemIndex:= Ord(Tree.ClickAction);
-    // #WARNING PROP NOT EXISTS
-    //cbTreeDelay.Value:= Tree.UpdateDelay;
+    cbTreeDelay.Value:= Tree.UpdateDelay;
 
     cbMapHScroll.Checked:= opMapHScroll;
     cbMapVScroll.Checked:= opMapVScroll;

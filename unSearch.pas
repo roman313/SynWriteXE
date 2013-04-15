@@ -466,7 +466,6 @@ begin
     end;
 
   // #WARNING! FEW PROBLEMS
-  (*
   if UseFundamentals then
   begin
     cStrings.FundFinder:= Self; //set Fundamentals callback
@@ -480,7 +479,6 @@ begin
       FControl.ReplaceText(0, FControl.TextLength, S);
     Exit
   end;
-  *)
 
   if IsSel and not CntOnly then
     FControl.ResetSelection;

@@ -326,13 +326,10 @@ begin
   EditorSlave.Gutter.Images:= TfmMain(Owner).ImgListGutter;
 
   //special events
-  // #WARNING! NOT EXISTS
-  (*
   EditorMaster.OnShowHint:= EditorShowHint;
   EditorSlave.OnShowHint:= EditorShowHint;
   EditorMaster.OnCtrlClick:= EditorCtrlClick;
   EditorSlave.OnCtrlClick:= EditorCtrlClick;
-  *)
 
   TControlHack(Splitter2).PopupMenu:= PopupSplitter;
   TControlHack(Splitter2).OnDblClick:= SplitterDblClick;

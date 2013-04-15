@@ -38,6 +38,10 @@ object fmSetup: TfmSetup
       ImageIndex = 4
       TabVisible = False
       OnShow = tabIntfShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Label11: TLabel
         Left = 8
         Top = 364
@@ -97,7 +101,6 @@ object fmSetup: TfmSetup
           Height = 21
           Style = csDropDownList
           DropDownCount = 20
-          ItemHeight = 13
           TabOrder = 0
           OnChange = cbLangChange
         end
@@ -115,7 +118,6 @@ object fmSetup: TfmSetup
           Width = 240
           Height = 21
           Style = csDropDownList
-          ItemHeight = 13
           TabOrder = 1
           Items.Strings = (
             'Do nothing'
@@ -175,7 +177,6 @@ object fmSetup: TfmSetup
           Width = 153
           Height = 21
           Style = csDropDownList
-          ItemHeight = 13
           TabOrder = 0
           Items.Strings = (
             'ANSI (Windows)'
@@ -191,7 +192,6 @@ object fmSetup: TfmSetup
           Width = 145
           Height = 21
           Style = csDropDownList
-          ItemHeight = 13
           TabOrder = 1
           Items.Strings = (
             'Windows'
@@ -205,7 +205,6 @@ object fmSetup: TfmSetup
           Height = 21
           Style = csDropDownList
           DropDownCount = 20
-          ItemHeight = 13
           Sorted = True
           TabOrder = 2
         end
@@ -216,6 +215,10 @@ object fmSetup: TfmSetup
       ImageIndex = 1
       TabVisible = False
       OnShow = tabColorsShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object boxToolbar: TGroupBox
         Left = 8
         Top = 1
@@ -243,7 +246,6 @@ object fmSetup: TfmSetup
           Width = 240
           Height = 21
           Style = csDropDownList
-          ItemHeight = 13
           TabOrder = 0
         end
         object cbIcons: TComboBox
@@ -252,7 +254,6 @@ object fmSetup: TfmSetup
           Width = 240
           Height = 21
           Style = csDropDownList
-          ItemHeight = 13
           TabOrder = 1
           Items.Strings = (
             'Standard'
@@ -314,7 +315,6 @@ object fmSetup: TfmSetup
           Width = 177
           Height = 22
           Style = [cbStandardColors, cbExtendedColors, cbSystemColors, cbIncludeNone, cbCustomColor, cbPrettyNames]
-          ItemHeight = 16
           TabOrder = 1
           OnSelect = ColorBox1Select
         end
@@ -342,6 +342,10 @@ object fmSetup: TfmSetup
       Caption = 'Fonts'
       TabVisible = False
       OnShow = tabFontsShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object gFont: TGroupBox
         Left = 8
         Top = -3
@@ -409,6 +413,10 @@ object fmSetup: TfmSetup
       Caption = 'Tabs'
       TabVisible = False
       OnShow = tabTabsShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object boxTabs: TGroupBox
         Left = 8
         Top = 0
@@ -504,7 +512,6 @@ object fmSetup: TfmSetup
           Width = 57
           Height = 181
           Style = lbOwnerDrawFixed
-          ItemHeight = 16
           TabOrder = 9
           OnDblClick = ListTabColorsDblClick
           OnDrawItem = ListTabColorsDrawItem
@@ -516,7 +523,6 @@ object fmSetup: TfmSetup
           Width = 321
           Height = 21
           Style = csDropDownList
-          ItemHeight = 13
           TabOrder = 0
           Items.Strings = (
             'Always show tabs'
@@ -529,6 +535,10 @@ object fmSetup: TfmSetup
       Caption = 'Editor'
       TabVisible = False
       OnShow = tabEdShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object gEdit: TGroupBox
         Left = 8
         Top = 4
@@ -823,7 +833,6 @@ object fmSetup: TfmSetup
           Width = 97
           Height = 21
           Style = csDropDownList
-          ItemHeight = 13
           TabOrder = 28
           Items.Strings = (
             'Normal'
@@ -857,6 +866,10 @@ object fmSetup: TfmSetup
       ImageIndex = 6
       TabVisible = False
       OnShow = tabEd2Show
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object gEditor: TGroupBox
         Left = 8
         Top = 88
@@ -1005,7 +1018,6 @@ object fmSetup: TfmSetup
           Height = 21
           Hint = 'Style of line numbering.'
           Style = csDropDownList
-          ItemHeight = 13
           TabOrder = 6
           Items.Strings = (
             'Default'
@@ -1112,7 +1124,6 @@ object fmSetup: TfmSetup
           Height = 22
           Hint = 'Line style of block staples.'
           Style = csOwnerDrawFixed
-          ItemHeight = 16
           TabOrder = 8
           OnDrawItem = cbStaplesDrawItem
         end
@@ -1229,7 +1240,6 @@ object fmSetup: TfmSetup
             'whitespace character in the preceding line.'
           AutoDropDown = True
           Style = csDropDownList
-          ItemHeight = 13
           TabOrder = 3
           OnChange = edTabModeChange
           Items.Strings = (
@@ -1262,6 +1272,10 @@ object fmSetup: TfmSetup
       Caption = 'Editor carets'
       TabVisible = False
       OnShow = tabCaretsShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object boxCarets: TGroupBox
         Left = 8
         Top = 0
@@ -1343,10 +1357,14 @@ object fmSetup: TfmSetup
         end
       end
     end
-    object tabOvr: TTntTabSheet
+    object tabOvr: TTabSheet
       Caption = 'Editor overrides'
       TabVisible = False
       OnShow = tabOvrShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
     end
     object tabKey: TTabSheet
       Caption = 'Keys'
@@ -1437,7 +1455,6 @@ object fmSetup: TfmSetup
         Height = 21
         Style = csDropDownList
         DropDownCount = 40
-        ItemHeight = 13
         TabOrder = 0
         OnChange = cbKeyCatChange
       end
@@ -1464,6 +1481,10 @@ object fmSetup: TfmSetup
       ImageIndex = 3
       TabVisible = False
       OnShow = tabFilesShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object boxFGroup: TGroupBox
         Left = 8
         Top = 0
@@ -1505,7 +1526,6 @@ object fmSetup: TfmSetup
           Width = 230
           Height = 21
           Style = csDropDownList
-          ItemHeight = 13
           TabOrder = 0
           Items.Strings = (
             'Don'#39't open'
@@ -1589,7 +1609,6 @@ object fmSetup: TfmSetup
           Width = 230
           Height = 21
           Style = csDropDownList
-          ItemHeight = 13
           TabOrder = 0
           Items.Strings = (
             'Don'#39't watch'
@@ -1603,7 +1622,6 @@ object fmSetup: TfmSetup
           Height = 21
           Style = csDropDownList
           DropDownCount = 15
-          ItemHeight = 13
           TabOrder = 1
           Items.Strings = (
             'Don'#39't suggest'
@@ -1622,6 +1640,10 @@ object fmSetup: TfmSetup
       Caption = 'Search'
       TabVisible = False
       OnShow = tabSearchShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object TntLabel22: TLabel
         Left = 8
         Top = 364
@@ -1741,7 +1763,6 @@ object fmSetup: TfmSetup
           Width = 243
           Height = 21
           Style = csDropDownList
-          ItemHeight = 13
           TabOrder = 1
           Items.Strings = (
             'Close Quick Search'
@@ -1762,6 +1783,10 @@ object fmSetup: TfmSetup
       Caption = 'Tree/Map'
       TabVisible = False
       OnShow = tabTreeShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object gTree: TGroupBox
         Left = 8
         Top = 0
@@ -1829,7 +1854,6 @@ object fmSetup: TfmSetup
           Width = 243
           Height = 21
           Style = csDropDownList
-          ItemHeight = 13
           TabOrder = 5
           Items.Strings = (
             'No action'
@@ -1898,6 +1922,10 @@ object fmSetup: TfmSetup
       Caption = 'History'
       TabVisible = False
       OnShow = tabHistShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object boxHist: TGroupBox
         Left = 8
         Top = 0
@@ -2007,7 +2035,6 @@ object fmSetup: TfmSetup
           Width = 233
           Height = 21
           Style = csDropDownList
-          ItemHeight = 13
           TabOrder = 10
           OnChange = cbDirLastChange
           Items.Strings = (
@@ -2037,7 +2064,6 @@ object fmSetup: TfmSetup
           Width = 233
           Height = 21
           Style = csDropDownList
-          ItemHeight = 13
           TabOrder = 9
           Items.Strings = (
             'Disabled'
@@ -2068,6 +2094,10 @@ object fmSetup: TfmSetup
       Caption = 'Sessions/Projects'
       TabVisible = False
       OnShow = tabSessShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object boxSess: TGroupBox
         Left = 8
         Top = 0
@@ -2133,6 +2163,10 @@ object fmSetup: TfmSetup
       ImageIndex = -1
       TabVisible = False
       OnShow = tabACPShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object gAcpAll: TGroupBox
         Left = 8
         Top = 148
@@ -2169,7 +2203,6 @@ object fmSetup: TfmSetup
           Width = 201
           Height = 21
           Style = csDropDownList
-          ItemHeight = 13
           TabOrder = 4
           Items.Strings = (
             'No filtration'
@@ -2408,6 +2441,10 @@ object fmSetup: TfmSetup
       Caption = 'Auto-save'
       TabVisible = False
       OnShow = tabASaveShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object gASave: TGroupBox
         Left = 8
         Top = 4
@@ -2557,6 +2594,10 @@ object fmSetup: TfmSetup
       Caption = 'Spell checker'
       TabVisible = False
       OnShow = tabSpellShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object boxSpellOpt: TGroupBox
         Left = 8
         Top = 0
@@ -2659,6 +2700,10 @@ object fmSetup: TfmSetup
       Caption = 'Search folders'
       TabVisible = False
       OnShow = tabFoldersShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object boxFolders: TGroupBox
         Left = 8
         Top = 0
@@ -2708,6 +2753,10 @@ object fmSetup: TfmSetup
       Caption = 'Misc'
       TabVisible = False
       OnShow = tabMiscShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object boxMisc: TGroupBox
         Left = 8
         Top = 0
@@ -2868,7 +2917,6 @@ object fmSetup: TfmSetup
           Width = 145
           Height = 21
           Style = csDropDownList
-          ItemHeight = 13
           TabOrder = 0
         end
         object cbStripBk: TCheckBox
@@ -2892,7 +2940,6 @@ object fmSetup: TfmSetup
           Width = 145
           Height = 21
           Style = csDropDownList
-          ItemHeight = 13
           TabOrder = 3
           Items.Strings = (
             'Auto-hide'
@@ -2905,7 +2952,6 @@ object fmSetup: TfmSetup
           Width = 145
           Height = 21
           Style = csDropDownList
-          ItemHeight = 13
           TabOrder = 4
           Items.Strings = (
             'Unicode'
