@@ -1,3 +1,6 @@
+Please, make EXE 64-bit !!!
+
+
 SynWriteXE
 ========
 
